@@ -1,0 +1,69 @@
+FC Velocity — Fitness Assessment Data and Standards
+
+This is the single source of truth for all quantitative fitness data. Player IDs match the player profiles in players.txt.
+
+---
+
+ASSESSMENT SCHEDULE
+
+Pre-season assessment: 3 weeks before the season starts. Full battery for all first-squad players.
+Mid-season assessment: December winter break. Focus on fatigue monitoring and fitness changes.
+Post-injury assessment: At RTP Stage 3 and Stage 4 to confirm functional readiness.
+Annual comprehensive assessment: Includes blood panels, bone density for selected players, and psychological screening.
+
+---
+
+FITNESS TEST BATTERY AND BENCHMARKS
+
+Yo-Yo Intermittent Recovery Test Level 2 (Yo-Yo IR2): Measures football-specific aerobic capacity. Benchmark outfield players: minimum 1080m, elite target 1400m+. Benchmark goalkeepers: minimum 780m.
+
+30-metre sprint test (GPS timed): Measures acceleration and maximum speed. Benchmark outfield: below 4.0 seconds. Elite: below 3.8 seconds.
+
+5-10-5 agility test (Pro Agility Shuttle): Measures lateral agility and change-of-direction speed. Benchmark outfield: below 4.4 seconds.
+
+Single-leg hop test: Measures lower limb power and symmetry. Limb Symmetry Index (LSI) = injured side / uninjured side × 100. RTP threshold: LSI ≥ 90%.
+
+Isokinetic dynamometry — quadriceps and hamstring: Peak torque measured at 60°/s. H:Q ratio benchmark: 0.60–0.70. Players with H:Q below 0.55 are placed on a targeted hamstring strengthening programme.
+
+Sit-and-reach flexibility: Benchmark above 28 cm. Players below this threshold are placed on a daily hamstring and posterior chain flexibility programme.
+
+Body composition (DXA scan or skinfold): Outfield benchmark 8–14% body fat. Goalkeeper benchmark 10–16%.
+
+Resting heart rate (7-day average): Benchmark 42–58 bpm. Values above 60 bpm after a rest day may indicate insufficient recovery or illness.
+
+Heart Rate Variability — HRV (RMSSD): Each player has a personal pre-season baseline. A drop of more than 20% from personal baseline on consecutive mornings triggers a load management review with Tal Ben-David.
+
+---
+
+SQUAD FITNESS DATA — NOVEMBER 2024 ASSESSMENT
+
+PLR-001 Marco Alvarez: Yo-Yo IR2 1360m | Sprint 3.82s | Agility 4.31s | Body fat 10.2% | Status: High fitness, match-ready.
+
+PLR-002 Luca Ferretti: Yo-Yo IR2 1180m | Sprint 3.91s | Agility 4.39s | Body fat 11.4% | Status: Good. Slightly below pre-ACL baseline of 1280m. Continued strength development ongoing.
+
+PLR-003 Dmitri Volkov: Yo-Yo IR2 1020m | Sprint 4.08s | Agility 4.52s | Body fat 12.8% | Status: Moderate-High. Load managed during fixture congestion period.
+
+PLR-004 James Okafor: Yo-Yo IR2 1420m | Sprint 3.74s | Agility 4.19s | Body fat 9.1% | Status: Excellent. Squad's top performer. Sit-and-reach below benchmark — flexibility programme active.
+
+PLR-005 Anton Becker: Yo-Yo IR2 980m | Sprint 4.21s | Shoulder stability: full range, symmetrical strength | Status: Good. Within expected goalkeeper range.
+
+PLR-006 Rafael Torres: Yo-Yo IR2 1310m | Sprint 3.87s | Agility 4.28s | H:Q ratio 0.64 | Status: High. Cleared for all activity.
+
+PLR-007 Yosef Klein: Yo-Yo IR2 1240m | Sprint 4.01s | Agility 4.37s | Body fat 11.7% | Status: High. Inhaler protocol confirmed.
+
+---
+
+LOAD MONITORING — ACWR POLICY
+
+FC Velocity uses GPS tracking (Catapult Sport system) to monitor total distance, high-speed running (above 21 km/h), sprint distance (above 25 km/h), and Player Load daily.
+
+The Acute:Chronic Workload Ratio (ACWR) is the primary injury risk indicator. ACWR is the ratio of the current week's training load to the rolling 4-week average. Safe zone: 0.80–1.30. Elevated risk: 1.30–1.50. High risk: above 1.50. When a player's ACWR exceeds 1.50, Tal Ben-David modifies their next session load and notifies the responsible physiotherapist immediately. ACWR data is reviewed every Monday morning at the medical and conditioning meeting.
+
+---
+
+NUTRITIONAL BENCHMARKS
+
+Carbohydrate intake on match days: 8–10 g per kg of body weight.
+Daily protein intake: 1.6–2.2 g per kg of body weight; post-training intake within 30 minutes is prioritised.
+Hydration target: urine colour pale yellow (scale 1–3, PNSS chart) at the start of each session. Dehydration above 2% of body weight impairs sprint performance and increases injury risk.
+Iron and Vitamin D: assessed twice per season. Deficiencies are common in professional footballers and are corrected with personalised supplement plans from nutritionist Daniela Ronen.

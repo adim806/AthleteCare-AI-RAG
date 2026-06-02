@@ -1,0 +1,54 @@
+FC Velocity — Player Profiles and Medical Status
+
+FC Velocity is a professional football club competing in the Israeli Premier League. The medical department consists of lead physiotherapist Dr. Sara Cohen, physiotherapist Dr. Yoel Mizrahi, sports physician Dr. Anat Shapira, and fitness coach Tal Ben-David. All records are maintained in the KineticMind system.
+
+---
+
+FIRST SQUAD
+
+Player ID: PLR-001 | Marco Alvarez | Striker | Age 27 | 183 cm / 79 kg | Right-footed
+Medical status: Fully cleared. History of left hamstring Grade II strain (2022) and right hamstring Grade I strain (2023). Mandatory 10-minute individual warm-up before every session as a permanent prevention measure.
+
+Player ID: PLR-002 | Luca Ferretti | Central Midfielder | Age 24 | 178 cm / 74 kg | Right-footed
+Medical status: Fully cleared for all competitive play. Underwent ACL reconstruction on right knee (March 2023), completed return-to-play protocol (October 2023). Enrolled in permanent ACL prevention programme. Requires weekly physiotherapy maintenance session.
+
+Player ID: PLR-003 | Dmitri Volkov | Centre Back | Age 31 | 191 cm / 89 kg | Left-footed
+Medical status: Active — load being managed. Chronic lower back stiffness controlled with daily 15-minute mobility programme. Previous right ankle sprain (2021), fully healed. No acute injuries.
+
+Player ID: PLR-004 | James Okafor | Right Winger | Age 22 | 175 cm / 71 kg | Right-footed
+Medical status: Fully cleared. No significant injury history. High injury-risk profile flagged due to explosive sprint mechanics and below-average hamstring flexibility. Enrolled in daily hip flexor and hamstring flexibility programme since August 2024.
+
+Player ID: PLR-005 | Anton Becker | Goalkeeper | Age 29 | 188 cm / 83 kg | Right-footed
+Medical status: Fully cleared. Left shoulder surgically stabilised (Bankart repair, February 2021). Full range of motion restored. Permanent shoulder stability programme three times per week.
+
+Player ID: PLR-006 | Rafael Torres | Left Back | Age 26 | 177 cm / 73 kg | Left-footed
+Medical status: Fully cleared. Groin strain Grade I (September 2024), resolved. Previous right knee medial meniscus tear (2021), conservatively managed and stable. Monitored at each pre-season.
+
+Player ID: PLR-007 | Yosef Klein | Defensive Midfielder | Age 28 | 180 cm / 77 kg | Right-footed
+Medical status: Fully cleared. Mild exercise-induced asthma managed with pre-exercise salbutamol inhaler. TUE on file with Dr. Shapira. Inhaler kept on the bench at all times during matches.
+
+---
+
+RESERVE SQUAD
+
+Player ID: PLR-008 | Oren Shoval | Striker | Age 20 | 181 cm / 76 kg
+Medical status: Active injury — right calf muscle strain Grade I (14 November 2024). Currently in Stage 2 of the soft tissue protocol under Dr. Sara Cohen. Expected return to full training: 28 November 2024.
+
+Player ID: PLR-009 | Nabil Harroui | Central Midfielder | Age 19 | 174 cm / 68 kg
+Medical status: Cleared. No injury history. Monitored for overtraining risk given high development programme load. HRV and sleep quality tracked weekly.
+
+Player ID: PLR-010 | Eitan Levi | Centre Back | Age 23 | 187 cm / 85 kg
+Medical status: Cleared. Stress fracture of left tibia (March 2024), fully healed. Bone density follow-up scan scheduled January 2025. On high-calcium diet plan prescribed by nutritionist Daniela Ronen.
+
+---
+
+MEDICAL BASELINE NORMS — FC VELOCITY
+
+Resting heart rate target: 42–58 bpm.
+Blood pressure normal range: 100/60 – 130/80 mmHg.
+Body fat — outfield players: 8–14%. Goalkeepers: 10–16%.
+VO2 max minimum — outfield players: 58 ml/kg/min. Goalkeepers: 52 ml/kg/min.
+Sit-and-reach flexibility minimum: 28 cm.
+Maximum sprint speed minimum — outfield players: 30 km/h.
+Hamstring-to-quadriceps strength ratio (H:Q): 0.60–0.70 assessed by isokinetic dynamometer.
+Players falling below any baseline are referred to Tal Ben-David for an individualised adjustment programme.

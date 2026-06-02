@@ -1,1 +1,1 @@
-"""DevMind RAG package — loader, embedder, indexer, pipeline."""
+"""AthleteCare RAG package — Bedrock pipeline."""

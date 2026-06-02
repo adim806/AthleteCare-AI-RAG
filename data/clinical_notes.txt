@@ -1,0 +1,56 @@
+FC Velocity — Physiotherapy Daily Clinical Notes
+
+Clinical session notes for all active and recent rehabilitation cases. Each note is a self-contained record: player, date, session type, findings, and plan. Notes are written by the responsible physiotherapist and entered into KineticMind on the day of treatment.
+
+---
+
+ACTIVE CASE: OREN SHOVAL (PLR-008) — Right calf strain Grade I
+
+Session note | 20 November 2024 | Dr. Sara Cohen
+Oren Shoval attended for Stage 2 soft tissue rehabilitation, Day 6 post-injury. Swelling reduced significantly compared to initial assessment. Palpation of the right gastrocnemius medial head: tenderness on moderate pressure, reduced from Day 1. Pain-free active dorsiflexion range now 12°. Passive stretching of calf within pain-free range performed. Soft tissue mobilisation applied using instrument-assisted technique for 10 minutes. Isometric calf contraction introduced: 3 sets of 10-second holds at 50% perceived effort — pain score 0/10 throughout. Player reports confidence improving. Pool session scheduled tomorrow. Progressing as expected for Grade I. Target return to field jogging: 24 November 2024. Target return to full training: 28 November 2024.
+
+Session note | 18 November 2024 | Dr. Sara Cohen
+Oren Shoval, Day 4 post right calf strain. Swelling stable, no bruising progression. Resting pain: 0/10. Palpation: localised tenderness medial gastrocnemius. Single-leg standing maintained for 20 seconds without pain. Commenced gentle active-assisted ankle range of motion exercises. Manual soft tissue work: effleurage and petrissage proximal to injury site only. NSAIDs continued as prescribed. Advised no running or impact until further assessment. Next session: 20 November.
+
+Session note | 15 November 2024 | Dr. Sara Cohen
+Initial assessment: Oren Shoval sustained right calf strain during training sprint 14 November 2024. Clinical findings: localised swelling and point tenderness at medial head of right gastrocnemius. Active dorsiflexion limited to 6° (normal 20°). Thompson test negative — Achilles tendon intact. Single-leg calf raise: unable to complete due to pain. Classified as Grade I muscle strain. POLICE protocol applied: compression bandage applied, ice 20 minutes. Crutches provided for weight-bearing assistance. Informed consent obtained for treatment plan. Plan: Stage 1–2 soft tissue protocol. Expected return 28 November 2024. Case opened INJ-2024-031.
+
+---
+
+ACTIVE MAINTENANCE: LUCA FERRETTI (PLR-002) — Post-ACL maintenance
+
+Session note | 19 November 2024 | Dr. Yoel Mizrahi
+Luca Ferretti, weekly ACL maintenance session. No complaints. Right knee fully asymptomatic. Isokinetic assessment: quadriceps peak torque 218 Nm right / 221 Nm left — LSI 98.6%, within normal limits. H:Q ratio right knee: 0.68, within target range. Plyometric landing session completed: 4 sets of 5 drop jumps, 3 sets of lateral box hops. Video review: knee valgus controlled on all repetitions — no corrective coaching required today. ACL-RSI questionnaire score this month: 79/100 (above 65 threshold, psychological clearance maintained). Player in excellent condition. Continuing current programme unchanged.
+
+Session note | 12 November 2024 | Dr. Yoel Mizrahi
+Luca Ferretti, weekly maintenance. Reports mild right knee fatigue following Sunday's 90-minute match and two training sessions this week. No pain, no swelling. Resting HR this morning: 52 bpm (within personal baseline). Decided to reduce plyometric volume today: 2 sets of drop jumps only (instead of 4). Nordic hamstring exercise: 3 sets of 6 reps — completed without issue. Manual soft tissue work to right hamstring and quadriceps for 15 minutes. Advised 8 hours sleep priority this week. Will review load with Tal Ben-David. Next session: 19 November.
+
+---
+
+ACTIVE MAINTENANCE: DMITRI VOLKOV (PLR-003) — Chronic lower back management
+
+Session note | 21 November 2024 | Dr. Sara Cohen
+Dmitri Volkov, routine lower back maintenance session. Reports minor stiffness on waking this morning (2/10), resolved within 20 minutes. No acute pain. Lumbar active range of motion: flexion 70°, extension 25°, lateral flexion 30° bilaterally — all within his personal stable range. Lumbar paraspinal palpation: mild bilateral tightness at L3–L4 level, no focal tenderness. Treatment: manual therapy — passive lumbar mobilisation, grade III/IV at L3–L5. Dry needling to bilateral erector spinae (3 needles each side, 10 minutes). Reviewed daily home programme: Thomas stretch, cat-cow, bird-dog, dead bug, pallof press — player reporting consistent compliance. Load reviewed with Tal Ben-David this morning: ACWR 1.22, within safe zone. No load changes required. Next session: 28 November.
+
+Session note | 14 November 2024 | Dr. Sara Cohen
+Dmitri Volkov. Acute flare-up reported following Tuesday's match — aerial duel landing. Lower back pain: 5/10 immediately post-match, settled to 3/10 by this morning. No radiation to lower limb, no neurological symptoms. Lumbar flexion 40° with pain, extension 15°. SLR bilateral: negative. Assessment: acute episode on background of chronic lumbar condition — consistent with previous episodes. No red flags. Plan: 2-day rest from running, modified training (no aerial duels or heavy physical contact). NSAIDs prescribed by Dr. Shapira. Manual therapy: soft tissue mobilisation only today. Review in 3 days.
+
+---
+
+RECENT DISCHARGE: RAFAEL TORRES (PLR-006) — Left groin strain Grade I (discharged September 2024)
+
+Discharge note | 15 September 2024 | Dr. Yoel Mizrahi
+Rafael Torres discharged from active treatment. Left groin strain Grade I (INJ-2024-029) sustained 3 September 2024, 12-day recovery. Final session assessment: left adductor strength 96% of right side on manual resistance testing. Pain-free full passive hip abduction range. Copenhagen plank: 3 sets of 20 seconds bilateral without discomfort. Sport-specific running including lateral shuffles and short sprints completed without symptoms. Cleared for full training and competition. Prevention note: Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance. No further treatment sessions required unless symptoms recur.
+
+---
+
+RECENT MAINTENANCE: ANTON BECKER (PLR-005) — Shoulder stability programme
+
+Session note | 18 November 2024 | Dr. Yoel Mizrahi
+Anton Becker, routine shoulder stability session (three times per week, permanent programme). No shoulder complaints. External rotation strength: right 38 Nm, left 37 Nm — symmetrical and stable. Internal rotation: right 52 Nm, left 51 Nm. Glenohumeral joint: full range of motion bilaterally, no apprehension sign, no click. Treatment: rotator cuff circuit — external rotation with band (3×15), internal rotation with band (3×15), diagonal D1 and D2 patterns (3×10 each). Serratus anterior activation: wall push-up plus (3×12). Posterior capsule stretch held 60 seconds bilateral. Player comfortable throughout. Programme continuing as prescribed. Next session: 20 November.
+
+---
+
+PROTOCOL NOTES FOR DOCUMENTATION
+
+Every clinical note in KineticMind must include: player name and PLR ID, date, treating physiotherapist, session number in the current episode, objective findings (range of motion, pain score, strength measurements), treatment applied, patient response, and plan for the next session. Subjective complaints alone are insufficient — quantitative measurements must be recorded at every session where applicable. Notes must be entered on the day of treatment, not retrospectively.

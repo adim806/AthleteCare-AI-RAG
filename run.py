@@ -1,7 +1,7 @@
 """
-DevMind entry point.
+AthleteCare entry point.
 
-Run from the devmind/ directory:
+Run from the RAG-App/ directory:
     python run.py
 """
 

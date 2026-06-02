@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevMind — Internal Knowledge Base</title>
+  <title>AthleteCare — Sports Medicine Assistant</title>
   <link rel="stylesheet" href="/static/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
   <div class="sidebar-header">
     <div class="brand">
       <span class="brand-icon">⬡</span>
-      <span class="brand-name">DevMind</span>
+      <span class="brand-name">AthleteCare</span>
     </div>
     <button class="btn-new-chat" id="btnNewChat" title="New conversation">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -66,8 +66,8 @@
   <div class="init-overlay" id="initOverlay">
     <div class="init-card">
       <div class="init-logo">⬡</div>
-      <h2 class="init-title">DevMind</h2>
-      <p class="init-sub">Internal Knowledge Base</p>
+      <h2 class="init-title">AthleteCare</h2>
+      <p class="init-sub">Sports Medicine Intelligence for Professional Football</p>
       <div class="init-spinner"></div>
       <p class="init-status" id="initStatus">Loading knowledge base…</p>
       <div class="init-progress-bar"><div class="init-progress-fill" id="initProgressFill"></div></div>
@@ -79,15 +79,14 @@
     <!-- Welcome screen shown when no session is active -->
     <div class="welcome" id="welcome">
       <div class="welcome-icon">⬡</div>
-      <h1 class="welcome-title">Welcome to DevMind</h1>
-      <p class="welcome-sub">Ask anything about our coding standards, Git workflow,<br>API guidelines, testing policy, architecture, or onboarding.</p>
+      <h1 class="welcome-title">Welcome to AthleteCare</h1>
+      <p class="welcome-sub">Sports Medicine Intelligence for Professional Football.<br>Ask about player records, injury protocols, rehab plans, and return-to-play guidelines.</p>
       <div class="suggestion-grid">
-        <button class="suggestion-chip" data-q="What are the Python naming conventions?">Python naming conventions</button>
-        <button class="suggestion-chip" data-q="How do I name my Git branches?">Git branch naming</button>
-        <button class="suggestion-chip" data-q="What HTTP status codes should I use for validation errors?">API error codes</button>
-        <button class="suggestion-chip" data-q="What is the minimum required test coverage?">Test coverage rules</button>
-        <button class="suggestion-chip" data-q="How do I set up my local development environment?">Local dev setup</button>
-        <button class="suggestion-chip" data-q="What databases does the platform use?">Platform databases</button>
+        <button class="suggestion-chip" data-q="What is Oren Shoval's current rehab status?">Oren Shoval's rehab status</button>
+        <button class="suggestion-chip" data-q="How long does ACL reconstruction rehabilitation take?">ACL rehab duration</button>
+        <button class="suggestion-chip" data-q="What does the FIFA 11+ warm-up include?">FIFA 11+ warm-up</button>
+        <button class="suggestion-chip" data-q="Which players are currently on prevention programmes?">Prevention programme players</button>
+        <button class="suggestion-chip" data-q="What ACWR value indicates high injury risk?">ACWR injury risk threshold</button>
       </div>
     </div>
 
@@ -101,7 +100,7 @@
       <textarea
         id="questionInput"
         class="question-input"
-        placeholder="Ask about coding standards, Git workflow, architecture…"
+        placeholder="Ask about player injuries, rehab protocols, return-to-play guidelines…"
         rows="1"
         autocomplete="off"
         spellcheck="false"
@@ -112,7 +111,7 @@
         </svg>
       </button>
     </div>
-    <p class="input-hint">DevMind answers from internal documentation only.</p>
+    <p class="input-hint">AthleteCare answers from club medical documentation only.</p>
   </div>
 
 </main>

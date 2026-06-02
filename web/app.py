@@ -1,10 +1,10 @@
 """
-DevMind Flask web application.
+AthleteCare Flask web application.
 
 Endpoints
 ---------
 GET  /                              -- serve the chat UI
-GET  /api/status                    -- RAG engine readiness + progress
+GET  /api/status                    -- RAG engine readiness
 GET  /api/sessions                  -- list all sessions
 POST /api/sessions                  -- create a new session
 GET  /api/sessions/<id>/messages    -- fetch all messages for a session
@@ -15,14 +15,13 @@ POST /api/ask                       -- submit a question and get an answer
 
 import os
 import sys
-import threading
 
 from flask import Flask, jsonify, render_template, request
 
 # ------------------------------------------------------------------
 # PATH BOOTSTRAP
-# Ensure the devmind project root (parent of web/) is on sys.path so
-# that `import database` and `from rag.pipeline import RAGEngine` work
+# Ensure the project root (parent of web/) is on sys.path so that
+# `import database` and `from rag.pipeline import RAGEngine` work
 # regardless of the working directory when the app is launched.
 # ------------------------------------------------------------------
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,22 +39,10 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 app.config["JSON_SORT_KEYS"] = False
 
 # ------------------------------------------------------------------
-# RAG ENGINE — initialised once in a background thread at startup
+# RAG ENGINE — ready immediately; Bedrock needs no local index build
 # ------------------------------------------------------------------
 
 _engine = RAGEngine()
-
-
-def _init_engine_in_background() -> None:
-    try:
-        _engine.initialise()
-    except Exception as exc:
-        _engine.status = f"error: {exc}"
-        print(f"[app] RAG engine failed to initialise: {exc}", flush=True)
-
-
-_init_thread = threading.Thread(target=_init_engine_in_background, daemon=True)
-
 
 # ------------------------------------------------------------------
 # DATABASE INITIALISATION
@@ -63,8 +50,6 @@ _init_thread = threading.Thread(target=_init_engine_in_background, daemon=True)
 
 with app.app_context():
     db.init_db()
-
-_init_thread.start()
 
 
 # ------------------------------------------------------------------
@@ -98,10 +83,10 @@ def index():
 def status():
     return _ok(
         data={
-            "ready": _engine.ready,
-            "status": _engine.status,
-            "progress": _engine.progress,
-            "vectors": _engine.index.ntotal if _engine.index else 0,
+            "ready":    _engine.ready,
+            "status":   _engine.status,
+            "progress": {"current": 0, "total": 0},
+            "vectors":  0,
         }
     )
 
@@ -158,13 +143,13 @@ def rename_session(session_id: str):
 def ask():
     if not _engine.ready:
         return _err(
-            f"The knowledge base is still loading ({_engine.status}). "
-            "Please wait a moment and try again.",
+            f"The knowledge base is unavailable ({_engine.status}). "
+            "Please check your AWS credentials and Knowledge Base ID.",
             503,
         )
 
     body = request.get_json(silent=True) or {}
-    question = (body.get("question") or "").strip()
+    question   = (body.get("question")   or "").strip()
     session_id = (body.get("session_id") or "").strip()
 
     if not question:
@@ -181,18 +166,17 @@ def ask():
 
     # Build conversation history (exclude current question — already added)
     history = db.get_history_for_llm(session_id, limit=20)
-    # Remove the last entry (the question we just inserted)
     if history and history[-1]["role"] == "user":
         history = history[:-1]
 
     # Run the RAG pipeline
     try:
-        result = _engine.answer(question=question, history=history)
+        result = _engine.ask(question=question, history=history)
     except Exception as exc:
         return _err(f"RAG pipeline error: {exc}", 500)
 
     answer_text = result["answer"]
-    context = result["context"]
+    sources     = result["sources"]
 
     # Auto-title the session after the first user message
     session = db.get_session(session_id)
@@ -200,18 +184,19 @@ def ask():
         auto_title = question[:60] + ("…" if len(question) > 60 else "")
         db.update_session_title(session_id, auto_title)
 
-    # Persist the assistant message
+    # Persist the assistant message (sources stored under "context" key for
+    # compatibility with the existing frontend source-display logic)
     db.add_message(
         session_id=session_id,
         role="assistant",
         content=answer_text,
-        context=context,
+        context=sources,
     )
 
     return _ok(
         data={
-            "answer": answer_text,
-            "context": context,
+            "answer":     answer_text,
+            "context":    sources,
             "session_id": session_id,
         }
     )

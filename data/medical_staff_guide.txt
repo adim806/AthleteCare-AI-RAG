@@ -1,0 +1,65 @@
+FC Velocity — Medical Staff Guide and Operational Procedures
+
+FC Velocity competes in the Israeli Premier League. The medical department: Chief Medical Officer Dr. Anat Shapira (MD, MSc Sports Medicine), lead physiotherapist Dr. Sara Cohen (BPhys, MSc), physiotherapist Dr. Yoel Mizrahi (BPhys), fitness and conditioning coach Tal Ben-David (MSc Sports Science), and part-time nutritionist Daniela Ronen (RD, MSc). Dr. Shapira has final authority on all medical decisions including return-to-play clearance. In her absence, Dr. Cohen assumes interim authority for physiotherapy decisions only.
+
+---
+
+DAILY WORKFLOW
+
+07:00: Physiotherapy room opens. Morning treatment appointments for pre-training rehabilitation.
+08:00–10:30: Training session. At least one physiotherapist pitch-side at all times.
+10:30: Post-training treatment. Players with acute or sub-acute injuries attend physiotherapy room.
+11:00: GPS load data uploaded and reviewed by Tal Ben-David. ACWR values calculated, flagged players identified.
+11:30: Daily medical handover (15 minutes) — Dr. Cohen and Tal Ben-David review flagged players. Dr. Shapira joins every Monday and Friday.
+Afternoon: Rehabilitation sessions for injured players. RTP stage assessments as scheduled.
+Match days: Full medical team travels with the squad. Emergency equipment checklist completed before departure.
+
+---
+
+MATCH DAY MEDICAL PROTOCOL
+
+Pre-match (90 minutes before kick-off): Pitch-side medical bag checked — defibrillator, oxygen, cervical collar, stretcher, analgesics, anti-emetics, glucose. Physiotherapist reviews all injury-flagged players with coaching staff. Players with taped joints or braces confirmed ready. Any painkilling injection must be cleared by Dr. Shapira and recorded in KineticMind.
+
+During the match: One physiotherapist on the bench at all times. Dr. Shapira or a covering physician in the stadium. Any player leaving the pitch for medical assessment must be evaluated before re-entry — re-entry permitted only with physiotherapist clearance. Concussion assessment: any player with a head impact causing loss of consciousness, confusion, headache, visual disturbance, or balance problems must be immediately removed and assessed with the SCAT6 tool. A player with suspected concussion may not return to play on the same day — this is absolute per UEFA regulations.
+
+Post-match: Cold water immersion within 30 minutes for players with high match loads (above 90 minutes or high sprint volume). Physiotherapy team available for 60 minutes post-match. Injury log updated in KineticMind before staff depart.
+
+---
+
+CONCUSSION PROTOCOL
+
+FC Velocity follows the UEFA concussion protocol aligned with the 2023 International Concussion in Sport consensus statement. Step 1: immediate removal from play — no exceptions. Step 2: SCAT6 assessment by team physician or physiotherapist. Step 3: no same-day return to play — absolute. Step 4: physician assessment within 24 hours. Step 5: graduated 6-step RTP — rest → light aerobic exercise → sport-specific exercise → non-contact training → full contact training → match play. Each step requires 24 hours symptom-free before advancing. Minimum total return time is 5 days. Players with 3 or more documented concussions in 3 years are referred to a neurologist before any further RTP clearance.
+
+---
+
+DOCUMENTATION REQUIREMENTS
+
+All of the following must be recorded in KineticMind on the same day they occur: new injury assessment and diagnosis, all treatment sessions (exercises, modalities, patient response), RTP stage progressions with supporting test results, match day injury incidents, concussion assessments including negative assessments, strength and fitness test results, and all medication administration. The KineticMind system is the club's legal medical record. Entries must be made by the staff member who provided the treatment — delegation is not permitted.
+
+Medical confidentiality: player information shared with coaching staff is limited to training availability and load restrictions. Diagnosis and prognosis may be shared with the head coach. Detailed medical history beyond the current episode requires written player consent.
+
+---
+
+EMERGENCY PROCEDURES
+
+Suspected cardiac arrest: call emergency services (101 in Israel) immediately, begin CPR, apply the AED located at the pitch-side medical station or in the dressing room. Dr. Shapira takes lead; physiotherapist assists.
+
+Suspected spinal injury: do not move the player. Stabilise head and neck manually. Manage airway only if breathing is obstructed. Cervical collar applied by the physician only.
+
+Suspected fracture: splint in the position found — do not attempt to realign. Apply ice. Refer to hospital for imaging.
+
+Heat stroke (core temperature suspected above 40°C, confusion, hot dry skin): move player to shade, cold water immersion if available, cold towels to neck, armpits and groin. Call emergency services if the player loses consciousness.
+
+---
+
+ANTI-DOPING COMPLIANCE
+
+FC Velocity operates under full WADA and UEFA anti-doping compliance. The WADA prohibited list is reviewed annually by all medical staff before pre-season. All player supplements must be approved by both Dr. Shapira and Daniela Ronen, and the player must provide written informed consent before any supplement is administered.
+
+TUE on file: Yosef Klein (PLR-007) holds a Therapeutic Use Exemption for salbutamol (asthma inhaler). Dr. Shapira is the club's registered whereabouts officer, responsible for accurate whereabouts data for all first-squad players subject to out-of-competition testing.
+
+---
+
+COMMUNICATION WITH COACHING STAFF
+
+The medical department provides the head coach with a daily injury report before training. The report states: players unavailable for training with expected return date, players available for modified training only, players cleared for full training, and any load management restrictions. Diagnosis and treatment details are not included. The coaching staff may not instruct medical staff to clear a player who has not met RTP criteria. Disagreements are escalated to the club director.

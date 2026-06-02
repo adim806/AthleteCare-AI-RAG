@@ -1,25 +1,20 @@
 """
-Full RAG pipeline for DevMind.
+AthleteCare RAG pipeline — AWS Bedrock Knowledge Base backend.
 
-The RAGEngine class is the single public surface used by the Flask web app.
-It coordinates loader → embedder → indexer → Gemini and holds all state in
-memory so that only one initialisation pass is needed per server process.
+RAGEngine is the single public surface used by the Flask web app.
+It wraps a single boto3 call to Bedrock's retrieve_and_generate API,
+which handles both retrieval and generation in one round-trip.
 
 Classes
 -------
-RAGEngine -- initialise once at startup; call .answer() per user question
+RAGEngine -- instantiate once at startup; call .ask() per user question
 """
 
 import os
-import threading
 
+import boto3
+from botocore.exceptions import BotoCoreError, ClientError
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
-
-from rag.embedder import BATCH_SIZE, create_hf_client, embed_texts
-from rag.indexer import TOP_K, create_faiss_index, retrieve
-from rag.loader import DATA_FOLDER, load_documents, setup_nltk
 
 load_dotenv()
 
@@ -27,12 +22,68 @@ load_dotenv()
 # CONFIGURATION
 # ------------------------------------------------------------------
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-3-flash-preview"
+_AWS_ACCESS_KEY_ID     = os.environ.get("AWS_ACCESS_KEY_ID", "")
+_AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
+_AWS_REGION            = os.environ.get("AWS_DEFAULT_REGION", "us-east-1")
+_KB_ID                 = os.environ.get("BEDROCK_KNOWLEDGE_BASE_ID", "")
+
+# Allow full ARN override; otherwise resolve at startup (inference profile
+# required for newer models such as Claude Haiku 4.5).
+_MODEL_ID = os.environ.get(
+    "BEDROCK_MODEL_ID",
+    "anthropic.claude-haiku-4-5-20251001-v1:0",
+)
+
+_SYSTEM_PROMPT = (
+    "You are AthleteCare, a medical assistant for FC Velocity. "
+    "Answer only from the provided context — player records, injury history, "
+    "treatment protocols, and fitness data. "
+    "If not in the context, say so clearly."
+)
+
+# Bedrock prompt template — $search_results$ and $output_format_instructions$
+# are substituted automatically by Bedrock.
+_PROMPT_TEMPLATE = (
+    _SYSTEM_PROMPT
+    + "\n\n$search_results$\n\n$output_format_instructions$"
+)
 
 
 def _log(msg: str) -> None:
     print(f"[pipeline] {msg}", flush=True)
+
+
+def _resolve_model_arn(region: str, model_id: str) -> str:
+    """
+    Return the modelArn Bedrock expects for retrieve_and_generate.
+
+    Newer models (e.g. Claude Haiku 4.5) require an inference-profile ARN
+    rather than a foundation-model ARN.  We look up the profile automatically;
+    set BEDROCK_MODEL_ARN in .env to skip lookup.
+    """
+    override = os.environ.get("BEDROCK_MODEL_ARN")
+    if override:
+        return override
+
+    bedrock = boto3.client(
+        "bedrock",
+        region_name=region,
+        aws_access_key_id=_AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=_AWS_SECRET_ACCESS_KEY,
+    )
+
+    for profile_id in (f"us.{model_id}", f"global.{model_id}"):
+        try:
+            profile = bedrock.get_inference_profile(
+                inferenceProfileIdentifier=profile_id,
+            )
+            arn = profile["inferenceProfileArn"]
+            _log(f"Resolved inference profile {profile_id} -> {arn}")
+            return arn
+        except ClientError:
+            continue
+
+    return f"arn:aws:bedrock:{region}::foundation-model/{model_id}"
 
 
 # ------------------------------------------------------------------
@@ -41,215 +92,180 @@ def _log(msg: str) -> None:
 
 class RAGEngine:
     """
-    Encapsulates the entire RAG pipeline as a single in-memory object.
+    Thin wrapper around the Bedrock retrieve_and_generate API.
 
     Lifecycle
     ---------
-    1. Instantiate once (e.g. at Flask app startup).
-    2. Call .initialise() — this is blocking and may take 1–2 minutes
-       the first time because it embeds all documents.  It is idempotent:
-       subsequent calls return immediately.
-    3. Call .answer(question, history) for each user turn.
+    1. Instantiate once (e.g. at Flask app startup).  The boto3 client is
+       created and credentials are validated immediately — no background
+       indexing step is needed because retrieval is handled by Bedrock.
+    2. Call .ask(question, history) for each user turn.
 
     Thread safety
     -------------
-    .initialise() is protected by a lock so it is safe to call from a
-    background thread or from multiple concurrent requests.  All other
-    methods are read-only after initialisation and therefore thread-safe.
+    boto3 clients are thread-safe for read operations.  All calls are
+    stateless (no local index), so concurrent requests are safe.
     """
 
-    def __init__(self, data_folder: str = DATA_FOLDER) -> None:
-        self.data_folder = data_folder
-        self.chunks: list[str] = []
-        self.sources: list[str] = []
-        self.index = None
-        self.ready: bool = False
-        self.status: str = "not_initialised"
-        self.progress: dict = {"current": 0, "total": 0}
+    def __init__(self) -> None:
+        self.ready:  bool = False
+        self.status: str  = "connecting"
 
-        self._lock = threading.Lock()
+        missing = [v for v, k in [
+            ("AWS_ACCESS_KEY_ID",        _AWS_ACCESS_KEY_ID),
+            ("AWS_SECRET_ACCESS_KEY",    _AWS_SECRET_ACCESS_KEY),
+            ("BEDROCK_KNOWLEDGE_BASE_ID", _KB_ID),
+        ] if not k]
 
-        self.gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-        self.hf_client = create_hf_client()
+        if missing:
+            self.status = f"error: missing env vars: {', '.join(missing)}"
+            _log(self.status)
+            return
 
-    # ------------------------------------------------------------------
-    # INITIALISATION
-    # ------------------------------------------------------------------
-
-    def initialise(self) -> None:
-        """Load documents, build embeddings, and build the FAISS index.
-
-        This method is idempotent — calling it a second time is a no-op.
-        """
-        with self._lock:
-            if self.ready:
-                return
-
-            self.status = "downloading_nltk"
-            _log("Setting up NLTK tokenizer...")
-            setup_nltk()
-
-            self.status = "loading_documents"
-            _log(f"Loading documents from '{self.data_folder}'...")
-            self.chunks, self.sources = load_documents(self.data_folder)
-            _log(
-                f"Loaded {len(self.chunks)} sentences "
-                f"from {len(set(self.sources))} file(s)."
+        try:
+            self._client = boto3.client(
+                service_name="bedrock-agent-runtime",
+                region_name=_AWS_REGION,
+                aws_access_key_id=_AWS_ACCESS_KEY_ID,
+                aws_secret_access_key=_AWS_SECRET_ACCESS_KEY,
             )
-
-            self.status = "embedding_documents"
-            _log("Embedding documents via HuggingFace...")
-
-            def _progress(current: int, total: int) -> None:
-                self.progress = {"current": current, "total": total}
-
-            embeddings = embed_texts(
-                hf_client=self.hf_client,
-                texts=self.chunks,
-                batch_size=BATCH_SIZE,
-                progress_callback=_progress,
-            )
-
-            self.status = "building_index"
-            _log("Building FAISS index...")
-            self.index = create_faiss_index(embeddings)
-
-            self.ready = True
+            self._kb_id     = _KB_ID
+            self._model_arn = _resolve_model_arn(_AWS_REGION, _MODEL_ID)
+            self.ready  = True
             self.status = "ready"
-            _log(f"Ready — {self.index.ntotal} vectors indexed.")
+            _log(f"Connected — KB={_KB_ID} model={self._model_arn}")
+        except (BotoCoreError, ClientError) as exc:
+            self.status = f"error: {exc}"
+            _log(f"Failed to create Bedrock client: {exc}")
 
     # ------------------------------------------------------------------
-    # RETRIEVAL
+    # PUBLIC API
     # ------------------------------------------------------------------
 
-    def retrieve(self, query: str, k: int = TOP_K) -> list[dict]:
-        """Return the top-k chunks most relevant to *query*.
-
-        Each result is a dict with keys: text, source, score.
-
-        Raises RuntimeError if the engine has not been initialised.
-        """
-        if not self.ready:
-            raise RuntimeError("RAG engine is not ready yet.")
-
-        return retrieve(
-            index=self.index,
-            chunks=self.chunks,
-            sources=self.sources,
-            hf_client=self.hf_client,
-            query=query,
-            k=k,
-        )
-
-    # ------------------------------------------------------------------
-    # GENERATION
-    # ------------------------------------------------------------------
-
-    def ask_gemini(
-        self,
-        context: str,
-        question: str,
-        history: list[dict] | None = None,
-    ) -> str:
-        """
-        Call Gemini with retrieved context, conversation history, and the
-        user's latest question.
-
-        Parameters
-        ----------
-        context  : newline-joined retrieved chunks
-        question : the user's current question
-        history  : list of {"role": "user"|"assistant", "content": str}
-                   entries representing the conversation so far (excluding
-                   the current question)
-
-        Returns
-        -------
-        The model's answer as a stripped string.
-        """
-        history_text = ""
-        if history:
-            lines = []
-            for msg in history:
-                role = "User" if msg["role"] == "user" else "Assistant"
-                lines.append(f"{role}: {msg['content']}")
-            history_text = "\n".join(lines)
-
-        prompt = f"""You are a helpful RAG assistant for a software engineering team.
-
-Use the provided context and the previous conversation to answer the user's
-latest question.
-
-Rules:
-1. Answer using ONLY the provided context. Do NOT use general knowledge.
-2. If the context does not contain enough information, reply EXACTLY:
-   "I don't have enough information in the internal documents to answer this question."
-3. Keep the answer simple and clear.
-4. Do not invent or assume facts that are not explicitly stated in the context.
-5. Use the conversation history only to resolve references like "it" or
-   "the previous one" — never invent earlier turns.
-
-Conversation so far:
-{history_text if history_text else "(no previous messages)"}
-
-Context retrieved from documents:
-{context}
-
-User's latest question:
-{question}
-
-Answer:
-"""
-
-        response = self.gemini_client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.3,
-                max_output_tokens=500,
-                thinking_config=types.ThinkingConfig(thinking_budget=0),
-            ),
-        )
-        return response.text.strip()
-
-    # ------------------------------------------------------------------
-    # HIGH-LEVEL HELPER
-    # ------------------------------------------------------------------
-
-    def answer(
+    def ask(
         self,
         question: str,
         history: list[dict] | None = None,
-        k: int = TOP_K,
     ) -> dict:
         """
-        Run the full retrieve → generate flow for a single user turn.
+        Retrieve from the Bedrock Knowledge Base and generate an answer.
+
+        Conversation history is prepended to the question text so that
+        Bedrock's prompt sees prior context without requiring server-side
+        session management.
 
         Parameters
         ----------
         question : the user's current question
-        history  : conversation history (see ask_gemini for format)
-        k        : number of chunks to retrieve
+        history  : list of {"role": "user"|"assistant", "content": str}
 
         Returns
         -------
         dict with keys:
             answer  -- the model's answer string
-            context -- list of retrieved chunk dicts (text, source, score)
+            sources -- list of {"source": str, "score": float}
 
-        Raises RuntimeError if the engine has not been initialised.
+        Raises RuntimeError if the engine is not ready.
+        Raises ClientError / BotoCoreError on Bedrock API failures.
         """
         if not self.ready:
-            raise RuntimeError("RAG engine is not ready yet.")
+            raise RuntimeError(f"RAG engine is not ready: {self.status}")
 
-        retrieved = self.retrieve(question, k=k)
-        context = "\n".join(item["text"] for item in retrieved)
-        answer_text = self.ask_gemini(
-            context=context,
-            question=question,
-            history=history or [],
+        # Prepend conversation history into the input text.
+        if history:
+            lines = []
+            for msg in history:
+                role = "User" if msg["role"] == "user" else "Assistant"
+                lines.append(f"{role}: {msg['content']}")
+            input_text = (
+                "Conversation so far:\n"
+                + "\n".join(lines)
+                + f"\n\nCurrent question: {question}"
+            )
+        else:
+            input_text = question
+
+        response = self._client.retrieve_and_generate(
+            input={"text": input_text},
+            retrieveAndGenerateConfiguration={
+                "type": "KNOWLEDGE_BASE",
+                "knowledgeBaseConfiguration": {
+                    "knowledgeBaseId": self._kb_id,
+                    "modelArn": self._model_arn,
+                    "generationConfiguration": {
+                        "promptTemplate": {
+                            "textPromptTemplate": _PROMPT_TEMPLATE,
+                        },
+                    },
+                    "retrievalConfiguration": {
+                        "vectorSearchConfiguration": {
+                            "numberOfResults": 5,
+                        },
+                    },
+                },
+            },
         )
+
+        answer_text = response.get("output", {}).get("text", "").strip()
+        sources     = _extract_sources(response)
+
         return {
-            "answer": answer_text,
-            "context": retrieved,
+            "answer":  answer_text,
+            "sources": sources,
+            # "context" alias keeps tests/older callers working
+            "context": sources,
         }
+
+    # Backward-compatible alias used by tests and any older call sites.
+    def answer(
+        self,
+        question: str,
+        history: list[dict] | None = None,
+        **_kwargs,
+    ) -> dict:
+        """Alias for ask(); retained for backward compatibility."""
+        return self.ask(question, history)
+
+
+# ------------------------------------------------------------------
+# HELPERS
+# ------------------------------------------------------------------
+
+def _extract_sources(response: dict) -> list[dict]:
+    """
+    Pull unique source URIs and scores from a retrieve_and_generate response.
+
+    Bedrock returns a `citations` list; each citation may reference one or
+    more retrieved documents.  Scores are optional metadata.
+    """
+    sources: list[dict] = []
+    seen:    set[str]   = set()
+
+    for citation in response.get("citations", []):
+        for ref in citation.get("retrievedReferences", []):
+            loc = ref.get("location", {})
+
+            # Resolve the document URI — support S3 and web locations.
+            uri: str = (
+                loc.get("s3Location",  {}).get("uri")
+                or loc.get("webLocation", {}).get("url")
+                or "unknown"
+            )
+
+            if uri in seen:
+                continue
+            seen.add(uri)
+
+            # Score is stored in metadata when available.
+            raw_score = ref.get("metadata", {}).get("score", 0.0)
+            try:
+                score = float(raw_score)
+            except (TypeError, ValueError):
+                score = 0.0
+
+            # Use only the filename/key portion for display.
+            display = uri.split("/")[-1] if uri != "unknown" else "unknown"
+
+            sources.append({"source": display, "score": score})
+
+    return sources

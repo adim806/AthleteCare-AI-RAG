@@ -1,25 +1,26 @@
-# DevMind — RAG-Powered Internal Knowledge Base
+# AthleteCare — Sports Medicine Intelligence for Professional Football
 
 A Retrieval-Augmented Generation (RAG) web application that serves as an
-intelligent assistant for a software engineering team's internal documentation.
-Engineers can ask natural-language questions and receive grounded answers sourced
-exclusively from the company's knowledge base.
+intelligent medical knowledge assistant for professional football clubs.
+Physiotherapists, fitness coaches, and sports physicians can ask
+natural-language questions and receive grounded answers sourced exclusively
+from the club's medical knowledge base.
 
 ## Topic & Motivation
 
-The chosen domain is **internal engineering documentation** — the kind of
-knowledge base that every software team accumulates: coding standards, Git
-workflow rules, API guidelines, testing policies, system architecture, and
-onboarding guides.
+The chosen domain is **sports medicine documentation** — the kind of
+knowledge base that every professional football club's medical department
+maintains: player medical records, injury history, treatment protocols,
+return-to-play criteria, fitness assessments, and clinical session notes.
 
 This topic was selected because:
 
-- It mirrors a real professional need — new engineers constantly look up team
-  conventions and best practices.
-- The documents are well-structured and contain factual, verifiable content,
-  which makes it straightforward to validate retrieval accuracy.
-- It demonstrates a practical RAG use case (company knowledge search) that
-  translates directly to production environments.
+- It mirrors a real professional need — medical staff constantly look up
+  treatment protocols and player-specific rehab plans under time pressure.
+- The documents contain factual, verifiable clinical content, which makes it
+  straightforward to validate retrieval accuracy.
+- It demonstrates a high-value RAG use case (medical knowledge search) that
+  translates directly to real-world sports medicine operations.
 
 ## Architecture Overview
 
@@ -28,177 +29,138 @@ User ──▶ Flask Web UI ──▶ POST /api/ask
                               │
                     ┌─────────┴──────────┐
                     ▼                    ▼
-             FAISS Retrieval       Conversation
-             (top-k chunks)         History (SQLite)
-                    │                    │
-                    └────────┬───────────┘
-                             ▼
-                     Gemini LLM Prompt
-                     (context + history + question)
-                             │
+         AWS Bedrock Knowledge Base   Conversation
+         retrieve_and_generate        History (SQLite)
+         (retrieval + generation)            │
+                    │                        │
+                    └────────┬───────────────┘
                              ▼
                       Grounded Answer
+                      + source citationsמ  
 ```
 
 | Component | Technology |
 |-----------|-----------|
 | Web framework | Flask 3 |
-| Embedding model | `ibm-granite/granite-embedding-97m-multilingual-r2` (HuggingFace Inference API) |
-| Vector store | FAISS (`IndexFlatIP`, cosine similarity) |
-| LLM | Google Gemini (`gemini-3-flash-preview`) |
+| RAG backend | AWS Bedrock Knowledge Base (`retrieve_and_generate`) |
+| Generation model | Anthropic Claude Haiku 4.5 (via inference profile) |
+| Embeddings (managed by Bedrock) | Amazon Titan Embed Text v2 |
+| AWS SDK | boto3 |
 | Conversation store | SQLite |
-| Sentence tokenizer | NLTK (`sent_tokenize`) |
-| PDF text extraction | PyMuPDF (`fitz`) |
 | Containerisation | Docker |
+
+There is **no local vector index**. Retrieval, embedding, and generation are
+handled entirely by AWS Bedrock. The app starts immediately — no 1–2 minute
+embedding step on launch.
 
 ## Data Source
 
-The knowledge base consists of **7 documents** (6 text files + 1 PDF) stored in
-the `data/` directory.  They simulate a realistic set of internal engineering
-docs for a fictional company called "DevMind":
+The corpus consists of **9 medical documents** covering FC Velocity's squad
+and clinical operations:
 
 | File | Content |
 |------|---------|
-| `architecture.txt` | Microservices layout, AWS/K8s deployment, data stores, CI/CD, observability |
-| `api_guidelines.txt` | REST conventions, HTTP status codes, authentication, pagination, validation |
-| `coding_standards.txt` | PEP 8, naming conventions, type hints, import ordering, formatting rules |
-| `git_workflow.txt` | Branch naming, Conventional Commits, PR requirements, merge strategies |
-| `onboarding.txt` | Prerequisites, environment setup, first-week checklist, team practices |
-| `testing_policy.txt` | Coverage requirements, test types, naming conventions, flaky-test policy |
-| `devmind_security_guidelines.pdf` | Password hashing, JWT storage, input validation, encryption, audit logging |
+| `players.txt` | Player profiles — squad list with positions, age, nationality, and current medical status |
+| `injury_history.txt` | Full injury history per player — type, date, mechanism, days missed |
+| `treatment_protocols.txt` | Standard treatment protocols for common football injuries (muscle, ligament, bone) |
+| `return_to_play.txt` | Return-to-play guidelines and criteria for each injury category |
+| `fitness_assessments.txt` | Fitness test results, ACWR values, and readiness scores |
+| `prevention_guidelines.txt` | Injury prevention programmes including FIFA 11+, neuromuscular training, load management |
+| `medical_staff_guide.txt` | Procedures for medical staff — matchday protocols, emergency procedures, documentation |
+| `quick_reference.txt` | Quick clinical reference card — red flags, drug dosages, taping techniques |
+| `clinical_notes.txt` | Daily clinical session notes — physiotherapy assessments, treatment diary entries |
 
-These documents were written to be factually consistent and internally
-cross-referenced, providing a realistic corpus for semantic retrieval.  The PDF
-file demonstrates that the system supports multiple document formats.
-
-## Chunking Strategy
-
-Documents are split into **sentence-level chunks** using NLTK's
-`sent_tokenize`.  Each sentence becomes one vector in the FAISS index, paired
-with its source filename.
-
-**Why sentence-level chunking?**
-
-- Internal docs are written in standalone declarative sentences (e.g. "Use
-  snake_case for Python variables"), each carrying one distinct fact.
-- Fine-grained chunks reduce noise — the LLM receives only the most relevant
-  sentences rather than large paragraphs that may contain unrelated information.
-- Simple and deterministic — the same data always produces the same index.
-
-**Trade-offs acknowledged:**
-
-- Very short sentences may lack context on their own.
-- An alternative section-based chunker (`loader.chunk_by_section`) is included
-  in the codebase but not used by default; it groups text by section headers for
-  coarser retrieval when broader context is preferred.
-
-## Embedding Model
-
-The project uses **IBM Granite Embedding 97M Multilingual R2**
-(`ibm-granite/granite-embedding-97m-multilingual-r2`) via the HuggingFace
-Inference API.
-
-**Why this model?**
-
-- Lightweight (97M parameters) — fast inference via the free HF API tier.
-- Multilingual support — handles English technical text well and can be extended
-  to other languages.
-- Produces high-quality dense vectors for semantic similarity tasks.
-
-Embeddings are generated in **batches of 8** with exponential-backoff retries
-(up to 5 attempts) to handle transient API errors gracefully.
-
-## FAISS Indexing
-
-- **Index type:** `IndexFlatIP` (flat inner-product index).
-- All document vectors are **L2-normalised** before indexing, which makes
-  inner-product search equivalent to **cosine similarity** search.
-- At query time the query vector is also L2-normalised before searching.
-- **Top-K = 3** results are returned per query.
-- A **minimum score threshold of 0.3** filters out low-relevance results,
-  ensuring the LLM only receives genuinely related context.
-- The index is rebuilt in memory on every server start (~1-2 min on first run).
+The local `data/` folder holds the source documents. At runtime, the app
+queries an **AWS Bedrock Knowledge Base** that indexes these files (typically
+synced from S3). Chunking, embedding, and vector search are managed by
+Bedrock — not by application code.
 
 ## RAG Pipeline
 
+The entire RAG backend lives in `rag/pipeline.py` as a single `RAGEngine`
+class:
+
 1. **User submits a question** via the web UI (`POST /api/ask`).
-2. **Retrieval** — the question is embedded and searched against the FAISS index;
-   the top-3 chunks above the relevance threshold are returned.
-3. **Prompt construction** — retrieved chunks are joined as context and combined
-   with conversation history and the user's question into a structured prompt.
-4. **LLM generation** — Gemini generates a grounded answer with `temperature=0.3`.
-5. **Persistence** — both the question and the answer (with source metadata) are
-   saved to SQLite for session continuity.
+2. **Conversation history** is loaded from SQLite and prepended to the input
+   text so multi-turn questions work (e.g. "What about return-to-play after that?").
+3. **Bedrock `retrieve_and_generate`** — one API call that:
+   - Retrieves the top relevant chunks from the Knowledge Base
+   - Generates an answer using Claude Haiku 4.5 with a custom system prompt
+   - Returns citations with source document references
+4. **Persistence** — the question, answer, and source metadata are saved to
+   SQLite for session continuity.
+
+### System Prompt
+
+```
+You are AthleteCare, a medical assistant for FC Velocity. Answer only from
+the provided context — player records, injury history, treatment protocols,
+and fitness data. If not in the context, say so clearly.
+```
+
+### Model Configuration
+
+Newer Bedrock models (including Claude Haiku 4.5) require an **inference
+profile ARN**, not a foundation-model ARN. On startup, `RAGEngine` resolves
+the correct profile automatically. You can also set it explicitly in `.env`:
+
+```
+BEDROCK_MODEL_ARN=arn:aws:bedrock:us-east-1:ACCOUNT_ID:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0
+```
 
 ### Hallucination Reduction
 
-- The system prompt instructs the model to answer **only** from the provided
-  context and to explicitly refuse when information is insufficient.
-- `temperature=0.3` minimises creative generation.
-- The relevance threshold prevents low-quality context from reaching the LLM.
-- `max_output_tokens=500` keeps answers concise and focused.
+- The system prompt instructs the model to answer **only** from retrieved context.
+- Bedrock Knowledge Base RAG natively grounds answers in cited source documents.
+- Out-of-domain questions receive a clear "not in the context" response.
 
 ### Edge Case Handling
 
 | Scenario | Behaviour |
 |----------|-----------|
 | Empty question | Returns 400 error |
-| Engine not ready | Returns 503 with loading status |
+| Engine not ready (missing AWS creds) | Returns 503 with status message |
 | Session not found | Returns 404 error |
-| Pipeline exception | Returns 500 with error message |
-| No relevant results (all below threshold) | Empty context → LLM states lack of information |
-| Irrelevant question (out-of-domain) | LLM responds with "I don't have enough information" |
+| Bedrock API exception | Returns 500 with error message |
+| Irrelevant question (out-of-domain) | LLM states information is not in the context |
 
 ## Web Application
 
-- **Dark-themed UI** with a professional design (Inter + JetBrains Mono fonts).
+- **Dark-themed UI** — navy (`#0B1E3D`) and green (`#00A86B`) palette.
+- **Branding** — AthleteCare / "Sports Medicine Intelligence for Professional Football".
 - **Sidebar** with session management (create, switch, delete conversations).
-- **Welcome screen** with suggestion chips for common questions.
+- **Welcome screen** with suggestion chips for common clinical questions.
 - **Chat interface** with user/assistant message bubbles.
-- **Source display** — each answer shows expandable source documents with
-  similarity scores.
-- **Loading indicators** — full-screen init overlay with progress bar during
-  startup; animated thinking dots while waiting for responses.
+- **Source display** — each answer shows expandable source documents.
+- **Instant startup** — no loading overlay; Bedrock handles indexing in the cloud.
 - **Error handling** — network and API errors shown inline in the chat.
 - **Responsive design** — sidebar collapses on mobile screens.
 
 ## Installation & Running
 
-### Option A — Docker (recommended)
-
-The easiest way to run the application.  Only **Docker** and an internet
-connection are required.
-
-```bash
-cd RAG-App
-
-# 1. Build the image
-docker build -t devmind-rag .
-
-# 2. Run the container (pass API keys via .env)
-docker run -d --name devmind -p 5000:5000 --env-file .env devmind-rag
-```
-
-Open **http://localhost:5000** in your browser.  The knowledge base embedding
-takes ~1-2 minutes on first launch; a loading overlay shows progress.
-
-Useful Docker commands:
-
-```bash
-docker logs -f devmind       # watch logs in real time
-docker stop devmind           # stop the container
-docker start devmind          # restart the container
-docker rm -f devmind          # remove and re-create if needed
-```
-
-### Option B — Local Python
-
-#### Prerequisites
+### Prerequisites
 
 - Python 3.11+
-- Internet connection (for HuggingFace and Gemini API calls)
+- An AWS account with:
+  - Bedrock model access enabled for **Claude Haiku 4.5**
+  - A configured **Knowledge Base** with the medical documents indexed
+- Internet connection (for AWS API calls)
 
-#### Setup
+### Environment Variables
+
+Create a `.env` file in the project root (never commit it):
+
+```env
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_DEFAULT_REGION=us-east-1
+BEDROCK_KNOWLEDGE_BASE_ID=your_knowledge_base_id
+BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
+# Optional — skip automatic inference-profile lookup:
+# BEDROCK_MODEL_ARN=arn:aws:bedrock:us-east-1:ACCOUNT_ID:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0
+```
+
+### Option A — Local Python
 
 ```bash
 cd RAG-App
@@ -210,22 +172,39 @@ python -m venv .venv
 # macOS/Linux:
 source .venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (use python -m pip to ensure correct venv)
+python -m pip install -r requirements.txt
 
-# Configure API keys — create a .env file with:
-#   HF_TOKEN=your_huggingface_token
-#   GEMINI_API_KEY=your_gemini_api_key
-```
-
-#### Running the Application
-
-```bash
+# Start the app
 python run.py
 ```
 
-The app starts at **http://localhost:5000**.  On first launch, the knowledge base
-embedding takes ~1-2 minutes; a loading overlay shows progress.
+On Windows, prefer the venv Python explicitly:
+
+```powershell
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe run.py
+```
+
+Open **http://localhost:5000** — the app is ready immediately.
+
+### Option B — Docker
+
+```bash
+cd RAG-App
+
+docker build -t athletecare-rag .
+docker run -d --name athletecare -p 5000:5000 --env-file .env athletecare-rag
+```
+
+Useful Docker commands:
+
+```bash
+docker logs -f athletecare       # watch logs in real time
+docker stop athletecare          # stop the container
+docker start athletecare         # restart the container
+docker rm -f athletecare         # remove and re-create if needed
+```
 
 ### Running Tests
 
@@ -233,24 +212,53 @@ embedding takes ~1-2 minutes; a loading overlay shows progress.
 pytest tests/test_queries.py -v -s
 ```
 
-Tests require live API access (HuggingFace + Gemini) and take a few minutes on
-first run due to embedding generation.
+Tests require live AWS credentials and a configured Bedrock Knowledge Base.
 
 ## Test Queries & Validation
 
 The test suite (`tests/test_queries.py`) validates the full RAG pipeline with
-**8 documented test cases**:
+**7 documented test cases**:
 
-| # | Question | Expected Behaviour | Source Document |
-|---|----------|--------------------|-----------------|
-| 1 | What naming convention should I use for Python functions? | Mentions `snake_case` or PEP 8 | `coding_standards.txt` |
-| 2 | How should I name a feature branch in Git? | Mentions `feature/` prefix | `git_workflow.txt` |
-| 3 | What HTTP status code should I return for a validation error? | Mentions 400 or 422 | `api_guidelines.txt` |
-| 4 | What is the minimum required unit test coverage percentage? | Mentions 80% | `testing_policy.txt` |
-| 5 | How do I set up my local development environment? | Mentions Docker, pip, or clone | `onboarding.txt` |
-| 6 | What database technology does the DevMind platform use? | Mentions PostgreSQL or Redis | `architecture.txt` |
-| 7 | What about hotfix branches? (with conversation history) | Coherent multi-turn answer | `git_workflow.txt` |
-| 8 | What is the capital of France? (irrelevant) | Refuses or states lack of information | N/A |
+| # | Question | Expected Behaviour |
+|---|----------|--------------------|
+| 1 | What is Oren Shoval's current rehab status? | Mentions rehab details for the named player |
+| 2 | How long does ACL reconstruction rehabilitation take? | Mentions a timeline in weeks/months |
+| 3 | What does the FIFA 11+ warm-up include? | Describes exercises in the programme |
+| 4 | Which players are currently on prevention programmes? | Names players enrolled in prevention |
+| 5 | What ACWR value indicates high injury risk? | Mentions a numeric threshold (e.g. >1.5) |
+| 6 | What are the return-to-play criteria after ACL rehab? (with history) | Coherent multi-turn answer |
+| 7 | What is the capital of France? (irrelevant) | Refuses or states lack of information |
+
+These same questions appear as suggestion chips on the welcome screen.
+
+## Troubleshooting
+
+### "Legacy model" ValidationException
+
+Older Claude models (e.g. Claude 3 Haiku) are marked legacy by AWS. Ensure
+`.env` uses **Claude Haiku 4.5** and that `BEDROCK_MODEL_ARN` points to an
+**inference profile**, not a foundation-model ARN.
+
+### Multiple servers on port 5000
+
+If you see intermittent errors, check that only one Flask process is running:
+
+```powershell
+# Windows — stop anything on port 5000
+Get-NetTCPConnection -LocalPort 5000 -ErrorAction SilentlyContinue |
+  Select-Object -ExpandProperty OwningProcess -Unique |
+  ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }
+```
+
+Then start a single instance with `.venv\Scripts\python.exe run.py`.
+
+### ModuleNotFoundError: boto3
+
+Install into the correct virtual environment:
+
+```powershell
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
 ## Project Structure
 
@@ -258,32 +266,44 @@ The test suite (`tests/test_queries.py`) validates the full RAG pipeline with
 RAG-App/
 ├── run.py                  # Entry point — starts Flask on port 5000
 ├── database.py             # SQLite session & message persistence
-├── requirements.txt        # Python dependencies
+├── requirements.txt        # Python dependencies (Flask, boto3, pytest)
 ├── Dockerfile              # Docker image build recipe
-├── .dockerignore           # Files excluded from Docker image
-├── .env                    # API keys (not committed)
+├── .dockerignore
+├── .env                    # AWS credentials (not committed)
 ├── .gitignore
 ├── README.md
-├── data/
-│   ├── devmind_security_guidelines.pdf
-│   ├── api_guidelines.txt
-│   ├── architecture.txt
-│   ├── coding_standards.txt
-│   ├── git_workflow.txt
-│   ├── onboarding.txt
-│   └── testing_policy.txt
+├── data/                   # Source medical documents (9 files)
+│   ├── players.txt
+│   ├── injury_history.txt
+│   ├── treatment_protocols.txt
+│   ├── return_to_play.txt
+│   ├── fitness_assessments.txt
+│   ├── prevention_guidelines.txt
+│   ├── medical_staff_guide.txt
+│   ├── quick_reference.txt
+│   └── clinical_notes.txt
 ├── rag/
 │   ├── __init__.py
-│   ├── loader.py           # Document loading & sentence chunking
-│   ├── embedder.py         # HuggingFace embedding (batch, retries)
-│   ├── indexer.py          # FAISS index creation & retrieval
-│   └── pipeline.py         # RAGEngine — orchestrates the full pipeline
+│   └── pipeline.py         # RAGEngine — Bedrock retrieve_and_generate
 ├── web/
 │   ├── app.py              # Flask routes & API endpoints
 │   ├── templates/
 │   │   └── index.html      # Chat UI (HTML + inline JS)
 │   └── static/
-│       └── style.css       # Dark-theme stylesheet
+│       └── style.css       # Dark-theme stylesheet (navy + green)
 └── tests/
-    └── test_queries.py     # Integration tests (8 documented queries)
+    └── test_queries.py     # Integration tests (7 documented queries)
 ```
+
+## API Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Serve the chat UI |
+| GET | `/api/status` | Engine readiness (`ready`, `status`) |
+| GET | `/api/sessions` | List all chat sessions |
+| POST | `/api/sessions` | Create a new session |
+| GET | `/api/sessions/<id>/messages` | Fetch messages for a session |
+| DELETE | `/api/sessions/<id>` | Delete a session |
+| PATCH | `/api/sessions/<id>/title` | Rename a session |
+| POST | `/api/ask` | Submit a question and get a grounded answer |

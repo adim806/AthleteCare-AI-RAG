@@ -1,0 +1,55 @@
+FC Velocity — Physiotherapy Treatment Protocols
+
+Standard treatment protocols for the most common injuries in professional football. Each stage is labelled with the injury type so it can be retrieved independently.
+
+General rule: No player may return to full training or competition without written physiotherapist clearance. Grade II injuries and above also require sign-off by Dr. Anat Shapira. Pain during any rehabilitation stage is a signal to regress — not to push through.
+
+---
+
+PROTOCOL A: MUSCLE STRAIN (hamstring, quadriceps, calf, groin/adductor)
+
+Muscle strain — Stage 1, Acute (Days 1–3): Apply POLICE protocol immediately (Protection, Optimal Loading, Ice, Compression, Elevation). Ice 15–20 minutes every 2 hours for the first 48 hours. Avoid heat, massage, and stretching of the injured tissue in the first 72 hours. Grade I: partial weight-bearing as tolerated. Grade II: crutches if required. NSAIDs as prescribed by Dr. Shapira. Daily assessment of swelling, bruising, and range of motion.
+
+Muscle strain — Stage 2, Subacute (Days 4–14): Gentle passive and active-assisted stretching within pain-free range. Soft tissue mobilisation by physiotherapist — manual therapy or instrument-assisted as indicated. Isometric strengthening exercises when the player can tolerate. Pool running or cycling if ground-based exercise is contraindicated.
+
+Muscle strain — Stage 3, Rehabilitation (Days 10–35 depending on grade): Progressive resistance training: isotonic first, then isokinetic. Nordic hamstring exercises for hamstring injuries: 3 sets of 5–8 reps, three times per week. Sport-specific running: straight-line jogging → curvilinear running → short sprints → full sprints. Agility and change-of-direction drills introduced when sprint speed reaches 75% of pre-injury baseline. No contact training until Stage 4 criteria are met.
+
+Muscle strain — Return to training criteria: Full pain-free range of motion. Injured limb strength at minimum 90% of the uninjured limb on isokinetic dynamometer. Successful completion of sport-specific running protocol without symptoms. Physiotherapist sign-off required; physician review required for Grade II.
+
+---
+
+PROTOCOL B: LIGAMENT SPRAIN (ankle, knee collateral ligaments)
+
+Ligament sprain — Stage 1, Acute (Days 1–5): POLICE protocol. Taping or bracing applied. Grade II: imaging referral — X-ray to exclude fracture, MRI if ligament involvement is clinically suspected. Grade II: partial weight-bearing with crutches. Grade III: immediate referral to Dr. Shapira for surgical assessment.
+
+Ligament sprain — Stage 2, Restoration of movement (Days 3–14): Range of motion exercises within pain-free limits. Proprioceptive training on wobble board: begin with single-leg standing, progress to dynamic balance. Hydrotherapy if swelling prevents ground-based work. Manual therapy for joint mobility.
+
+Ligament sprain — Stage 3, Functional rehabilitation (Days 10–28): Progressive strengthening: calf raises, resistance band exercises, single-leg press. Change-of-direction drills: Grade I from Week 3, Grade II from Week 4–5. Sport-specific football movements: lateral shuffles, ball work, crossing runs. Proprioceptive training on unstable surfaces.
+
+Ligament sprain — Return to training criteria: Full pain-free range of motion matching the uninjured side. Single-leg hop test at Limb Symmetry Index (LSI) ≥ 90%. Completed functional movement screen. Grade II and above: sign-off by both physiotherapist and Dr. Shapira.
+
+---
+
+PROTOCOL C: ACL RECONSTRUCTION REHABILITATION (9–12 months total)
+
+ACL rehab — Phase 1, Immediate post-op (Weeks 0–2): Swelling management: elevation, cryotherapy, compression. Quadriceps activation: isometric quad sets, straight leg raises. Passive and active-assisted knee flexion: target 90° by Week 2. Weight-bearing per surgeon's instructions.
+
+ACL rehab — Phase 2, Early rehabilitation (Weeks 2–6): Full weight-bearing when quadriceps control is sufficient. Closed-chain exercises: mini-squats (0–60°), leg press, step-ups. Pool running from Week 3–4. Target 120° knee flexion by Week 6. Stationary cycling introduced.
+
+ACL rehab — Phase 3, Strength building (Months 2–4): Progressive resistance: leg press, lunges, leg extension (limited arc 90–40°). Proprioceptive and neuromuscular training on stability equipment. Hamstring strengthening essential for ACL protection: Nordic curls, deadlifts. Running not permitted until isokinetic quadriceps strength reaches 60% of the contralateral limb.
+
+ACL rehab — Phase 4, Running and agility (Months 4–7): Straight-line running programme: jog → tempo run → full speed over 6–8 weeks. Lateral and curved running from Month 5. Change-of-direction drills from Month 6. Ball work and sport-specific movements from Month 6–7.
+
+ACL rehab — Phase 5, Return to full training (Months 8–10): Full team training introduced gradually. Contact training permitted when LSI ≥ 90% in strength and hop tests and psychological readiness is confirmed via the ACL-RSI questionnaire. Biomechanical video analysis conducted before return.
+
+ACL rehab — Phase 6, Return to competition (Months 10–12): Full competitive play when all functional and psychological criteria are passed. Ongoing maintenance: weekly physiotherapy session, prophylactic taping for the first 3 months post-return.
+
+---
+
+PROTOCOL D: STRESS FRACTURE (tibia, metatarsals, navicular)
+
+Stress fracture — Stage 1, Offloading (Weeks 1–8): Complete cessation of running and jumping. Walking boot for lower limb fractures. Upper body conditioning and pool work maintained throughout. Nutritional review: calcium and Vitamin D levels assessed; supplements prescribed if deficient. Bone density imaging indicated for recurrent stress fractures.
+
+Stress fracture — Stage 2, Progressive loading (Weeks 6–12): Walking without boot when pain-free. Pool running and elliptical as a bridge to ground-based impact. Low-speed jogging on a soft surface when clinical and imaging criteria are met. Running volume increased by 10-minute increments per week.
+
+Stress fracture — Stage 3, Return to full load (Weeks 10–16): Full running volume and training resumed when asymptomatic and imaging confirms healing. Load monitoring maintained for 4 weeks post-return. Training load diary kept to prevent recurrence.

@@ -1,5 +1,6 @@
 /* ================================================================
-   DevMind — Professional dark-theme CSS
+   AthleteCare — Sports medicine dark-theme CSS
+   Palette: navy #0B1E3D · green #00A86B · white
    ================================================================ */
 
 /* ----------------------------------------------------------------
@@ -7,39 +8,39 @@
 ---------------------------------------------------------------- */
 :root {
   /* Backgrounds */
-  --bg-base:       #0d0f14;
-  --bg-surface:    #13161e;
-  --bg-elevated:   #1a1e2a;
-  --bg-overlay:    #20253380;
+  --bg-base:       #060e1e;
+  --bg-surface:    #0b1e3d;
+  --bg-elevated:   #112448;
+  --bg-overlay:    #0b1e3d80;
 
   /* Sidebar */
-  --sidebar-bg:    #111318;
-  --sidebar-border:#1f2333;
+  --sidebar-bg:    #080f22;
+  --sidebar-border:#1a2d50;
 
   /* Accent */
-  --accent:        #6c8fff;
-  --accent-hover:  #849fff;
-  --accent-glow:   rgba(108, 143, 255, 0.15);
+  --accent:        #00a86b;
+  --accent-hover:  #00c47d;
+  --accent-glow:   rgba(0, 168, 107, 0.15);
 
   /* Text */
-  --text-primary:   #e8eaf0;
-  --text-secondary: #8b90a0;
-  --text-muted:     #555b6e;
+  --text-primary:   #f0f4ff;
+  --text-secondary: #7a9bbf;
+  --text-muted:     #3d5a7a;
 
   /* User bubble */
-  --user-bg:       #1e2840;
-  --user-border:   #2d3a5e;
+  --user-bg:       #0f2340;
+  --user-border:   #1e3a60;
 
   /* Assistant bubble */
-  --ai-bg:         #161a24;
-  --ai-border:     #1f2535;
+  --ai-bg:         #0a1830;
+  --ai-border:     #152848;
 
   /* Borders */
-  --border-subtle: #1c2030;
-  --border-medium: #252a3a;
+  --border-subtle: #0d2040;
+  --border-medium: #162d50;
 
   /* Status */
-  --green:  #3ecf8e;
+  --green:  #00a86b;
   --yellow: #f4c542;
   --red:    #f56565;
 
@@ -195,7 +196,7 @@ body {
   overflow: hidden;
 }
 .session-item:hover { background: var(--bg-elevated); color: var(--text-primary); }
-.session-item.active { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(108,143,255,0.18); }
+.session-item.active { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(0,168,107,0.22); }
 
 .session-icon { font-size: 13px; flex-shrink: 0; }
 
@@ -474,7 +475,7 @@ body {
   width: 34px;
   height: 34px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #1c2240, #2d3a60);
+  background: linear-gradient(135deg, #091830, #0b2d40);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,7 +502,7 @@ body {
 }
 
 .user-bubble {
-  background: linear-gradient(135deg, var(--user-bg), #1a2350);
+  background: linear-gradient(135deg, var(--user-bg), #0d2a4a);
   border: 1px solid var(--user-border);
   border-bottom-right-radius: var(--radius-sm);
   color: var(--text-primary);
@@ -519,7 +520,7 @@ body {
 .assistant-bubble code {
   font-family: var(--font-mono);
   font-size: 12.5px;
-  background: rgba(108,143,255,0.1);
+  background: rgba(0,168,107,0.1);
   color: var(--accent-hover);
   padding: 1px 5px;
   border-radius: 4px;

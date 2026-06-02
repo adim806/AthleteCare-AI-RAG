@@ -1,5 +1,5 @@
 """
-SQLite-backed conversation memory for the DevMind RAG chat app.
+SQLite-backed conversation memory for the AthleteCare RAG chat app.
 
 Two tables:
 - sessions(id, title, created_at, updated_at)

@@ -1,0 +1,61 @@
+FC Velocity — Injury Prevention Guidelines
+
+Injury prevention is the highest-priority function of the FC Velocity medical department. Most football injuries are not random accidents — they are predictable events reducible through systematic preparation. Teams with structured prevention programmes experience 25–50% fewer muscle injuries than those without (UEFA Health and Performance Project data).
+
+---
+
+FIFA 11+ WARM-UP (mandatory before every session and match)
+
+The FIFA 11+ programme is compulsory at FC Velocity, supervised by the physiotherapists and Tal Ben-David. It consists of three parts. Part 1 (8 minutes): running exercises with hip flexion, hip abduction, shoulder contact, and hopping. Part 2 (10 minutes): six strengthening exercises in three sets each — Nordic hamstring curls, single-leg squats, Copenhagen planks, lateral band walks, plank with arm raise, and side-to-side hops with landing control. Part 3 (2 minutes): moderate and high-speed directional running. The FIFA 11+ reduces hamstring injuries by up to 50%, ACL injuries by up to 40%, and ankle sprains by up to 20% when performed consistently.
+
+---
+
+HAMSTRING INJURY PREVENTION
+
+Hamstring injuries are the most common injury in professional football. The primary prevention tool is the Nordic hamstring exercise (Russian hamstring curl): player kneels with feet anchored and lowers their torso forward using eccentric hamstring contraction. Protocol: 3 sets of 5–8 reps, three times per week in the off-season, twice per week in-season. A 2015 Cochrane review found the Nordic exercise reduces hamstring injuries by 51%.
+
+Players with a sit-and-reach score below 28 cm are placed on a daily 10-minute hamstring stretching routine. Players with any previous hamstring injury perform an additional 10-minute individual warm-up before joining team training — this is a permanent requirement. Marco Alvarez (PLR-001) is on this enhanced hamstring protocol due to his 2022 Grade II and 2023 Grade I injuries.
+
+---
+
+ACL INJURY PREVENTION
+
+High-risk indicators for ACL injury: poor knee valgus control on landing, H:Q ratio below 0.55, high sprint volume with a limited strength base, and previous ACL injury (the strongest individual risk factor). Prevention exercises include plyometric landing training with video feedback on knee valgus angle, single-leg stability work (Bulgarian split squats, single-leg RDLs, wobble board), hip abductor strengthening (lateral band walks, clamshells), and the Copenhagen plank series. Luca Ferretti (PLR-002) is enrolled in the permanent ACL prevention programme following his 2023 reconstruction.
+
+---
+
+PRE-SEASON MUSCULOSKELETAL SCREENING
+
+Every player undergoes full screening before the start of each season. Screening components: Functional Movement Screen (FMS) — 7 patterns scored 0–3, any score of 0 or 1 is flagged for remediation. Isokinetic strength test at 60°/s and 240°/s. Hip range of motion assessment — asymmetry above 10° triggers a hip mobility programme. Ankle dorsiflexion test — below 10° indicates elevated ACL and Achilles risk. Landing mechanics video analysis — knee valgus angle and trunk inclination assessed on drop jump. Players with multiple risk factors are enrolled in a targeted individual prevention programme before the season starts.
+
+---
+
+INDIVIDUAL PREVENTION PROGRAMMES — CURRENT SQUAD
+
+James Okafor (PLR-004): Daily 10-minute hip flexor and hamstring flexibility routine, enrolled August 2024 due to below-benchmark sit-and-reach score.
+
+Marco Alvarez (PLR-001): Enhanced hamstring protocol — additional 10-minute individual warm-up before all sessions. In place since August 2022.
+
+Dmitri Volkov (PLR-003): Daily 15-minute lower back mobility and core stability programme: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, and pallof press.
+
+Anton Becker (PLR-005): Shoulder stability programme three times per week: rotator cuff strengthening (external rotation, internal rotation, diagonal patterns), serratus anterior activation, and posterior capsule stretching.
+
+Luca Ferretti (PLR-002): Permanent ACL prevention programme: twice-weekly plyometric landing sessions, weekly isokinetic assessment, and an enhanced FIFA 11+ variant.
+
+---
+
+LOAD MANAGEMENT
+
+The safe ACWR range is 0.80–1.30. ACWR above 1.50 signals high injury risk. Full load management policy and ACWR calculation details are defined in fitness_assessments.txt. During fixture congestion (three or more matches in seven days) the medical team holds a daily 10-minute briefing to assess squad load.
+
+---
+
+RETURN FROM INTERNATIONAL DUTY
+
+Players returning from international duty submit their training and match data from the national team. Tal Ben-David reviews the load and may impose a reduced training load for the first 3–5 days. Players who have crossed more than 3 time zones are placed on a jet lag recovery protocol.
+
+---
+
+HEAT AND HYDRATION POLICY
+
+During training above 28°C: water breaks every 15 minutes, electrolyte drink provided at the half-time break of sessions over 60 minutes. Training must not continue in WBGT conditions above 32°C without Dr. Shapira's approval. A 2% body mass loss through dehydration impairs sprint performance and significantly increases injury risk.
