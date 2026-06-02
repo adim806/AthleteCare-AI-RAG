@@ -7,32 +7,101 @@
   <link rel="stylesheet" href="/static/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- ============================================================
-     SIDEBAR
-     ============================================================ -->
+<!-- SVG icons (reused) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <linearGradient id="acGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D084"/>
+      <stop offset="45%" stop-color="#00A86B"/>
+      <stop offset="100%" stop-color="#007A52"/>
+    </linearGradient>
+    <linearGradient id="acShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="acRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D084" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00A86B" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Primary brand mark — pulse badge -->
+  <symbol id="logo-athletecare" viewBox="0 0 48 48">
+    <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#acGrad)"/>
+    <rect x="3" y="3" width="42" height="21" rx="13" fill="url(#acShine)"/>
+    <rect x="5.5" y="5.5" width="37" height="37" rx="11" fill="none" stroke="url(#acRing)" stroke-width="1"/>
+    <path
+      d="M9 26.5h6.2l2.8-7.2 3.6 12.4 3.2-8.8 2.8 3.6H39"
+      fill="none"
+      stroke="#fff"
+      stroke-width="2.35"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  </symbol>
+
+  <!-- Compact session / chat icon -->
+  <symbol id="icon-session" viewBox="0 0 24 24">
+    <path
+      d="M4 12.5h3.2l1.6-4 2 6.8 1.8-5 1.6 2.1H20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.65"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <!-- Assistant avatar variant -->
+  <symbol id="icon-assistant" viewBox="0 0 48 48">
+    <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#acGrad)"/>
+    <path
+      d="M10 26h5.5l2.5-6.5 3.2 11 2.8-7.5 2.5 3H38"
+      fill="none"
+      stroke="#fff"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+</svg>
+
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <div class="brand">
-      <span class="brand-icon">⬡</span>
-      <span class="brand-name">AthleteCare</span>
+      <svg class="brand-logo" aria-hidden="true"><use href="#logo-athletecare"/></svg>
+      <div class="brand-text">
+        <span class="brand-name">AthleteCare</span>
+        <span class="brand-tagline">Medical Intelligence</span>
+      </div>
     </div>
-    <button class="btn-new-chat" id="btnNewChat" title="New conversation">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  </div>
+
+  <div class="sidebar-actions">
+    <button class="btn-new-chat" id="btnNewChat" title="New consultation">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
         <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
       </svg>
+      New consultation
     </button>
   </div>
 
-  <div class="sidebar-section-label">Recent</div>
-  <nav class="session-list" id="sessionList">
-    <!-- sessions injected by JS -->
-  </nav>
+  <div class="sidebar-section-label">Recent sessions</div>
+  <nav class="session-list" id="sessionList"></nav>
 
   <div class="sidebar-footer">
+    <div class="club-badge">
+      <div class="club-badge-icon">FV</div>
+      <div class="club-badge-text">
+        <strong>FC Velocity</strong>
+        <span>First-team medical dept.</span>
+      </div>
+    </div>
     <div class="status-pill" id="statusPill">
       <span class="status-dot" id="statusDot"></span>
       <span id="statusText">Connecting…</span>
@@ -40,67 +109,91 @@
   </div>
 </aside>
 
-<!-- ============================================================
-     MAIN CONTENT
-     ============================================================ -->
 <main class="main" id="main">
 
-  <!-- Top bar -->
   <header class="topbar">
     <button class="btn-icon btn-toggle-sidebar" id="btnToggleSidebar" title="Toggle sidebar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
-    <span class="topbar-title" id="topbarTitle">New conversation</span>
-    <div class="topbar-actions">
-      <button class="btn-icon" id="btnDeleteSession" title="Delete conversation" style="display:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
-        </svg>
-      </button>
-    </div>
+    <span class="topbar-title" id="topbarTitle">New consultation</span>
+    <span class="topbar-badge">Clinical RAG</span>
   </header>
 
-  <!-- Loading overlay shown while engine initialises -->
-  <div class="init-overlay" id="initOverlay">
+  <div class="init-overlay hidden" id="initOverlay">
     <div class="init-card">
-      <div class="init-logo">⬡</div>
+      <svg class="init-logo" width="56" height="56" aria-hidden="true"><use href="#logo-athletecare"/></svg>
       <h2 class="init-title">AthleteCare</h2>
-      <p class="init-sub">Sports Medicine Intelligence for Professional Football</p>
+      <p class="init-sub">Connecting to FC Velocity knowledge base…</p>
       <div class="init-spinner"></div>
-      <p class="init-status" id="initStatus">Loading knowledge base…</p>
-      <div class="init-progress-bar"><div class="init-progress-fill" id="initProgressFill"></div></div>
+      <p class="init-status" id="initStatus">Initializing</p>
     </div>
   </div>
 
-  <!-- Chat messages area -->
   <div class="chat-area" id="chatArea">
-    <!-- Welcome screen shown when no session is active -->
     <div class="welcome" id="welcome">
-      <div class="welcome-icon">⬡</div>
-      <h1 class="welcome-title">Welcome to AthleteCare</h1>
-      <p class="welcome-sub">Sports Medicine Intelligence for Professional Football.<br>Ask about player records, injury protocols, rehab plans, and return-to-play guidelines.</p>
+      <div class="welcome-hero">
+        <div class="welcome-badge">
+          <svg class="welcome-badge-icon" width="14" height="14" aria-hidden="true"><use href="#icon-session"/></svg>
+          FC Velocity · First Team
+        </div>
+        
+        <h1 class="welcome-title">Sports Medicine Intelligence for Professional Football</h1>
+        <p class="welcome-sub">
+          Ask about player records, injury protocols, rehab plans, and return-to-play guidelines.
+        </p>
+      </div>
+
+      <div class="knowledge-grid" id="knowledgeGrid">
+        <div class="knowledge-card knowledge-card--loading">
+          <div class="knowledge-card-shimmer"></div>
+        </div>
+        <div class="knowledge-card knowledge-card--loading">
+          <div class="knowledge-card-shimmer"></div>
+        </div>
+        <div class="knowledge-card knowledge-card--loading">
+          <div class="knowledge-card-shimmer"></div>
+        </div>
+        <div class="knowledge-card knowledge-card--loading">
+          <div class="knowledge-card-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="suggestions-header">Try a clinical query</div>
       <div class="suggestion-grid">
-        <button class="suggestion-chip" data-q="What is Oren Shoval's current rehab status?">Oren Shoval's rehab status</button>
-        <button class="suggestion-chip" data-q="How long does ACL reconstruction rehabilitation take?">ACL rehab duration</button>
-        <button class="suggestion-chip" data-q="What does the FIFA 11+ warm-up include?">FIFA 11+ warm-up</button>
-        <button class="suggestion-chip" data-q="Which players are currently on prevention programmes?">Prevention programme players</button>
-        <button class="suggestion-chip" data-q="What ACWR value indicates high injury risk?">ACWR injury risk threshold</button>
+        <button class="suggestion-chip" data-q="What is Oren Shoval's current rehab status?">
+          <span class="chip-icon">📋</span>
+          <span class="chip-text">Oren Shoval's rehab status</span>
+        </button>
+        <button class="suggestion-chip" data-q="How long does ACL reconstruction rehabilitation take?">
+          <span class="chip-icon">⏱</span>
+          <span class="chip-text">ACL rehab duration</span>
+        </button>
+        <button class="suggestion-chip" data-q="What does the FIFA 11+ warm-up include?">
+          <span class="chip-icon">⚽</span>
+          <span class="chip-text">FIFA 11+ warm-up</span>
+        </button>
+        <button class="suggestion-chip" data-q="Which players are currently on prevention programmes?">
+          <span class="chip-icon">🛡</span>
+          <span class="chip-text">Prevention programme players</span>
+        </button>
+        <button class="suggestion-chip" data-q="What ACWR value indicates high injury risk?">
+          <span class="chip-icon">📈</span>
+          <span class="chip-text">ACWR injury risk threshold</span>
+        </button>
       </div>
     </div>
 
-    <!-- Messages injected here -->
     <div class="message-list" id="messageList" style="display:none;"></div>
   </div>
 
-  <!-- Input bar -->
   <div class="input-bar">
     <div class="input-wrapper">
       <textarea
         id="questionInput"
         class="question-input"
-        placeholder="Ask about player injuries, rehab protocols, return-to-play guidelines…"
+        placeholder="Ask about injuries, rehab protocols, return-to-play criteria…"
         rows="1"
         autocomplete="off"
         spellcheck="false"
@@ -111,25 +204,16 @@
         </svg>
       </button>
     </div>
-    <p class="input-hint">AthleteCare answers from club medical documentation only.</p>
+    <p class="input-hint"><strong>AthleteCare</strong> answers only from verified club medical documentation.</p>
   </div>
 
 </main>
 
-<!-- ============================================================
-     JAVASCRIPT
-     ============================================================ -->
 <script>
-/* ---------------------------------------------------------------
-   STATE
---------------------------------------------------------------- */
 let currentSessionId = null;
 let engineReady = false;
 let statusPollTimer = null;
 
-/* ---------------------------------------------------------------
-   DOM REFS
---------------------------------------------------------------- */
 const sidebar       = document.getElementById('sidebar');
 const sessionList   = document.getElementById('sessionList');
 const chatArea      = document.getElementById('chatArea');
@@ -139,24 +223,20 @@ const questionInput = document.getElementById('questionInput');
 const btnSend       = document.getElementById('btnSend');
 const btnNewChat    = document.getElementById('btnNewChat');
 const btnToggle     = document.getElementById('btnToggleSidebar');
-const btnDelete     = document.getElementById('btnDeleteSession');
 const topbarTitle   = document.getElementById('topbarTitle');
+const knowledgeGrid = document.getElementById('knowledgeGrid');
 const initOverlay   = document.getElementById('initOverlay');
 const initStatus    = document.getElementById('initStatus');
-const initFill      = document.getElementById('initProgressFill');
 const statusDot     = document.getElementById('statusDot');
 const statusText    = document.getElementById('statusText');
 
-/* ---------------------------------------------------------------
-   ENGINE STATUS POLLING
---------------------------------------------------------------- */
+const AVATAR_SVG = '<svg viewBox="0 0 48 48" width="22" height="22"><use href="#icon-assistant"/></svg>';
+const SESSION_ICON = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-session"/></svg>';
+
 const STATUS_LABELS = {
-  not_initialised:    'Not started',
-  downloading_nltk:   'Downloading tokenizer…',
-  loading_documents:  'Loading documents…',
-  embedding_documents:'Building embeddings…',
-  building_index:     'Building search index…',
-  ready:              'Ready',
+  connecting: 'Connecting…',
+  ready:      'Knowledge base online',
+  error:      'Connection error',
 };
 
 async function pollStatus() {
@@ -165,64 +245,87 @@ async function pollStatus() {
     const json = await res.json();
     const d    = json.data;
 
-    const label = STATUS_LABELS[d.status] || d.status;
-    initStatus.textContent = label;
-    statusText.textContent = label;
-
-    if (d.total > 0) {
-      const pct = Math.round((d.progress.current / d.progress.total) * 100);
-      initFill.style.width = pct + '%';
-    }
-
     if (d.ready) {
       engineReady = true;
       initOverlay.classList.add('hidden');
       statusDot.className = 'status-dot ready';
-      statusText.textContent = `Ready · ${d.vectors} vectors`;
+      statusText.textContent = STATUS_LABELS.ready;
       clearInterval(statusPollTimer);
       await loadSessions();
+      await loadOverview();
     } else {
-      statusDot.className = 'status-dot loading';
+      const label = d.status?.startsWith('error') ? d.status : STATUS_LABELS.connecting;
+      initStatus.textContent = label;
+      statusText.textContent = label;
+      statusDot.className = d.status?.startsWith('error') ? 'status-dot error' : 'status-dot loading';
     }
   } catch {
     statusDot.className = 'status-dot error';
-    statusText.textContent = 'Connection error';
+    statusText.textContent = STATUS_LABELS.error;
   }
 }
 
 statusPollTimer = setInterval(pollStatus, 1500);
 pollStatus();
 
-/* ---------------------------------------------------------------
-   SESSIONS
---------------------------------------------------------------- */
 async function loadSessions() {
   const res  = await fetch('/api/sessions');
   const json = await res.json();
   renderSessionList(json.data || []);
 }
 
+const DELETE_ICON = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+  <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
+</svg>`;
+
 function renderSessionList(sessions) {
   sessionList.innerHTML = '';
   if (!sessions.length) {
-    sessionList.innerHTML = '<div class="session-empty">No conversations yet.</div>';
+    sessionList.innerHTML = '<div class="session-empty">No consultations yet.<br>Start with a clinical query.</div>';
     return;
   }
   sessions.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'session-row' + (s.id === currentSessionId ? ' active' : '');
+
     const el = document.createElement('button');
-    el.className = 'session-item' + (s.id === currentSessionId ? ' active' : '');
+    el.className = 'session-item';
     el.dataset.id = s.id;
     el.innerHTML = `
-      <span class="session-icon">💬</span>
+      <span class="session-icon">${SESSION_ICON}</span>
       <span class="session-title">${escHtml(s.title)}</span>`;
     el.addEventListener('click', () => loadSession(s.id));
-    sessionList.appendChild(el);
+
+    const del = document.createElement('button');
+    del.className = 'session-delete';
+    del.type = 'button';
+    del.title = 'Delete consultation';
+    del.setAttribute('aria-label', 'Delete consultation');
+    del.innerHTML = DELETE_ICON;
+    del.addEventListener('click', e => {
+      e.stopPropagation();
+      deleteSession(s.id);
+    });
+
+    row.appendChild(el);
+    row.appendChild(del);
+    sessionList.appendChild(row);
   });
+}
+
+async function deleteSession(sessionId) {
+  if (!confirm('Delete this consultation?')) return;
+  await fetch(`/api/sessions/${sessionId}`, { method: 'DELETE' });
+  if (currentSessionId === sessionId) {
+    currentSessionId = null;
+    topbarTitle.textContent = 'New consultation';
+    showWelcome();
+  }
+  await loadSessions();
 }
 
 async function loadSession(sessionId) {
   currentSessionId = sessionId;
-  btnDelete.style.display = '';
 
   const res  = await fetch(`/api/sessions/${sessionId}/messages`);
   const json = await res.json();
@@ -230,23 +333,24 @@ async function loadSession(sessionId) {
   showMessageList();
   messageList.innerHTML = '';
 
-  const msgs = json.data || [];
-  msgs.forEach(m => appendMessage(m.role, m.content, m.context));
-
+  (json.data || []).forEach(m => appendMessage(m.role, m.content, m.context));
   scrollToBottom();
   await loadSessions();
 
-  const session = await (await fetch(`/api/sessions`)).json();
+  const session = await (await fetch('/api/sessions')).json();
   const found = (session.data || []).find(s => s.id === sessionId);
-  topbarTitle.textContent = found ? found.title : 'Conversation';
+  topbarTitle.textContent = found ? found.title : 'Consultation';
 }
 
 async function createSession() {
-  const res    = await fetch('/api/sessions', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({title: 'New conversation'}) });
-  const json   = await res.json();
+  const res = await fetch('/api/sessions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title: 'New consultation' }),
+  });
+  const json = await res.json();
   currentSessionId = json.data.id;
-  btnDelete.style.display = '';
-  topbarTitle.textContent = 'New conversation';
+  topbarTitle.textContent = 'New consultation';
   showMessageList();
   messageList.innerHTML = '';
   await loadSessions();
@@ -258,20 +362,6 @@ btnNewChat.addEventListener('click', async () => {
   questionInput.focus();
 });
 
-btnDelete.addEventListener('click', async () => {
-  if (!currentSessionId) return;
-  if (!confirm('Delete this conversation?')) return;
-  await fetch(`/api/sessions/${currentSessionId}`, { method: 'DELETE' });
-  currentSessionId = null;
-  btnDelete.style.display = 'none';
-  topbarTitle.textContent = 'New conversation';
-  showWelcome();
-  await loadSessions();
-});
-
-/* ---------------------------------------------------------------
-   CHAT UI HELPERS
---------------------------------------------------------------- */
 function showWelcome() {
   welcome.style.display = '';
   messageList.style.display = 'none';
@@ -289,11 +379,8 @@ function escHtml(str) {
 }
 
 function formatMarkdown(text) {
-  // Bold
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  // Inline code
   text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-  // Line breaks
   text = text.replace(/\n/g, '<br>');
   return text;
 }
@@ -304,12 +391,16 @@ function appendMessage(role, content, context) {
 
   if (role === 'user') {
     wrap.innerHTML = `
-      <div class="msg-bubble user-bubble">${escHtml(content)}</div>`;
+      <div class="msg-body">
+        <div class="msg-role-label">Staff</div>
+        <div class="msg-bubble user-bubble">${escHtml(content)}</div>
+      </div>`;
   } else {
     const sourceHtml = buildSourceHtml(context);
     wrap.innerHTML = `
-      <div class="msg-avatar">⬡</div>
+      <div class="msg-avatar">${AVATAR_SVG}</div>
       <div class="msg-body">
+        <div class="msg-role-label">AthleteCare</div>
         <div class="msg-bubble assistant-bubble">${formatMarkdown(content)}</div>
         ${sourceHtml}
       </div>`;
@@ -321,12 +412,15 @@ function buildSourceHtml(context) {
   if (!context || !context.length) return '';
   const items = context.map(c => {
     const src = c.source ? c.source.replace('.txt','').replace(/_/g,' ') : 'unknown';
-    const pct = Math.round(c.score * 100);
-    return `<li><span class="src-label">${escHtml(src)}</span><span class="src-score">${pct}%</span></li>`;
+    const hasScore = c.score && c.score > 0;
+    const scoreHtml = hasScore
+      ? `<span class="src-score">${Math.round(c.score * 100)}% match</span>`
+      : `<span class="src-score cited">Cited</span>`;
+    return `<li><span class="src-label">${escHtml(src)}</span>${scoreHtml}</li>`;
   }).join('');
   return `
     <details class="sources">
-      <summary>Sources (${context.length})</summary>
+      <summary>Clinical sources (${context.length})</summary>
       <ul>${items}</ul>
     </details>`;
 }
@@ -336,8 +430,9 @@ function appendThinking() {
   wrap.className = 'message assistant thinking-msg';
   wrap.id = 'thinkingBubble';
   wrap.innerHTML = `
-    <div class="msg-avatar">⬡</div>
+    <div class="msg-avatar">${AVATAR_SVG}</div>
     <div class="msg-body">
+      <div class="msg-role-label">AthleteCare</div>
       <div class="msg-bubble assistant-bubble thinking">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
       </div>
@@ -355,17 +450,12 @@ function scrollToBottom() {
   chatArea.scrollTo({ top: chatArea.scrollHeight, behavior: 'smooth' });
 }
 
-/* ---------------------------------------------------------------
-   SEND MESSAGE
---------------------------------------------------------------- */
 async function sendMessage() {
   const question = questionInput.value.trim();
   if (!question) return;
-  if (!engineReady) { alert('The knowledge base is still loading. Please wait.'); return; }
+  if (!engineReady) { alert('The knowledge base is not ready. Please wait.'); return; }
 
-  if (!currentSessionId) {
-    await createSession();
-  }
+  if (!currentSessionId) await createSession();
 
   questionInput.value = '';
   autoResizeTextarea();
@@ -382,7 +472,6 @@ async function sendMessage() {
       body: JSON.stringify({ question, session_id: currentSessionId }),
     });
     const json = await res.json();
-
     removeThinking();
 
     if (!res.ok) {
@@ -407,7 +496,7 @@ async function getSessionTitle(id) {
   const res  = await fetch('/api/sessions');
   const json = await res.json();
   const s    = (json.data || []).find(x => x.id === id);
-  return s ? s.title : 'Conversation';
+  return s ? s.title : 'Consultation';
 }
 
 function setInputDisabled(disabled) {
@@ -416,9 +505,6 @@ function setInputDisabled(disabled) {
   btnSend.classList.toggle('disabled', disabled);
 }
 
-/* ---------------------------------------------------------------
-   INPUT EVENTS
---------------------------------------------------------------- */
 btnSend.addEventListener('click', sendMessage);
 
 questionInput.addEventListener('keydown', e => {
@@ -434,25 +520,106 @@ function autoResizeTextarea() {
 }
 questionInput.addEventListener('input', autoResizeTextarea);
 
-/* ---------------------------------------------------------------
-   SUGGESTION CHIPS
---------------------------------------------------------------- */
 document.querySelectorAll('.suggestion-chip').forEach(btn => {
   btn.addEventListener('click', async () => {
-    const q = btn.dataset.q;
-    if (!engineReady) { alert('The knowledge base is still loading. Please wait.'); return; }
-    questionInput.value = q;
+    if (!engineReady) { alert('The knowledge base is not ready. Please wait.'); return; }
+    questionInput.value = btn.dataset.q;
     await sendMessage();
   });
 });
 
-/* ---------------------------------------------------------------
-   SIDEBAR TOGGLE
---------------------------------------------------------------- */
 btnToggle.addEventListener('click', () => {
   sidebar.classList.toggle('collapsed');
   document.body.classList.toggle('sidebar-collapsed');
 });
+
+async function loadOverview() {
+  try {
+    const res  = await fetch('/api/overview');
+    const json = await res.json();
+    renderOverview(json.data || {});
+  } catch {
+    knowledgeGrid.innerHTML = '<p class="knowledge-error">Could not load knowledge base overview.</p>';
+  }
+}
+
+function renderOverview(data) {
+  const players = data.players || [];
+  const firstSquad = players.filter(p => p.squad === 'First squad');
+  const reserveSquad = players.filter(p => p.squad === 'Reserve squad');
+  const activeCases = data.active_cases || [];
+  const documents = data.documents || [];
+  const protocols = data.protocols || [];
+
+  const playerTags = players.map(p => {
+    const statusClass = p.status === 'active' ? 'tag-active'
+      : p.status === 'monitoring' ? 'tag-monitor' : '';
+    return `<span class="player-tag ${statusClass}" title="${escHtml(p.position)}">${escHtml(p.name)}</span>`;
+  }).join('');
+
+  const activeHtml = activeCases.length
+    ? activeCases.map(p => `
+        <li class="active-case">
+          <span class="active-case-name">${escHtml(p.name)}</span>
+          <span class="active-case-meta">${escHtml(p.position)} · ${escHtml(p.status_label)}</span>
+        </li>`).join('')
+    : '<li class="active-case active-case--none">No active injury cases on file</li>';
+
+  const docItems = documents.map(d => `
+    <li class="doc-item">
+      <span class="doc-item-title">${escHtml(d.title)}</span>
+      <span class="doc-item-desc">${escHtml(d.description)}</span>
+    </li>`).join('');
+
+  const protocolItems = protocols.map(p =>
+    `<li class="protocol-item">${escHtml(p)}</li>`
+  ).join('');
+
+  knowledgeGrid.innerHTML = `
+    <article class="knowledge-card knowledge-card--squad">
+      <div class="knowledge-card-head">
+        <div class="knowledge-card-icon">👥</div>
+        <div>
+          <h3 class="knowledge-card-title">${data.player_count || 0} Squad Players</h3>
+          <p class="knowledge-card-sub">${escHtml(data.club?.name || 'FC Velocity')} · ${firstSquad.length} first team · ${reserveSquad.length} reserve</p>
+        </div>
+      </div>
+      <div class="player-tags">${playerTags}</div>
+    </article>
+
+    <article class="knowledge-card knowledge-card--clinical">
+      <div class="knowledge-card-head">
+        <div class="knowledge-card-icon">🩺</div>
+        <div>
+          <h3 class="knowledge-card-title">${activeCases.length} Active Medical Cases</h3>
+          <p class="knowledge-card-sub">Current injuries and load-managed players</p>
+        </div>
+      </div>
+      <ul class="active-case-list">${activeHtml}</ul>
+    </article>
+
+    <article class="knowledge-card knowledge-card--library">
+      <div class="knowledge-card-head">
+        <div class="knowledge-card-icon">📚</div>
+        <div>
+          <h3 class="knowledge-card-title">${data.document_count || 0} Clinical Documents</h3>
+          <p class="knowledge-card-sub">Indexed in the AthleteCare knowledge base</p>
+        </div>
+      </div>
+      <ul class="doc-list">${docItems}</ul>
+    </article>
+
+    <article class="knowledge-card knowledge-card--protocols">
+      <div class="knowledge-card-head">
+        <div class="knowledge-card-icon">📋</div>
+        <div>
+          <h3 class="knowledge-card-title">${data.protocol_count || 0} Treatment & Prevention Protocols</h3>
+          <p class="knowledge-card-sub">${data.protocol_doc_count || 0} dedicated protocol documents</p>
+        </div>
+      </div>
+      <ul class="protocol-list">${protocolItems}</ul>
+    </article>`;
+}
 </script>
 </body>
 </html>

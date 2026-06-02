@@ -5,6 +5,7 @@ Endpoints
 ---------
 GET  /                              -- serve the chat UI
 GET  /api/status                    -- RAG engine readiness
+GET  /api/overview                  -- knowledge base dashboard metadata
 GET  /api/sessions                  -- list all sessions
 POST /api/sessions                  -- create a new session
 GET  /api/sessions/<id>/messages    -- fetch all messages for a session
@@ -29,6 +30,7 @@ if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
 import database as db  # noqa: E402 — import after path bootstrap
+import overview  # noqa: E402
 from rag.pipeline import RAGEngine  # noqa: E402
 
 # ------------------------------------------------------------------
@@ -89,6 +91,11 @@ def status():
             "vectors":  0,
         }
     )
+
+
+@app.route("/api/overview")
+def knowledge_overview():
+    return _ok(data=overview.get_overview())
 
 
 # ------------------------------------------------------------------
