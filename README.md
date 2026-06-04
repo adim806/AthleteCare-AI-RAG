@@ -14,6 +14,10 @@ Each staff member asks questions in natural language and receives answers
 > asks questions in natural language and receives document-grounded answers with
 > citations, without manually opening files.
 
+<img width="2557" height="1272" alt="צילום מסך 2026-06-04 214950" src="https://github.com/user-attachments/assets/4677e277-5293-4ece-824c-caa182b03d17" />
+
+
+
 ### Five target audiences (one platform)
 
 The welcome-screen **Knowledge Library** organises documents by role so each
