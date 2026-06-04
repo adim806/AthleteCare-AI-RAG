@@ -1,54 +1,173 @@
 FC Velocity — Player Profiles and Medical Status
+SOURCE: players.txt | DOMAIN: squad_registry | UPDATED: November 2024
+CHUNK_FORMAT: PLAYER_PROFILE | Each record is self-contained and independently retrievable.
 
-FC Velocity is a professional football club competing in the Israeli Premier League. The medical department consists of lead physiotherapist Dr. Sara Cohen, physiotherapist Dr. Yoel Mizrahi, sports physician Dr. Anat Shapira, and fitness coach Tal Ben-David. All records are maintained in the KineticMind system.
-
----
-
-FIRST SQUAD
-
-Player ID: PLR-001 | Marco Alvarez | Striker | Age 27 | 183 cm / 79 kg | Right-footed
-Medical status: Fully cleared. History of left hamstring Grade II strain (2022) and right hamstring Grade I strain (2023). Mandatory 10-minute individual warm-up before every session as a permanent prevention measure.
-
-Player ID: PLR-002 | Luca Ferretti | Central Midfielder | Age 24 | 178 cm / 74 kg | Right-footed
-Medical status: Fully cleared for all competitive play. Underwent ACL reconstruction on right knee (March 2023), completed return-to-play protocol (October 2023). Enrolled in permanent ACL prevention programme. Requires weekly physiotherapy maintenance session.
-
-Player ID: PLR-003 | Dmitri Volkov | Centre Back | Age 31 | 191 cm / 89 kg | Left-footed
-Medical status: Active — load being managed. Chronic lower back stiffness controlled with daily 15-minute mobility programme. Previous right ankle sprain (2021), fully healed. No acute injuries.
-
-Player ID: PLR-004 | James Okafor | Right Winger | Age 22 | 175 cm / 71 kg | Right-footed
-Medical status: Fully cleared. No significant injury history. High injury-risk profile flagged due to explosive sprint mechanics and below-average hamstring flexibility. Enrolled in daily hip flexor and hamstring flexibility programme since August 2024.
-
-Player ID: PLR-005 | Anton Becker | Goalkeeper | Age 29 | 188 cm / 83 kg | Right-footed
-Medical status: Fully cleared. Left shoulder surgically stabilised (Bankart repair, February 2021). Full range of motion restored. Permanent shoulder stability programme three times per week.
-
-Player ID: PLR-006 | Rafael Torres | Left Back | Age 26 | 177 cm / 73 kg | Left-footed
-Medical status: Fully cleared. Groin strain Grade I (September 2024), resolved. Previous right knee medial meniscus tear (2021), conservatively managed and stable. Monitored at each pre-season.
-
-Player ID: PLR-007 | Yosef Klein | Defensive Midfielder | Age 28 | 180 cm / 77 kg | Right-footed
-Medical status: Fully cleared. Mild exercise-induced asthma managed with pre-exercise salbutamol inhaler. TUE on file with Dr. Shapira. Inhaler kept on the bench at all times during matches.
+Club: FC Velocity | League: Israeli Premier League
+Medical department: Dr. Anat Shapira (CMO, final medical authority), Dr. Sara Cohen (Lead Physiotherapist), Dr. Yoel Mizrahi (Physiotherapist), Tal Ben-David (Fitness & Conditioning Coach), Daniela Ronen (Nutritionist, part-time).
+System of record: KineticMind
 
 ---
 
-RESERVE SQUAD
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-001 | NAME: Marco Alvarez | POSITION: Striker | AGE: 27
+PHYSICAL: 183 cm / 79 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared for all training and competition.
+INJURY_RISK_FLAGS: Bilateral hamstring strain history. High recurrence risk.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Enhanced hamstring warm-up: 10-minute individual warm-up before every session (permanent, since August 2022).
+  - Nordic hamstring protocol: 3×5–8 reps, twice per week in-season.
+INJURY_HISTORY_SUMMARY: Left hamstring Grade II strain (2022), right hamstring Grade I strain (2023). Full details in injury_history.txt (INJ-2022-019, INJ-2023-011).
+NOTES: Any new hamstring complaint must be reviewed against bilateral injury history. Re-injury to either hamstring within 12 months triggers a mandatory medical meeting review.
 
-Player ID: PLR-008 | Oren Shoval | Striker | Age 20 | 181 cm / 76 kg
-Medical status: Active injury — right calf muscle strain Grade I (14 November 2024). Currently in Stage 2 of the soft tissue protocol under Dr. Sara Cohen. Expected return to full training: 28 November 2024.
+---
 
-Player ID: PLR-009 | Nabil Harroui | Central Midfielder | Age 19 | 174 cm / 68 kg
-Medical status: Cleared. No injury history. Monitored for overtraining risk given high development programme load. HRV and sleep quality tracked weekly.
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-002 | NAME: Luca Ferretti | POSITION: Central Midfielder | AGE: 24
+PHYSICAL: 178 cm / 74 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared for all competitive play.
+INJURY_RISK_FLAGS: Previous ACL reconstruction — highest individual re-injury risk factor.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Permanent ACL prevention programme: twice-weekly plyometric landing sessions.
+  - Weekly isokinetic strength assessment (right knee).
+  - Enhanced FIFA 11+ variant before every session.
+  - Weekly physiotherapy maintenance session (Dr. Yoel Mizrahi).
+CURRENT_METRICS (November 2024): Isokinetic LSI 98.6% | H:Q right knee 0.68 | ACL-RSI score 79/100 (threshold ≥65, cleared).
+FITNESS_DATA: Yo-Yo IR2 1180m (below pre-ACL baseline of 1280m, improving) | Sprint 3.91s | Agility 4.39s | Body fat 11.4%.
+INJURY_HISTORY_SUMMARY: Right knee ACL rupture and reconstruction (March 2023). Full RTP completed October 2023. Details in injury_history.txt (INJ-2023-042).
+NOTES: Weekly maintenance sessions are non-negotiable per RTP agreement. Any right knee swelling or pain must be referred immediately to Dr. Shapira.
 
-Player ID: PLR-010 | Eitan Levi | Centre Back | Age 23 | 187 cm / 85 kg
-Medical status: Cleared. Stress fracture of left tibia (March 2024), fully healed. Bone density follow-up scan scheduled January 2025. On high-calcium diet plan prescribed by nutritionist Daniela Ronen.
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-003 | NAME: Dmitri Volkov | POSITION: Centre Back | AGE: 31
+PHYSICAL: 191 cm / 89 kg | FOOT: Left
+MEDICAL_STATUS: Active — load being managed. No acute injury. Chronic lower back condition under control.
+INJURY_RISK_FLAGS: Chronic lumbar stiffness. Recurrent acute episodes on background of chronic condition.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Daily 15-minute lower back mobility and core stability: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, pallof press.
+  - Load cap during fixture congestion: no aerial duels in training when ACWR >1.30.
+CURRENT_METRICS (November 2024): ACWR 1.22 (safe zone) | Yo-Yo IR2 1020m | Sprint 4.08s | Agility 4.52s | Body fat 12.8%.
+INJURY_HISTORY_SUMMARY: Acute lower back episode (April 2024), right ankle sprain Grade II (2021). Details in injury_history.txt (INJ-2024-017, INJ-2021-027).
+NOTES: Volkov has a documented pattern of flare-ups after aerial duel landings. Match-day decisions regarding aerial activity should factor in recent back symptoms. Refer any radicular symptoms (leg pain, tingling) immediately to Dr. Shapira.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-004 | NAME: James Okafor | POSITION: Right Winger | AGE: 22
+PHYSICAL: 175 cm / 71 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared. No significant injury history.
+INJURY_RISK_FLAGS: Below-benchmark sit-and-reach flexibility. Explosive sprint mechanics increase hamstring and hip flexor strain risk.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Daily 10-minute hip flexor and hamstring flexibility routine (enrolled August 2024).
+  - Sit-and-reach score monitored monthly.
+FITNESS_DATA: Yo-Yo IR2 1420m (squad best) | Sprint 3.74s (squad fastest) | Agility 4.19s | Body fat 9.1%.
+INJURY_HISTORY_SUMMARY: No significant injury history.
+NOTES: Okafor is the squad's top physical performer but has an identified flexibility deficit. If sit-and-reach remains below 28 cm at the January 2025 assessment, programme will be escalated.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-005 | NAME: Anton Becker | POSITION: Goalkeeper | AGE: 29
+PHYSICAL: 188 cm / 83 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared.
+INJURY_RISK_FLAGS: Previous left shoulder surgical stabilisation. Re-dislocation risk if stability programme lapses.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Shoulder stability programme: 3×/week (permanent). Rotator cuff strengthening, serratus anterior activation, posterior capsule stretching.
+CURRENT_METRICS (November 2024): External rotation R 38 Nm / L 37 Nm (symmetrical) | Internal rotation R 52 Nm / L 51 Nm | Full glenohumeral ROM bilaterally | No apprehension sign.
+FITNESS_DATA: Yo-Yo IR2 980m (within goalkeeper benchmark) | Sprint 4.21s.
+INJURY_HISTORY_SUMMARY: Left shoulder subluxation and Bankart repair (February 2021). Full ROM restored. Details in injury_history.txt (INJ-2021-003).
+NOTES: Any dive landing with outstretched arm that results in shoulder discomfort must be assessed same day. Do not schedule shoulder programme on match days — perform on training days only.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-006 | NAME: Rafael Torres | POSITION: Left Back | AGE: 26
+PHYSICAL: 177 cm / 73 kg | FOOT: Left
+MEDICAL_STATUS: Fully cleared for all activity.
+INJURY_RISK_FLAGS: Right knee medial meniscus history — monitored each pre-season.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Copenhagen plank added to FIFA 11+ enhanced routine (from September 2024) for adductor maintenance.
+CURRENT_METRICS (November 2024): H:Q ratio 0.64 | Left adductor strength 96% of right | Yo-Yo IR2 1310m | Sprint 3.87s | Agility 4.28s.
+INJURY_HISTORY_SUMMARY: Left groin strain Grade I (September 2024, discharged), right knee medial meniscus tear Grade II (2021, conservatively managed and stable). Details in injury_history.txt (INJ-2024-029, INJ-2021-014).
+NOTES: Pre-season meniscus screening is mandatory. Any locking, clicking, or medial joint-line pain in the right knee requires immediate MRI referral.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-007 | NAME: Yosef Klein | POSITION: Defensive Midfielder | AGE: 28
+PHYSICAL: 180 cm / 77 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared. Exercise-induced asthma managed.
+MEDICAL_FLAGS: Therapeutic Use Exemption (TUE) on file with Dr. Shapira for salbutamol (asthma inhaler, WADA-approved).
+ACTIVE_PREVENTION_PROGRAMMES: None beyond standard squad protocols.
+MEDICATION_PROTOCOL: Pre-exercise salbutamol inhaler — mandatory before every training session and match. Inhaler must be present on the bench at all times during matches. Spare inhaler held in team medical bag.
+FITNESS_DATA: Yo-Yo IR2 1240m | Sprint 4.01s | Agility 4.37s | Body fat 11.7%.
+INJURY_HISTORY_SUMMARY: No musculoskeletal injury history.
+NOTES: If inhaler is unavailable before a match, Klein must not participate until the inhaler is located. Match-day medical checklist must confirm inhaler presence.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-008 | NAME: Oren Shoval | POSITION: Striker | SQUAD: Reserve | AGE: 20
+PHYSICAL: 181 cm / 76 kg
+MEDICAL_STATUS: ACTIVE INJURY — Right calf muscle strain Grade I.
+INJURY_CASE_ID: INJ-2024-031
+INJURY_DATE: 14 November 2024
+CURRENT_RTP_STAGE: Stage 2 (Subacute soft tissue rehabilitation)
+RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
+EXPECTED_RETURN_FIELD_JOGGING: 24 November 2024
+EXPECTED_RETURN_FULL_TRAINING: 28 November 2024
+LATEST_SESSION_FINDINGS (20 November 2024): Swelling significantly reduced. Dorsiflexion ROM 12° (initial 6°, normal 20°). Isometric calf contraction pain-free (0/10). Confidence improving.
+INJURY_HISTORY_SUMMARY: No prior injury history.
+NOTES: Thompson test negative — Achilles intact. POLICE applied at injury. Crutches provided initially. Pool session scheduled 21 November 2024. Full session notes in clinical_notes.txt.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-009 | NAME: Nabil Harroui | POSITION: Central Midfielder | SQUAD: Reserve | AGE: 19
+PHYSICAL: 174 cm / 68 kg
+MEDICAL_STATUS: Cleared. No injury history.
+INJURY_RISK_FLAGS: Overtraining risk due to high development programme load.
+MONITORING: HRV and sleep quality tracked weekly. Any two consecutive mornings with HRV drop >20% from personal baseline triggers load management review with Tal Ben-David.
+FITNESS_DATA: Full battery pending (not yet in first-squad rotation).
+NOTES: Youngest squad member. Fatigue monitoring is priority given dual first-team and reserve programme demands.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-010 | NAME: Eitan Levi | POSITION: Centre Back | SQUAD: Reserve | AGE: 23
+PHYSICAL: 187 cm / 85 kg
+MEDICAL_STATUS: Cleared. Tibial stress fracture fully healed.
+INJURY_RISK_FLAGS: Bone density monitoring required. Previous stress fracture = elevated recurrence risk.
+MEDICAL_FOLLOW_UP: Bone density (DXA) scan scheduled January 2025.
+NUTRITIONAL_PROTOCOL: High-calcium diet plan prescribed by Daniela Ronen. Daily calcium target per plan. Vitamin D levels to be rechecked January 2025.
+INJURY_HISTORY_SUMMARY: Left tibia stress fracture (March 2024), fully healed — imaging confirmed complete bone remodelling. Details in injury_history.txt (INJ-2024-008).
+NOTES: Return to full load confirmed. Training volume monitoring to continue for 4 weeks post each pre-season. Any shin pain must be reported immediately and training suspended pending assessment.
 
 ---
 
 MEDICAL BASELINE NORMS — FC VELOCITY
+RECORD_TYPE: SQUAD_NORMS
 
-Resting heart rate target: 42–58 bpm.
-Blood pressure normal range: 100/60 – 130/80 mmHg.
-Body fat — outfield players: 8–14%. Goalkeepers: 10–16%.
-VO2 max minimum — outfield players: 58 ml/kg/min. Goalkeepers: 52 ml/kg/min.
-Sit-and-reach flexibility minimum: 28 cm.
-Maximum sprint speed minimum — outfield players: 30 km/h.
-Hamstring-to-quadriceps strength ratio (H:Q): 0.60–0.70 assessed by isokinetic dynamometer.
-Players falling below any baseline are referred to Tal Ben-David for an individualised adjustment programme.
+Q: What is the resting heart rate target for FC Velocity players?
+A: 42–58 bpm. Values above 60 bpm after a rest day may indicate insufficient recovery or illness.
+
+Q: What is the normal blood pressure range?
+A: 100/60 – 130/80 mmHg.
+
+Q: What is the body fat benchmark for outfield players and goalkeepers?
+A: Outfield players: 8–14%. Goalkeepers: 10–16%.
+
+Q: What is the minimum VO2 max for outfield players and goalkeepers?
+A: Outfield players: 58 ml/kg/min minimum. Goalkeepers: 52 ml/kg/min minimum.
+
+Q: What is the minimum sit-and-reach flexibility score?
+A: 28 cm. Players below this threshold are enrolled in a daily posterior chain flexibility programme.
+
+Q: What is the minimum maximum sprint speed for outfield players?
+A: 30 km/h.
+
+Q: What is the target hamstring-to-quadriceps strength ratio (H:Q)?
+A: 0.60–0.70 assessed by isokinetic dynamometer. H:Q below 0.55 triggers immediate referral to targeted hamstring strengthening.
+
+Q: What happens when a player falls below any baseline norm?
+A: The player is referred to Tal Ben-David for an individualised adjustment programme.

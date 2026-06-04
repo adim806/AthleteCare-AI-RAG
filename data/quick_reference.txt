@@ -1,82 +1,184 @@
 FC Velocity — Quick Clinical Reference
+SOURCE: quick_reference.txt | DOMAIN: quick_reference | UPDATED: November 2024
+CHUNK_FORMAT: QA_PAIR | Each question and answer is self-contained and independently retrievable.
 
-This document provides direct answers to the most common clinical questions. It is designed for fast retrieval — each entry is a self-contained question and answer. Full protocols are in treatment_protocols.txt, return_to_play.txt, and prevention_guidelines.txt.
-
----
-
-RETURN-TO-PLAY TIMELINES
-
-How long does a Grade I hamstring strain take to return? A Grade I hamstring strain requires 5–10 days before return to full training, provided all criteria are met.
-How long does a Grade II hamstring strain take to return? A Grade II hamstring strain requires 3–6 weeks. Isokinetic dynamometer testing is mandatory before Stage 4 clearance.
-How long does a Grade I ankle sprain take to return? A Grade I ankle sprain requires 5–7 days.
-How long does a Grade II ankle sprain take to return? A Grade II ankle sprain requires 2–4 weeks.
-How long does a Grade I groin strain take to return? A Grade I groin strain requires 7–14 days.
-How long does a Grade I calf strain take to return? A Grade I calf strain requires 5–10 days.
-How long does ACL reconstruction rehabilitation take? ACL reconstruction rehabilitation takes 9–10 months for return to full training and 10–12 months for return to competitive match play.
-How long does a tibial stress fracture take to return? A tibial stress fracture requires 10–14 weeks for return to training and 14–18 weeks for return to full competition.
-What is the minimum return time after concussion? The minimum return time after concussion is 5 days, following the 6-step graduated concussion RTP protocol with 24 hours symptom-free between each step.
+PURPOSE: Fast retrieval for the most common clinical questions. Each entry is a complete Q&A pair with source reference. Full protocols: treatment_protocols.txt, return_to_play.txt, prevention_guidelines.txt.
 
 ---
 
-INJURY SEVERITY CLASSIFICATION
+RECORD_TYPE: QA_PAIR | TOPIC: Return-to-play timelines
 
-What is a Grade I muscle strain? A Grade I muscle strain is a mild injury with microscopic tearing, minimal functional loss, and an expected return of 5–10 days.
-What is a Grade II muscle strain? A Grade II muscle strain is a moderate injury with partial tearing, significant functional impairment, and a return of 2–6 weeks.
-What is a Grade III muscle strain? A Grade III muscle strain is a severe injury involving complete rupture, requiring 3–9 months or longer for return.
-What is the difference between a Grade I and Grade II ankle sprain? A Grade I ankle sprain has no significant functional loss and returns in under a week. A Grade II ankle sprain has partial ligament tearing, significant pain and swelling, and returns in 2–4 weeks.
+Q: How long does a Grade I hamstring strain take to return?
+A: 5–10 days minimum before return to full training, provided all criteria are met. Source: return_to_play.txt.
 
----
+Q: How long does a Grade II hamstring strain take to return?
+A: 3–6 weeks. Isokinetic dynamometer testing is mandatory before Stage 4 clearance. Source: return_to_play.txt.
 
-ACUTE INJURY MANAGEMENT
+Q: How long does a Grade I ankle sprain take to return?
+A: 5–7 days minimum. Source: return_to_play.txt.
 
-What is the POLICE protocol? POLICE stands for Protection, Optimal Loading, Ice, Compression, and Elevation. It is the standard first-response protocol for all acute soft tissue injuries at FC Velocity. Ice is applied for 15–20 minutes every 2 hours for the first 48 hours.
-What should not be done in the first 72 hours after a muscle strain? Heat, massage, and direct stretching of the injured tissue must be avoided in the first 72 hours after a muscle strain, as these can increase bleeding and delay healing.
-When should a player be referred for imaging after an ankle injury? A player should be referred for X-ray to exclude fracture and MRI if ligament involvement is clinically suspected for all Grade II ankle sprains and above.
-When is a Grade III injury referred to the physician? Any Grade III injury or suspected surgical case must be immediately referred to Dr. Anat Shapira.
+Q: How long does a Grade II ankle sprain take to return?
+A: 2–4 weeks. Source: return_to_play.txt.
 
----
+Q: How long does a Grade I groin strain take to return?
+A: 7–14 days. Source: return_to_play.txt.
 
-RETURN-TO-PLAY CRITERIA
+Q: How long does a Grade I calf strain take to return?
+A: 5–10 days. Source: return_to_play.txt.
 
-What limb symmetry index is required for RTP clearance? A Limb Symmetry Index (LSI) of at least 90% on the single-leg hop test is required for Stage 4 and Stage 5 RTP clearance.
-What strength level is required at RTP Stage 3? At RTP Stage 3, the injured limb must reach at least 80% of the contralateral limb's strength.
-What strength level is required at RTP Stage 4? At RTP Stage 4, the injured limb must reach at least 90% of the contralateral limb's strength on isokinetic testing.
-What is the ACL-RSI threshold for psychological RTP clearance? An ACL-RSI questionnaire score of 65 or above (0–100 scale) is required for psychological readiness clearance after ACL reconstruction.
-Who must sign off on a Grade II injury RTP? Grade II injuries require sign-off by both the responsible physiotherapist and Dr. Anat Shapira before the player advances to Stage 4.
-Can time alone determine return-to-play readiness? No. Time alone does not determine readiness. All functional and psychological criteria must be met regardless of elapsed time.
+Q: How long does a Grade I knee MCL sprain take to return?
+A: 1–2 weeks. Source: return_to_play.txt.
 
----
+Q: How long does a Grade II knee MCL sprain take to return?
+A: 4–8 weeks. Source: return_to_play.txt.
 
-LOAD MANAGEMENT
+Q: How long does ACL reconstruction rehabilitation take?
+A: Return to full training: 9–10 months. Return to competitive match play: 10–12 months. Both are minimums — all criteria must be met. Source: return_to_play.txt.
 
-What ACWR range is considered safe? An Acute:Chronic Workload Ratio (ACWR) between 0.80 and 1.30 is considered the safe zone.
-What ACWR indicates elevated injury risk? An ACWR between 1.30 and 1.50 indicates elevated injury risk and requires load monitoring.
-What ACWR indicates high injury risk? An ACWR above 1.50 indicates significantly elevated injury risk. Tal Ben-David must immediately reduce the player's next session load and notify the physiotherapist.
-What GPS metrics are tracked daily? FC Velocity tracks total distance, high-speed running distance (above 21 km/h), sprint distance (above 25 km/h), Player Load, and ACWR via the Catapult Sport GPS system.
+Q: How long does a tibial stress fracture take to return?
+A: Return to training: 10–14 weeks. Return to full competition: 14–18 weeks. Source: return_to_play.txt.
 
----
-
-PREVENTION AND WARM-UP
-
-Is the FIFA 11+ mandatory? Yes. The FIFA 11+ warm-up is mandatory before every training session and every match at FC Velocity.
-What does the FIFA 11+ reduce? The FIFA 11+ reduces hamstring injuries by up to 50%, ACL injuries by up to 40%, and ankle sprains by up to 20% when performed consistently.
-What is the Nordic hamstring exercise protocol? The Nordic hamstring exercise protocol at FC Velocity is 3 sets of 5–8 repetitions, three times per week in the off-season, and twice per week in-season.
-What H:Q ratio indicates hamstring weakness? An H:Q ratio below 0.55 indicates significant hamstring weakness and triggers referral to a targeted hamstring strengthening programme.
-What sit-and-reach score triggers a flexibility programme? A sit-and-reach score below 28 cm triggers enrolment in a daily posterior chain flexibility programme.
+Q: What is the minimum return time after concussion?
+A: 5 days minimum, following the 6-step graduated concussion RTP protocol with 24 hours symptom-free between each step. Source: medical_staff_guide.txt.
 
 ---
 
-CONCUSSION
+RECORD_TYPE: QA_PAIR | TOPIC: Injury severity classification
 
-Can a player with suspected concussion return to play on the same day? No. A player with suspected or confirmed concussion may never return to play on the day of injury — this is absolute per UEFA regulations and FC Velocity policy.
-What tool is used for concussion assessment? The SCAT6 (Sport Concussion Assessment Tool 6th edition) is used for all sideline and post-match concussion assessments at FC Velocity.
-What are the signs that require immediate concussion assessment? Loss of consciousness, confusion, headache, visual disturbance, and balance problems after a head impact all require immediate removal from play and SCAT6 assessment.
+Q: What is a Grade I muscle strain?
+A: A mild injury with microscopic tearing, minimal functional loss, and expected return of 5–10 days.
+
+Q: What is a Grade II muscle strain?
+A: A moderate injury with partial tearing, significant functional impairment, and return of 2–6 weeks.
+
+Q: What is a Grade III muscle strain?
+A: A severe injury involving complete rupture. Return requires 3–9 months or longer.
+
+Q: What is the difference between a Grade I and Grade II ankle sprain?
+A: Grade I has no significant functional loss and returns in under a week. Grade II has partial ligament tearing, significant pain and swelling, and returns in 2–4 weeks.
 
 ---
 
-CURRENT SQUAD STATUS (November 2024)
+RECORD_TYPE: QA_PAIR | TOPIC: Acute injury management
 
-Who is currently injured in the squad? Oren Shoval (PLR-008) is currently injured — right calf muscle strain Grade I sustained 14 November 2024. Expected return: 28 November 2024.
-Which players are on permanent prevention programmes? Marco Alvarez (PLR-001) is on enhanced hamstring protocol. Luca Ferretti (PLR-002) is on the permanent ACL prevention programme. Dmitri Volkov (PLR-003) is on daily lower back mobility programme. James Okafor (PLR-004) is on daily hamstring and hip flexibility programme. Anton Becker (PLR-005) is on three-times-weekly shoulder stability programme.
-Which player has a TUE on file? Yosef Klein (PLR-007) has a Therapeutic Use Exemption on file for salbutamol (asthma inhaler).
-Who is responsible for physiotherapy at FC Velocity? Dr. Sara Cohen is the lead physiotherapist and Dr. Yoel Mizrahi is the second physiotherapist. Dr. Anat Shapira is the team physician with final medical authority.
+Q: What is the POLICE protocol?
+A: Protection, Optimal Loading, Ice, Compression, Elevation. It is the standard first-response protocol for all acute soft tissue injuries at FC Velocity. Ice: 15–20 minutes every 2 hours for the first 48 hours.
+
+Q: What must be avoided in the first 72 hours after a muscle strain?
+A: Heat, massage, and direct stretching of the injured tissue — these increase bleeding and delay healing.
+
+Q: When should a player be referred for imaging after an ankle injury?
+A: X-ray to exclude fracture for all Grade II ankle sprains. MRI if ligament involvement is clinically suspected.
+
+Q: When is a Grade III injury referred to the physician?
+A: Any Grade III injury or suspected surgical case must be immediately referred to Dr. Anat Shapira.
+
+Q: What does a Thompson test assess?
+A: Achilles tendon integrity. A negative Thompson test confirms the Achilles tendon is intact.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Return-to-play criteria and thresholds
+
+Q: What LSI is required for RTP Stage 4 and Stage 5 clearance?
+A: Limb Symmetry Index ≥ 90% on the single-leg hop test.
+
+Q: What strength level is required at RTP Stage 3?
+A: Injured limb must reach at least 80% of the contralateral limb's strength.
+
+Q: What strength level is required at RTP Stage 4?
+A: Injured limb must reach at least 90% of the contralateral limb's strength on isokinetic testing.
+
+Q: What sprint speed is required for RTP clearance?
+A: At least 95% of the player's pre-injury maximum sprint speed on GPS measurement.
+
+Q: What is the ACL-RSI threshold for psychological RTP clearance?
+A: A score of 65 or above (0–100 scale). Below 65 = not psychologically cleared, regardless of physical results.
+
+Q: Who must sign off on a Grade II injury RTP?
+A: Both the responsible physiotherapist and Dr. Anat Shapira must sign off before the player advances to Stage 4.
+
+Q: Can time alone determine return-to-play readiness?
+A: No. Time alone does not determine readiness. All functional and psychological criteria must be met regardless of elapsed time.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Load management
+
+Q: What ACWR range is considered safe?
+A: 0.80–1.30.
+
+Q: What ACWR indicates elevated injury risk?
+A: 1.30–1.50 — elevated risk, requires monitoring.
+
+Q: What ACWR indicates high injury risk?
+A: Above 1.50. Tal Ben-David must immediately reduce the player's next session load and notify the physiotherapist.
+
+Q: What GPS metrics are tracked daily?
+A: Total distance, high-speed running (above 21 km/h), sprint distance (above 25 km/h), Player Load, and ACWR — via Catapult Sport GPS.
+
+Q: What HRV drop triggers load management review?
+A: A drop of more than 20% from personal pre-season baseline on consecutive mornings triggers a load management review with Tal Ben-David.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Prevention and warm-up
+
+Q: Is the FIFA 11+ mandatory?
+A: Yes. Mandatory before every training session and every match at FC Velocity.
+
+Q: What does the FIFA 11+ reduce?
+A: Hamstring injuries by up to 50%, ACL injuries by up to 40%, ankle sprains by up to 20% when performed consistently.
+
+Q: What is the Nordic hamstring exercise protocol at FC Velocity?
+A: 3 sets of 5–8 repetitions. Three times per week in the off-season. Twice per week in-season.
+
+Q: What H:Q ratio indicates hamstring weakness requiring intervention?
+A: H:Q below 0.55 triggers referral to a targeted hamstring strengthening programme.
+
+Q: What sit-and-reach score triggers a flexibility programme?
+A: Below 28 cm triggers enrolment in a daily posterior chain flexibility programme.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Concussion
+
+Q: Can a player with suspected concussion return to play on the same day?
+A: Never. Same-day return is absolute per UEFA regulations and FC Velocity policy — no exceptions.
+
+Q: What assessment tool is used for concussion?
+A: SCAT6 (Sport Concussion Assessment Tool, 6th Edition) — for all sideline and post-match assessments.
+
+Q: What signs require immediate concussion assessment?
+A: Loss of consciousness, confusion, headache, visual disturbance, or balance problems after a head impact.
+
+Q: How many concussions in 3 years require neurologist referral?
+A: 3 or more documented concussions in a 3-year period require neurologist referral before further RTP clearance.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Current squad status (November 2024)
+
+Q: Who is currently injured in the squad?
+A: Oren Shoval (PLR-008) — right calf muscle strain Grade I, sustained 14 November 2024. Currently in Stage 2 rehabilitation. Expected return to full training: 28 November 2024. Responsible: Dr. Sara Cohen.
+
+Q: Which players are on permanent prevention programmes?
+A: Marco Alvarez (PLR-001) — enhanced bilateral hamstring warm-up protocol. Luca Ferretti (PLR-002) — permanent ACL prevention programme. Dmitri Volkov (PLR-003) — daily lower back mobility and core stability programme. James Okafor (PLR-004) — daily hamstring and hip flexor flexibility programme. Anton Becker (PLR-005) — three-times-weekly shoulder stability programme.
+
+Q: Which player has a TUE on file?
+A: Yosef Klein (PLR-007) — TUE for salbutamol (asthma inhaler). Inhaler confirmed on bench at every match.
+
+Q: Who requires a follow-up medical appointment in early 2025?
+A: Eitan Levi (PLR-010) — bone density (DXA) scan scheduled January 2025 following 2024 tibial stress fracture.
+
+Q: Who is responsible for physiotherapy at FC Velocity?
+A: Dr. Sara Cohen (lead physiotherapist) and Dr. Yoel Mizrahi (second physiotherapist). Dr. Anat Shapira is the team physician with final medical authority.
+
+Q: Who is the squad's top performer in Yo-Yo IR2 and sprint speed?
+A: James Okafor (PLR-004) — Yo-Yo IR2 1420m (squad best), sprint 3.74s (squad fastest).
+
+Q: Which player has the most significant fitness concern despite being cleared?
+A: James Okafor — squad's best fitness performer but sit-and-reach below 28cm benchmark. Active flexibility programme in place.
+
+Q: What is the ACWR status for Dmitri Volkov as of November 2024?
+A: ACWR 1.22 — within the safe zone (0.80–1.30). No load changes required at last review (21 November 2024).

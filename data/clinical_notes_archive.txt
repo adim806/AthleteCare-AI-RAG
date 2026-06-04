@@ -1,0 +1,113 @@
+FC Velocity — Physiotherapy Clinical Notes: Archived and Discharged Cases
+SOURCE: clinical_notes_archive.txt | DOMAIN: clinical_notes_archive | UPDATED: November 2024
+CHUNK_FORMAT: SESSION_NOTE | Each note is self-contained and independently retrievable.
+
+PURPOSE: This file contains discharge summaries and archived notes for cases that are no longer active. Active and ongoing cases are in clinical_notes_active.txt.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Rafael Torres | PLAYER_ID: PLR-006 | CASE_ID: INJ-2024-029
+INJURY: Left groin strain, Grade I
+DISCHARGE_DATE: 15 September 2024
+TOTAL_EPISODE_DURATION: 12 days (3 September – 15 September 2024)
+CLINICIAN: Dr. Yoel Mizrahi
+SESSION_TYPE: Discharge assessment
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Left adductor strength: 96% of right side on manual resistance testing
+  - Passive hip abduction ROM: full pain-free range
+  - Copenhagen plank: 3×20 seconds bilateral — no discomfort
+  - Sport-specific running: lateral shuffles and short sprints — no symptoms
+  - Pain: 0/10 throughout final assessment
+
+DISCHARGE_DECISION: Cleared for full training and competition. All functional criteria met.
+
+PREVENTION_NOTE: Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance. No further treatment sessions required unless symptoms recur.
+
+FOLLOW_UP: Standard pre-season adductor screening. Report any groin discomfort immediately.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Eitan Levi | PLAYER_ID: PLR-010 | CASE_ID: INJ-2024-008
+INJURY: Stress fracture, left tibia (tibial shaft, middle third)
+DISCHARGE_DATE: September 2024
+TOTAL_EPISODE_DURATION: Approximately 22 weeks (5 March 2024 – September 2024)
+CLINICIAN: Dr. Anat Shapira
+SESSION_TYPE: Final clearance — imaging confirmed
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Imaging: complete bone remodelling confirmed — no residual stress reaction
+  - Pain: 0/10 with full running load
+  - Running volume: full training load sustained without symptoms for 4 weeks
+  - Bone density: baseline established via DXA — follow-up scan scheduled January 2025
+
+DISCHARGE_DECISION: Cleared for full training and competition. Nutritional protocol (high calcium) to continue.
+
+FOLLOW_UP:
+  - Bone density DXA scan: January 2025
+  - Vitamin D recheck: January 2025
+  - Any shin pain = immediate training suspension + assessment before resuming
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | CASE_ID: INJ-2023-042
+INJURY: Right knee ACL rupture — post-reconstruction rehabilitation
+DISCHARGE_DATE: 14 October 2023 (competitive play clearance)
+TOTAL_EPISODE_DURATION: 7 months post-surgery (18 March – 14 October 2023)
+CLINICIANS: Dr. Yoel Mizrahi (rehabilitation lead), Dr. Anat Shapira (final clearance)
+SESSION_TYPE: RTP Stage 5 clearance — return to competitive play
+
+FINAL_OBJECTIVE_FINDINGS_AT_RTP:
+  - Isokinetic quadriceps strength LSI: ≥90% (threshold met)
+  - Single-leg hop test LSI: ≥90% (threshold met)
+  - H:Q ratio: within 0.60–0.70 range
+  - 5-10-5 agility test: within 10% of pre-injury baseline
+  - Sprint speed GPS: ≥95% of pre-injury maximum
+  - ACL-RSI score: ≥65 (psychological clearance confirmed)
+  - Biomechanical video analysis: knee valgus controlled — no corrective flags
+
+DISCHARGE_DECISION: Cleared for full competitive play as of 14 October 2023. Transition to permanent ACL maintenance programme.
+
+ONGOING_MAINTENANCE: Weekly physiotherapy session (Dr. Yoel Mizrahi). Permanent ACL prevention programme. Monthly ACL-RSI monitoring. Full details in clinical_notes_active.txt.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | CASE_ID: INJ-2023-011
+INJURY: Right hamstring strain, Grade I (recurrence)
+DISCHARGE_DATE: 4 February 2023
+TOTAL_EPISODE_DURATION: 6 days (29 January – 4 February 2023)
+CLINICIAN: Dr. Sara Cohen
+SESSION_TYPE: Clearance — Grade I resolved
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Pain: 0/10 throughout sprint testing
+  - Hamstring ROM: full, pain-free
+  - Sprint test: passed — no symptom reproduction
+
+DISCHARGE_DECISION: Cleared for full training. Enhanced bilateral hamstring warm-up protocol confirmed as permanent. This injury (right Grade I) combined with 2022 (left Grade II) established bilateral hamstring risk profile.
+
+PREVENTION_NOTE: Combined 2022 + 2023 hamstring injuries resulted in permanent enhanced protocol: 10-minute individual warm-up before ALL sessions, Nordic protocol 2×/week in-season. Protocol continues indefinitely.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Anton Becker | PLAYER_ID: PLR-005 | CASE_ID: INJ-2021-003
+INJURY: Left shoulder subluxation — Bankart repair rehabilitation
+DISCHARGE_DATE: June 2021
+TOTAL_EPISODE_DURATION: 4 months (February 2021 – June 2021)
+CLINICIAN: Dr. Anat Shapira
+SESSION_TYPE: Post-surgical rehabilitation clearance
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Full glenohumeral ROM restored bilaterally
+  - Rotator cuff strength: symmetrical
+  - Apprehension sign: negative
+  - No instability on provocation testing
+
+DISCHARGE_DECISION: Cleared for full goalkeeping duties. Permanent shoulder stability programme established (3×/week) to prevent recurrence.
+
+NOTES: Permanent programme is non-negotiable — discontinuation would elevate re-dislocation risk significantly given surgical history.

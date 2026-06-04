@@ -145,19 +145,63 @@
         </p>
       </div>
 
-      <div class="knowledge-grid" id="knowledgeGrid">
-        <div class="knowledge-card knowledge-card--loading">
-          <div class="knowledge-card-shimmer"></div>
-        </div>
-        <div class="knowledge-card knowledge-card--loading">
-          <div class="knowledge-card-shimmer"></div>
-        </div>
-        <div class="knowledge-card knowledge-card--loading">
-          <div class="knowledge-card-shimmer"></div>
-        </div>
-        <div class="knowledge-card knowledge-card--loading">
-          <div class="knowledge-card-shimmer"></div>
-        </div>
+      <div class="welcome-showcase-row">
+        <figure class="welcome-showcase" aria-label="AI Sports Medicine System">
+          <div class="welcome-showcase-frame">
+            <img
+              src="/static/images/rag_hero.jpg"
+              alt="AI Sports Medicine System — integrated player health, recovery analytics, biomechanics, and club medical knowledge"
+              class="welcome-showcase-img"
+              width="1920"
+              height="1080"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="welcome-showcase-caption">
+            <span class="welcome-showcase-label">AI Sports Medicine System</span>
+            <span class="welcome-showcase-tagline">Optimize · Prevent · Perform</span>
+          </figcaption>
+        </figure>
+
+        <aside class="insight-panel" id="insightPanel" aria-label="Squad status and knowledge library">
+          <div class="insight-panel-tabs" role="tablist">
+            <button type="button" class="insight-tab active" role="tab" aria-selected="true" data-panel="squad" id="tabSquad">
+              <span class="insight-tab-icon" aria-hidden="true">⚽</span>
+              <span class="insight-tab-label">Squad</span>
+            </button>
+            <button type="button" class="insight-tab" role="tab" aria-selected="false" data-panel="library" id="tabLibrary">
+              <span class="insight-tab-icon" aria-hidden="true">📁</span>
+              <span class="insight-tab-label">Team Data</span>
+            </button>
+          </div>
+
+          <div class="insight-panel-body">
+            <section class="insight-section active" id="panelSquad" role="tabpanel" aria-labelledby="tabSquad">
+              <header class="insight-section-head">
+                <h3 class="insight-section-title">Squad Status</h3>
+                <p class="insight-section-meta" id="squadMeta">Loading…</p>
+              </header>
+              <div class="insight-stats" id="squadStats"></div>
+              <div class="insight-block">
+                <h4 class="insight-block-title">Not fit for full training</h4>
+                <ul class="insight-player-list" id="notFitList"></ul>
+              </div>
+              <div class="insight-block insight-block--cleared">
+                <h4 class="insight-block-title">Cleared for training</h4>
+                <ul class="insight-player-list insight-player-list--compact" id="clearedList"></ul>
+              </div>
+            </section>
+
+            <section class="insight-section" id="panelLibrary" role="tabpanel" aria-labelledby="tabLibrary" hidden>
+              <header class="insight-section-head">
+                <h3 class="insight-section-title">Knowledge Library</h3>
+                <p class="insight-section-meta">By medical staff audience</p>
+              </header>
+              <div class="insight-audiences" id="audienceList"></div>
+            </section>
+          </div>
+        </aside>
       </div>
 
       <div class="suggestions-header">Try a clinical query</div>
@@ -224,7 +268,6 @@ const btnSend       = document.getElementById('btnSend');
 const btnNewChat    = document.getElementById('btnNewChat');
 const btnToggle     = document.getElementById('btnToggleSidebar');
 const topbarTitle   = document.getElementById('topbarTitle');
-const knowledgeGrid = document.getElementById('knowledgeGrid');
 const initOverlay   = document.getElementById('initOverlay');
 const initStatus    = document.getElementById('initStatus');
 const statusDot     = document.getElementById('statusDot');
@@ -252,7 +295,7 @@ async function pollStatus() {
       statusText.textContent = STATUS_LABELS.ready;
       clearInterval(statusPollTimer);
       await loadSessions();
-      await loadOverview();
+      await loadDashboard();
     } else {
       const label = d.status?.startsWith('error') ? d.status : STATUS_LABELS.connecting;
       initStatus.textContent = label;
@@ -533,93 +576,124 @@ btnToggle.addEventListener('click', () => {
   document.body.classList.toggle('sidebar-collapsed');
 });
 
-async function loadOverview() {
+/* Insight panel — squad status & document library */
+const insightTabs = document.querySelectorAll('.insight-tab');
+const panelSquad = document.getElementById('panelSquad');
+const panelLibrary = document.getElementById('panelLibrary');
+
+insightTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.panel;
+    insightTabs.forEach(t => {
+      const on = t === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    const squadOn = target === 'squad';
+    panelSquad.classList.toggle('active', squadOn);
+    panelSquad.hidden = !squadOn;
+    panelLibrary.classList.toggle('active', !squadOn);
+    panelLibrary.hidden = squadOn;
+  });
+});
+
+document.getElementById('audienceList')?.addEventListener('click', e => {
+  const head = e.target.closest('.insight-audience-head');
+  if (!head) return;
+  const item = head.closest('.insight-audience');
+  if (!item) return;
+  const open = item.classList.toggle('open');
+  head.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+async function loadDashboard() {
   try {
-    const res  = await fetch('/api/overview');
+    const res = await fetch('/api/dashboard');
     const json = await res.json();
-    renderOverview(json.data || {});
+    renderDashboard(json.data || {});
   } catch {
-    knowledgeGrid.innerHTML = '<p class="knowledge-error">Could not load knowledge base overview.</p>';
+    document.getElementById('squadMeta').textContent = 'Could not load squad data';
   }
 }
 
-function renderOverview(data) {
-  const players = data.players || [];
-  const firstSquad = players.filter(p => p.squad === 'First squad');
-  const reserveSquad = players.filter(p => p.squad === 'Reserve squad');
-  const activeCases = data.active_cases || [];
-  const documents = data.documents || [];
-  const protocols = data.protocols || [];
+function renderDashboard(data) {
+  const squad = data.squad || {};
+  const audiences = data.audiences || [];
 
-  const playerTags = players.map(p => {
-    const statusClass = p.status === 'active' ? 'tag-active'
-      : p.status === 'monitoring' ? 'tag-monitor' : '';
-    return `<span class="player-tag ${statusClass}" title="${escHtml(p.position)}">${escHtml(p.name)}</span>`;
+  const meta = document.getElementById('squadMeta');
+  meta.textContent = squad.last_updated
+    ? `Updated ${squad.last_updated} · ${data.club?.name || 'FC Velocity'}`
+    : (data.club?.name || 'FC Velocity');
+
+  const notFit = squad.not_fit || [];
+  const cleared = squad.cleared || [];
+  const clearedCount = squad.cleared_count ?? cleared.length;
+
+  document.getElementById('squadStats').innerHTML = `
+    <div class="insight-stat insight-stat--warn">
+      <span class="insight-stat-value">${notFit.length}</span>
+      <span class="insight-stat-label">Restricted</span>
+    </div>
+    <div class="insight-stat insight-stat--ok">
+      <span class="insight-stat-value">${clearedCount}</span>
+      <span class="insight-stat-label">Cleared</span>
+    </div>
+    <div class="insight-stat">
+      <span class="insight-stat-value">${squad.total_players || 10}</span>
+      <span class="insight-stat-label">Squad</span>
+    </div>`;
+
+  const notFitList = document.getElementById('notFitList');
+  if (!notFit.length) {
+    notFitList.innerHTML = '<li class="insight-player insight-player--none">All players cleared for full training</li>';
+  } else {
+    notFitList.innerHTML = notFit.map(p => {
+      const badge = p.status === 'unavailable' ? 'Unavailable' : 'Modified';
+      const cls = p.status === 'unavailable' ? 'badge-unavailable' : 'badge-modified';
+      return `<li class="insight-player">
+        <div class="insight-player-top">
+          <span class="insight-player-name">${escHtml(p.name)}</span>
+          <span class="insight-player-badge ${cls}">${badge}</span>
+        </div>
+        <p class="insight-player-detail">${escHtml(p.detail)}</p>
+      </li>`;
+    }).join('');
+  }
+
+  const clearedList = document.getElementById('clearedList');
+  const clearedPreview = cleared.slice(0, 6);
+  const more = cleared.length > 6 ? `<li class="insight-player insight-player--more">+${cleared.length - 6} more cleared</li>` : '';
+  clearedList.innerHTML = clearedPreview.map(p =>
+    `<li class="insight-player insight-player--cleared">
+      <span class="insight-player-name">${escHtml(p.name)}</span>
+    </li>`
+  ).join('') + more;
+
+  document.getElementById('audienceList').innerHTML = audiences.map((aud, i) => {
+    const docs = (aud.documents || []).filter(d => d.available);
+    const docItems = docs.map(d =>
+      `<li class="insight-doc">
+        <span class="insight-doc-title">${escHtml(d.title)}</span>
+        <span class="insight-doc-desc">${escHtml(d.desc)}</span>
+      </li>`
+    ).join('');
+    const open = i === 0 ? ' open' : '';
+    const expanded = i === 0 ? 'true' : 'false';
+    return `<div class="insight-audience${open}">
+      <button type="button" class="insight-audience-head" aria-expanded="${expanded}">
+        <span class="insight-audience-icon" aria-hidden="true">${aud.icon}</span>
+        <span class="insight-audience-info">
+          <span class="insight-audience-role">${escHtml(aud.role)}</span>
+          <span class="insight-audience-lead">${escHtml(aud.lead)}</span>
+        </span>
+        <span class="insight-audience-count">${docs.length}</span>
+        <svg class="insight-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="insight-doc-list">${docItems}</ul>
+    </div>`;
   }).join('');
-
-  const activeHtml = activeCases.length
-    ? activeCases.map(p => `
-        <li class="active-case">
-          <span class="active-case-name">${escHtml(p.name)}</span>
-          <span class="active-case-meta">${escHtml(p.position)} · ${escHtml(p.status_label)}</span>
-        </li>`).join('')
-    : '<li class="active-case active-case--none">No active injury cases on file</li>';
-
-  const docItems = documents.map(d => `
-    <li class="doc-item">
-      <span class="doc-item-title">${escHtml(d.title)}</span>
-      <span class="doc-item-desc">${escHtml(d.description)}</span>
-    </li>`).join('');
-
-  const protocolItems = protocols.map(p =>
-    `<li class="protocol-item">${escHtml(p)}</li>`
-  ).join('');
-
-  knowledgeGrid.innerHTML = `
-    <article class="knowledge-card knowledge-card--squad">
-      <div class="knowledge-card-head">
-        <div class="knowledge-card-icon">👥</div>
-        <div>
-          <h3 class="knowledge-card-title">${data.player_count || 0} Squad Players</h3>
-          <p class="knowledge-card-sub">${escHtml(data.club?.name || 'FC Velocity')} · ${firstSquad.length} first team · ${reserveSquad.length} reserve</p>
-        </div>
-      </div>
-      <div class="player-tags">${playerTags}</div>
-    </article>
-
-    <article class="knowledge-card knowledge-card--clinical">
-      <div class="knowledge-card-head">
-        <div class="knowledge-card-icon">🩺</div>
-        <div>
-          <h3 class="knowledge-card-title">${activeCases.length} Active Medical Cases</h3>
-          <p class="knowledge-card-sub">Current injuries and load-managed players</p>
-        </div>
-      </div>
-      <ul class="active-case-list">${activeHtml}</ul>
-    </article>
-
-    <article class="knowledge-card knowledge-card--library">
-      <div class="knowledge-card-head">
-        <div class="knowledge-card-icon">📚</div>
-        <div>
-          <h3 class="knowledge-card-title">${data.document_count || 0} Clinical Documents</h3>
-          <p class="knowledge-card-sub">Indexed in the AthleteCare knowledge base</p>
-        </div>
-      </div>
-      <ul class="doc-list">${docItems}</ul>
-    </article>
-
-    <article class="knowledge-card knowledge-card--protocols">
-      <div class="knowledge-card-head">
-        <div class="knowledge-card-icon">📋</div>
-        <div>
-          <h3 class="knowledge-card-title">${data.protocol_count || 0} Treatment & Prevention Protocols</h3>
-          <p class="knowledge-card-sub">${data.protocol_doc_count || 0} dedicated protocol documents</p>
-        </div>
-      </div>
-      <ul class="protocol-list">${protocolItems}</ul>
-    </article>`;
 }
+
 </script>
 </body>
 </html>

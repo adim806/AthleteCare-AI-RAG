@@ -1,61 +1,166 @@
 FC Velocity — Injury Prevention Guidelines
+SOURCE: prevention_guidelines.txt | DOMAIN: prevention | UPDATED: November 2024
+CHUNK_FORMAT: PREVENTION_ENTRY | Each section is self-contained and independently retrievable.
 
-Injury prevention is the highest-priority function of the FC Velocity medical department. Most football injuries are not random accidents — they are predictable events reducible through systematic preparation. Teams with structured prevention programmes experience 25–50% fewer muscle injuries than those without (UEFA Health and Performance Project data).
-
----
-
-FIFA 11+ WARM-UP (mandatory before every session and match)
-
-The FIFA 11+ programme is compulsory at FC Velocity, supervised by the physiotherapists and Tal Ben-David. It consists of three parts. Part 1 (8 minutes): running exercises with hip flexion, hip abduction, shoulder contact, and hopping. Part 2 (10 minutes): six strengthening exercises in three sets each — Nordic hamstring curls, single-leg squats, Copenhagen planks, lateral band walks, plank with arm raise, and side-to-side hops with landing control. Part 3 (2 minutes): moderate and high-speed directional running. The FIFA 11+ reduces hamstring injuries by up to 50%, ACL injuries by up to 40%, and ankle sprains by up to 20% when performed consistently.
+CORE PRINCIPLE: Most football injuries are not random accidents — they are predictable events reducible through systematic preparation. Teams with structured prevention programmes experience 25–50% fewer muscle injuries than those without (UEFA Health and Performance Project data).
 
 ---
 
-HAMSTRING INJURY PREVENTION
+RECORD_TYPE: PREVENTION_PROGRAMME
+PROGRAMME: FIFA 11+ Warm-Up | MANDATORY: Yes — before every session and every match
 
-Hamstring injuries are the most common injury in professional football. The primary prevention tool is the Nordic hamstring exercise (Russian hamstring curl): player kneels with feet anchored and lowers their torso forward using eccentric hamstring contraction. Protocol: 3 sets of 5–8 reps, three times per week in the off-season, twice per week in-season. A 2015 Cochrane review found the Nordic exercise reduces hamstring injuries by 51%.
+Q: Is the FIFA 11+ warm-up mandatory at FC Velocity?
+A: Yes. The FIFA 11+ programme is compulsory before every training session and every match. Supervised by the physiotherapists and Tal Ben-David.
 
-Players with a sit-and-reach score below 28 cm are placed on a daily 10-minute hamstring stretching routine. Players with any previous hamstring injury perform an additional 10-minute individual warm-up before joining team training — this is a permanent requirement. Marco Alvarez (PLR-001) is on this enhanced hamstring protocol due to his 2022 Grade II and 2023 Grade I injuries.
+Q: What does Part 1 of the FIFA 11+ warm-up include?
+A: Part 1 (8 minutes): running exercises with hip flexion, hip abduction, shoulder contact, and hopping.
 
----
+Q: What does Part 2 of the FIFA 11+ warm-up include?
+A: Part 2 (10 minutes): six strengthening exercises, three sets each — Nordic hamstring curls, single-leg squats, Copenhagen planks, lateral band walks, plank with arm raise, and side-to-side hops with landing control.
 
-ACL INJURY PREVENTION
+Q: What does Part 3 of the FIFA 11+ warm-up include?
+A: Part 3 (2 minutes): moderate and high-speed directional running.
 
-High-risk indicators for ACL injury: poor knee valgus control on landing, H:Q ratio below 0.55, high sprint volume with a limited strength base, and previous ACL injury (the strongest individual risk factor). Prevention exercises include plyometric landing training with video feedback on knee valgus angle, single-leg stability work (Bulgarian split squats, single-leg RDLs, wobble board), hip abductor strengthening (lateral band walks, clamshells), and the Copenhagen plank series. Luca Ferretti (PLR-002) is enrolled in the permanent ACL prevention programme following his 2023 reconstruction.
-
----
-
-PRE-SEASON MUSCULOSKELETAL SCREENING
-
-Every player undergoes full screening before the start of each season. Screening components: Functional Movement Screen (FMS) — 7 patterns scored 0–3, any score of 0 or 1 is flagged for remediation. Isokinetic strength test at 60°/s and 240°/s. Hip range of motion assessment — asymmetry above 10° triggers a hip mobility programme. Ankle dorsiflexion test — below 10° indicates elevated ACL and Achilles risk. Landing mechanics video analysis — knee valgus angle and trunk inclination assessed on drop jump. Players with multiple risk factors are enrolled in a targeted individual prevention programme before the season starts.
-
----
-
-INDIVIDUAL PREVENTION PROGRAMMES — CURRENT SQUAD
-
-James Okafor (PLR-004): Daily 10-minute hip flexor and hamstring flexibility routine, enrolled August 2024 due to below-benchmark sit-and-reach score.
-
-Marco Alvarez (PLR-001): Enhanced hamstring protocol — additional 10-minute individual warm-up before all sessions. In place since August 2022.
-
-Dmitri Volkov (PLR-003): Daily 15-minute lower back mobility and core stability programme: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, and pallof press.
-
-Anton Becker (PLR-005): Shoulder stability programme three times per week: rotator cuff strengthening (external rotation, internal rotation, diagonal patterns), serratus anterior activation, and posterior capsule stretching.
-
-Luca Ferretti (PLR-002): Permanent ACL prevention programme: twice-weekly plyometric landing sessions, weekly isokinetic assessment, and an enhanced FIFA 11+ variant.
+Q: How effective is the FIFA 11+ at preventing injuries?
+A: When performed consistently, the FIFA 11+ reduces hamstring injuries by up to 50%, ACL injuries by up to 40%, and ankle sprains by up to 20%.
 
 ---
 
-LOAD MANAGEMENT
+RECORD_TYPE: PREVENTION_PROGRAMME
+PROGRAMME: Hamstring Injury Prevention | PRIORITY: Highest — most common injury in professional football
 
-The safe ACWR range is 0.80–1.30. ACWR above 1.50 signals high injury risk. Full load management policy and ACWR calculation details are defined in fitness_assessments.txt. During fixture congestion (three or more matches in seven days) the medical team holds a daily 10-minute briefing to assess squad load.
+Q: What is the primary prevention tool for hamstring injuries at FC Velocity?
+A: The Nordic hamstring exercise (Russian hamstring curl). The player kneels with feet anchored and lowers their torso forward using eccentric hamstring contraction.
+
+Q: What is the Nordic hamstring exercise protocol at FC Velocity?
+A: 3 sets of 5–8 repetitions. Three times per week in the off-season. Twice per week in-season.
+
+Q: How effective is the Nordic hamstring exercise?
+A: A 2015 Cochrane review found the Nordic exercise reduces hamstring injuries by 51%.
+
+Q: What triggers a daily hamstring stretching routine?
+A: A sit-and-reach score below 28 cm places the player on a daily 10-minute hamstring stretching routine.
+
+Q: What is the enhanced hamstring warm-up policy for players with previous hamstring injury?
+A: Players with any previous hamstring injury perform an additional 10-minute individual warm-up before joining team training. This is a permanent, non-negotiable requirement.
+
+Q: Which player is currently on the enhanced hamstring protocol?
+A: Marco Alvarez (PLR-001) — due to 2022 left hamstring Grade II strain and 2023 right hamstring Grade I strain (bilateral history). The enhanced warm-up protocol has been in place since August 2022.
 
 ---
 
-RETURN FROM INTERNATIONAL DUTY
+RECORD_TYPE: PREVENTION_PROGRAMME
+PROGRAMME: ACL Injury Prevention | PRIORITY: High — reconstruction has 10–12 month recovery
 
-Players returning from international duty submit their training and match data from the national team. Tal Ben-David reviews the load and may impose a reduced training load for the first 3–5 days. Players who have crossed more than 3 time zones are placed on a jet lag recovery protocol.
+Q: What are the high-risk indicators for ACL injury at FC Velocity?
+A: Poor knee valgus control on landing, H:Q ratio below 0.55, high sprint volume with a limited strength base, and previous ACL injury (the strongest individual risk factor).
+
+Q: What exercises are used for ACL injury prevention?
+A: Plyometric landing training with video feedback on knee valgus angle, single-leg stability work (Bulgarian split squats, single-leg RDLs, wobble board), hip abductor strengthening (lateral band walks, clamshells), and the Copenhagen plank series.
+
+Q: Which player is on the permanent ACL prevention programme?
+A: Luca Ferretti (PLR-002) — enrolled following his March 2023 ACL reconstruction. Programme includes: twice-weekly plyometric landing sessions, weekly isokinetic strength assessment, and enhanced FIFA 11+ variant. This is a permanent, lifelong programme.
 
 ---
 
-HEAT AND HYDRATION POLICY
+RECORD_TYPE: PREVENTION_PROGRAMME
+PROGRAMME: Pre-Season Musculoskeletal Screening | FREQUENCY: Before every season
 
-During training above 28°C: water breaks every 15 minutes, electrolyte drink provided at the half-time break of sessions over 60 minutes. Training must not continue in WBGT conditions above 32°C without Dr. Shapira's approval. A 2% body mass loss through dehydration impairs sprint performance and significantly increases injury risk.
+Q: What does the FC Velocity pre-season musculoskeletal screening include?
+A: Functional Movement Screen (FMS) — 7 movement patterns scored 0–3 (any 0 or 1 flagged for remediation). Isokinetic strength test at 60°/s and 240°/s. Hip ROM assessment (asymmetry >10° triggers hip mobility programme). Ankle dorsiflexion test (below 10° indicates elevated ACL and Achilles risk). Landing mechanics video analysis (knee valgus angle and trunk inclination on drop jump).
+
+Q: What FMS score triggers a remediation programme?
+A: Any score of 0 or 1 on the Functional Movement Screen (FMS) is flagged for a targeted remediation programme.
+
+Q: What hip ROM asymmetry triggers intervention?
+A: Asymmetry above 10° between hips triggers a hip mobility programme.
+
+Q: What ankle dorsiflexion threshold indicates elevated injury risk?
+A: Below 10° of ankle dorsiflexion indicates elevated risk for ACL and Achilles tendon injuries.
+
+Q: What happens if a player has multiple risk factors on pre-season screening?
+A: Players with multiple risk factors are enrolled in a targeted individual prevention programme before the season starts.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: James Okafor | PLAYER_ID: PLR-004 | PROGRAMME_START: August 2024
+TRIGGER: Below-benchmark sit-and-reach score (below 28 cm). Explosive sprint mechanics — elevated hamstring and hip flexor risk.
+
+Q: What is James Okafor's current prevention programme?
+A: Daily 10-minute hip flexor and hamstring flexibility routine. Enrolled August 2024. Sit-and-reach score monitored monthly. If below 28 cm at January 2025 assessment, programme will be escalated.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | PROGRAMME_START: August 2022
+TRIGGER: Left hamstring Grade II strain (2022) followed by right hamstring Grade I strain (2023) — bilateral hamstring injury history.
+
+Q: What is Marco Alvarez's current prevention programme?
+A: Enhanced bilateral hamstring protocol: 10-minute individual warm-up before ALL training sessions (permanent). Nordic hamstring exercise 3×5–8 reps, twice per week in-season. This protocol has been in place since August 2022 and was expanded after the 2023 recurrence on the right side.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | PROGRAMME_START: April 2024 (formalised)
+TRIGGER: Acute lower back episode April 2024 on background of chronic lumbar stiffness.
+
+Q: What is Dmitri Volkov's current prevention programme?
+A: Daily 15-minute lower back mobility and core stability programme: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, and pallof press. Load cap during fixture congestion (no aerial duels in training when ACWR >1.30). Programme compliance confirmed at every clinical session.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Anton Becker | PLAYER_ID: PLR-005 | PROGRAMME_START: June 2021 (post-Bankart repair)
+TRIGGER: Left shoulder subluxation and surgical stabilisation (Bankart repair, February 2021).
+
+Q: What is Anton Becker's current prevention programme?
+A: Shoulder stability programme, three times per week (permanent). Exercises: rotator cuff strengthening (external rotation, internal rotation, diagonal D1 and D2 patterns), serratus anterior activation (wall push-up plus), posterior capsule stretching. Performed on training days only — not on match days.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | PROGRAMME_START: October 2023 (post-ACL RTP)
+TRIGGER: Right knee ACL reconstruction (March 2023) — previous ACL injury is the single strongest individual re-injury risk factor.
+
+Q: What is Luca Ferretti's current prevention programme?
+A: Permanent ACL prevention programme: twice-weekly plyometric landing sessions with video feedback, weekly isokinetic strength assessment of right knee, enhanced FIFA 11+ variant before every session, weekly physiotherapy maintenance session with Dr. Yoel Mizrahi. Monthly ACL-RSI questionnaire (current score 79/100).
+
+---
+
+RECORD_TYPE: PREVENTION_POLICY
+SECTION: Load management
+
+Q: What is the safe ACWR zone at FC Velocity?
+A: 0.80–1.30.
+
+Q: What ACWR indicates elevated injury risk?
+A: 1.30–1.50 indicates elevated risk requiring load monitoring.
+
+Q: What ACWR indicates high injury risk requiring immediate action?
+A: Above 1.50. Tal Ben-David must immediately reduce the player's next session load and notify the responsible physiotherapist.
+
+Q: What protocol applies during fixture congestion (3+ matches in 7 days)?
+A: The medical team holds a daily 10-minute briefing to assess squad load, with particular attention to ACWR values and HRV trends.
+
+---
+
+RECORD_TYPE: PREVENTION_POLICY
+SECTION: Return from international duty
+
+Q: What happens when a player returns from international duty?
+A: The player submits training and match data from the national team. Tal Ben-David reviews the load and may impose a reduced training load for the first 3–5 days. Players who have crossed more than 3 time zones are placed on a jet lag recovery protocol.
+
+---
+
+RECORD_TYPE: PREVENTION_POLICY
+SECTION: Heat and hydration policy
+
+Q: What hydration protocol applies during training above 28°C?
+A: Water breaks every 15 minutes. Electrolyte drink provided at the half-time break of sessions over 60 minutes.
+
+Q: What WBGT temperature stops training?
+A: Training must not continue in WBGT conditions above 32°C without Dr. Shapira's approval.
+
+Q: What level of dehydration impairs performance and increases injury risk?
+A: A 2% body mass loss through dehydration impairs sprint performance and significantly increases injury risk.

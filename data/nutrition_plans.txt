@@ -1,0 +1,117 @@
+FC Velocity — Nutritional Plans and Medical Nutrition Protocols
+SOURCE: nutrition_plans.txt | DOMAIN: nutrition | UPDATED: November 2024
+CHUNK_FORMAT: NUTRITION_ENTRY | Each entry is self-contained and independently retrievable.
+
+RESPONSIBLE: Daniela Ronen (RD, MSc) — Club Nutritionist (part-time). All supplement approvals require sign-off from both Daniela Ronen and Dr. Anat Shapira plus written player consent.
+
+---
+
+RECORD_TYPE: NUTRITION_STANDARDS
+SECTION: Squad-wide nutritional benchmarks
+
+Q: What is the carbohydrate intake target on match days?
+A: 8–10 g per kg of body weight. A 79 kg player (e.g. Alvarez) targets 632–790 g carbohydrate on match day.
+
+Q: What is the daily protein intake target for players?
+A: 1.6–2.2 g per kg of body weight per day. Post-training intake within 30 minutes is prioritised for muscle repair.
+
+Q: What are the protein intake examples per player?
+A: PLR-001 Alvarez (79 kg): 126–174 g/day. PLR-002 Ferretti (74 kg): 118–163 g/day. PLR-003 Volkov (89 kg): 142–196 g/day. PLR-004 Okafor (71 kg): 114–156 g/day. PLR-005 Becker (83 kg): 133–183 g/day.
+
+Q: What is the hydration target before sessions?
+A: Urine colour pale yellow (scale 1–3 on PNSS chart) at the start of each training session. Dehydration above 2% of body weight impairs sprint performance and significantly increases injury risk.
+
+Q: What micronutrients are assessed twice per season?
+A: Iron and Vitamin D. Deficiencies are common in professional footballers. Corrected with personalised plans from Daniela Ronen.
+
+Q: What are the signs of iron deficiency that should be reported?
+A: Persistent fatigue despite adequate rest, reduced training performance, pallor, shortness of breath during exercise. Refer for blood panel if any 2+ signs present.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_NUTRITION_PLAN
+PLAYER: Eitan Levi | PLAYER_ID: PLR-010 | PLAN_TYPE: Bone health — stress fracture recovery
+PLAN_START: March 2024 | PRESCRIBED_BY: Daniela Ronen
+TRIGGER: Left tibial stress fracture (March 2024) — Vitamin D and calcium deficiency identified.
+
+Q: What is Eitan Levi's nutritional protocol?
+A: High-calcium diet plan. Target calcium intake: minimum 1500 mg/day from dietary sources (dairy, leafy greens, fortified foods). Vitamin D supplementation: 2000 IU/day (deficiency confirmed at injury assessment). Daily calcium and Vitamin D supplements until recheck in January 2025.
+
+Q: What foods are emphasised in Eitan Levi's plan?
+A: Dairy: 3+ servings/day (milk, yoghurt, cheese). Fortified plant-based alternatives if dairy is tolerated poorly. Leafy greens: kale, broccoli, pak choi at minimum one meal/day. Fatty fish: 2+ servings/week for Vitamin D (salmon, mackerel, sardines).
+
+Q: When is Eitan Levi's nutritional follow-up?
+A: January 2025 — blood panel for calcium, Vitamin D (25-OH-D3), and bone density DXA scan.
+
+Q: What Vitamin D level is being targeted for Eitan Levi?
+A: Target serum 25-OH-D3: >75 nmol/L (from deficient level at injury). Values below 50 nmol/L indicate deficiency requiring treatment.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_NUTRITION_PLAN
+PLAYER: Yosef Klein | PLAYER_ID: PLR-007 | PLAN_TYPE: Asthma and exercise — general sports nutrition
+MEDICAL_FLAG: Exercise-induced asthma (TUE for salbutamol)
+PLAN_NOTES: No specific nutritional deficiencies identified. Standard sports nutrition protocol applies.
+
+Q: Are there dietary considerations for Yosef Klein's asthma?
+A: Yes. Avoid known dietary triggers (sulphites in processed foods and some wines — not relevant for competition). Ensure adequate antioxidant intake (Vitamin C, Vitamin E, beta-carotene) — oxidative stress may worsen airway inflammation. Omega-3 supplementation (fish oil, 1g/day) reviewed with Dr. Shapira — anti-inflammatory benefit for airway health. All supplements must be WADA-checked before administration.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_NUTRITION_PLAN
+PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | PLAN_TYPE: Anti-inflammatory — chronic lower back
+MEDICAL_FLAG: Chronic lower back condition, age 31
+
+Q: Are there nutritional recommendations for Dmitri Volkov's lower back condition?
+A: Yes. Anti-inflammatory nutrition protocol: Omega-3 supplementation 2g/day (WADA-checked, fish oil — approved by Dr. Shapira and Daniela Ronen). Reduced processed food and refined sugar intake. Mediterranean diet pattern: olive oil, oily fish, nuts, vegetables, legumes emphasised. Adequate protein (1.8 g/kg/day) to support muscle maintenance given chronic spasm risk. Body fat currently 12.8% — within range; avoid excessive weight gain which increases lumbar load.
+
+---
+
+RECORD_TYPE: INDIVIDUAL_NUTRITION_PLAN
+PLAYER: Nabil Harroui | PLAYER_ID: PLR-009 | PLAN_TYPE: Overtraining risk — recovery nutrition
+MEDICAL_FLAG: High development programme load; fatigue monitoring active
+
+Q: What nutritional guidance applies to Nabil Harroui?
+A: Recovery-focused protocol. Carbohydrate intake prioritised post-training: 1.0–1.2 g/kg within 30 minutes of session end to replenish glycogen. Protein co-ingestion post-training: 20–25 g high-quality protein (leucine-rich: whey, chicken, eggs). Sleep nutrition: tryptophan-containing foods in evening (milk, turkey, banana) to support sleep quality. Iron levels monitored given high training volume — blood panel at January 2025 annual assessment.
+
+---
+
+RECORD_TYPE: NUTRITION_POLICY
+SECTION: Supplement approval process
+
+Q: What is the process for approving a player supplement at FC Velocity?
+A: Step 1 — Player or staff requests supplement approval. Step 2 — Daniela Ronen checks supplement against the WADA prohibited list and reviews ingredients. Step 3 — Dr. Shapira gives medical clearance. Step 4 — Player provides written informed consent. Step 5 — Supplement is documented in KineticMind. No supplement may be administered without all 5 steps completed.
+
+Q: Which supplements are currently approved for the squad?
+A: Vitamin D (Levi — deficiency treatment), calcium (Levi — bone health), fish oil/Omega-3 (Volkov — anti-inflammatory, WADA-approved), protein supplements post-training (squad-wide, WADA-checked brands only). All others require individual review.
+
+Q: Is creatine permitted at FC Velocity?
+A: Creatine is not on the WADA prohibited list. However, any use requires approval by Daniela Ronen and Dr. Shapira with documented player consent. No blanket approval — individual review required.
+
+---
+
+RECORD_TYPE: NUTRITION_POLICY
+SECTION: Match day nutrition protocol
+
+Q: What is the pre-match meal protocol?
+A: Main pre-match meal: 3–4 hours before kick-off. High carbohydrate (2–3 g/kg), moderate protein (0.3 g/kg), low fat and fibre to avoid GI disturbance. Examples: pasta with chicken or fish, rice with vegetables and lean protein. Snack 1–2 hours before kick-off: easily digestible carbohydrate, low fibre. Examples: banana, toast with honey, sports drink.
+
+Q: What is the half-time nutrition protocol?
+A: Carbohydrate intake at half-time for matches lasting 90+ minutes: 30–60 g carbohydrate. Sports drink, banana, or energy gel (WADA-checked brand only). Water available throughout.
+
+Q: What is the post-match recovery nutrition protocol?
+A: Within 30 minutes of final whistle: 1.0–1.2 g/kg carbohydrate + 20–25 g protein. Recovery meal within 2 hours. For evening matches: protein-rich meal before sleep (casein protein or dairy — e.g. cottage cheese) to support overnight muscle repair.
+
+---
+
+RECORD_TYPE: NUTRITION_POLICY
+SECTION: Weight and body composition management
+
+Q: What are the body fat benchmarks at FC Velocity?
+A: Outfield players: 8–14%. Goalkeepers: 10–16%. Players outside range are referred to Daniela Ronen for individual review.
+
+Q: What is the approach if a player is above the body fat benchmark?
+A: Gradual reduction only — no crash dieting. Target 0.5 kg per week maximum loss to preserve muscle mass. Caloric deficit achieved through carbohydrate moderation, not protein reduction. Daniela Ronen monitors weekly.
+
+Q: Is rapid weight cutting permitted before matches?
+A: No. Rapid dehydration or weight cutting is prohibited. Dehydration above 2% of body weight impairs sprint performance and increases injury risk — this is incompatible with performance standards.

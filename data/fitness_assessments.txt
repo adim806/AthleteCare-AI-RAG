@@ -1,69 +1,174 @@
 FC Velocity — Fitness Assessment Data and Standards
+SOURCE: fitness_assessments.txt | DOMAIN: fitness_data | UPDATED: November 2024
+CHUNK_FORMAT: FITNESS_ENTRY | Each entry is self-contained and independently retrievable.
 
-This is the single source of truth for all quantitative fitness data. Player IDs match the player profiles in players.txt.
-
----
-
-ASSESSMENT SCHEDULE
-
-Pre-season assessment: 3 weeks before the season starts. Full battery for all first-squad players.
-Mid-season assessment: December winter break. Focus on fatigue monitoring and fitness changes.
-Post-injury assessment: At RTP Stage 3 and Stage 4 to confirm functional readiness.
-Annual comprehensive assessment: Includes blood panels, bone density for selected players, and psychological screening.
+NOTE: This file is the single source of truth for all quantitative fitness data. Player IDs match players.txt.
 
 ---
 
-FITNESS TEST BATTERY AND BENCHMARKS
+RECORD_TYPE: FITNESS_POLICY
+SECTION: Assessment schedule
 
-Yo-Yo Intermittent Recovery Test Level 2 (Yo-Yo IR2): Measures football-specific aerobic capacity. Benchmark outfield players: minimum 1080m, elite target 1400m+. Benchmark goalkeepers: minimum 780m.
+Q: When does the pre-season fitness assessment take place?
+A: 3 weeks before the season starts. Full battery for all first-squad players.
 
-30-metre sprint test (GPS timed): Measures acceleration and maximum speed. Benchmark outfield: below 4.0 seconds. Elite: below 3.8 seconds.
+Q: When does the mid-season fitness assessment take place?
+A: December winter break. Focus on fatigue monitoring and fitness changes.
 
-5-10-5 agility test (Pro Agility Shuttle): Measures lateral agility and change-of-direction speed. Benchmark outfield: below 4.4 seconds.
+Q: When does the post-injury fitness assessment take place?
+A: At RTP Stage 3 and Stage 4 to confirm functional readiness for progression.
 
-Single-leg hop test: Measures lower limb power and symmetry. Limb Symmetry Index (LSI) = injured side / uninjured side × 100. RTP threshold: LSI ≥ 90%.
-
-Isokinetic dynamometry — quadriceps and hamstring: Peak torque measured at 60°/s. H:Q ratio benchmark: 0.60–0.70. Players with H:Q below 0.55 are placed on a targeted hamstring strengthening programme.
-
-Sit-and-reach flexibility: Benchmark above 28 cm. Players below this threshold are placed on a daily hamstring and posterior chain flexibility programme.
-
-Body composition (DXA scan or skinfold): Outfield benchmark 8–14% body fat. Goalkeeper benchmark 10–16%.
-
-Resting heart rate (7-day average): Benchmark 42–58 bpm. Values above 60 bpm after a rest day may indicate insufficient recovery or illness.
-
-Heart Rate Variability — HRV (RMSSD): Each player has a personal pre-season baseline. A drop of more than 20% from personal baseline on consecutive mornings triggers a load management review with Tal Ben-David.
+Q: What does the annual comprehensive assessment include?
+A: Blood panels (including iron, Vitamin D, haematocrit), bone density for selected players, and psychological screening.
 
 ---
 
-SQUAD FITNESS DATA — NOVEMBER 2024 ASSESSMENT
+RECORD_TYPE: FITNESS_BENCHMARK
+SECTION: Test battery benchmarks
 
-PLR-001 Marco Alvarez: Yo-Yo IR2 1360m | Sprint 3.82s | Agility 4.31s | Body fat 10.2% | Status: High fitness, match-ready.
+Q: What is the Yo-Yo IR2 benchmark for outfield players?
+A: Minimum 1080m. Elite target: 1400m+.
 
-PLR-002 Luca Ferretti: Yo-Yo IR2 1180m | Sprint 3.91s | Agility 4.39s | Body fat 11.4% | Status: Good. Slightly below pre-ACL baseline of 1280m. Continued strength development ongoing.
+Q: What is the Yo-Yo IR2 benchmark for goalkeepers?
+A: Minimum 780m.
 
-PLR-003 Dmitri Volkov: Yo-Yo IR2 1020m | Sprint 4.08s | Agility 4.52s | Body fat 12.8% | Status: Moderate-High. Load managed during fixture congestion period.
+Q: What is the 30-metre sprint benchmark for outfield players?
+A: Below 4.0 seconds. Elite: below 3.8 seconds.
 
-PLR-004 James Okafor: Yo-Yo IR2 1420m | Sprint 3.74s | Agility 4.19s | Body fat 9.1% | Status: Excellent. Squad's top performer. Sit-and-reach below benchmark — flexibility programme active.
+Q: What is the 5-10-5 agility benchmark for outfield players?
+A: Below 4.4 seconds.
 
-PLR-005 Anton Becker: Yo-Yo IR2 980m | Sprint 4.21s | Shoulder stability: full range, symmetrical strength | Status: Good. Within expected goalkeeper range.
+Q: What is the single-leg hop test RTP threshold?
+A: Limb Symmetry Index (LSI) ≥ 90%. Calculated as: injured side distance ÷ uninjured side distance × 100.
 
-PLR-006 Rafael Torres: Yo-Yo IR2 1310m | Sprint 3.87s | Agility 4.28s | H:Q ratio 0.64 | Status: High. Cleared for all activity.
+Q: What is the isokinetic H:Q ratio benchmark?
+A: 0.60–0.70 at 60°/s. H:Q below 0.55 triggers immediate referral to targeted hamstring strengthening programme.
 
-PLR-007 Yosef Klein: Yo-Yo IR2 1240m | Sprint 4.01s | Agility 4.37s | Body fat 11.7% | Status: High. Inhaler protocol confirmed.
+Q: What sit-and-reach score triggers a flexibility programme?
+A: Below 28 cm triggers enrolment in a daily posterior chain flexibility programme.
+
+Q: What body fat benchmarks apply?
+A: Outfield players: 8–14%. Goalkeepers: 10–16%.
+
+Q: What resting heart rate is normal for FC Velocity players?
+A: 42–58 bpm. Values above 60 bpm after a rest day may indicate insufficient recovery or illness.
+
+Q: What HRV drop triggers a load management review?
+A: A drop of more than 20% from a player's personal pre-season HRV baseline on consecutive mornings triggers a load management review with Tal Ben-David.
 
 ---
 
-LOAD MONITORING — ACWR POLICY
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | ASSESSMENT_DATE: November 2024
 
-FC Velocity uses GPS tracking (Catapult Sport system) to monitor total distance, high-speed running (above 21 km/h), sprint distance (above 25 km/h), and Player Load daily.
+Q: What are Marco Alvarez's November 2024 fitness results?
+A: Yo-Yo IR2: 1360m (above minimum, approaching elite) | Sprint: 3.82s (elite range) | Agility: 4.31s (within benchmark) | Body fat: 10.2% (within 8–14% range) | Overall status: High fitness, match-ready.
 
-The Acute:Chronic Workload Ratio (ACWR) is the primary injury risk indicator. ACWR is the ratio of the current week's training load to the rolling 4-week average. Safe zone: 0.80–1.30. Elevated risk: 1.30–1.50. High risk: above 1.50. When a player's ACWR exceeds 1.50, Tal Ben-David modifies their next session load and notifies the responsible physiotherapist immediately. ACWR data is reviewed every Monday morning at the medical and conditioning meeting.
+Q: Is Marco Alvarez above or below benchmark?
+A: Above benchmark across all measured metrics. High fitness, fully match-ready.
 
 ---
 
-NUTRITIONAL BENCHMARKS
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | ASSESSMENT_DATE: November 2024
 
-Carbohydrate intake on match days: 8–10 g per kg of body weight.
-Daily protein intake: 1.6–2.2 g per kg of body weight; post-training intake within 30 minutes is prioritised.
-Hydration target: urine colour pale yellow (scale 1–3, PNSS chart) at the start of each session. Dehydration above 2% of body weight impairs sprint performance and increases injury risk.
-Iron and Vitamin D: assessed twice per season. Deficiencies are common in professional footballers and are corrected with personalised supplement plans from nutritionist Daniela Ronen.
+Q: What are Luca Ferretti's November 2024 fitness results?
+A: Yo-Yo IR2: 1180m (above minimum 1080m, below pre-ACL baseline of 1280m — improving) | Sprint: 3.91s | Agility: 4.39s | Body fat: 11.4% | Isokinetic LSI: 98.6% (right knee, above 90% threshold) | H:Q right knee: 0.68 (within 0.60–0.70 range) | ACL-RSI: 79/100 (above 65 threshold).
+
+Q: Is Luca Ferretti back to his pre-ACL fitness level?
+A: Not yet — Yo-Yo IR2 at 1180m vs pre-ACL baseline of 1280m. All other metrics within range. Continued strength and aerobic development ongoing.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | ASSESSMENT_DATE: November 2024
+
+Q: What are Dmitri Volkov's November 2024 fitness results?
+A: Yo-Yo IR2: 1020m (below benchmark but age-managed) | Sprint: 4.08s | Agility: 4.52s (slightly above 4.4s benchmark) | Body fat: 12.8% (within 8–14% range) | ACWR: 1.22 (safe zone).
+
+Q: Is Dmitri Volkov below fitness benchmark?
+A: Yo-Yo IR2 at 1020m is below the 1080m minimum. Agility 4.52s is above the 4.4s benchmark (slower). This is age-managed (31 years old) and load is being monitored. Volkov is not available for periods of fixture congestion without specific load management approval.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: James Okafor | PLAYER_ID: PLR-004 | ASSESSMENT_DATE: November 2024
+
+Q: What are James Okafor's November 2024 fitness results?
+A: Yo-Yo IR2: 1420m (squad best, elite range) | Sprint: 3.74s (squad fastest, elite range) | Agility: 4.19s (elite range) | Body fat: 9.1% (excellent) | Sit-and-reach: BELOW 28cm benchmark — flexibility programme active.
+
+Q: Is James Okafor the fittest player in the squad?
+A: By objective metrics, yes — Okafor leads the squad in Yo-Yo IR2 (1420m) and sprint speed (3.74s). However, his sit-and-reach score is below the 28cm benchmark, creating a hamstring and hip flexor injury risk despite excellent fitness.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Anton Becker | PLAYER_ID: PLR-005 | ASSESSMENT_DATE: November 2024
+
+Q: What are Anton Becker's November 2024 fitness results?
+A: Yo-Yo IR2: 980m (above goalkeeper minimum 780m) | Sprint: 4.21s | Shoulder stability: full ROM, symmetrical strength bilaterally (external rotation R 38 Nm / L 37 Nm; internal rotation R 52 Nm / L 51 Nm).
+
+Q: Is Anton Becker within goalkeeper fitness benchmarks?
+A: Yes. Yo-Yo IR2 980m comfortably above goalkeeper minimum 780m. Shoulder strength symmetrical — stability programme is working.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Rafael Torres | PLAYER_ID: PLR-006 | ASSESSMENT_DATE: November 2024
+
+Q: What are Rafael Torres's November 2024 fitness results?
+A: Yo-Yo IR2: 1310m | Sprint: 3.87s | Agility: 4.28s | H:Q ratio: 0.64 (within 0.60–0.70 target range) | Status: High — cleared for all activity.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Yosef Klein | PLAYER_ID: PLR-007 | ASSESSMENT_DATE: November 2024
+
+Q: What are Yosef Klein's November 2024 fitness results?
+A: Yo-Yo IR2: 1240m | Sprint: 4.01s | Agility: 4.37s | Body fat: 11.7% | Status: High — inhaler protocol confirmed.
+
+---
+
+RECORD_TYPE: FITNESS_POLICY
+SECTION: Load monitoring — ACWR
+
+Q: What GPS system does FC Velocity use?
+A: Catapult Sport GPS system.
+
+Q: What GPS metrics are tracked daily?
+A: Total distance, high-speed running distance (above 21 km/h), sprint distance (above 25 km/h), Player Load, and ACWR.
+
+Q: How is ACWR calculated?
+A: ACWR = current week's training load ÷ rolling 4-week average training load.
+
+Q: What is the safe ACWR zone?
+A: 0.80–1.30.
+
+Q: What ACWR indicates elevated injury risk?
+A: 1.30–1.50 — elevated risk, requires monitoring.
+
+Q: What ACWR indicates high injury risk requiring immediate action?
+A: Above 1.50 — Tal Ben-David must immediately modify the next session load and notify the responsible physiotherapist.
+
+Q: When is the ACWR data reviewed?
+A: Every Monday morning at the medical and conditioning meeting.
+
+---
+
+RECORD_TYPE: FITNESS_POLICY
+SECTION: Nutritional benchmarks
+
+Q: What is the carbohydrate intake target on match days?
+A: 8–10 g per kg of body weight.
+
+Q: What is the daily protein intake target?
+A: 1.6–2.2 g per kg of body weight. Post-training intake within 30 minutes is prioritised.
+
+Q: What is the hydration target before sessions?
+A: Urine colour pale yellow (scale 1–3 on PNSS chart) at the start of each session.
+
+Q: What level of dehydration affects performance?
+A: Dehydration above 2% of body weight impairs sprint performance and increases injury risk.
+
+Q: What micronutrients are assessed twice per season?
+A: Iron and Vitamin D — deficiencies are common in professional footballers and corrected with personalised plans from nutritionist Daniela Ronen.

@@ -1,0 +1,134 @@
+FC Velocity — Concussion Protocol and Management Guide
+SOURCE: concussion_protocol.txt | DOMAIN: clinical_protocols | UPDATED: November 2024
+CHUNK_FORMAT: CONCUSSION_ENTRY | Each section is self-contained and independently retrievable.
+
+BASIS: UEFA concussion protocol aligned with the 2023 International Concussion in Sport (CIS) consensus statement. All FC Velocity staff are trained annually on this protocol.
+
+---
+
+RECORD_TYPE: CONCUSSION_RECOGNITION
+SECTION: Signs and symptoms requiring immediate removal
+
+Q: What signs after a head impact require immediate removal from play?
+A: Loss of consciousness (any duration). Confusion or disorientation. Headache. Visual disturbance (blurred, double, or loss of vision). Balance problems or unsteady gait. Memory problems (cannot recall events). Dazed or "not right" appearance. Seizure. Vomiting following head contact.
+
+Q: What is the principle of "if in doubt, sit them out"?
+A: If any sign or symptom of concussion is present, or if there is any doubt, the player must be removed immediately. There is no minimum threshold — suspected concussion = immediate removal, no exceptions.
+
+Q: Can a player assess themselves for concussion and decide to return?
+A: No. Self-assessment is not valid. The SCAT6 must be administered by a trained physiotherapist or physician.
+
+---
+
+RECORD_TYPE: CONCUSSION_PROTOCOL
+SECTION: Sideline assessment — SCAT6
+
+Q: What is the SCAT6?
+A: The Sport Concussion Assessment Tool, 6th Edition. It is the standard sideline and post-match concussion assessment tool used at FC Velocity.
+
+Q: Who administers the SCAT6?
+A: The team physician (Dr. Shapira) or either physiotherapist (Dr. Cohen or Dr. Mizrahi). All three are trained in SCAT6 administration.
+
+Q: What does the SCAT6 assess?
+A: Symptom inventory (22 symptoms, 0–6 severity scale). Cognitive assessment: orientation (month, date, day, year, time), immediate memory (5 words, 3 trials), concentration (digit span backwards), delayed memory recall. Neurological screen: gait, balance (Modified Balance Error Scoring System — mBESS). Background information: previous concussions, headache history, learning difficulties.
+
+Q: What SCAT6 score indicates concussion?
+A: The SCAT6 is not a pass/fail test with a single threshold. Any symptom rated above 0, any cognitive domain significantly below personal baseline, or any balance impairment indicates concussion. Clinical judgement combined with SCAT6 findings guides the decision.
+
+Q: Is a negative SCAT6 sufficient to clear a player for same-day return?
+A: No. A negative SCAT6 does NOT permit same-day return. The no-same-day-return rule is absolute regardless of SCAT6 result.
+
+---
+
+RECORD_TYPE: CONCUSSION_PROTOCOL
+SECTION: Immediate management — match day
+
+Q: What is the step-by-step match day concussion protocol?
+A: Step 1 — Immediate removal from play. No hesitation. The game continues without the player. Step 2 — Move player to a quiet area away from the pitch. Step 3 — Administer SCAT6. Step 4 — No same-day return to play under any circumstances. Step 5 — Physician assessment within 24 hours (Dr. Shapira or covering physician). Step 6 — Document in KineticMind on the day of assessment — even if the assessment is negative.
+
+Q: What if the suspected concussion occurs and no physician is present?
+A: The senior physiotherapist (Dr. Cohen) has authority to administer SCAT6 and remove the player. Dr. Shapira is contacted by phone. The player does not return to play.
+
+Q: What documentation is required on match day for any head impact?
+A: All concussion assessments — including negative assessments — must be recorded in KineticMind on the same day. This is a legal record requirement.
+
+---
+
+RECORD_TYPE: CONCUSSION_PROTOCOL
+SECTION: Graduated Return-to-Play (GRTP) — 6 steps
+
+Q: What is the concussion Graduated Return-to-Play protocol?
+A: A 6-step protocol. Each step requires the player to be symptom-free for 24 hours before advancing. Minimum total duration: 5 days.
+
+Step 1 — Rest: Complete physical and cognitive rest until symptom-free. No training, no screen time if symptoms are exacerbated by it. Criteria to advance: symptom-free at rest for 24 hours.
+
+Step 2 — Light aerobic exercise: Walking, swimming, stationary cycling. No resistance training. Intensity: heart rate up to 70% maximum. No head-impact risk. Criteria to advance: no symptom return or worsening for 24 hours.
+
+Step 3 — Sport-specific exercise: Football-specific running drills. No heading, no contact, no sprinting to maximum speed. Criteria to advance: no symptom return or worsening for 24 hours.
+
+Step 4 — Non-contact training: Full team training excluding contact drills. Passing, tactical drills, non-contact activities. Physician assessment recommended at this stage. Criteria to advance: no symptom return or worsening for 24 hours.
+
+Step 5 — Full contact training: Unrestricted training including contact drills. Only permitted after medical clearance (physician sign-off). Criteria to advance: no symptom return or worsening for 24 hours.
+
+Step 6 — Return to match play: Full competitive participation. Final sign-off: Dr. Anat Shapira.
+
+Q: What is the minimum total time to return from concussion?
+A: 5 days minimum — one day per step for steps 2–6. If any step causes symptom recurrence, the player drops back one step and the 24-hour symptom-free period restarts.
+
+Q: What if concussion symptoms return during the GRTP?
+A: Drop back to the previous step immediately. Symptom-free period of 24 hours must be re-established at that step before re-attempting progression. If symptoms persist beyond 72 hours at any step, refer to Dr. Shapira for specialist evaluation.
+
+---
+
+RECORD_TYPE: CONCUSSION_PROTOCOL
+SECTION: Special populations and escalation
+
+Q: How many concussions in what period triggers neurologist referral?
+A: 3 or more documented concussions within a 3-year period. The player must be referred to a neurologist before any further RTP clearance is given.
+
+Q: What if a player is under 18?
+A: Players under 18 follow a more conservative protocol — minimum 7-day total GRTP (not 5 days) and physician clearance is required at each stage. Dr. Shapira must be consulted for all under-18 concussion cases.
+
+Q: What if a player presents with prolonged symptoms (post-concussion syndrome)?
+A: If symptoms persist beyond 10 days, refer to Dr. Shapira for specialist neurological evaluation. Do not attempt GRTP until cleared by a neurologist.
+
+Q: Are there red flag symptoms that require emergency hospital referral?
+A: Yes. Emergency hospital referral (call 101) for: loss of consciousness >1 minute, seizure, repeated vomiting, worsening headache, focal neurological signs (weakness, numbness, speech problems), neck pain with head impact (suspected spinal injury — do not move player).
+
+---
+
+RECORD_TYPE: CONCUSSION_PROTOCOL
+SECTION: Cognitive rest and return to learning/work
+
+Q: What cognitive rest is required after a concussion?
+A: In the acute phase (Days 1–2): limit screen time, reading, and cognitively demanding work if these worsen symptoms. Gradual return to cognitive activity is permitted as symptoms improve. Complete cognitive rest is no longer recommended — some cognitive activity is helpful if it does not worsen symptoms.
+
+Q: Can a player review match footage or tactical content while concussed?
+A: Only if this does not worsen symptoms. Introduce gradually — 10–15 minute sessions, increasing as tolerated. Stop immediately if headache or concentration difficulties increase.
+
+---
+
+RECORD_TYPE: CONCUSSION_PREVENTION
+SECTION: Reducing concussion risk
+
+Q: What measures at FC Velocity aim to reduce concussion incidence?
+A: Proper heading technique instruction during FIFA 11+. Training limits on heading repetitions — no high-volume heading sessions (>10 headers per session) for players with prior concussion history. Appropriate headwear available but not mandatory. Pitch-side medical cover at all training sessions.
+
+Q: What is the heading restriction policy for players with prior concussion history?
+A: Players with 1 prior concussion: heading limited to maximum 10 repetitions per training session. Players with 2+ prior concussions: heading during training suspended until specialist review.
+
+---
+
+RECORD_TYPE: QA_PAIR | TOPIC: Concussion quick-access reference
+
+Q: Can a concussed player return to play on the day of the injury?
+A: Never — absolute rule, no exceptions. UEFA regulation and FC Velocity policy.
+
+Q: Who makes the final decision to clear a concussed player for match play?
+A: Dr. Anat Shapira (or covering physician). No player returns to competitive play without physician sign-off after concussion.
+
+Q: Does a normal SCAT6 result mean a player can return?
+A: No. A normal SCAT6 does not permit same-day return. All 6 GRTP steps must be completed.
+
+Q: What is the emergency number in Israel?
+A: 101 (emergency services). Used for cardiac arrest, unconscious player, spinal injury, seizure, or any life-threatening emergency.

@@ -1,65 +1,148 @@
 FC Velocity — Medical Staff Guide and Operational Procedures
-
-FC Velocity competes in the Israeli Premier League. The medical department: Chief Medical Officer Dr. Anat Shapira (MD, MSc Sports Medicine), lead physiotherapist Dr. Sara Cohen (BPhys, MSc), physiotherapist Dr. Yoel Mizrahi (BPhys), fitness and conditioning coach Tal Ben-David (MSc Sports Science), and part-time nutritionist Daniela Ronen (RD, MSc). Dr. Shapira has final authority on all medical decisions including return-to-play clearance. In her absence, Dr. Cohen assumes interim authority for physiotherapy decisions only.
-
----
-
-DAILY WORKFLOW
-
-07:00: Physiotherapy room opens. Morning treatment appointments for pre-training rehabilitation.
-08:00–10:30: Training session. At least one physiotherapist pitch-side at all times.
-10:30: Post-training treatment. Players with acute or sub-acute injuries attend physiotherapy room.
-11:00: GPS load data uploaded and reviewed by Tal Ben-David. ACWR values calculated, flagged players identified.
-11:30: Daily medical handover (15 minutes) — Dr. Cohen and Tal Ben-David review flagged players. Dr. Shapira joins every Monday and Friday.
-Afternoon: Rehabilitation sessions for injured players. RTP stage assessments as scheduled.
-Match days: Full medical team travels with the squad. Emergency equipment checklist completed before departure.
+SOURCE: medical_staff_guide.txt | DOMAIN: operations | UPDATED: November 2024
+CHUNK_FORMAT: OPERATIONAL_ENTRY | Each section is self-contained and independently retrievable.
 
 ---
 
-MATCH DAY MEDICAL PROTOCOL
+RECORD_TYPE: STAFF_DIRECTORY
+SECTION: Medical department structure and authority
 
-Pre-match (90 minutes before kick-off): Pitch-side medical bag checked — defibrillator, oxygen, cervical collar, stretcher, analgesics, anti-emetics, glucose. Physiotherapist reviews all injury-flagged players with coaching staff. Players with taped joints or braces confirmed ready. Any painkilling injection must be cleared by Dr. Shapira and recorded in KineticMind.
+Q: Who is the Chief Medical Officer at FC Velocity?
+A: Dr. Anat Shapira (MD, MSc Sports Medicine). She has final authority on all medical decisions, including return-to-play clearance, painkilling injections, supplement approvals, and emergency decisions.
 
-During the match: One physiotherapist on the bench at all times. Dr. Shapira or a covering physician in the stadium. Any player leaving the pitch for medical assessment must be evaluated before re-entry — re-entry permitted only with physiotherapist clearance. Concussion assessment: any player with a head impact causing loss of consciousness, confusion, headache, visual disturbance, or balance problems must be immediately removed and assessed with the SCAT6 tool. A player with suspected concussion may not return to play on the same day — this is absolute per UEFA regulations.
+Q: Who is the lead physiotherapist at FC Velocity?
+A: Dr. Sara Cohen (BPhys, MSc). In Dr. Shapira's absence, Dr. Cohen assumes interim authority for physiotherapy decisions only — not for surgical or prescription decisions.
 
-Post-match: Cold water immersion within 30 minutes for players with high match loads (above 90 minutes or high sprint volume). Physiotherapy team available for 60 minutes post-match. Injury log updated in KineticMind before staff depart.
+Q: Who is the second physiotherapist?
+A: Dr. Yoel Mizrahi (BPhys). Handles maintenance sessions, routine assessments, and active rehabilitation cases.
 
----
+Q: Who is the fitness and conditioning coach?
+A: Tal Ben-David (MSc Sports Science). Responsible for GPS load monitoring, ACWR calculations, and daily conditioning. Reports flagged players to the physiotherapy team.
 
-CONCUSSION PROTOCOL
+Q: Who is the club nutritionist?
+A: Daniela Ronen (RD, MSc). Part-time role. Responsible for nutritional plans, supplement approvals, and micronutrient assessments.
 
-FC Velocity follows the UEFA concussion protocol aligned with the 2023 International Concussion in Sport consensus statement. Step 1: immediate removal from play — no exceptions. Step 2: SCAT6 assessment by team physician or physiotherapist. Step 3: no same-day return to play — absolute. Step 4: physician assessment within 24 hours. Step 5: graduated 6-step RTP — rest → light aerobic exercise → sport-specific exercise → non-contact training → full contact training → match play. Each step requires 24 hours symptom-free before advancing. Minimum total return time is 5 days. Players with 3 or more documented concussions in 3 years are referred to a neurologist before any further RTP clearance.
+Q: Who has final authority on return-to-play clearance?
+A: Dr. Anat Shapira. No player returns to competitive play without her sign-off, regardless of physiotherapy assessment.
 
----
-
-DOCUMENTATION REQUIREMENTS
-
-All of the following must be recorded in KineticMind on the same day they occur: new injury assessment and diagnosis, all treatment sessions (exercises, modalities, patient response), RTP stage progressions with supporting test results, match day injury incidents, concussion assessments including negative assessments, strength and fitness test results, and all medication administration. The KineticMind system is the club's legal medical record. Entries must be made by the staff member who provided the treatment — delegation is not permitted.
-
-Medical confidentiality: player information shared with coaching staff is limited to training availability and load restrictions. Diagnosis and prognosis may be shared with the head coach. Detailed medical history beyond the current episode requires written player consent.
-
----
-
-EMERGENCY PROCEDURES
-
-Suspected cardiac arrest: call emergency services (101 in Israel) immediately, begin CPR, apply the AED located at the pitch-side medical station or in the dressing room. Dr. Shapira takes lead; physiotherapist assists.
-
-Suspected spinal injury: do not move the player. Stabilise head and neck manually. Manage airway only if breathing is obstructed. Cervical collar applied by the physician only.
-
-Suspected fracture: splint in the position found — do not attempt to realign. Apply ice. Refer to hospital for imaging.
-
-Heat stroke (core temperature suspected above 40°C, confusion, hot dry skin): move player to shade, cold water immersion if available, cold towels to neck, armpits and groin. Call emergency services if the player loses consciousness.
+Q: Who is FC Velocity's registered whereabouts officer for anti-doping?
+A: Dr. Anat Shapira is responsible for accurate whereabouts data for all first-squad players subject to out-of-competition testing.
 
 ---
 
-ANTI-DOPING COMPLIANCE
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Daily workflow
 
-FC Velocity operates under full WADA and UEFA anti-doping compliance. The WADA prohibited list is reviewed annually by all medical staff before pre-season. All player supplements must be approved by both Dr. Shapira and Daniela Ronen, and the player must provide written informed consent before any supplement is administered.
+Q: What is the daily medical workflow at FC Velocity?
+A: 07:00 — Physiotherapy room opens (pre-training rehabilitation). 08:00–10:30 — Training session (at least one physiotherapist pitch-side). 10:30 — Post-training treatment for injured players. 11:00 — GPS data uploaded and ACWR values calculated by Tal Ben-David. 11:30 — Daily medical handover (15 min): Dr. Cohen and Tal Ben-David review flagged players. Dr. Shapira joins every Monday and Friday. Afternoon — Rehabilitation sessions and RTP stage assessments. Match days — Full medical team travels with squad.
 
-TUE on file: Yosef Klein (PLR-007) holds a Therapeutic Use Exemption for salbutamol (asthma inhaler). Dr. Shapira is the club's registered whereabouts officer, responsible for accurate whereabouts data for all first-squad players subject to out-of-competition testing.
+Q: How often does Dr. Shapira attend the daily medical handover?
+A: Every Monday and Friday. Dr. Cohen and Tal Ben-David run the handover on other days.
+
+Q: Who is pitch-side during training at all times?
+A: At least one physiotherapist must be pitch-side during every training session.
 
 ---
 
-COMMUNICATION WITH COACHING STAFF
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Match day medical protocol
 
-The medical department provides the head coach with a daily injury report before training. The report states: players unavailable for training with expected return date, players available for modified training only, players cleared for full training, and any load management restrictions. Diagnosis and treatment details are not included. The coaching staff may not instruct medical staff to clear a player who has not met RTP criteria. Disagreements are escalated to the club director.
+Q: What is checked 90 minutes before kick-off?
+A: Pitch-side medical bag checked — defibrillator (AED), oxygen, cervical collar, stretcher, analgesics, anti-emetics, glucose. Physiotherapist reviews all injury-flagged players with coaching staff. Taped joints and braces confirmed. Yosef Klein's inhaler presence confirmed.
+
+Q: What is the protocol for a player leaving the pitch for medical assessment during a match?
+A: Any player who leaves the pitch for medical assessment must be evaluated before re-entry. Re-entry is permitted only with physiotherapist clearance.
+
+Q: What is the concussion protocol during a match?
+A: Any player with a head impact causing loss of consciousness, confusion, headache, visual disturbance, or balance problems must be immediately removed and assessed with the SCAT6 tool. A player with suspected concussion may NOT return to play on the same day — this is absolute per UEFA regulations.
+
+Q: What painkilling injections are permitted during a match?
+A: Any painkilling injection must be cleared by Dr. Shapira and recorded in KineticMind before administration.
+
+Q: What recovery is required post-match for high-load players?
+A: Cold water immersion within 30 minutes for players with high match loads (above 90 minutes played or high sprint volume). Physiotherapy team available for 60 minutes post-match. Injury log updated in KineticMind before staff depart.
+
+---
+
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Concussion protocol (full)
+
+Q: What is FC Velocity's concussion protocol?
+A: Step 1 — Immediate removal from play (no exceptions). Step 2 — SCAT6 assessment by team physician or physiotherapist. Step 3 — No same-day return to play (absolute). Step 4 — Physician assessment within 24 hours. Step 5 — Graduated 6-step RTP: rest → light aerobic exercise → sport-specific exercise → non-contact training → full contact training → match play. Each step requires 24 hours symptom-free before advancing. Minimum total return time: 5 days.
+
+Q: What concussion assessment tool is used at FC Velocity?
+A: SCAT6 (Sport Concussion Assessment Tool, 6th Edition) — used for all sideline and post-match concussion assessments.
+
+Q: Can a player return to play on the day of a concussion?
+A: Absolutely not. This is non-negotiable per UEFA regulations and FC Velocity policy. No same-day return — ever.
+
+Q: What is the minimum return time after concussion?
+A: 5 days, following the full 6-step protocol with 24 hours symptom-free at each step.
+
+Q: How many concussions in what period triggers a neurologist referral?
+A: Players with 3 or more documented concussions in 3 years are referred to a neurologist before any further RTP clearance.
+
+Q: Are negative concussion assessments also documented?
+A: Yes. All concussion assessments — including negative assessments — must be recorded in KineticMind on the day they occur.
+
+---
+
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Documentation requirements (KineticMind)
+
+Q: What must be recorded in KineticMind on the day it occurs?
+A: New injury assessments and diagnoses, all treatment sessions (exercises, modalities, patient response), RTP stage progressions with supporting test results, match day injury incidents, all concussion assessments (including negative), strength and fitness test results, and all medication administration.
+
+Q: Is KineticMind FC Velocity's legal medical record?
+A: Yes. KineticMind is the club's legal medical record. Entries must be made by the staff member who provided the treatment — delegation is not permitted.
+
+Q: Can documentation be entered retrospectively?
+A: No. Notes must be entered on the day of treatment, not retrospectively.
+
+Q: What medical information can be shared with the coaching staff?
+A: Training availability and load restrictions. Diagnosis and prognosis may be shared with the head coach. Detailed medical history beyond the current episode requires written player consent.
+
+---
+
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Emergency procedures
+
+Q: What is the cardiac arrest protocol?
+A: Call emergency services (101 in Israel) immediately. Begin CPR. Apply the AED located at the pitch-side medical station or in the dressing room. Dr. Shapira takes lead; physiotherapist assists.
+
+Q: What is the suspected spinal injury protocol?
+A: Do not move the player. Stabilise head and neck manually. Manage airway only if breathing is obstructed. Cervical collar applied by the physician only — not by physiotherapy staff.
+
+Q: What is the suspected fracture protocol?
+A: Splint in the position found — do not attempt to realign. Apply ice. Refer to hospital for imaging.
+
+Q: What is the heat stroke protocol?
+A: Signs: suspected core temperature above 40°C, confusion, hot dry skin. Actions: move player to shade, cold water immersion if available, cold towels to neck, armpits, and groin. Call emergency services if player loses consciousness.
+
+Q: Where is the AED located at FC Velocity?
+A: At the pitch-side medical station and in the dressing room.
+
+---
+
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Anti-doping compliance
+
+Q: What anti-doping framework does FC Velocity operate under?
+A: Full WADA and UEFA anti-doping compliance. The WADA prohibited list is reviewed annually by all medical staff before pre-season.
+
+Q: What is the process for approving player supplements?
+A: All player supplements must be approved by both Dr. Shapira and Daniela Ronen. The player must provide written informed consent before any supplement is administered.
+
+Q: Which player has a TUE at FC Velocity?
+A: Yosef Klein (PLR-007) holds a Therapeutic Use Exemption (TUE) for salbutamol (asthma inhaler). TUE filed with Dr. Shapira. Inhaler confirmed on bench at every match.
+
+---
+
+RECORD_TYPE: OPERATIONAL_PROCEDURE
+SECTION: Communication with coaching staff
+
+Q: What is in the daily injury report provided to the head coach?
+A: Players unavailable for training with expected return date. Players available for modified training only. Players cleared for full training. Any load management restrictions. Diagnosis and treatment details are NOT included.
+
+Q: Can the coaching staff instruct medical staff to clear a player who has not met RTP criteria?
+A: No. The coaching staff may not instruct medical staff to clear a player who has not met RTP criteria. Disagreements are escalated to the club director.

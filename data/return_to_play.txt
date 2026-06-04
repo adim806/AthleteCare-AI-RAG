@@ -1,57 +1,172 @@
 FC Velocity — Return-to-Play Protocol
+SOURCE: return_to_play.txt | DOMAIN: clinical_protocols | UPDATED: November 2024
+CHUNK_FORMAT: RTP_ENTRY | Each stage and criterion is self-contained and independently retrievable.
 
-The Return-to-Play (RTP) framework at FC Velocity is criteria-based: time alone does not determine readiness. A player must meet both functional and psychological criteria before advancing each stage. The final decision to return a player to competition is made jointly by the physiotherapist, the sports physician (Dr. Shapira), and the head coach.
-
----
-
-THE FIVE-STAGE RTP FRAMEWORK
-
-RTP Stage 1 — Rest: Goal is to protect the injured tissue. Player rests from all sport activity. General conditioning (upper body, pool) maintained where possible. Criteria to progress: no pain at rest, swelling resolved, full weight-bearing restored for lower limb injuries.
-
-RTP Stage 2 — Light aerobic exercise: Goal is to restore cardiovascular fitness without loading the injured structure. Permitted activities: walking, pool running, stationary cycling, upper body gym work. Criteria to progress: zero pain or swelling during and after activity, subjective pain score 0/10.
-
-RTP Stage 3 — Sport-specific individual exercise: Goal is to restore football movement patterns. Permitted activities: straight-line jogging, non-contact ball work, passing drills. Criteria to progress: no symptoms at Stage 3 load, injured limb strength at minimum 80% of contralateral limb, physiotherapist confirmation.
-
-RTP Stage 4 — Non-contact team training: Goal is to reintegrate the player into the team environment. Permitted activities: full team sessions excluding physical challenges and collisions. Criteria to progress: full Stage 4 sessions completed without symptom recurrence, injured limb strength at minimum 90% of contralateral limb, single-leg hop test LSI ≥ 90%, physician clearance for Grade II injuries and surgical cases.
-
-RTP Stage 5 — Full training and competition: Goal is full participation in all activities and competitive matches. Criteria to complete: all functional tests passed, psychological readiness confirmed (ACL-RSI score ≥ 65 for ACL injuries), head coach agreement, final sign-off by Dr. Anat Shapira.
+CORE PRINCIPLE: Time alone does not determine readiness. A player must meet both functional and psychological criteria before advancing each stage. The final decision to return a player to competition is made jointly by the physiotherapist, Dr. Shapira, and the head coach.
 
 ---
 
-FUNCTIONAL TESTS FOR RTP CLEARANCE
+RECORD_TYPE: RTP_STAGE
+STAGE: 1 | NAME: Rest and protection
+GOAL: Protect the injured tissue and prevent secondary damage.
 
-Single-leg hop test: Player hops forward on one leg. Injured limb must reach at least 90% of the uninjured limb distance (LSI ≥ 90%).
-Triple hop test: Three consecutive hops on one leg — same 90% LSI threshold applies.
-Isokinetic strength: Hamstring-to-quadriceps ratio (H:Q) must be 0.60–0.70. Absolute strength of injured limb must be ≥ 90% of contralateral.
-Sprint speed test: Player must achieve at least 95% of pre-injury maximum sprint speed on GPS tracking.
-5-10-5 agility test: Completion time must be within 10% of the player's pre-injury baseline.
+Q: What is RTP Stage 1?
+A: Stage 1 is complete rest from all sport activity. General conditioning (upper body, pool) is maintained where possible to preserve fitness.
 
----
-
-PSYCHOLOGICAL READINESS
-
-Fear of re-injury is common, especially after ACL surgery, and may persist even when the player is physically ready. The ACL-RSI questionnaire is used for all ACL cases — a score of 65 or above (0–100 scale) is required before Stage 5 clearance. For other injuries a clinical interview by the physiotherapist assesses confidence and willingness to engage in contact. Players expressing fear of re-injury must not be rushed. Graduated exposure to contact during Stage 4 is the appropriate response.
+Q: What are the criteria to progress from RTP Stage 1 to Stage 2?
+A: No pain at rest, swelling fully resolved, and full weight-bearing restored for lower limb injuries.
 
 ---
 
-RETURN TIMELINES BY INJURY TYPE
+RECORD_TYPE: RTP_STAGE
+STAGE: 2 | NAME: Light aerobic exercise
+GOAL: Restore cardiovascular fitness without loading the injured structure.
 
-Hamstring strain Grade I: return in 5–10 days.
-Hamstring strain Grade II: return in 3–6 weeks, dynamometer test required.
-Calf strain Grade I: return in 5–10 days.
-Groin strain Grade I: return in 7–14 days.
-Ankle sprain Grade I: return in 5–7 days.
-Ankle sprain Grade II: return in 2–4 weeks.
-Knee MCL sprain Grade I: return in 1–2 weeks.
-Knee MCL sprain Grade II: return in 4–8 weeks.
-ACL reconstruction: return to training 9–10 months, return to competition 10–12 months.
-Stress fracture tibia or metatarsal: return to training 10–14 weeks, full competition 14–18 weeks.
-Concussion: minimum 5 days, following the 6-step graduated concussion RTP protocol.
+Q: What is RTP Stage 2?
+A: Light aerobic exercise that avoids loading the injured structure. Permitted activities: walking, pool running, stationary cycling, upper body gym work.
 
-All timelines are minimums. No player advances without meeting the criteria regardless of elapsed time.
+Q: What are the criteria to progress from RTP Stage 2 to Stage 3?
+A: Zero pain or swelling during and after all Stage 2 activities. Subjective pain score 0/10 throughout.
 
 ---
 
-RE-INJURY REVIEW
+RECORD_TYPE: RTP_STAGE
+STAGE: 3 | NAME: Sport-specific individual exercise
+GOAL: Restore football movement patterns without team contact.
 
-If a player sustains a re-injury to the same structure within 6 months of returning to play, a formal review is conducted at the next medical team meeting. The review examines whether the RTP protocol was followed correctly, whether functional criteria were genuinely met, and whether external pressure from coaching staff influenced the clearance decision. A re-injury review report must be filed in the KineticMind system within 7 days.
+Q: What is RTP Stage 3?
+A: Sport-specific individual exercise. Permitted activities: straight-line jogging, non-contact ball work, passing drills.
+
+Q: What are the criteria to progress from RTP Stage 3 to Stage 4?
+A: No symptoms at Stage 3 load. Injured limb strength at minimum 80% of contralateral limb. Physiotherapist confirmation.
+
+Q: What strength level is required at RTP Stage 3?
+A: The injured limb must reach at least 80% of the contralateral limb's strength before progressing to Stage 4.
+
+---
+
+RECORD_TYPE: RTP_STAGE
+STAGE: 4 | NAME: Non-contact team training
+GOAL: Reintegrate the player into the team environment without collision risk.
+
+Q: What is RTP Stage 4?
+A: Full team training sessions excluding physical challenges and collisions. No contact drills.
+
+Q: What are the criteria to progress from RTP Stage 4 to Stage 5?
+A: Full Stage 4 sessions completed without symptom recurrence. Injured limb strength at minimum 90% of contralateral limb. Single-leg hop test LSI ≥ 90%. Physician clearance for Grade II injuries and all surgical cases.
+
+Q: What strength level is required at RTP Stage 4?
+A: The injured limb must reach at least 90% of the contralateral limb's strength on isokinetic testing.
+
+Q: What is the LSI threshold required at Stage 4?
+A: Single-leg hop test Limb Symmetry Index (LSI) ≥ 90%. Calculated as: injured limb distance ÷ uninjured limb distance × 100.
+
+Q: Who must clear a Grade II injury before Stage 4?
+A: Both the responsible physiotherapist and Dr. Anat Shapira must provide clearance before a player with a Grade II injury or surgical history advances to Stage 4.
+
+---
+
+RECORD_TYPE: RTP_STAGE
+STAGE: 5 | NAME: Full training and competition
+GOAL: Full participation in all training and competitive matches.
+
+Q: What is RTP Stage 5?
+A: Full participation in all training and competition, including contact and match play.
+
+Q: What are the criteria to complete RTP Stage 5 and return to competitive play?
+A: All functional tests passed. Psychological readiness confirmed (ACL-RSI score ≥65 for ACL injuries). Head coach agreement. Final sign-off by Dr. Anat Shapira.
+
+Q: Can a player return to competition without head coach agreement?
+A: No. Return to competitive play requires agreement from the physiotherapist, Dr. Shapira, and the head coach.
+
+---
+
+RECORD_TYPE: RTP_FUNCTIONAL_TESTS
+RECORD_TYPE: Functional tests for RTP clearance
+
+Q: What is the single-leg hop test and what is the threshold?
+A: The player hops forward on one leg. The injured limb must reach at least 90% of the uninjured limb's distance. LSI = injured ÷ uninjured × 100. Threshold: LSI ≥ 90%.
+
+Q: What is the triple hop test threshold?
+A: Three consecutive hops on one leg — same 90% LSI threshold as the single-leg hop test.
+
+Q: What are the isokinetic strength criteria for RTP?
+A: H:Q ratio must be 0.60–0.70. Absolute strength of the injured limb must be ≥ 90% of the contralateral limb at 60°/s.
+
+Q: What sprint speed is required for RTP clearance?
+A: The player must achieve at least 95% of their pre-injury maximum sprint speed on GPS tracking.
+
+Q: What is the agility test standard for RTP?
+A: 5-10-5 agility test completion time must be within 10% of the player's pre-injury baseline.
+
+---
+
+RECORD_TYPE: RTP_PSYCHOLOGICAL
+SECTION: Psychological readiness
+
+Q: What psychological assessment is used for ACL RTP clearance?
+A: The ACL-RSI (ACL Return to Sport after Injury) questionnaire. A score of 65 or above on a 0–100 scale is required before Stage 5 clearance.
+
+Q: What is the ACL-RSI threshold for returning to competition?
+A: ≥65 out of 100. A score below 65 means the player is NOT psychologically cleared, regardless of physical readiness.
+
+Q: What is the psychological assessment for non-ACL injuries?
+A: A clinical interview by the physiotherapist assessing confidence and willingness to engage in contact. If a player expresses fear of re-injury, graduated exposure to contact during Stage 4 is the appropriate response — the player must not be rushed.
+
+Q: Can a player be cleared physically but not psychologically?
+A: Yes. Physical and psychological criteria are independent. A player who passes all functional tests but scores below 65 on ACL-RSI is not cleared for Stage 5. Both must be satisfied.
+
+---
+
+RECORD_TYPE: RTP_TIMELINES
+SECTION: Return timelines by injury type
+
+Q: How long does a Grade I hamstring strain take to return?
+A: 5–10 days. This is a minimum — all criteria must be met regardless of elapsed time.
+
+Q: How long does a Grade II hamstring strain take to return?
+A: 3–6 weeks. Isokinetic dynamometer testing is mandatory before Stage 4 clearance.
+
+Q: How long does a Grade I calf strain take to return?
+A: 5–10 days.
+
+Q: How long does a Grade I groin strain take to return?
+A: 7–14 days.
+
+Q: How long does a Grade I ankle sprain take to return?
+A: 5–7 days.
+
+Q: How long does a Grade II ankle sprain take to return?
+A: 2–4 weeks.
+
+Q: How long does a Grade I knee MCL sprain take to return?
+A: 1–2 weeks.
+
+Q: How long does a Grade II knee MCL sprain take to return?
+A: 4–8 weeks.
+
+Q: How long does ACL reconstruction rehabilitation take?
+A: Return to training: 9–10 months. Return to competitive play: 10–12 months. Both are minimums — criteria must be met.
+
+Q: How long does a tibial or metatarsal stress fracture take to return?
+A: Return to training: 10–14 weeks. Return to full competition: 14–18 weeks.
+
+Q: What is the minimum return time after concussion?
+A: 5 days minimum, following the 6-step graduated concussion RTP protocol with 24 hours symptom-free between each step.
+
+Q: Does meeting the time threshold mean a player can return?
+A: No. All timelines are minimums. A player cannot advance regardless of time elapsed unless all functional and psychological criteria are met.
+
+---
+
+RECORD_TYPE: RTP_REINJURY_REVIEW
+SECTION: Re-injury review policy
+
+Q: What triggers a re-injury review at FC Velocity?
+A: A re-injury to the same structure within 6 months of returning to play triggers a formal review at the next medical team meeting.
+
+Q: What does the re-injury review examine?
+A: Whether the RTP protocol was followed correctly, whether functional criteria were genuinely met, and whether external pressure from coaching staff influenced the clearance decision.
+
+Q: What must be filed after a re-injury review?
+A: A re-injury review report must be filed in KineticMind within 7 days of the re-injury.

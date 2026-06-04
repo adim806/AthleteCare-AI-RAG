@@ -1,0 +1,138 @@
+FC Velocity — Daily Squad Status Report
+SOURCE: squad_status_daily.txt | DOMAIN: squad_status | UPDATED: 21 November 2024
+CHUNK_FORMAT: STATUS_ENTRY | Each player status entry is self-contained and independently retrievable.
+
+PURPOSE: Fast-access snapshot of current injury, availability, load, and prevention status for every squad member. Updated daily. For historical injury details see injury_history.txt; for session notes see clinical_notes_active.txt.
+
+LAST_UPDATED: 21 November 2024 | UPDATED_BY: Dr. Sara Cohen
+
+---
+
+RECORD_TYPE: SQUAD_OVERVIEW | DATE: 21 November 2024
+
+PLAYERS_UNAVAILABLE_FOR_TRAINING (1):
+  - PLR-008 Oren Shoval — right calf strain Grade I, Stage 2 rehab, return target 28 Nov 2024
+
+PLAYERS_AVAILABLE_MODIFIED_TRAINING (1):
+  - PLR-003 Dmitri Volkov — load managed; no aerial duel training; ACWR 1.22
+
+PLAYERS_CLEARED_FULL_TRAINING (8):
+  - PLR-001 Marco Alvarez — cleared (enhanced hamstring warm-up required)
+  - PLR-002 Luca Ferretti — cleared (weekly physio maintenance required)
+  - PLR-004 James Okafor — cleared
+  - PLR-005 Anton Becker — cleared (shoulder programme on training days)
+  - PLR-006 Rafael Torres — cleared
+  - PLR-007 Yosef Klein — cleared (inhaler required pitch-side)
+  - PLR-009 Nabil Harroui — cleared (HRV monitoring active)
+  - PLR-010 Eitan Levi — cleared (bone density follow-up January 2025)
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-001 | NAME: Marco Alvarez | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No active injury.
+LOAD_STATUS: ACWR not flagged.
+DAILY_REQUIREMENTS: 10-minute individual hamstring warm-up before joining team session (permanent requirement — do not skip).
+UPCOMING: No scheduled medical appointments.
+FLAGS: Bilateral hamstring history. Report any hamstring discomfort same day to Dr. Sara Cohen.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-002 | NAME: Luca Ferretti | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No active injury. Post-ACL maintenance ongoing.
+LOAD_STATUS: ACWR within safe zone. Mild fatigue noted post-match week (12 Nov session) — resolved.
+DAILY_REQUIREMENTS: FIFA 11+ enhanced variant. Weekly maintenance session (next: 26 November with Dr. Yoel Mizrahi).
+CURRENT_KEY_METRICS: LSI 98.6% | H:Q 0.68 | ACL-RSI 79/100.
+FLAGS: Weekly maintenance session non-negotiable. Any right knee swelling = same-day referral to Dr. Shapira.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-003 | NAME: Dmitri Volkov | DATE: 21 November 2024
+AVAILABILITY: MODIFIED TRAINING ONLY
+INJURY_STATUS: Chronic lower back — stable. No acute episode active. Minor morning stiffness (2/10) resolved within 20 min.
+LOAD_STATUS: ACWR 1.22 — safe zone.
+TRAINING_RESTRICTIONS: No aerial duel training. No heavy physical contact. Full technical and tactical participation permitted.
+DAILY_REQUIREMENTS: Daily 15-minute mobility programme (Thomas stretch, cat-cow, bird-dog, dead bug, pallof press) — confirmed compliant.
+NEXT_SESSION: 28 November 2024 (Dr. Sara Cohen).
+FLAGS: If lower back pain exceeds 4/10 or any leg pain develops — immediate assessment and rest from training.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-004 | NAME: James Okafor | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No active injury.
+LOAD_STATUS: ACWR within safe zone. Highest physical output player — monitor for spike after congestion periods.
+DAILY_REQUIREMENTS: Daily 10-minute hip flexor and hamstring flexibility routine (pre-training).
+FLAGS: Sit-and-reach below 28cm benchmark — flexibility programme must continue. Reassess January 2025.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-005 | NAME: Anton Becker | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No active injury. Shoulder fully stable.
+LOAD_STATUS: No flags.
+DAILY_REQUIREMENTS: Shoulder stability programme 3×/week on training days (next session: 22 November, Dr. Yoel Mizrahi). NOT on match days.
+FLAGS: Any left shoulder discomfort after diving contact = same-day assessment.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-006 | NAME: Rafael Torres | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No active injury. Left groin strain fully resolved (discharged 15 September 2024).
+LOAD_STATUS: H:Q 0.64 — within range. No flags.
+DAILY_REQUIREMENTS: Copenhagen plank in FIFA 11+ enhanced routine (adductor maintenance, ongoing).
+FLAGS: Right knee medial meniscus — any locking, clicking, or medial joint-line pain = immediate MRI referral.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-007 | NAME: Yosef Klein | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No musculoskeletal injury.
+LOAD_STATUS: No flags.
+DAILY_REQUIREMENTS: Pre-exercise salbutamol inhaler mandatory before every session and match. Inhaler confirmed on bench for all matches. Spare inhaler in team medical bag.
+FLAGS: If inhaler is unavailable before a match, Klein does not participate until inhaler is located. TUE filed with Dr. Shapira.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-008 | NAME: Oren Shoval | DATE: 21 November 2024
+AVAILABILITY: UNAVAILABLE — ACTIVE INJURY
+INJURY_STATUS: Right calf muscle strain Grade I (INJ-2024-031). Stage 2 rehabilitation.
+CURRENT_STAGE: Stage 2 — soft tissue mobilisation and isometric loading
+RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
+ACWR_STATUS: Not applicable (no running load).
+LATEST_FINDINGS (20 Nov): Dorsiflexion ROM 12° (improving from 6°). Pain 0/10 during isometric contraction. Swelling reducing.
+MILESTONES:
+  - Pool running: 21 November 2024
+  - Field jogging (target): 24 November 2024
+  - Full training (target): 28 November 2024
+FLAGS: Not available for selection until full training clearance from Dr. Sara Cohen.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-009 | NAME: Nabil Harroui | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: No injury history. Fatigue monitoring active.
+LOAD_STATUS: HRV and sleep quality tracked weekly. No flags at last review.
+DAILY_REQUIREMENTS: Weekly HRV check. Report fatigue, illness, or sleep disturbance to Tal Ben-David.
+FLAGS: Overtraining risk given high development programme load. Any HRV drop >20% from baseline on consecutive mornings = load review.
+
+---
+
+RECORD_TYPE: PLAYER_DAILY_STATUS
+PLAYER_ID: PLR-010 | NAME: Eitan Levi | DATE: 21 November 2024
+AVAILABILITY: FULL TRAINING — CLEARED
+INJURY_STATUS: Tibial stress fracture fully healed (cleared September 2024). Bone density monitoring ongoing.
+LOAD_STATUS: Load monitoring active for 4 weeks post each pre-season per protocol.
+DAILY_REQUIREMENTS: High-calcium diet plan (Daniela Ronen). Calcium and Vitamin D supplementation ongoing.
+UPCOMING: Bone density (DXA) scan — January 2025. Vitamin D recheck — January 2025.
+FLAGS: Any shin pain = immediate training suspension and assessment before resuming. No exceptions.

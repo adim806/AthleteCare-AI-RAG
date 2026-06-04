@@ -1,10 +1,31 @@
 # AthleteCare — Sports Medicine Intelligence for Professional Football
 
-A Retrieval-Augmented Generation (RAG) web application that serves as an
-intelligent medical knowledge assistant for professional football clubs.
-Physiotherapists, fitness coaches, and sports physicians can ask
-natural-language questions and receive grounded answers sourced exclusively
-from the club's medical knowledge base.
+A Retrieval-Augmented Generation (RAG) web application that serves as a
+smart medical assistant for the **medical and fitness staff** of a professional
+football club. The system is built for a critical department whose mission is
+to **maintain player availability and prevent injuries** — keeping the squad
+fit, load-managed, and ready to perform.
+
+Each staff member asks questions in natural language and receives answers
+**grounded in club documents with citations**, without manually opening files.
+
+> A RAG-powered smart medical assistant for a professional football club's medical
+> staff. Every team member — physiotherapist, physician, fitness coach, nutritionist —
+> asks questions in natural language and receives document-grounded answers with
+> citations, without manually opening files.
+
+### Five target audiences (one platform)
+
+The welcome-screen **Knowledge Library** organises documents by role so each
+audience sees what matters to their workflow:
+
+| Audience | Typical use |
+|----------|-------------|
+| **Chief Medical Officer** | Injury clearance, RTP authority, concussion, squad oversight |
+| **Physiotherapists** | Treatment protocols, clinical notes, rehab progressions |
+| **Sports Scientists** | Load metrics, ACWR, fitness testing, injury-risk monitoring |
+| **Fitness Coaches** | Training availability, prevention programmes, session planning |
+| **Sports Nutritionists** | Player diet plans, supplementation, recovery nutrition |
 
 ## Topic & Motivation
 
@@ -36,7 +57,7 @@ User ──▶ Flask Web UI ──▶ POST /api/ask
                     └────────┬───────────────┘
                              ▼
                       Grounded Answer
-                      + source citationsמ  
+                      + source citations
 ```
 
 | Component | Technology |
@@ -55,25 +76,31 @@ embedding step on launch.
 
 ## Data Source
 
-The corpus consists of **9 medical documents** covering FC Velocity's squad
-and clinical operations:
+The corpus consists of **14 medical and performance documents** (plus a hero
+visual asset) covering FC Velocity's squad and clinical operations:
 
 | File | Content |
 |------|---------|
-| `players.txt` | Player profiles — squad list with positions, age, nationality, and current medical status |
+| `players.txt` | Player profiles — positions, baselines, and current medical status |
 | `injury_history.txt` | Full injury history per player — type, date, mechanism, days missed |
-| `treatment_protocols.txt` | Standard treatment protocols for common football injuries (muscle, ligament, bone) |
-| `return_to_play.txt` | Return-to-play guidelines and criteria for each injury category |
+| `treatment_protocols.txt` | Standard treatment protocols for common football injuries |
+| `return_to_play.txt` | Return-to-play guidelines and clearance criteria |
 | `fitness_assessments.txt` | Fitness test results, ACWR values, and readiness scores |
-| `prevention_guidelines.txt` | Injury prevention programmes including FIFA 11+, neuromuscular training, load management |
-| `medical_staff_guide.txt` | Procedures for medical staff — matchday protocols, emergency procedures, documentation |
-| `quick_reference.txt` | Quick clinical reference card — red flags, drug dosages, taping techniques |
-| `clinical_notes.txt` | Daily clinical session notes — physiotherapy assessments, treatment diary entries |
+| `prevention_guidelines.txt` | FIFA 11+, neuromuscular training, load management |
+| `medical_staff_guide.txt` | Matchday protocols, emergency procedures, documentation |
+| `quick_reference.txt` | Red flags, drug dosages, taping techniques |
+| `clinical_notes_active.txt` | Current physiotherapy assessments and session diary |
+| `clinical_notes_archive.txt` | Historical clinical notes |
+| `concussion_protocol.txt` | Graduated return-to-sport after head injury |
+| `nutrition_plans.txt` | Individual diet protocols and supplementation |
+| `squad_status_daily.txt` | Daily availability snapshot — who is cleared, modified, or unavailable |
+| `clinical_notes.txt` | Legacy combined notes (retained for compatibility) |
 
-The local `data/` folder holds the source documents. At runtime, the app
-queries an **AWS Bedrock Knowledge Base** that indexes these files (typically
-synced from S3). Chunking, embedding, and vector search are managed by
-Bedrock — not by application code.
+The local `data/` folder holds the source documents. `dashboard.py` reads
+`squad_status_daily.txt` and maps files to the five staff audiences for the
+welcome-screen insight panel. At runtime, Q&A queries an **AWS Bedrock
+Knowledge Base** that indexes these files (typically synced from S3). Chunking,
+embedding, and vector search are managed by Bedrock — not by application code.
 
 ## RAG Pipeline
 
@@ -126,15 +153,17 @@ BEDROCK_MODEL_ARN=arn:aws:bedrock:us-east-1:ACCOUNT_ID:inference-profile/us.anth
 
 ## Web Application
 
-- **Dark-themed UI** — navy (`#0B1E3D`) and green (`#00A86B`) palette.
+- **Dark-themed UI** — navy (`#0B1E3D`) and green (`#00A86B`) palette with cyan accents on the hero section.
 - **Branding** — AthleteCare / "Sports Medicine Intelligence for Professional Football".
-- **Sidebar** with session management (create, switch, delete conversations).
-- **Welcome screen** with suggestion chips for common clinical questions.
+- **Sidebar** with session management (create, switch, delete consultations).
+- **Welcome screen** — AI Sports Medicine hero visual, **insight panel** (Squad + Library tabs), and suggestion chips for common clinical questions.
+- **Squad tab** — live-style snapshot from `squad_status_daily.txt`: players not fit for full training vs. cleared.
+- **Library tab** — documents grouped by the five target audiences (accordion per role).
 - **Chat interface** with user/assistant message bubbles.
-- **Source display** — each answer shows expandable source documents.
-- **Instant startup** — no loading overlay; Bedrock handles indexing in the cloud.
+- **Source display** — each answer shows expandable clinical source citations.
+- **Startup** — brief connection overlay until Bedrock reports ready; then dashboard and sessions load.
 - **Error handling** — network and API errors shown inline in the chat.
-- **Responsive design** — sidebar collapses on mobile screens.
+- **Responsive design** — sidebar collapses on mobile; hero and insight panel stack vertically on narrower screens.
 
 ## Installation & Running
 
@@ -266,13 +295,14 @@ Install into the correct virtual environment:
 RAG-App/
 ├── run.py                  # Entry point — starts Flask on port 5000
 ├── database.py             # SQLite session & message persistence
+├── dashboard.py            # Squad status + documents by staff audience (welcome panel)
 ├── requirements.txt        # Python dependencies (Flask, boto3, pytest)
 ├── Dockerfile              # Docker image build recipe
 ├── .dockerignore
 ├── .env                    # AWS credentials (not committed)
 ├── .gitignore
 ├── README.md
-├── data/                   # Source medical documents (9 files)
+├── data/                   # Source medical documents (14 .txt files + rag_image.jpg)
 │   ├── players.txt
 │   ├── injury_history.txt
 │   ├── treatment_protocols.txt
@@ -281,6 +311,11 @@ RAG-App/
 │   ├── prevention_guidelines.txt
 │   ├── medical_staff_guide.txt
 │   ├── quick_reference.txt
+│   ├── clinical_notes_active.txt
+│   ├── clinical_notes_archive.txt
+│   ├── concussion_protocol.txt
+│   ├── nutrition_plans.txt
+│   ├── squad_status_daily.txt
 │   └── clinical_notes.txt
 ├── rag/
 │   ├── __init__.py
@@ -290,7 +325,9 @@ RAG-App/
 │   ├── templates/
 │   │   └── index.html      # Chat UI (HTML + inline JS)
 │   └── static/
-│       └── style.css       # Dark-theme stylesheet (navy + green)
+│       ├── style.css       # Dark-theme stylesheet (navy + green)
+│       └── images/
+│           └── rag_hero.jpg  # Welcome-screen hero visual
 └── tests/
     └── test_queries.py     # Integration tests (7 documented queries)
 ```
@@ -301,6 +338,7 @@ RAG-App/
 |--------|------|-------------|
 | GET | `/` | Serve the chat UI |
 | GET | `/api/status` | Engine readiness (`ready`, `status`) |
+| GET | `/api/dashboard` | Squad availability + documents by staff audience |
 | GET | `/api/sessions` | List all chat sessions |
 | POST | `/api/sessions` | Create a new session |
 | GET | `/api/sessions/<id>/messages` | Fetch messages for a session |
