@@ -62,13 +62,13 @@ A: Grade I has no significant functional loss and returns in under a week. Grade
 RECORD_TYPE: QA_PAIR | TOPIC: Acute injury management
 
 Q: What is the POLICE protocol?
-A: Protection, Optimal Loading, Ice, Compression, Elevation. It is the standard first-response protocol for all acute soft tissue injuries at FC Velocity. Ice: 15–20 minutes every 2 hours for the first 48 hours.
+A: Protection, Optimal Loading, Ice, Compression, Elevation. Standard first-response for all acute soft tissue injuries at FC Velocity. Ice: 15–20 minutes every 2 hours for the first 48 hours.
 
 Q: What must be avoided in the first 72 hours after a muscle strain?
 A: Heat, massage, and direct stretching of the injured tissue — these increase bleeding and delay healing.
 
 Q: When should a player be referred for imaging after an ankle injury?
-A: X-ray to exclude fracture for all Grade II ankle sprains. MRI if ligament involvement is clinically suspected.
+A: X-ray for all Grade II ankle sprains to exclude fracture. MRI if ligament involvement is clinically suspected.
 
 Q: When is a Grade III injury referred to the physician?
 A: Any Grade III injury or suspected surgical case must be immediately referred to Dr. Anat Shapira.
@@ -160,25 +160,39 @@ A: 3 or more documented concussions in a 3-year period require neurologist refer
 RECORD_TYPE: QA_PAIR | TOPIC: Current squad status (November 2024)
 
 Q: Who is currently injured in the squad?
-A: Oren Shoval (PLR-008) — right calf muscle strain Grade I, sustained 14 November 2024. Currently in Stage 2 rehabilitation. Expected return to full training: 28 November 2024. Responsible: Dr. Sara Cohen.
+A: TWO players are currently injured:
+1. Neymar Cohen (PLR-011) — left hamstring Grade II (INJ-2024-033), sustained 20 October 2024. Currently Stage 3 rehabilitation. Expected return to full training: 15 December 2024. Responsible: Dr. Sara Cohen.
+2. Oren Shoval (PLR-008) — right calf strain Grade I (INJ-2024-031), sustained 14 November 2024. Currently Stage 2 rehabilitation. Expected return to full training: 28 November 2024. Responsible: Dr. Sara Cohen.
+
+Q: Who is unavailable for the next match?
+A: Neymar Cohen (PLR-011) and Oren Shoval (PLR-008) are both unavailable for selection. Neither has received full training clearance.
+
+Q: Who is available for modified training only?
+A: Dmitri Volkov (PLR-003) — chronic lower back condition. No aerial duel training, no heavy physical contact. Full technical and tactical participation permitted.
 
 Q: Which players are on permanent prevention programmes?
-A: Marco Alvarez (PLR-001) — enhanced bilateral hamstring warm-up protocol. Luca Ferretti (PLR-002) — permanent ACL prevention programme. Dmitri Volkov (PLR-003) — daily lower back mobility and core stability programme. James Okafor (PLR-004) — daily hamstring and hip flexor flexibility programme. Anton Becker (PLR-005) — three-times-weekly shoulder stability programme.
+A: Marco Alvarez (PLR-001) — enhanced bilateral hamstring warm-up. Luca Ferretti (PLR-002) — permanent ACL prevention programme. Dmitri Volkov (PLR-003) — daily lower back mobility and core stability. James Okafor (PLR-004) — daily hamstring and hip flexor flexibility. Anton Becker (PLR-005) — shoulder stability 3×/week. Neymar Cohen (PLR-011) — bilateral ankle stability programme (permanent) + enhanced hamstring protocol (added following Grade II strain). Leo Mizrahi (PLR-012) — Copenhagen plank in FIFA 11+ (adductor maintenance).
 
 Q: Which player has a TUE on file?
 A: Yosef Klein (PLR-007) — TUE for salbutamol (asthma inhaler). Inhaler confirmed on bench at every match.
 
 Q: Who requires a follow-up medical appointment in early 2025?
-A: Eitan Levi (PLR-010) — bone density (DXA) scan scheduled January 2025 following 2024 tibial stress fracture.
+A: Eitan Levi (PLR-010) — bone density (DXA) scan and Vitamin D recheck, January 2025. Neymar Cohen (PLR-011) — reassessment for Stage 3→4 progression, 25 November 2024.
 
 Q: Who is responsible for physiotherapy at FC Velocity?
 A: Dr. Sara Cohen (lead physiotherapist) and Dr. Yoel Mizrahi (second physiotherapist). Dr. Anat Shapira is the team physician with final medical authority.
 
 Q: Who is the squad's top performer in Yo-Yo IR2 and sprint speed?
-A: James Okafor (PLR-004) — Yo-Yo IR2 1420m (squad best), sprint 3.74s (squad fastest).
+A: Yo-Yo IR2: James Okafor (PLR-004) — 1420m. Sprint speed: James Okafor (PLR-004) — 3.74s. Squad second in both: Cristiano Levi (PLR-013) — Yo-Yo IR2 1390m, sprint 3.79s.
 
-Q: Which player has the most significant fitness concern despite being cleared?
-A: James Okafor — squad's best fitness performer but sit-and-reach below 28cm benchmark. Active flexibility programme in place.
+Q: What is the ACWR status across the squad?
+A: Volkov (PLR-003): 1.22 — safe zone. Cristiano Levi (PLR-013): 1.28 — safe zone, upper boundary, monitoring active post-international duty. All other cleared players: within safe zone, no flags.
 
-Q: What is the ACWR status for Dmitri Volkov as of November 2024?
-A: ACWR 1.22 — within the safe zone (0.80–1.30). No load changes required at last review (21 November 2024).
+Q: What is Neymar Cohen's current rehabilitation status?
+A: PLR-011 Neymar Cohen is in Stage 3 rehabilitation for a left hamstring Grade II strain (INJ-2024-033). Last assessment (19 November): hamstring strength at 78% of contralateral (target 80% for Stage 3→4 progression). Next reassessment: 25 November 2024. Expected return to full training: 15 December 2024. Dr. Shapira sign-off required before Stage 4 (Grade II protocol).
+
+Q: What is Cristiano Levi's load status?
+A: PLR-013 Cristiano Levi is fully cleared but ACWR is 1.28 — at the upper boundary of the safe zone (0.80–1.30). This follows his return from international duty on 12 November 2024. Tal Ben-David is monitoring daily. No restrictions applied currently, but any rise above 1.30 triggers immediate load modification.
+
+Q: Who has the most complex injury history in the squad?
+A: Neymar Cohen (PLR-011) — three lower limb soft tissue injuries in 3 years: right ankle Grade II (2022), left ankle Grade I (2023), left hamstring Grade II (2024, current). Bilateral ankle stability programme and enhanced hamstring protocol are both permanent.

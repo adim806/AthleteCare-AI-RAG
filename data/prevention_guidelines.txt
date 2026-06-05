@@ -44,8 +44,8 @@ A: A sit-and-reach score below 28 cm places the player on a daily 10-minute hams
 Q: What is the enhanced hamstring warm-up policy for players with previous hamstring injury?
 A: Players with any previous hamstring injury perform an additional 10-minute individual warm-up before joining team training. This is a permanent, non-negotiable requirement.
 
-Q: Which player is currently on the enhanced hamstring protocol?
-A: Marco Alvarez (PLR-001) — due to 2022 left hamstring Grade II strain and 2023 right hamstring Grade I strain (bilateral history). The enhanced warm-up protocol has been in place since August 2022.
+Q: Which players are currently on the enhanced hamstring protocol?
+A: Marco Alvarez (PLR-001) — bilateral hamstring history (2022, 2023). Neymar Cohen (PLR-011) — Grade II hamstring strain (2024, active case). Cohen's enhanced protocol will be made permanent following clearance.
 
 ---
 
@@ -78,8 +78,19 @@ A: Asymmetry above 10° between hips triggers a hip mobility programme.
 Q: What ankle dorsiflexion threshold indicates elevated injury risk?
 A: Below 10° of ankle dorsiflexion indicates elevated risk for ACL and Achilles tendon injuries.
 
-Q: What happens if a player has multiple risk factors on pre-season screening?
-A: Players with multiple risk factors are enrolled in a targeted individual prevention programme before the season starts.
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | PROGRAMME_START: November 2023 (ankle stability) / October 2024 (hamstring)
+TRIGGER: Bilateral ankle sprain history (INJ-2022-015 right ankle Grade II, INJ-2023-022 left ankle Grade I). Left hamstring Grade II strain October 2024 (INJ-2024-033).
+
+Q: What is Neymar Cohen's current prevention programme?
+A: Two active prevention programmes:
+PROGRAMME 1 — Bilateral ankle stability (permanent, since November 2023): Proprioceptive training 3×/week on wobble board (bilateral), single-leg balance progression, lateral band walks for hip stability. Programme addresses documented bilateral ankle instability under rapid change-of-direction load.
+PROGRAMME 2 — Enhanced hamstring protocol (commenced October 2024, following Grade II strain): Nordic hamstring exercise 3×5–8 reps, twice per week in-season. 10-minute individual hamstring warm-up before joining team training (to become permanent following clearance). This is a Grade II injury — recurrence risk is elevated. Both programmes will continue simultaneously after return to training.
+
+Q: Why does Neymar Cohen have a bilateral ankle stability programme?
+A: Cohen sustained a right ankle Grade II sprain in October 2022 and a left ankle Grade I sprain in April 2023 — bilateral ankle history within 6 months. The pattern of instability under rapid deceleration and directional change was identified as a systemic risk. Bilateral proprioceptive programme introduced November 2023 and has been maintained since.
 
 ---
 
@@ -94,10 +105,10 @@ A: Daily 10-minute hip flexor and hamstring flexibility routine. Enrolled August
 
 RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
 PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | PROGRAMME_START: August 2022
-TRIGGER: Left hamstring Grade II strain (2022) followed by right hamstring Grade I strain (2023) — bilateral hamstring injury history.
+TRIGGER: Left hamstring Grade II (2022) followed by right hamstring Grade I (2023) — bilateral hamstring injury history.
 
 Q: What is Marco Alvarez's current prevention programme?
-A: Enhanced bilateral hamstring protocol: 10-minute individual warm-up before ALL training sessions (permanent). Nordic hamstring exercise 3×5–8 reps, twice per week in-season. This protocol has been in place since August 2022 and was expanded after the 2023 recurrence on the right side.
+A: Enhanced bilateral hamstring protocol: 10-minute individual warm-up before ALL sessions (permanent). Nordic hamstring exercise 3×5–8 reps, twice per week in-season.
 
 ---
 
@@ -106,7 +117,7 @@ PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | PROGRAMME_START: April 2024 (formal
 TRIGGER: Acute lower back episode April 2024 on background of chronic lumbar stiffness.
 
 Q: What is Dmitri Volkov's current prevention programme?
-A: Daily 15-minute lower back mobility and core stability programme: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, and pallof press. Load cap during fixture congestion (no aerial duels in training when ACWR >1.30). Programme compliance confirmed at every clinical session.
+A: Daily 15-minute lower back mobility and core stability programme: Thomas stretch, cat-cow mobilisation, bird-dog, dead bug, and pallof press. Load cap during fixture congestion (no aerial duels in training when ACWR >1.30).
 
 ---
 
@@ -115,16 +126,25 @@ PLAYER: Anton Becker | PLAYER_ID: PLR-005 | PROGRAMME_START: June 2021 (post-Ban
 TRIGGER: Left shoulder subluxation and surgical stabilisation (Bankart repair, February 2021).
 
 Q: What is Anton Becker's current prevention programme?
-A: Shoulder stability programme, three times per week (permanent). Exercises: rotator cuff strengthening (external rotation, internal rotation, diagonal D1 and D2 patterns), serratus anterior activation (wall push-up plus), posterior capsule stretching. Performed on training days only — not on match days.
+A: Shoulder stability programme, three times per week (permanent). Exercises: rotator cuff strengthening, serratus anterior activation, posterior capsule stretching. Training days only — not on match days.
 
 ---
 
 RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
 PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | PROGRAMME_START: October 2023 (post-ACL RTP)
-TRIGGER: Right knee ACL reconstruction (March 2023) — previous ACL injury is the single strongest individual re-injury risk factor.
+TRIGGER: Right knee ACL reconstruction (March 2023).
 
 Q: What is Luca Ferretti's current prevention programme?
 A: Permanent ACL prevention programme: twice-weekly plyometric landing sessions with video feedback, weekly isokinetic strength assessment of right knee, enhanced FIFA 11+ variant before every session, weekly physiotherapy maintenance session with Dr. Yoel Mizrahi. Monthly ACL-RSI questionnaire (current score 79/100).
+
+---
+
+RECORD_TYPE: INDIVIDUAL_PREVENTION_PROGRAMME
+PLAYER: Leo Mizrahi | PLAYER_ID: PLR-012 | PROGRAMME_START: September 2023
+TRIGGER: Left adductor Grade I strain March 2023. Sharp directional change mechanics create cyclical adductor load.
+
+Q: What is Leo Mizrahi's current prevention programme?
+A: Copenhagen plank exercise added to FIFA 11+ enhanced routine as permanent adductor maintenance (since September 2023). Monthly adductor strength screening by manual resistance testing. Report any left groin tightness same day to Dr. Sara Cohen.
 
 ---
 
@@ -150,6 +170,9 @@ SECTION: Return from international duty
 
 Q: What happens when a player returns from international duty?
 A: The player submits training and match data from the national team. Tal Ben-David reviews the load and may impose a reduced training load for the first 3–5 days. Players who have crossed more than 3 time zones are placed on a jet lag recovery protocol.
+
+Q: Which player recently returned from international duty?
+A: Cristiano Levi (PLR-013) returned from international duty on 12 November 2024 having played 2 matches in 4 days. A 5-day reduced load protocol was applied (12–17 November). ACWR currently 1.28 — monitoring continues.
 
 ---
 

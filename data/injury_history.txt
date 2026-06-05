@@ -11,6 +11,27 @@ Classification reference:
 
 Policy: Recurring injuries in the same anatomical region within 12 months must be reviewed at the monthly medical meeting. Any re-injury to a previously Grade III or surgically repaired structure must be referred immediately to Dr. Anat Shapira regardless of apparent severity.
 
+ACTIVE CASES: INJ-2024-033 (Cohen), INJ-2024-031 (Shoval)
+
+---
+
+RECORD_TYPE: INJURY_RECORD | STATUS: ACTIVE
+CASE_ID: INJ-2024-033
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | AGE_AT_INJURY: 23 | POSITION: Left Winger
+INJURY_TYPE: Left hamstring strain, Grade II
+INJURY_SITE: Left biceps femoris, proximal musculotendinous junction
+INJURY_DATE: 20 October 2024
+MECHANISM: Explosive acceleration during a counterattack sprint — sudden deceleration at the 85th minute of a competitive match
+CLASSIFICATION: Grade II muscle strain
+DAYS_MISSED_TO_DATE: 30+ (ongoing)
+EXPECTED_RETURN_FULL_TRAINING: 15 December 2024
+CURRENT_STAGE: Stage 3 — rehabilitation and return to running
+CURRENT_METRICS (19 November 2024): Injured limb strength 78% of contralateral (target 80% for Stage 3→4 progression)
+RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
+PROTOCOL_APPLIED: Soft tissue protocol (Protocol A)
+PREVIOUS_SAME_SITE_INJURY: No prior left hamstring injury. Bilateral ankle sprain history (INJ-2022-015, INJ-2023-022) — different site.
+NOTES: Cohen's third lower limb soft tissue injury in 3 years. Pattern emerging: acute soft tissue injuries under high sprint fatigue in late match minutes. Enhanced hamstring protocol to be maintained permanently after clearance. Dr. Shapira review required before Stage 4 advancement (Grade II). Monthly medical meeting case review flagged.
+
 ---
 
 RECORD_TYPE: INJURY_RECORD | STATUS: ACTIVE
@@ -27,7 +48,7 @@ CURRENT_STAGE: Stage 2 — soft tissue mobilisation and isometric loading
 RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
 PROTOCOL_APPLIED: Soft tissue protocol (Protocol A)
 PREVIOUS_SAME_SITE_INJURY: None — first calf injury
-NOTES: POLICE applied immediately at injury. Thompson test negative (Achilles intact). Crutches provided. Pool running commenced Day 7. Full session notes in clinical_notes.txt.
+NOTES: POLICE applied immediately at injury. Thompson test negative (Achilles intact). Crutches provided. Pool running commenced Day 7.
 
 ---
 
@@ -43,7 +64,7 @@ DAYS_MISSED: 12 days
 DATE_CLEARED: 15 September 2024
 RESPONSIBLE_CLINICIAN: Dr. Yoel Mizrahi
 TREATMENT: 5-day rest, manual physiotherapy, progressive hip strengthening.
-DISCHARGE_STATUS: Full recovery. Left adductor strength 96% of right at discharge. Pain-free full passive hip abduction range. Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance.
+DISCHARGE_STATUS: Full recovery. Left adductor strength 96% of right at discharge. Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance.
 PREVIOUS_SAME_SITE_INJURY: None — first groin injury
 
 ---
@@ -60,9 +81,9 @@ DAYS_MISSED: 3 days running; modified training for 7 days
 RESOLVED: June 2024 (no recurrence since)
 RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
 TREATMENT: 3-day rest, NSAIDs, manual therapy. Chronic management programme established.
-ONGOING_MANAGEMENT: Daily 15-minute lower back mobility and core stability programme (Thomas stretch, cat-cow, bird-dog, dead bug, pallof press). Load cap during fixture congestion.
+ONGOING_MANAGEMENT: Daily 15-minute lower back mobility and core stability programme. Load cap during fixture congestion.
 PREVIOUS_SAME_SITE_INJURY: Chronic lower back stiffness — ongoing
-NOTES: Pattern identified — flare-ups consistently follow aerial duel landings. Refer any episode with radicular symptoms (leg pain, tingling, numbness) immediately to Dr. Shapira.
+NOTES: Pattern identified — flare-ups consistently follow aerial duel landings. Refer any episode with radicular symptoms immediately to Dr. Shapira.
 
 ---
 
@@ -75,13 +96,11 @@ INJURY_DATE: 5 March 2024
 MECHANISM: Gradual overload (not acute trauma)
 CLASSIFICATION: Tibial stress fracture
 TOTAL_RECOVERY_TIME: Approximately 22 weeks
-DATE_CLEARED: September 2024 (imaging confirmed complete bone remodelling)
+DATE_CLEARED: September 2024
 RESPONSIBLE_CLINICIAN: Dr. Anat Shapira
-TREATMENT: Immediate offloading with walking boot. No running for 8 weeks. Pool running and upper body conditioning maintained throughout. Calcium and Vitamin D supplementation (deficiency identified). Progressive return from week 9 per Protocol D.
+TREATMENT: Immediate offloading with walking boot. No running for 8 weeks. Calcium and Vitamin D supplementation.
 FOLLOW_UP_REQUIRED: Bone density (DXA) scan scheduled January 2025.
-NUTRITIONAL_PROTOCOL: High-calcium diet plan by Daniela Ronen — ongoing.
-PREVIOUS_SAME_SITE_INJURY: None (first stress fracture — bone density baseline now established)
-NOTES: Any shin pain in Levi must result in immediate training suspension and assessment before resuming. Second stress fracture would require bone density imaging and specialist review.
+PREVIOUS_SAME_SITE_INJURY: None (first stress fracture)
 
 ---
 
@@ -91,18 +110,34 @@ PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | AGE_AT_INJURY: 22 | POSITION: Centr
 INJURY_TYPE: ACL rupture, right knee, non-contact
 INJURY_SITE: Anterior cruciate ligament, right knee
 INJURY_DATE: 4 March 2023
-MECHANISM: Cutting movement during competitive match
 SURGERY_DATE: 18 March 2023
 SURGERY_TYPE: ACL reconstruction — patellar tendon autograft
 CLASSIFICATION: ACL rupture requiring surgical reconstruction
-TOTAL_RECOVERY_TIME: 7 months post-surgery to full training (10 months post-injury to competitive play)
+TOTAL_RECOVERY_TIME: 7 months post-surgery to full training
 DATE_RETURN_FULL_TRAINING: 2 October 2023
 DATE_RETURN_COMPETITIVE_PLAY: 14 October 2023
 RESPONSIBLE_CLINICIANS: Dr. Yoel Mizrahi and Dr. Anat Shapira
-FULL_RTP_PROTOCOL: Protocol C (ACL reconstruction rehabilitation, 9 phases)
-ONGOING: Weekly physiotherapy maintenance (Dr. Yoel Mizrahi). ACL-RSI score 79/100 at November 2024 (threshold ≥65). LSI 98.6% right knee. Enrolled in permanent ACL prevention programme.
+ONGOING: Weekly physiotherapy maintenance. ACL-RSI 79/100 (November 2024). LSI 98.6% right knee.
 PREVIOUS_SAME_SITE_INJURY: None — first ACL injury
-NOTES: Previous ACL injury is the single strongest individual risk factor for ACL re-rupture. Any right knee swelling or pain must trigger same-day assessment. Re-injury would require immediate referral to Dr. Shapira.
+NOTES: Previous ACL injury is the single strongest individual risk factor for ACL re-rupture. Any right knee swelling or pain must trigger same-day assessment.
+
+---
+
+RECORD_TYPE: INJURY_RECORD | STATUS: RESOLVED | YEAR: 2023
+CASE_ID: INJ-2023-035
+PLAYER: Leo Mizrahi | PLAYER_ID: PLR-012 | AGE_AT_INJURY: 25 | POSITION: Attacking Midfielder
+INJURY_TYPE: Left adductor strain, Grade I
+INJURY_SITE: Left adductor longus
+INJURY_DATE: 9 March 2023
+MECHANISM: Sharp direction change during training — cutting to the right
+CLASSIFICATION: Grade I muscle strain
+DAYS_MISSED: 10 days
+DATE_CLEARED: 19 March 2023
+RESPONSIBLE_CLINICIAN: Dr. Yoel Mizrahi
+TREATMENT: POLICE protocol, 5-day rest, manual physiotherapy, progressive hip adductor strengthening.
+DISCHARGE_STATUS: Full recovery. Left adductor strength 100% of right side at discharge. Copenhagen plank added to FIFA 11+ routine as permanent maintenance.
+PREVIOUS_SAME_SITE_INJURY: None — first adductor injury
+NOTES: Mizrahi's sharp directional change mechanics create cyclical adductor load. Monthly adductor screening established. Report any left groin tightness same day.
 
 ---
 
@@ -113,13 +148,32 @@ INJURY_TYPE: Right hamstring strain, Grade I — recurrence
 INJURY_SITE: Right biceps femoris
 INJURY_DATE: 29 January 2023
 MECHANISM: Sprint training at end of session — fatigue-related
-CLASSIFICATION: Grade I muscle strain (recurrence — same player, contralateral side)
+CLASSIFICATION: Grade I muscle strain (recurrence — contralateral side)
 DAYS_MISSED: 6 days
 DATE_CLEARED: 4 February 2023
 RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
 TREATMENT: POLICE protocol, 6-day rest.
-PREVENTION_CHANGE: Enhanced warm-up protocol permanently introduced. This was the second hamstring injury (2022 left Grade II, 2023 right Grade I) — bilateral hamstring history flagged for permanent enhanced protocol.
-PREVIOUS_SAME_SIDE_INJURY: Left hamstring Grade II (2022) — different side but same pattern. Combined bilateral history = high recurrence risk. Ongoing enhanced warm-up is a permanent protocol.
+PREVENTION_CHANGE: Enhanced bilateral hamstring warm-up protocol permanently introduced.
+PREVIOUS_SAME_SIDE_INJURY: Left hamstring Grade II (2022). Combined bilateral history = high recurrence risk.
+
+---
+
+RECORD_TYPE: INJURY_RECORD | STATUS: RESOLVED | YEAR: 2023
+CASE_ID: INJ-2023-022
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | AGE_AT_INJURY: 22 | POSITION: Left Winger
+INJURY_TYPE: Left ankle sprain, Grade I
+INJURY_SITE: Lateral ankle ligaments (ATFL), left
+INJURY_DATE: 14 April 2023
+MECHANISM: Rapid deceleration with lateral step — loss of balance on uneven pitch surface during training
+CLASSIFICATION: Grade I ligament sprain
+DAYS_MISSED: 8 days
+DATE_CLEARED: 22 April 2023
+RESPONSIBLE_CLINICIAN: Dr. Yoel Mizrahi
+TREATMENT: POLICE protocol, taping, early proprioceptive loading on wobble board.
+DISCHARGE_STATUS: Full recovery. Full pain-free ROM. Single-leg balance test symmetrical.
+PREVIOUS_SAME_SITE_INJURY: Right ankle Grade II (October 2022, INJ-2022-015) — different side.
+PREVENTION_CHANGE: Bilateral ankle stability programme introduced November 2023 — both ankles addressed given bilateral sprain history.
+NOTES: Second ankle injury in 6 months (different sides). Pattern of ankle instability under rapid change-of-direction load. Bilateral proprioceptive programme now permanent.
 
 ---
 
@@ -129,15 +183,32 @@ PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | AGE_AT_INJURY: 25 | POSITION: Strik
 INJURY_TYPE: Left hamstring strain, Grade II
 INJURY_SITE: Left biceps femoris, proximal
 INJURY_DATE: 11 August 2022
-MECHANISM: Explosive sprint early in match following insufficient warm-up time after a substitution delay
+MECHANISM: Explosive sprint early in match following insufficient warm-up time after substitution delay
 CLASSIFICATION: Grade II muscle strain
 DAYS_MISSED: 18 days
 DATE_CLEARED: 29 August 2022
 RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
 TREATMENT: POLICE protocol, 18-day rest, manual physiotherapy, Nordic hamstring exercises, progressive running return.
-PREVENTION_CHANGE: Mandatory extended warm-up protocol established following this injury. Later expanded to enhanced bilateral protocol after 2023 right hamstring recurrence.
+PREVENTION_CHANGE: Mandatory extended warm-up protocol established.
 PREVIOUS_SAME_SITE_INJURY: None — first hamstring injury
-NOTES: Warm-up deprivation was the identified mechanism. This case established the club policy that substitution delays do not exempt players from full warm-up.
+
+---
+
+RECORD_TYPE: INJURY_RECORD | STATUS: RESOLVED | YEAR: 2022
+CASE_ID: INJ-2022-015
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | AGE_AT_INJURY: 21 | POSITION: Left Winger
+INJURY_TYPE: Right ankle sprain, Grade II
+INJURY_SITE: Lateral ankle ligaments (ATFL + CFL), right
+INJURY_DATE: 3 October 2022
+MECHANISM: Awkward landing after aerial duel during a competitive match — foot inverted on landing
+CLASSIFICATION: Grade II ligament sprain
+DAYS_MISSED: 28 days (4 weeks)
+DATE_CLEARED: 31 October 2022
+RESPONSIBLE_CLINICIAN: Dr. Yoel Mizrahi
+TREATMENT: POLICE protocol, bracing, X-ray to exclude fracture (negative), progressive proprioceptive training, wobble board programme.
+DISCHARGE_STATUS: Full pain-free ROM. Single-leg hop test LSI 94% at clearance. No instability.
+PREVIOUS_SAME_SITE_INJURY: None — first ankle injury for Cohen
+NOTES: Imaging referral performed as per Grade II protocol — no fracture confirmed. Bracing used during return to training.
 
 ---
 
@@ -166,13 +237,12 @@ INJURY_SITE: Right knee, medial meniscus
 INJURY_DATE: 3 June 2021
 MECHANISM: Rotation of planted foot during a tackle
 CLASSIFICATION: Grade II — conservative management
-DAYS_MISSED: Approximately 42 days (6 weeks offloading)
+DAYS_MISSED: Approximately 42 days
 DATE_CLEARED: Mid-July 2021
 RESPONSIBLE_CLINICIAN: Dr. Anat Shapira
 TREATMENT: Conservative — 6 weeks offloading, progressive strengthening, return protocol. No surgery required.
-ONGOING_MONITORING: Pre-season meniscus screening mandatory at each pre-season. Status stable at all subsequent assessments.
-PREVIOUS_SAME_SITE_INJURY: None
-NOTES: Any locking, clicking, or medial joint-line pain in Torres's right knee must trigger immediate MRI referral — conservative management does not exclude future deterioration.
+ONGOING_MONITORING: Pre-season meniscus screening mandatory.
+NOTES: Any locking, clicking, or medial joint-line pain in Torres's right knee must trigger immediate MRI referral.
 
 ---
 
@@ -189,6 +259,4 @@ TOTAL_RECOVERY_TIME: 4 months
 DATE_CLEARED: June 2021
 RESPONSIBLE_CLINICIAN: Dr. Anat Shapira
 TREATMENT: Surgical stabilisation (Bankart repair). 4-month rehabilitation. Permanent shoulder stability programme introduced.
-ONGOING: Shoulder stability programme 3×/week (permanent). Full ROM restored. No recurrence. Strength symmetrical at November 2024 assessment.
-PREVIOUS_SAME_SITE_INJURY: None
-NOTES: Any left shoulder discomfort following diving contact must be assessed same day. Do not allow return to goalkeeping duties after a shoulder impact without physiotherapist clearance.
+ONGOING: Shoulder stability programme 3×/week (permanent). Full ROM restored. No recurrence.

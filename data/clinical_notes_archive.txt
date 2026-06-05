@@ -7,6 +7,53 @@ PURPOSE: This file contains discharge summaries and archived notes for cases tha
 ---
 
 RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2023-022
+INJURY: Left ankle sprain, Grade I
+DISCHARGE_DATE: 22 April 2023
+TOTAL_EPISODE_DURATION: 8 days (14 April – 22 April 2023)
+CLINICIAN: Dr. Yoel Mizrahi
+SESSION_TYPE: Discharge assessment
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Left ankle ROM: full pain-free range bilaterally
+  - Single-leg balance: symmetric bilaterally — no proprioceptive deficit
+  - Single-leg hop test: LSI 98% — within normal limits
+  - Pain: 0/10 throughout final assessment
+  - Sport-specific testing (lateral shuffle, directional change): completed without symptoms
+
+DISCHARGE_DECISION: Cleared for full training and competition. Grade I — no physician sign-off required. Physiotherapist clearance sufficient.
+
+PREVENTION_NOTE: Second ankle injury (first: right Grade II October 2022). Bilateral ankle history now established. Formal bilateral ankle stability programme will be introduced at start of 2023–24 pre-season (November 2023). Discussed with player — compliance essential given directional change mechanics.
+
+FOLLOW_UP: Bilateral ankle stability programme introduced November 2023 — confirmed active.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2022-015
+INJURY: Right ankle sprain, Grade II
+DISCHARGE_DATE: 31 October 2022
+TOTAL_EPISODE_DURATION: 28 days (3 October – 31 October 2022)
+CLINICIAN: Dr. Yoel Mizrahi
+SESSION_TYPE: Discharge assessment — Grade II clearance
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Right ankle ROM: full pain-free range matching left side
+  - X-ray result (performed at injury): no fracture confirmed
+  - Single-leg hop test: LSI 94% — above 90% threshold
+  - Proprioceptive testing: symmetrical. No ankle instability on inversion stress test.
+  - Pain: 0/10 throughout functional assessment
+  - Change-of-direction drills: completed at full speed without discomfort
+
+DISCHARGE_DECISION: Cleared for full training and competition. Grade II injury — Dr. Shapira reviewed and co-signed clearance.
+
+PREVENTION_NOTE: First ankle injury for Cohen. Player counselled on ankle instability risk with rapid deceleration mechanics. Taping recommended during training for 4 weeks post-return. No formal prevention programme required at this stage — formal bilateral programme introduced November 2023 after second ankle injury.
+
+FOLLOW_UP: No recurrence in 2022–23 season. Left ankle Grade I sustained April 2023 (INJ-2023-022) — bilateral pattern confirmed.
+
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
 PLAYER: Rafael Torres | PLAYER_ID: PLR-006 | CASE_ID: INJ-2024-029
 INJURY: Left groin strain, Grade I
 DISCHARGE_DATE: 15 September 2024
@@ -23,9 +70,30 @@ FINAL_OBJECTIVE_FINDINGS:
 
 DISCHARGE_DECISION: Cleared for full training and competition. All functional criteria met.
 
-PREVENTION_NOTE: Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance. No further treatment sessions required unless symptoms recur.
+PREVENTION_NOTE: Copenhagen plank added to Torres's FIFA 11+ enhanced routine as ongoing adductor maintenance.
 
-FOLLOW_UP: Standard pre-season adductor screening. Report any groin discomfort immediately.
+---
+
+RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
+PLAYER: Leo Mizrahi | PLAYER_ID: PLR-012 | CASE_ID: INJ-2023-035
+INJURY: Left adductor strain, Grade I
+DISCHARGE_DATE: 19 March 2023
+TOTAL_EPISODE_DURATION: 10 days (9 March – 19 March 2023)
+CLINICIAN: Dr. Yoel Mizrahi
+SESSION_TYPE: Discharge assessment — Grade I clearance
+
+FINAL_OBJECTIVE_FINDINGS:
+  - Left adductor strength: 100% of right side on manual resistance testing
+  - Passive hip abduction ROM: full pain-free range bilaterally
+  - Copenhagen plank: 3×20 seconds bilateral — no discomfort
+  - Sport-specific running: lateral shuffles, cutting movements — no symptoms
+  - Pain: 0/10 throughout final assessment
+
+DISCHARGE_DECISION: Cleared for full training and competition. All functional criteria met.
+
+PREVENTION_NOTE: Copenhagen plank added to Mizrahi's FIFA 11+ enhanced routine as ongoing adductor maintenance (from September 2023). Monthly adductor strength screening established. Mizrahi's sharp directional change mechanics create repetitive adductor load — ongoing prophylactic programme is non-negotiable.
+
+FOLLOW_UP: No adductor recurrence. Monthly screening active. Left adductor strength 98% of right at November 2024 review.
 
 ---
 
@@ -45,10 +113,7 @@ FINAL_OBJECTIVE_FINDINGS:
 
 DISCHARGE_DECISION: Cleared for full training and competition. Nutritional protocol (high calcium) to continue.
 
-FOLLOW_UP:
-  - Bone density DXA scan: January 2025
-  - Vitamin D recheck: January 2025
-  - Any shin pain = immediate training suspension + assessment before resuming
+FOLLOW_UP: DXA scan and Vitamin D recheck — January 2025.
 
 ---
 
@@ -69,9 +134,9 @@ FINAL_OBJECTIVE_FINDINGS_AT_RTP:
   - ACL-RSI score: ≥65 (psychological clearance confirmed)
   - Biomechanical video analysis: knee valgus controlled — no corrective flags
 
-DISCHARGE_DECISION: Cleared for full competitive play as of 14 October 2023. Transition to permanent ACL maintenance programme.
+DISCHARGE_DECISION: Cleared for full competitive play as of 14 October 2023. Permanent ACL maintenance programme commenced.
 
-ONGOING_MAINTENANCE: Weekly physiotherapy session (Dr. Yoel Mizrahi). Permanent ACL prevention programme. Monthly ACL-RSI monitoring. Full details in clinical_notes_active.txt.
+ONGOING_MAINTENANCE: Weekly physiotherapy session (Dr. Yoel Mizrahi). Monthly ACL-RSI monitoring (current score 79/100, November 2024).
 
 ---
 
@@ -79,7 +144,7 @@ RECORD_TYPE: DISCHARGE_NOTE | STATUS: DISCHARGED
 PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | CASE_ID: INJ-2023-011
 INJURY: Right hamstring strain, Grade I (recurrence)
 DISCHARGE_DATE: 4 February 2023
-TOTAL_EPISODE_DURATION: 6 days (29 January – 4 February 2023)
+TOTAL_EPISODE_DURATION: 6 days
 CLINICIAN: Dr. Sara Cohen
 SESSION_TYPE: Clearance — Grade I resolved
 
@@ -88,9 +153,7 @@ FINAL_OBJECTIVE_FINDINGS:
   - Hamstring ROM: full, pain-free
   - Sprint test: passed — no symptom reproduction
 
-DISCHARGE_DECISION: Cleared for full training. Enhanced bilateral hamstring warm-up protocol confirmed as permanent. This injury (right Grade I) combined with 2022 (left Grade II) established bilateral hamstring risk profile.
-
-PREVENTION_NOTE: Combined 2022 + 2023 hamstring injuries resulted in permanent enhanced protocol: 10-minute individual warm-up before ALL sessions, Nordic protocol 2×/week in-season. Protocol continues indefinitely.
+DISCHARGE_DECISION: Cleared for full training. Enhanced bilateral hamstring warm-up protocol confirmed as permanent.
 
 ---
 
@@ -108,6 +171,4 @@ FINAL_OBJECTIVE_FINDINGS:
   - Apprehension sign: negative
   - No instability on provocation testing
 
-DISCHARGE_DECISION: Cleared for full goalkeeping duties. Permanent shoulder stability programme established (3×/week) to prevent recurrence.
-
-NOTES: Permanent programme is non-negotiable — discontinuation would elevate re-dislocation risk significantly given surgical history.
+DISCHARGE_DECISION: Cleared for full goalkeeping duties. Permanent shoulder stability programme established (3×/week).

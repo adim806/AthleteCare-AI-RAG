@@ -6,6 +6,10 @@ Club: FC Velocity | League: Israeli Premier League
 Medical department: Dr. Anat Shapira (CMO, final medical authority), Dr. Sara Cohen (Lead Physiotherapist), Dr. Yoel Mizrahi (Physiotherapist), Tal Ben-David (Fitness & Conditioning Coach), Daniela Ronen (Nutritionist, part-time).
 System of record: KineticMind
 
+FIRST SQUAD: PLR-001 through PLR-007, PLR-011, PLR-012, PLR-013 (10 players)
+RESERVE SQUAD: PLR-008, PLR-009, PLR-010 (3 players)
+TOTAL SQUAD: 13 players
+
 ---
 
 RECORD_TYPE: PLAYER_PROFILE
@@ -107,6 +111,56 @@ NOTES: If inhaler is unavailable before a match, Klein must not participate unti
 ---
 
 RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-011 | NAME: Neymar Cohen | POSITION: Left Winger | AGE: 23
+PHYSICAL: 174 cm / 68 kg | FOOT: Left
+MEDICAL_STATUS: ACTIVE INJURY — Left hamstring strain, Grade II. Stage 3 rehabilitation.
+INJURY_CASE_ID: INJ-2024-033
+INJURY_DATE: 20 October 2024
+CURRENT_RTP_STAGE: Stage 3 — rehabilitation and return to running
+RESPONSIBLE_CLINICIAN: Dr. Sara Cohen
+EXPECTED_RETURN_FULL_TRAINING: 15 December 2024
+INJURY_RISK_FLAGS: Bilateral ankle sprain history (2022, 2023). Left hamstring Grade II — moderate recurrence risk. Explosive dribbling mechanics increase hamstring strain risk at deceleration.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Bilateral ankle stability programme: proprioceptive training 3×/week (permanent, since November 2023).
+  - Enhanced hamstring protocol added following Grade II strain: Nordic hamstring 3×5–8 reps, twice per week in-season.
+CURRENT_METRICS (19 November 2024): Injured left hamstring strength 78% of contralateral (target 80% for Stage 3→4 progression). Pain 0/10 at Stage 3 load. Straight-line jogging achieved without symptoms.
+FITNESS_DATA (pre-injury, October 2024): Yo-Yo IR2 1350m | Sprint 3.77s | Agility 4.21s | Body fat 10.3%.
+INJURY_HISTORY_SUMMARY: Right ankle Grade II sprain (October 2022, INJ-2022-015), left ankle Grade I sprain (April 2023, INJ-2023-022), left hamstring Grade II strain (October 2024, INJ-2024-033 — ACTIVE).
+NOTES: Cohen has a documented pattern of lower limb soft tissue injuries under high sprint workload. Any recurrence of ankle or hamstring symptoms during Stage 3 must trigger regression. Bilateral ankle history means proprioceptive programme is non-negotiable. Re-injury to left hamstring within 6 months of clearance = mandatory medical meeting review.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-012 | NAME: Leo Mizrahi | POSITION: Attacking Midfielder | AGE: 26
+PHYSICAL: 170 cm / 67 kg | FOOT: Left
+MEDICAL_STATUS: Fully cleared for all training and competition.
+INJURY_RISK_FLAGS: Previous left adductor Grade I strain (2023). Low recurrence risk — fully resolved.
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Copenhagen plank in FIFA 11+ enhanced routine (ongoing adductor maintenance, since September 2023).
+  - Monthly adductor strength screening (manual resistance testing).
+CURRENT_METRICS (November 2024): H:Q ratio 0.63 | Left adductor strength 98% of right | ACWR within safe zone.
+FITNESS_DATA: Yo-Yo IR2 1320m | Sprint 3.95s | Agility 4.25s | Body fat 9.8%.
+INJURY_HISTORY_SUMMARY: Left adductor strain Grade I (March 2023, INJ-2023-035, fully resolved). No other injury history.
+NOTES: Mizrahi is the squad's primary playmaker. His low centre of gravity and sharp directional changes create adductor load — ongoing Copenhagen plank protocol is prophylactic. Any left groin tightness must be reported same day to Dr. Sara Cohen.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
+PLAYER_ID: PLR-013 | NAME: Cristiano Levi | POSITION: Right Winger / Striker | AGE: 25
+PHYSICAL: 187 cm / 83 kg | FOOT: Right
+MEDICAL_STATUS: Fully cleared. Post-international duty load monitoring active.
+INJURY_RISK_FLAGS: High sprint volume player. ACWR elevated at 1.28 — monitoring required following international duty return (12 November 2024).
+ACTIVE_PREVENTION_PROGRAMMES:
+  - Standard FIFA 11+ — no individual programme required at this stage.
+  - Increased monitoring: ACWR tracked daily during post-international duty period (3–5 days reduced load, until 17 November 2024 — now resolved).
+CURRENT_METRICS (November 2024): ACWR 1.28 (upper safe zone — monitoring) | Yo-Yo IR2 1390m | Sprint 3.79s | Agility 4.22s | Body fat 9.5%.
+FITNESS_DATA: Yo-Yo IR2 1390m | Sprint 3.79s (squad second fastest) | Agility 4.22s | Body fat 9.5%.
+INJURY_HISTORY_SUMMARY: No significant injury history.
+NOTES: Levi returned from international duty 12 November 2024 having played 2 matches in 4 days. Load management protocol applied for 5 days post-return. ACWR now 1.28 — within safe zone but at upper boundary. Monitor closely during next high-intensity session. Any sharp muscle discomfort must be assessed before continuing.
+
+---
+
+RECORD_TYPE: PLAYER_PROFILE
 PLAYER_ID: PLR-008 | NAME: Oren Shoval | POSITION: Striker | SQUAD: Reserve | AGE: 20
 PHYSICAL: 181 cm / 76 kg
 MEDICAL_STATUS: ACTIVE INJURY — Right calf muscle strain Grade I.
@@ -118,7 +172,7 @@ EXPECTED_RETURN_FIELD_JOGGING: 24 November 2024
 EXPECTED_RETURN_FULL_TRAINING: 28 November 2024
 LATEST_SESSION_FINDINGS (20 November 2024): Swelling significantly reduced. Dorsiflexion ROM 12° (initial 6°, normal 20°). Isometric calf contraction pain-free (0/10). Confidence improving.
 INJURY_HISTORY_SUMMARY: No prior injury history.
-NOTES: Thompson test negative — Achilles intact. POLICE applied at injury. Crutches provided initially. Pool session scheduled 21 November 2024. Full session notes in clinical_notes.txt.
+NOTES: Thompson test negative — Achilles intact. POLICE applied at injury. Crutches provided initially. Pool session scheduled 21 November 2024.
 
 ---
 
@@ -141,7 +195,7 @@ INJURY_RISK_FLAGS: Bone density monitoring required. Previous stress fracture = 
 MEDICAL_FOLLOW_UP: Bone density (DXA) scan scheduled January 2025.
 NUTRITIONAL_PROTOCOL: High-calcium diet plan prescribed by Daniela Ronen. Daily calcium target per plan. Vitamin D levels to be rechecked January 2025.
 INJURY_HISTORY_SUMMARY: Left tibia stress fracture (March 2024), fully healed — imaging confirmed complete bone remodelling. Details in injury_history.txt (INJ-2024-008).
-NOTES: Return to full load confirmed. Training volume monitoring to continue for 4 weeks post each pre-season. Any shin pain must be reported immediately and training suspended pending assessment.
+NOTES: Return to full load confirmed. Any shin pain must be reported immediately and training suspended pending assessment.
 
 ---
 

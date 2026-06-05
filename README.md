@@ -54,29 +54,27 @@ User ──▶ Flask Web UI ──▶ POST /api/ask
                               │
                     ┌─────────┴──────────┐
                     ▼                    ▼
-         AWS Bedrock Knowledge Base   Conversation
-         retrieve_and_generate        History (SQLite)
-         (retrieval + generation)            │
-                    │                        │
-                    └────────┬───────────────┘
-                             ▼
-                      Grounded Answer
-                      + source citations
+         AWS Bedrock Agent           Session Messages
+         invoke_agent                 (SQLite — UI history)
+         (retrieval + generation +
+          session context + traces)
+                    │
+                    ▼
+             Streamed Answer
+             + Action Group traces
 ```
 
 | Component | Technology |
 |-----------|-----------|
 | Web framework | Flask 3 |
-| RAG backend | AWS Bedrock Knowledge Base (`retrieve_and_generate`) |
-| Generation model | Anthropic Claude Haiku 4.5 (via inference profile) |
-| Embeddings (managed by Bedrock) | Amazon Titan Embed Text v2 |
+| RAG backend | AWS Bedrock Agent (`invoke_agent`) |
 | AWS SDK | boto3 |
-| Conversation store | SQLite |
+| Conversation store | SQLite (UI display) + Bedrock Agent (context) |
 | Containerisation | Docker |
 
-There is **no local vector index**. Retrieval, embedding, and generation are
-handled entirely by AWS Bedrock. The app starts immediately — no 1–2 minute
-embedding step on launch.
+There is **no local vector index** and no client-side history management.
+Retrieval, generation, and multi-turn context are all handled server-side by
+the Bedrock Agent. The app starts immediately.
 
 ## Data Source
 
@@ -112,32 +110,16 @@ The entire RAG backend lives in `rag/pipeline.py` as a single `RAGEngine`
 class:
 
 1. **User submits a question** via the web UI (`POST /api/ask`).
-2. **Conversation history** is loaded from SQLite and prepended to the input
-   text so multi-turn questions work (e.g. "What about return-to-play after that?").
-3. **Bedrock `retrieve_and_generate`** — one API call that:
-   - Retrieves the top relevant chunks from the Knowledge Base
-   - Generates an answer using Claude Haiku 4.5 with a custom system prompt
-   - Returns citations with source document references
-4. **Persistence** — the question, answer, and source metadata are saved to
-   SQLite for session continuity.
-
-### System Prompt
-
-```
-You are AthleteCare, a medical assistant for FC Velocity. Answer only from
-the provided context — player records, injury history, treatment protocols,
-and fitness data. If not in the context, say so clearly.
-```
-
-### Model Configuration
-
-Newer Bedrock models (including Claude Haiku 4.5) require an **inference
-profile ARN**, not a foundation-model ARN. On startup, `RAGEngine` resolves
-the correct profile automatically. You can also set it explicitly in `.env`:
-
-```
-BEDROCK_MODEL_ARN=arn:aws:bedrock:us-east-1:ACCOUNT_ID:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0
-```
+2. **`invoke_agent`** — the question and `sessionId` are passed directly to the
+   Bedrock Agent. The Agent manages multi-turn conversational context
+   server-side; no client-side history concatenation is needed.
+3. **Event-stream processing** — the response is an event stream. The engine
+   loops through `response["completion"]`:
+   - **Chunk events** — decoded bytes are appended to build the final answer.
+   - **Trace events** — Action Group invocations (function name + parameters)
+     are printed to the console for observability.
+4. **Persistence** — the question and answer are saved to SQLite so the UI
+   can display the full conversation history on page refresh.
 
 ### Hallucination Reduction
 
@@ -187,10 +169,8 @@ Create a `.env` file in the project root (never commit it):
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
 AWS_DEFAULT_REGION=us-east-1
-BEDROCK_KNOWLEDGE_BASE_ID=your_knowledge_base_id
-BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
-# Optional — skip automatic inference-profile lookup:
-# BEDROCK_MODEL_ARN=arn:aws:bedrock:us-east-1:ACCOUNT_ID:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0
+BEDROCK_AGENT_ID=your_agent_id
+BEDROCK_AGENT_ALIAS_ID=your_agent_alias_id
 ```
 
 ### Option A — Local Python
@@ -266,12 +246,6 @@ These same questions appear as suggestion chips on the welcome screen.
 
 ## Troubleshooting
 
-### "Legacy model" ValidationException
-
-Older Claude models (e.g. Claude 3 Haiku) are marked legacy by AWS. Ensure
-`.env` uses **Claude Haiku 4.5** and that `BEDROCK_MODEL_ARN` points to an
-**inference profile**, not a foundation-model ARN.
-
 ### Multiple servers on port 5000
 
 If you see intermittent errors, check that only one Flask process is running:
@@ -323,7 +297,7 @@ RAG-App/
 │   └── clinical_notes.txt
 ├── rag/
 │   ├── __init__.py
-│   └── pipeline.py         # RAGEngine — Bedrock retrieve_and_generate
+│   └── pipeline.py         # RAGEngine — Bedrock invoke_agent (event stream + traces)
 ├── web/
 │   ├── app.py              # Flask routes & API endpoints
 │   ├── templates/

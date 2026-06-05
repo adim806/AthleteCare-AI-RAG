@@ -1,9 +1,9 @@
 """
-AthleteCare RAG pipeline — AWS Bedrock Knowledge Base backend.
+AthleteCare RAG pipeline — AWS Bedrock Agent backend.
 
 RAGEngine is the single public surface used by the Flask web app.
-It wraps a single boto3 call to Bedrock's retrieve_and_generate API,
-which handles both retrieval and generation in one round-trip.
+It wraps a single boto3 call to Bedrock's invoke_agent API, which handles
+retrieval, generation, and conversational context management internally.
 
 Classes
 -------
@@ -25,65 +25,12 @@ load_dotenv()
 _AWS_ACCESS_KEY_ID     = os.environ.get("AWS_ACCESS_KEY_ID", "")
 _AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
 _AWS_REGION            = os.environ.get("AWS_DEFAULT_REGION", "us-east-1")
-_KB_ID                 = os.environ.get("BEDROCK_KNOWLEDGE_BASE_ID", "")
-
-# Allow full ARN override; otherwise resolve at startup (inference profile
-# required for newer models such as Claude Haiku 4.5).
-_MODEL_ID = os.environ.get(
-    "BEDROCK_MODEL_ID",
-    "anthropic.claude-haiku-4-5-20251001-v1:0",
-)
-
-_SYSTEM_PROMPT = (
-    "You are AthleteCare, a medical assistant for FC Velocity. "
-    "Answer only from the provided context — player records, injury history, "
-    "treatment protocols, and fitness data. "
-    "If not in the context, say so clearly."
-)
-
-# Bedrock prompt template — $search_results$ and $output_format_instructions$
-# are substituted automatically by Bedrock.
-_PROMPT_TEMPLATE = (
-    _SYSTEM_PROMPT
-    + "\n\n$search_results$\n\n$output_format_instructions$"
-)
+_AGENT_ID              = os.environ.get("BEDROCK_AGENT_ID", "")
+_AGENT_ALIAS_ID        = os.environ.get("BEDROCK_AGENT_ALIAS_ID", "")
 
 
 def _log(msg: str) -> None:
     print(f"[pipeline] {msg}", flush=True)
-
-
-def _resolve_model_arn(region: str, model_id: str) -> str:
-    """
-    Return the modelArn Bedrock expects for retrieve_and_generate.
-
-    Newer models (e.g. Claude Haiku 4.5) require an inference-profile ARN
-    rather than a foundation-model ARN.  We look up the profile automatically;
-    set BEDROCK_MODEL_ARN in .env to skip lookup.
-    """
-    override = os.environ.get("BEDROCK_MODEL_ARN")
-    if override:
-        return override
-
-    bedrock = boto3.client(
-        "bedrock",
-        region_name=region,
-        aws_access_key_id=_AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=_AWS_SECRET_ACCESS_KEY,
-    )
-
-    for profile_id in (f"us.{model_id}", f"global.{model_id}"):
-        try:
-            profile = bedrock.get_inference_profile(
-                inferenceProfileIdentifier=profile_id,
-            )
-            arn = profile["inferenceProfileArn"]
-            _log(f"Resolved inference profile {profile_id} -> {arn}")
-            return arn
-        except ClientError:
-            continue
-
-    return f"arn:aws:bedrock:{region}::foundation-model/{model_id}"
 
 
 # ------------------------------------------------------------------
@@ -92,19 +39,20 @@ def _resolve_model_arn(region: str, model_id: str) -> str:
 
 class RAGEngine:
     """
-    Thin wrapper around the Bedrock retrieve_and_generate API.
+    Thin wrapper around the Bedrock invoke_agent API.
 
     Lifecycle
     ---------
     1. Instantiate once (e.g. at Flask app startup).  The boto3 client is
-       created and credentials are validated immediately — no background
-       indexing step is needed because retrieval is handled by Bedrock.
-    2. Call .ask(question, history) for each user turn.
+       created and credentials are validated immediately.
+    2. Call .ask(question, session_id) for each user turn.  The Bedrock
+       Agent manages conversational context internally using the sessionId —
+       no local history concatenation is required.
 
     Thread safety
     -------------
-    boto3 clients are thread-safe for read operations.  All calls are
-    stateless (no local index), so concurrent requests are safe.
+    boto3 clients are thread-safe for read operations.  All session state
+    is managed server-side by Bedrock, so concurrent requests are safe.
     """
 
     def __init__(self) -> None:
@@ -112,9 +60,10 @@ class RAGEngine:
         self.status: str  = "connecting"
 
         missing = [v for v, k in [
-            ("AWS_ACCESS_KEY_ID",        _AWS_ACCESS_KEY_ID),
-            ("AWS_SECRET_ACCESS_KEY",    _AWS_SECRET_ACCESS_KEY),
-            ("BEDROCK_KNOWLEDGE_BASE_ID", _KB_ID),
+            ("AWS_ACCESS_KEY_ID",       _AWS_ACCESS_KEY_ID),
+            ("AWS_SECRET_ACCESS_KEY",   _AWS_SECRET_ACCESS_KEY),
+            ("BEDROCK_AGENT_ID",        _AGENT_ID),
+            ("BEDROCK_AGENT_ALIAS_ID",  _AGENT_ALIAS_ID),
         ] if not k]
 
         if missing:
@@ -129,11 +78,11 @@ class RAGEngine:
                 aws_access_key_id=_AWS_ACCESS_KEY_ID,
                 aws_secret_access_key=_AWS_SECRET_ACCESS_KEY,
             )
-            self._kb_id     = _KB_ID
-            self._model_arn = _resolve_model_arn(_AWS_REGION, _MODEL_ID)
+            self._agent_id       = _AGENT_ID
+            self._agent_alias_id = _AGENT_ALIAS_ID
             self.ready  = True
             self.status = "ready"
-            _log(f"Connected — KB={_KB_ID} model={self._model_arn}")
+            _log(f"Connected — agentId={_AGENT_ID} agentAliasId={_AGENT_ALIAS_ID}")
         except (BotoCoreError, ClientError) as exc:
             self.status = f"error: {exc}"
             _log(f"Failed to create Bedrock client: {exc}")
@@ -142,28 +91,25 @@ class RAGEngine:
     # PUBLIC API
     # ------------------------------------------------------------------
 
-    def ask(
-        self,
-        question: str,
-        history: list[dict] | None = None,
-    ) -> dict:
+    def ask(self, question: str, session_id: str) -> dict:
         """
-        Retrieve from the Bedrock Knowledge Base and generate an answer.
+        Invoke the Bedrock Agent and stream the response.
 
-        Conversation history is prepended to the question text so that
-        Bedrock's prompt sees prior context without requiring server-side
-        session management.
+        Conversational context is managed server-side by the Agent using
+        the sessionId — no client-side history concatenation is needed.
 
         Parameters
         ----------
-        question : the user's current question
-        history  : list of {"role": "user"|"assistant", "content": str}
+        question   : the user's current question
+        session_id : Bedrock Agent session identifier (persists context
+                     across turns for the same session)
 
         Returns
         -------
         dict with keys:
             answer  -- the model's answer string
-            sources -- list of {"source": str, "score": float}
+            sources -- empty list (citations provided by the Agent's KB)
+            context -- empty list (alias for sources)
 
         Raises RuntimeError if the engine is not ready.
         Raises ClientError / BotoCoreError on Bedrock API failures.
@@ -171,101 +117,37 @@ class RAGEngine:
         if not self.ready:
             raise RuntimeError(f"RAG engine is not ready: {self.status}")
 
-        # Prepend conversation history into the input text.
-        if history:
-            lines = []
-            for msg in history:
-                role = "User" if msg["role"] == "user" else "Assistant"
-                lines.append(f"{role}: {msg['content']}")
-            input_text = (
-                "Conversation so far:\n"
-                + "\n".join(lines)
-                + f"\n\nCurrent question: {question}"
-            )
-        else:
-            input_text = question
-
-        response = self._client.retrieve_and_generate(
-            input={"text": input_text},
-            retrieveAndGenerateConfiguration={
-                "type": "KNOWLEDGE_BASE",
-                "knowledgeBaseConfiguration": {
-                    "knowledgeBaseId": self._kb_id,
-                    "modelArn": self._model_arn,
-                    "generationConfiguration": {
-                        "promptTemplate": {
-                            "textPromptTemplate": _PROMPT_TEMPLATE,
-                        },
-                    },
-                    "retrievalConfiguration": {
-                        "vectorSearchConfiguration": {
-                            "numberOfResults": 5,
-                        },
-                    },
-                },
-            },
+        response = self._client.invoke_agent(
+            agentId=self._agent_id,
+            agentAliasId=self._agent_alias_id,
+            sessionId=session_id,
+            inputText=question,
         )
 
-        answer_text = response.get("output", {}).get("text", "").strip()
-        sources     = _extract_sources(response)
+        answer_text = ""
+
+        for event in response.get("completion", []):
+            chunk = event.get("chunk")
+            if chunk:
+                answer_text += chunk["bytes"].decode("utf-8")
+
+            trace_event = event.get("trace")
+            if trace_event:
+                trace_data = trace_event.get("trace", {})
+                if "orchestrationTrace" in trace_data:
+                    orch = trace_data["orchestrationTrace"]
+                    if "invocationInput" in orch:
+                        inv = orch["invocationInput"]
+                        if "actionGroupInvocationInput" in inv:
+                            action = inv["actionGroupInvocationInput"]
+                            print(
+                                f"[Tool Invoked]: {action.get('function', '?')} "
+                                f"| Parameters: {action.get('parameters', [])}",
+                                flush=True,
+                            )
 
         return {
-            "answer":  answer_text,
-            "sources": sources,
-            # "context" alias keeps tests/older callers working
-            "context": sources,
+            "answer":  answer_text.strip(),
+            "sources": [],
+            "context": [],
         }
-
-    # Backward-compatible alias used by tests and any older call sites.
-    def answer(
-        self,
-        question: str,
-        history: list[dict] | None = None,
-        **_kwargs,
-    ) -> dict:
-        """Alias for ask(); retained for backward compatibility."""
-        return self.ask(question, history)
-
-
-# ------------------------------------------------------------------
-# HELPERS
-# ------------------------------------------------------------------
-
-def _extract_sources(response: dict) -> list[dict]:
-    """
-    Pull unique source URIs and scores from a retrieve_and_generate response.
-
-    Bedrock returns a `citations` list; each citation may reference one or
-    more retrieved documents.  Scores are optional metadata.
-    """
-    sources: list[dict] = []
-    seen:    set[str]   = set()
-
-    for citation in response.get("citations", []):
-        for ref in citation.get("retrievedReferences", []):
-            loc = ref.get("location", {})
-
-            # Resolve the document URI — support S3 and web locations.
-            uri: str = (
-                loc.get("s3Location",  {}).get("uri")
-                or loc.get("webLocation", {}).get("url")
-                or "unknown"
-            )
-
-            if uri in seen:
-                continue
-            seen.add(uri)
-
-            # Score is stored in metadata when available.
-            raw_score = ref.get("metadata", {}).get("score", 0.0)
-            try:
-                score = float(raw_score)
-            except (TypeError, ValueError):
-                score = 0.0
-
-            # Use only the filename/key portion for display.
-            display = uri.split("/")[-1] if uri != "unknown" else "unknown"
-
-            sources.append({"source": display, "score": score})
-
-    return sources

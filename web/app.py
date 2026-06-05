@@ -171,14 +171,10 @@ def ask():
     # Persist the user message
     db.add_message(session_id=session_id, role="user", content=question)
 
-    # Build conversation history (exclude current question — already added)
-    history = db.get_history_for_llm(session_id, limit=20)
-    if history and history[-1]["role"] == "user":
-        history = history[:-1]
-
-    # Run the RAG pipeline
+    # Run the RAG pipeline — conversational context is managed server-side
+    # by the Bedrock Agent using the sessionId
     try:
-        result = _engine.ask(question=question, history=history)
+        result = _engine.ask(question=question, session_id=session_id)
     except Exception as exc:
         return _err(f"RAG pipeline error: {exc}", 500)
 

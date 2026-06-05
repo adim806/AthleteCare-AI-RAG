@@ -5,6 +5,136 @@ CHUNK_FORMAT: SESSION_NOTE | Each session note is self-contained and independent
 PURPOSE: Active rehabilitation cases and ongoing maintenance cases. Archived cases (discharged >3 months ago) are in clinical_notes_archive.txt.
 Every note includes: PLAYER | DATE | CLINICIAN | SESSION_TYPE | OBJECTIVE_FINDINGS | TREATMENT_APPLIED | PATIENT_RESPONSE | PLAN.
 
+ACTIVE REHABILITATION CASES: Neymar Cohen (PLR-011) — hamstring Grade II Stage 3, Oren Shoval (PLR-008) — calf Grade I Stage 2
+ACTIVE MAINTENANCE CASES: Luca Ferretti (PLR-002) — post-ACL, Dmitri Volkov (PLR-003) — chronic lumbar, Anton Becker (PLR-005) — shoulder
+
+---
+
+RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
+INJURY: Left hamstring strain, Grade II
+DATE: 19 November 2024 | SESSION_NUMBER: 7 (Day 30 post-injury)
+CLINICIAN: Dr. Sara Cohen
+SESSION_TYPE: Stage 3 — rehabilitation and return to running assessment
+
+OBJECTIVE_FINDINGS:
+  - Pain at rest: 0/10
+  - Pain during Stage 3 activities: 0/10 throughout session
+  - Isokinetic left hamstring strength: 78% of contralateral right (target 80% for Stage 3→4 advancement)
+  - Straight-line jogging: completed 3×200m without symptoms
+  - Curvilinear running (low speed): initiated — 2×100m, no discomfort
+  - Nordic hamstring exercise: 3×5 reps — completed without pain
+  - Single-leg balance (bilateral): symmetric — no proprioceptive deficits noted
+
+TREATMENT_APPLIED:
+  - Isokinetic dynamometry assessment (formal strength measurement)
+  - Manual soft tissue work: left hamstring, 15 minutes
+  - Eccentric loading: Nordic hamstring 3×5 reps
+  - Running programme progression: curvilinear running introduced
+
+PATIENT_RESPONSE: Positive. Player motivated and fully compliant. Confidence building.
+
+CLINICAL_DECISION: Strength at 78% — 2% below the 80% threshold required for Stage 3→4 progression. Stage 4 advancement NOT yet authorised. Continue Stage 3 programme with focus on hamstring strength loading.
+
+PLAN:
+  - Continue isokinetic strengthening programme
+  - Re-assess strength: 25 November 2024
+  - If strength reaches 80%: initiate Stage 4 (non-contact team training) + refer to Dr. Shapira for Grade II sign-off
+  - Target return to full training: 15 December 2024
+  - No contact training until Stage 4 criteria met and physician clearance obtained
+
+---
+
+RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
+INJURY: Left hamstring strain, Grade II
+DATE: 11 November 2024 | SESSION_NUMBER: 5 (Day 22 post-injury)
+CLINICIAN: Dr. Sara Cohen
+SESSION_TYPE: Stage 3 entry — first jogging session
+
+OBJECTIVE_FINDINGS:
+  - Pain at rest: 0/10
+  - Palpation: minimal residual tenderness only at direct firm pressure. No pain on gentle palpation.
+  - Hamstring flexibility: within normal limits bilaterally
+  - Isokinetic strength (informal assessment): estimated 70–72% of contralateral
+  - Straight-line jogging trial: 2×100m at 60% pace — completed pain-free
+
+TREATMENT_APPLIED:
+  - Passive hamstring stretching: pain-free range
+  - Soft tissue mobilisation: instrument-assisted, 10 minutes
+  - Straight-line jogging introduction (Stage 3 entry)
+  - Stationary cycling: 15 minutes, low resistance
+
+PATIENT_RESPONSE: Excellent. No pain during jogging. Player visibly relieved to be running again.
+
+CLINICAL_DECISION: Stage 3 formally commenced. Pool running maintained as supplementary cardiovascular work. Strength still below target — formal isokinetic test scheduled for Day 30 (19 November).
+
+PLAN:
+  - Progressive straight-line running: increase distance and pace over next 2 weeks
+  - Nordic hamstring exercise: introduce at Day 25
+  - Next assessment: 19 November 2024
+
+---
+
+RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
+INJURY: Left hamstring strain, Grade II
+DATE: 31 October 2024 | SESSION_NUMBER: 3 (Day 11 post-injury)
+CLINICIAN: Dr. Sara Cohen
+SESSION_TYPE: Stage 2 — subacute rehabilitation
+
+OBJECTIVE_FINDINGS:
+  - Pain at rest: 0/10
+  - Palpation: localised tenderness left biceps femoris proximal. Reduced from Day 2.
+  - Active hamstring flexibility: 70° straight leg raise (reduced from normal 85°)
+  - Pain with passive stretch: mild discomfort at end range only (2/10)
+  - Crutches discontinued — full weight-bearing comfortable
+
+TREATMENT_APPLIED:
+  - Active-assisted hamstring stretching: pain-free range
+  - Soft tissue mobilisation: manual therapy to left hamstring and gluteal region
+  - Isometric hamstring contraction: 3×10 seconds, 50% effort — pain 0/10
+  - Pool running: 20 minutes, low resistance
+
+PATIENT_RESPONSE: Good progress. Crutches no longer needed. Pool running tolerated well.
+
+PLAN:
+  - Continue Stage 2 programme
+  - Progress to isotonic loading when pain 0/10 throughout
+  - Stage 3 entry target: approximately Day 18–20 (around 7–9 November)
+
+---
+
+RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
+INJURY: Left hamstring strain, Grade II
+DATE: 22 October 2024 | SESSION_NUMBER: 1 (Day 2 post-injury — initial assessment)
+CLINICIAN: Dr. Sara Cohen
+SESSION_TYPE: Initial assessment and Stage 1 management
+
+OBJECTIVE_FINDINGS:
+  - Localised swelling: present at left biceps femoris proximal musculotendinous junction
+  - Bruising: superficial ecchymosis noted Day 2
+  - Active hamstring flexibility: 50° straight leg raise (normal 85°) — significantly limited
+  - Pain with resisted knee flexion: 6/10
+  - Single-leg standing: possible but painful (4/10)
+  - Grade II classification confirmed: partial tearing, significant functional impairment
+
+TREATMENT_APPLIED:
+  - POLICE protocol: compression bandage, ice 20 minutes
+  - Crutches provided — non-weight-bearing as comfortable initially
+  - NSAIDs prescribed by Dr. Shapira
+  - Informed consent obtained for treatment plan
+
+DIAGNOSIS: Left hamstring Grade II strain — INJ-2024-033 opened.
+
+PLAN:
+  - Stage 1–2 soft tissue protocol (Protocol A)
+  - NSAIDs for 5 days
+  - Expected return to training: 15 December 2024
+  - Grade II: Dr. Shapira sign-off required before Stage 4
+  - Responsible: Dr. Sara Cohen
+
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
@@ -33,7 +163,6 @@ PLAN:
   - Next physiotherapy assessment: 23 November 2024
   - Target return to field jogging: 24 November 2024
   - Target return to full training: 28 November 2024
-  - Progressing as expected for Grade I calf strain
 
 ---
 
@@ -66,13 +195,12 @@ PLAN:
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
 PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2024-031
 INJURY: Right calf muscle strain, Grade I
-DATE: 15 November 2024 | SESSION_NUMBER: 1 (Day 1 post-injury — initial assessment)
+DATE: 15 November 2024 | SESSION_NUMBER: 1 (Day 1 — initial assessment)
 CLINICIAN: Dr. Sara Cohen
 SESSION_TYPE: Initial assessment and Stage 1 management
 
 OBJECTIVE_FINDINGS:
   - Localised swelling: present at medial head right gastrocnemius
-  - Point tenderness: medial gastrocnemius
   - Active dorsiflexion ROM: 6° (normal 20°) — significantly limited
   - Thompson test: NEGATIVE (Achilles tendon intact)
   - Single-leg calf raise: unable to complete due to pain
@@ -81,7 +209,7 @@ OBJECTIVE_FINDINGS:
 TREATMENT_APPLIED:
   - POLICE protocol: compression bandage, ice 20 minutes
   - Crutches provided for weight-bearing assistance
-  - Informed consent obtained for treatment plan
+  - Informed consent obtained
 
 DIAGNOSIS: Right calf Grade I strain — INJ-2024-031 opened.
 
@@ -127,15 +255,14 @@ SESSION_TYPE: ACL maintenance — fatigue management session
 OBJECTIVE_FINDINGS:
   - Right knee: no pain, no swelling
   - Resting HR: 52 bpm (within personal baseline)
-  - Player reports: mild right knee fatigue following Sunday's 90-minute match and two training sessions this week
+  - Player reports: mild right knee fatigue following Sunday's 90-minute match
 
 TREATMENT_APPLIED:
   - Reduced plyometric volume: 2×drop jumps (instead of standard 4)
   - Nordic hamstring: 3×6 reps (maintained)
   - Manual soft tissue work: right hamstring and quadriceps, 15 minutes
-  - Sleep advice: 8 hours priority this week
 
-CLINICAL_DECISION: Load reduction applied based on subjective fatigue and match congestion. Appropriate response — no alarm signals.
+CLINICAL_DECISION: Load reduction applied based on subjective fatigue. Appropriate response — no alarm signals.
 
 PLAN: Load review with Tal Ben-David. Next session: 19 November.
 
@@ -158,7 +285,7 @@ OBJECTIVE_FINDINGS:
 TREATMENT_APPLIED:
   - Manual therapy: passive lumbar mobilisation Grade III/IV at L3–L5
   - Dry needling: bilateral erector spinae (3 needles each side, 10 minutes)
-  - Home programme review: Thomas stretch, cat-cow, bird-dog, dead bug, pallof press — player reporting consistent compliance
+  - Home programme review: Thomas stretch, cat-cow, bird-dog, dead bug, pallof press — player confirmed compliant
 
 CLINICAL_DECISION: No load changes required. Stable presentation.
 
@@ -180,7 +307,7 @@ OBJECTIVE_FINDINGS:
   - Straight Leg Raise bilateral: NEGATIVE
   - Red flags: none present
 
-ASSESSMENT: Acute episode on background of chronic lumbar condition — consistent with previous episodes. Mechanism: aerial duel landing (Tuesday match).
+ASSESSMENT: Acute episode on background of chronic lumbar condition — consistent with previous episodes. Mechanism: aerial duel landing.
 
 TREATMENT_APPLIED:
   - Manual therapy: soft tissue mobilisation only
@@ -188,7 +315,7 @@ TREATMENT_APPLIED:
 
 CLINICAL_DECISION: 2-day rest from running. Modified training — no aerial duels, no heavy physical contact.
 
-PLAN: Review in 3 days (17 November 2024).
+PLAN: Review in 3 days.
 
 ---
 
@@ -208,7 +335,7 @@ OBJECTIVE_FINDINGS:
   - Audible click: NONE
 
 TREATMENT_APPLIED:
-  - Rotator cuff circuit: external rotation with band 3×15, internal rotation with band 3×15, diagonal D1 and D2 patterns 3×10 each
+  - Rotator cuff circuit: external rotation 3×15, internal rotation 3×15, diagonal D1/D2 patterns 3×10 each
   - Serratus anterior activation: wall push-up plus 3×12
   - Posterior capsule stretch: 60 seconds each side
 
