@@ -15,29 +15,25 @@ POST /api/ask                       -- submit a question and get an answer
 """
 
 import os
-import sys
 
 from flask import Flask, jsonify, render_template, request
 
-# ------------------------------------------------------------------
-# PATH BOOTSTRAP
-# Ensure the project root (parent of web/) is on sys.path so that
-# `import database` and `from rag.pipeline import RAGEngine` work
-# regardless of the working directory when the app is launched.
-# ------------------------------------------------------------------
-_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
-
-import dashboard  # noqa: E402
-import database as db  # noqa: E402 — import after path bootstrap
-from rag.pipeline import RAGEngine  # noqa: E402
+from . import dashboard
+from . import database as db
+from .rag.pipeline import RAGEngine
 
 # ------------------------------------------------------------------
 # FLASK APP
 # ------------------------------------------------------------------
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+_HERE     = os.path.dirname(os.path.abspath(__file__))
+_FRONTEND = os.path.join(os.path.dirname(_HERE), "frontend")
+
+app = Flask(
+    __name__,
+    template_folder=os.path.join(_FRONTEND, "templates"),
+    static_folder=os.path.join(_FRONTEND, "static"),
+)
 app.config["JSON_SORT_KEYS"] = False
 
 # ------------------------------------------------------------------

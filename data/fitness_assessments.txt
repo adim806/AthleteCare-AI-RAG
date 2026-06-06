@@ -1,8 +1,8 @@
 FC Velocity — Fitness Assessment Data and Standards
-SOURCE: fitness_assessments.txt | DOMAIN: fitness_data | UPDATED: November 2024
+SOURCE: fitness_assessments.txt | DOMAIN: fitness_data | UPDATED: June 2026
 CHUNK_FORMAT: FITNESS_ENTRY | Each entry is self-contained and independently retrievable.
 
-NOTE: This file is the single source of truth for all quantitative fitness data. Player IDs match players.txt.
+NOTE: Most recent assessments: pre-season July 2025, mid-season December 2025, pre-playoff May 2026.
 
 ---
 
@@ -10,16 +10,16 @@ RECORD_TYPE: FITNESS_POLICY
 SECTION: Assessment schedule
 
 Q: When does the pre-season fitness assessment take place?
-A: 3 weeks before the season starts. Full battery for all first-squad players.
+A: 3 weeks before the season starts — July 2025 for the 2025–26 season.
 
 Q: When does the mid-season fitness assessment take place?
-A: December winter break. Focus on fatigue monitoring and fitness changes.
+A: January winter break — January 6–8, 2026 for this season.
 
-Q: When does the post-injury fitness assessment take place?
-A: At RTP Stage 3 and Stage 4 to confirm functional readiness for progression.
+Q: When does the pre-playoff assessment take place?
+A: May 2026 — before the final league fixtures and Cup Final preparations.
 
 Q: What does the annual comprehensive assessment include?
-A: Blood panels (including iron, Vitamin D, haematocrit), bone density for selected players, and psychological screening.
+A: Blood panels (iron, Vitamin D, haematocrit), bone density for selected players, psychological screening. Conducted January 2026 winter break.
 
 ---
 
@@ -27,10 +27,7 @@ RECORD_TYPE: FITNESS_BENCHMARK
 SECTION: Test battery benchmarks
 
 Q: What is the Yo-Yo IR2 benchmark for outfield players?
-A: Minimum 1080m. Elite target: 1400m+.
-
-Q: What is the Yo-Yo IR2 benchmark for goalkeepers?
-A: Minimum 780m.
+A: Minimum 1080m. Elite: 1400m+.
 
 Q: What is the 30-metre sprint benchmark for outfield players?
 A: Below 4.0 seconds. Elite: below 3.8 seconds.
@@ -39,133 +36,114 @@ Q: What is the 5-10-5 agility benchmark for outfield players?
 A: Below 4.4 seconds.
 
 Q: What is the single-leg hop test RTP threshold?
-A: Limb Symmetry Index (LSI) ≥ 90%. Calculated as: injured side distance ÷ uninjured side distance × 100.
+A: LSI ≥90%. Calculated as injured ÷ uninjured × 100.
 
 Q: What is the isokinetic H:Q ratio benchmark?
-A: 0.60–0.70 at 60°/s. H:Q below 0.55 triggers immediate referral to targeted hamstring strengthening programme.
+A: 0.60–0.70. Below 0.55 = immediate referral to hamstring strengthening.
 
 Q: What sit-and-reach score triggers a flexibility programme?
-A: Below 28 cm triggers enrolment in a daily posterior chain flexibility programme.
+A: Below 28cm. Note: Okafor previously below benchmark — resolved April 2026 (now 30cm).
 
 Q: What body fat benchmarks apply?
 A: Outfield players: 8–14%. Goalkeepers: 10–16%.
 
-Q: What resting heart rate is normal for FC Velocity players?
-A: 42–58 bpm. Values above 60 bpm after a rest day may indicate insufficient recovery or illness.
-
-Q: What HRV drop triggers a load management review?
-A: A drop of more than 20% from a player's personal pre-season HRV baseline on consecutive mornings triggers a load management review with Tal Ben-David.
+Q: What HRV drop triggers load management review?
+A: More than 20% from personal pre-season baseline on consecutive mornings.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | ASSESSMENT_DATE: November 2024
+PLAYER: Marco Alvarez | PLAYER_ID: PLR-001 | ASSESSMENT_DATE: May 2026
 
-Q: What are Marco Alvarez's November 2024 fitness results?
-A: Yo-Yo IR2: 1360m (above minimum, approaching elite) | Sprint: 3.82s (elite range) | Agility: 4.31s (within benchmark) | Body fat: 10.2% | Overall status: High fitness, match-ready.
-
-Q: Is Marco Alvarez above or below benchmark?
-A: Above benchmark across all measured metrics. High fitness, fully match-ready.
+Q: What are Marco Alvarez's May 2026 fitness results?
+A: Yo-Yo IR2: 1375m | Sprint: 3.80s (elite) | Agility: 4.29s | Body fat: 10.4% | Status: High fitness, fully match-ready. No injury concerns since 2023.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | ASSESSMENT_DATE: November 2024
+PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | ASSESSMENT_DATE: May 2026
 
-Q: What are Luca Ferretti's November 2024 fitness results?
-A: Yo-Yo IR2: 1180m (above minimum 1080m, below pre-ACL baseline of 1280m — improving) | Sprint: 3.91s | Agility: 4.39s | Body fat: 11.4% | Isokinetic LSI: 98.6% (right knee) | H:Q right knee: 0.68 | ACL-RSI: 79/100.
+Q: What are Luca Ferretti's May 2026 fitness results?
+A: Yo-Yo IR2: 1240m (approaching pre-ACL baseline of 1280m) | Sprint: 3.89s | Agility: 4.37s | Body fat: 11.1% | LSI: 99.1% | H:Q: 0.69 | ACL-RSI: 91/100. Outstanding condition 2.5 years post-ACL.
 
-Q: Is Luca Ferretti back to his pre-ACL fitness level?
-A: Not yet — Yo-Yo IR2 at 1180m vs pre-ACL baseline of 1280m. All other metrics within range. Continued development ongoing.
-
----
-
-RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | ASSESSMENT_DATE: November 2024
-
-Q: What are Dmitri Volkov's November 2024 fitness results?
-A: Yo-Yo IR2: 1020m (below benchmark, age-managed) | Sprint: 4.08s | Agility: 4.52s (above 4.4s benchmark) | Body fat: 12.8% | ACWR: 1.22 (safe zone).
-
-Q: Is Dmitri Volkov below fitness benchmark?
-A: Yo-Yo IR2 1020m is below the 1080m minimum. Agility 4.52s is above the 4.4s threshold (slower). Both age-managed for a 31-year-old centre back.
+Q: Is Ferretti back to his pre-ACL fitness level?
+A: Nearly — Yo-Yo IR2 1240m vs 1280m pre-ACL baseline (97% of baseline). All other metrics within or exceeding range. The gap has narrowed significantly since 2024 (was 1180m).
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: James Okafor | PLAYER_ID: PLR-004 | ASSESSMENT_DATE: November 2024
+PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | ASSESSMENT_DATE: May 2026
 
-Q: What are James Okafor's November 2024 fitness results?
-A: Yo-Yo IR2: 1420m (squad best, elite range) | Sprint: 3.74s (squad fastest, elite range) | Agility: 4.19s | Body fat: 9.1% | Sit-and-reach: BELOW 28cm benchmark — flexibility programme active.
+Q: What are Dmitri Volkov's May 2026 fitness results?
+A: Yo-Yo IR2: 995m (below 1080m benchmark — age-managed at 32) | Sprint: 4.14s | Agility: 4.52s | Body fat: 13.1% | ACWR: 1.18 (safe zone). Managing chronic lumbar condition throughout.
 
-Q: Is James Okafor the fittest player in the squad?
-A: By aerobic and sprint metrics, yes — Okafor leads in Yo-Yo IR2 (1420m) and sprint speed (3.74s). However, his sit-and-reach is below the 28cm benchmark, creating injury risk despite excellent fitness.
-
----
-
-RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Anton Becker | PLAYER_ID: PLR-005 | ASSESSMENT_DATE: November 2024
-
-Q: What are Anton Becker's November 2024 fitness results?
-A: Yo-Yo IR2: 980m (above goalkeeper minimum 780m) | Sprint: 4.21s | Shoulder: full ROM, symmetrical strength (external rotation R 38 Nm / L 37 Nm; internal rotation R 52 Nm / L 51 Nm).
-
-Q: Is Anton Becker within goalkeeper fitness benchmarks?
-A: Yes. Yo-Yo IR2 980m comfortably above goalkeeper minimum 780m. Shoulder strength symmetrical — stability programme effective.
+Q: Is Volkov below fitness benchmark?
+A: Yo-Yo IR2 995m is below 1080m minimum — age-managed. Agility 4.52s above 4.4s benchmark. Both expected for a 32-year-old centre back with chronic back condition. Cleared for Cup Final with restrictions.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Rafael Torres | PLAYER_ID: PLR-006 | ASSESSMENT_DATE: November 2024
+PLAYER: James Okafor | PLAYER_ID: PLR-004 | ASSESSMENT_DATE: May 2026
 
-Q: What are Rafael Torres's November 2024 fitness results?
-A: Yo-Yo IR2: 1310m | Sprint: 3.87s | Agility: 4.28s | H:Q ratio: 0.64 (within target range) | Status: High — cleared for all activity.
+Q: What are James Okafor's May 2026 fitness results?
+A: Yo-Yo IR2: 1440m (squad best) | Sprint: 3.72s (squad fastest) | Agility: 4.17s | Body fat: 8.9% | Sit-and-reach: 30cm (ABOVE 28cm benchmark — improvement confirmed April 2026).
 
----
-
-RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Yosef Klein | PLAYER_ID: PLR-007 | ASSESSMENT_DATE: November 2024
-
-Q: What are Yosef Klein's November 2024 fitness results?
-A: Yo-Yo IR2: 1240m | Sprint: 4.01s | Agility: 4.37s | Body fat: 11.7% | Status: High — inhaler protocol confirmed.
+Q: Has Okafor resolved his flexibility deficit?
+A: Yes — April 2026 reassessment: 30cm (above 28cm benchmark). Daily flexibility programme effective. Programme continues as maintenance.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | ASSESSMENT_DATE: October 2024 (pre-injury)
-NOTE: Player currently injured (INJ-2024-033). Data below is from last completed pre-injury assessment.
+PLAYER: Anton Becker | PLAYER_ID: PLR-005 | ASSESSMENT_DATE: May 2026
 
-Q: What are Neymar Cohen's pre-injury fitness results (October 2024)?
-A: Yo-Yo IR2: 1350m (above minimum, strong aerobic capacity for a winger) | Sprint: 3.77s (elite range, squad third fastest) | Agility: 4.21s (excellent) | Body fat: 10.3% | Status at assessment: High fitness.
-
-Q: What is Neymar Cohen's current fitness status?
-A: UNAVAILABLE for training. Currently in Stage 3 rehabilitation (INJ-2024-033 — left hamstring Grade II). No fitness testing possible until RTP Stage 3 isokinetic assessment. Pre-injury data above represents last known fitness baseline.
-
-Q: What fitness testing is required for Neymar Cohen's RTP?
-A: At Stage 3: isokinetic strength assessment of left hamstring (target ≥80% of contralateral for Stage 3→4 progression). At Stage 4: full isokinetic battery, H:Q ratio, single-leg hop test LSI ≥90%, sprint speed ≥95% of pre-injury baseline (3.77s target: ≥3.58s). Grade II injury: Dr. Shapira sign-off required before Stage 4.
+Q: What are Anton Becker's May 2026 fitness results?
+A: Yo-Yo IR2: 1005m (above 780m goalkeeper minimum) | Sprint: 4.19s | Shoulder: R 39/L 38 Nm external rotation; R 53/L 52 Nm internal rotation — fully symmetrical. Five years post-Bankart — excellent stability.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Leo Mizrahi | PLAYER_ID: PLR-012 | ASSESSMENT_DATE: November 2024
+PLAYER: Rafael Torres | PLAYER_ID: PLR-006 | ASSESSMENT_DATE: May 2026
 
-Q: What are Leo Mizrahi's November 2024 fitness results?
-A: Yo-Yo IR2: 1320m (above minimum 1080m, solid aerobic base) | Sprint: 3.95s (within benchmark, below 4.0s) | Agility: 4.25s (within benchmark, strong for position) | Body fat: 9.8% (excellent) | H:Q ratio: 0.63 (within 0.60–0.70 target range) | Left adductor strength: 98% of right (monitoring continues post-2023 strain).
-
-Q: Is Leo Mizrahi above or below benchmark?
-A: Above benchmark across all metrics. H:Q 0.63 and adductor symmetry within normal limits. Fitness profile reflects his playmaking role — strong agility and direction change scores relative to sprint speed.
+Q: What are Rafael Torres's May 2026 fitness results?
+A: Yo-Yo IR2: 1330m | Sprint: 3.85s | Agility: 4.26s | H:Q: 0.65 | Left adductor: 98% of right | Status: High — fully cleared.
 
 ---
 
 RECORD_TYPE: PLAYER_FITNESS_DATA
-PLAYER: Cristiano Levi | PLAYER_ID: PLR-013 | ASSESSMENT_DATE: November 2024
+PLAYER: Yosef Klein | PLAYER_ID: PLR-007 | ASSESSMENT_DATE: May 2026
 
-Q: What are Cristiano Levi's November 2024 fitness results?
-A: Yo-Yo IR2: 1390m (elite range, squad second highest) | Sprint: 3.79s (elite range, squad second fastest) | Agility: 4.22s (elite range) | Body fat: 9.5% (excellent) | ACWR: 1.28 (safe zone — upper boundary, monitoring post-international duty).
+Q: What are Yosef Klein's May 2026 fitness results?
+A: Yo-Yo IR2: 1260m | Sprint: 4.00s | Agility: 4.35s | Body fat: 11.5% | Status: High. Asthma well-controlled with TUE protocol.
 
-Q: Is Cristiano Levi above or below benchmark?
-A: Above benchmark across all metrics. Among the top physical performers in the squad. ACWR currently 1.28 — within safe zone but at upper boundary following return from international duty. Monitoring continues.
+---
 
-Q: What is Cristiano Levi's ACWR status?
-A: ACWR 1.28 — within safe zone (0.80–1.30) but at the upper boundary. Tal Ben-David is monitoring daily. If ACWR exceeds 1.30, load modification protocol applies immediately. Levi returned from international duty 12 November 2024 after playing 2 matches in 4 days.
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | ASSESSMENT_DATE: May 2026 (post-clearance)
+
+Q: What are Neymar Cohen's May 2026 fitness results?
+A: Assessed May 2026 following April 22 clearance from Grade II hamstring. Yo-Yo IR2: 1320m (recovering — pre-injury baseline 1350m) | Sprint: 3.79s | Agility: 4.21s | Body fat: 10.5% | Left hamstring strength: 97% contralateral. Fitness recovering well.
+
+Q: Is Neymar Cohen fit for the Cup Final?
+A: Yes — cleared April 22, 2026. Fully available June 6, 2026. Monitor for fatigue-related hamstring risk in final 20 minutes given recurrence history.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Leo Mizrahi | PLAYER_ID: PLR-012 | ASSESSMENT_DATE: May 2026
+
+Q: What are Leo Mizrahi's May 2026 fitness results?
+A: Yo-Yo IR2: 1330m | Sprint: 3.93s | Agility: 4.24s | Body fat: 9.7% | H:Q: 0.64 | Left adductor: 99% of right | Status: High — fully cleared.
+
+---
+
+RECORD_TYPE: PLAYER_FITNESS_DATA
+PLAYER: Cristiano Levi | PLAYER_ID: PLR-013 | ASSESSMENT_DATE: May 2026
+
+Q: What are Cristiano Levi's May 2026 fitness results?
+A: Yo-Yo IR2: 1410m (squad second highest) | Sprint: 3.77s (squad second fastest) | Agility: 4.22s | Body fat: 9.3% | ACWR: 1.21 (safe zone). Strong end-of-season form.
+
+Q: What was Cristiano Levi's ACWR peak this season?
+A: February 2026 — ACWR peaked at 1.68 (high risk zone) during fixture congestion. Tal Ben-David applied immediate load reduction. No injury sustained. ACWR now 1.21.
 
 ---
 
@@ -176,48 +154,22 @@ Q: What GPS system does FC Velocity use?
 A: Catapult Sport GPS system.
 
 Q: What GPS metrics are tracked daily?
-A: Total distance, high-speed running distance (above 21 km/h), sprint distance (above 25 km/h), Player Load, and ACWR.
+A: Total distance, high-speed running (above 21 km/h), sprint distance (above 25 km/h), Player Load, ACWR.
 
 Q: How is ACWR calculated?
-A: ACWR = current week's training load ÷ rolling 4-week average training load.
+A: Current week's training load ÷ rolling 4-week average training load.
 
 Q: What is the safe ACWR zone?
 A: 0.80–1.30.
 
-Q: What ACWR indicates elevated injury risk?
-A: 1.30–1.50 — elevated risk, requires monitoring.
+Q: What ACWR indicates high injury risk?
+A: Above 1.50. Tal Ben-David immediately modifies next session load and notifies responsible physiotherapist. Example: Levi and Alvarez reached >1.5 in February 2026 — managed successfully.
 
-Q: What ACWR indicates high injury risk requiring immediate action?
-A: Above 1.50 — Tal Ben-David must immediately modify the next session load and notify the responsible physiotherapist.
-
-Q: When is the ACWR data reviewed?
-A: Every Monday morning at the medical and conditioning meeting.
-
-Q: Which squad players currently have ACWR values documented?
-A: PLR-003 Volkov: 1.22 (safe zone). PLR-013 Cristiano Levi: 1.28 (safe zone, upper boundary — monitoring). All other cleared players: ACWR within safe zone, no flags. PLR-011 Cohen and PLR-008 Shoval: not applicable (no running load during rehabilitation).
-
----
-
-RECORD_TYPE: FITNESS_POLICY
-SECTION: Nutritional benchmarks
-
-Q: What is the carbohydrate intake target on match days?
-A: 8–10 g per kg of body weight.
-
-Q: What is the daily protein intake target?
-A: 1.6–2.2 g per kg of body weight. Post-training intake within 30 minutes is prioritised.
-
-Q: What is the hydration target before sessions?
-A: Urine colour pale yellow (scale 1–3 on PNSS chart) at the start of each session.
-
-Q: What level of dehydration affects performance?
-A: Dehydration above 2% of body weight impairs sprint performance and increases injury risk.
-
-Q: What micronutrients are assessed twice per season?
-A: Iron and Vitamin D — deficiencies are common in professional footballers and corrected with personalised plans from Daniela Ronen.
+Q: Which squad players currently have notable ACWR values?
+A: Volkov: 1.18 (safe zone, chronic management). Cristiano Levi: 1.21 (safe zone, monitoring post-season load). All others: within safe zone, no flags. Shoval and any injured players: not applicable.
 
 Q: Who are the top sprint performers in the squad?
-A: 1st: James Okafor (PLR-004) — 3.74s. 2nd: Cristiano Levi (PLR-013) — 3.79s. 3rd: Neymar Cohen (PLR-011) — 3.77s (pre-injury baseline).
+A: 1st: James Okafor (PLR-004) — 3.72s. 2nd: Cristiano Levi (PLR-013) — 3.77s. 3rd: Neymar Cohen (PLR-011) — 3.79s (post-clearance).
 
 Q: Who leads the squad in Yo-Yo IR2?
-A: 1st: James Okafor (PLR-004) — 1420m. 2nd: Cristiano Levi (PLR-013) — 1390m. 3rd: Neymar Cohen (PLR-011) — 1350m (pre-injury baseline).
+A: 1st: James Okafor (PLR-004) — 1440m. 2nd: Cristiano Levi (PLR-013) — 1410m. 3rd: Marco Alvarez (PLR-001) — 1375m.

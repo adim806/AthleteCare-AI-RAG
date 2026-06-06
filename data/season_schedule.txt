@@ -1,0 +1,274 @@
+FC Velocity — Season Schedule 2025–26
+SOURCE: season_schedule.txt | DOMAIN: schedule | UPDATED: June 2026
+CHUNK_FORMAT: SCHEDULE_ENTRY | Each entry is self-contained and independently retrievable.
+
+PURPOSE: Full season fixture list and training schedule. Used by medical and fitness staff for load planning, ACWR management, fixture congestion identification, and return-to-play timing. All dates reference the Israeli football season calendar.
+
+SEASON_OVERVIEW:
+  Competition: Israeli Premier League (IPL) — 26 matchdays
+  Domestic Cup: Gvia HaMedina (State Cup) — 5 rounds including final
+  European: UEFA Europa Conference League Qualifying — 2 rounds
+  International breaks: 4 windows
+  Season start: August 16, 2025
+  Season end (league): May 30, 2026
+  Cup Final: June 6, 2026
+
+TODAY: June 6, 2026 — STATE CUP FINAL DAY
+
+---
+
+RECORD_TYPE: PHASE
+PHASE: Pre-Season | DATES: July 1–August 14, 2025
+
+Q: What does the pre-season period include?
+A: July 1–14 — Individual fitness testing and musculoskeletal screening battery for all first-squad players. July 15–31 — Double-session training days, tactical preparation, fitness base building. August 1–14 — Friendly matches and final pre-season preparation. Medical staff: Dr. Shapira leads full squad screening. Tal Ben-David establishes individual ACWR baselines. Daniela Ronen conducts nutritional assessments.
+
+Q: When is the pre-season fitness screening?
+A: July 1–14, 2025. Full battery for all first-squad players: Yo-Yo IR2, sprint, agility, isokinetic strength, FMS, body composition, blood panels.
+
+---
+
+RECORD_TYPE: PHASE
+PHASE: European Qualifying | DATES: August 7–28, 2025
+
+Q: What European competition did FC Velocity participate in for 2025-26?
+A: UEFA Europa Conference League Qualifying. Two qualifying rounds:
+  Round 1 (First Leg): August 7, 2025 — Away
+  Round 1 (Second Leg): August 14, 2025 — Home
+  Round 2 (First Leg): August 21, 2025 — Home
+  Round 2 (Second Leg): August 28, 2025 — Away
+  FC Velocity eliminated in Round 2 — dropped to league focus.
+
+Q: Did the European qualifying affect squad load at the start of the season?
+A: Yes. 4 competitive matches in 3 weeks before the league started. Tal Ben-David flagged elevated ACWR risk for high-output players. Load monitoring protocol activated for PLR-013 Cristiano Levi and PLR-004 Okafor from August 21.
+
+---
+
+RECORD_TYPE: INTERNATIONAL_BREAK
+BREAK: 1 | DATES: September 6–14, 2025
+PLAYERS_CALLED_UP: PLR-001 Alvarez (national team), PLR-013 Cristiano Levi (national team), PLR-003 Volkov (called up — restricted to 60 min/match by Dr. Shapira)
+
+Q: What happened during the September 2025 international break?
+A: September 6–14, 2025. Alvarez and Cristiano Levi called to national squad. Volkov called up but Dr. Shapira issued formal medical letter restricting him to maximum 60 minutes per match due to chronic lumbar condition. National team management accepted the restriction.
+
+Q: Was Volkov ever restricted from international duty?
+A: Yes — September 2025. Dr. Shapira issued a formal medical restriction letter limiting him to 60 minutes per match per appearance. This was the first time FC Velocity's CMO formally restricted a player's international availability. Volkov played twice (60 min each) — no lumbar flare-up during the break.
+
+---
+
+RECORD_TYPE: SEASON_MATCHES
+PHASE: League Phase 1 | DATES: August 16 – November 29, 2025
+MATCHDAYS: 1–14
+
+Q: What were FC Velocity's league fixtures in the first half of the season?
+A:
+  MD1:  August 16, 2025 — Hapoel Tel Aviv (H) — Saturday
+  MD2:  August 23, 2025 — Maccabi Haifa (A) — Saturday
+  MD3:  September 1, 2025 — Beitar Jerusalem (H) — Monday
+  [International break September 6–14]
+  MD4:  September 20, 2025 — Bnei Sakhnin (A) — Saturday
+  MD5:  September 27, 2025 — Hapoel Beer Sheva (H) — Saturday
+  MD6:  October 4, 2025 — Maccabi Tel Aviv (A) — Saturday
+  [International break October 11–19]
+  MD7:  October 25, 2025 — Hapoel Haifa (H) — Saturday
+  MD8:  November 1, 2025 — Ashdod FC (A) — Saturday
+  MD9:  November 8, 2025 — Ironi Kiryat Shmona (H) — Saturday
+  [International break November 15–23]
+  MD10: November 29, 2025 — Maccabi Petah Tikva (A) — Saturday
+
+---
+
+RECORD_TYPE: FIXTURE_CONGESTION
+EVENT: State Cup Round 2 + Double Fixture Week
+DATES: October 4–12, 2025
+MATCHES: MD6 (October 4) + Cup R2 (October 8) + MD7 preparation
+IMPACT: Elevated ACWR risk. Medical briefing held daily October 5–11.
+
+Q: Was there fixture congestion in October 2025?
+A: October 4–8, 2025 — 2 competitive matches in 4 days (league + cup). Medical team held daily 10-minute ACWR briefings. Tal Ben-David reduced training intensity October 5–7. No injuries sustained.
+
+---
+
+RECORD_TYPE: INTERNATIONAL_BREAK
+BREAK: 2 | DATES: October 11–19, 2025
+PLAYERS_CALLED_UP: PLR-001 Alvarez, PLR-013 Cristiano Levi
+
+Q: What happened during the October 2025 international break?
+A: October 11–19, 2025. Alvarez and Cristiano Levi on national duty. Cristiano Levi returned October 19 having played 2 matches in 4 days — 5-day load reduction protocol applied on return. ACWR peaked at 1.31 (just above safe zone) on October 22 — Tal Ben-David modified session load for 3 days.
+
+---
+
+RECORD_TYPE: SCHEDULE_ENTRY
+ENTRY: State Cup — Full Draw
+COMPETITION: Gvia HaMedina (State Cup) 2025–26
+
+Q: What is FC Velocity's State Cup record this season?
+A:
+  Round 1 (32): September 10, 2025 — Hapoel Acre (A) — Won 3–1
+  Round 2 (16): October 8, 2025 — Bnei Yehuda (H) — Won 2–0
+  Round 3 (QF): December 17, 2025 — Hapoel Tel Aviv (A) — Won 1–0 (AET)
+  Semi-Final: March 11, 2026 — Maccabi Haifa (H) — Won 2–1
+  FINAL: June 6, 2026 — Maccabi Tel Aviv — Bloomfield Stadium, Tel Aviv
+
+Q: When is the State Cup Final?
+A: June 6, 2026. FC Velocity vs. Maccabi Tel Aviv at Bloomfield Stadium, Tel Aviv. Kick-off 20:45. TODAY. Full medical team travelling.
+
+Q: Is the State Cup Final today?
+A: YES — June 6, 2026 is the State Cup Final. FC Velocity vs. Maccabi Tel Aviv, kick-off 20:45 at Bloomfield Stadium. This is the highest-stakes fixture of the season. Full squad available except PLR-008 Oren Shoval (unavailable — right calf Grade I, not yet cleared).
+
+---
+
+RECORD_TYPE: INTERNATIONAL_BREAK
+BREAK: 3 | DATES: November 15–23, 2025
+PLAYERS_CALLED_UP: PLR-001 Alvarez, PLR-003 Volkov (restricted — 60 min max per Dr. Shapira)
+
+Q: What happened during the November 2025 international break?
+A: November 15–23, 2025. Alvarez (2 matches, no issues). Volkov attended national squad under Dr. Shapira's restriction — played 58 minutes in one match, did not play in second. Returned without lumbar episode.
+
+---
+
+RECORD_TYPE: SEASON_MATCHES
+PHASE: League Phase 1 Continuation | DATES: December 2025
+MATCHDAYS: 11–14
+
+Q: What were the December 2025 fixtures?
+A:
+  MD11: December 6, 2025 — Hapoel Jerusalem (H) — Saturday
+  MD12: December 13, 2025 — Bnei Sakhnin (H) — Saturday
+  Cup QF: December 17, 2025 — Hapoel Tel Aviv (A) — Wednesday
+  MD13: December 20, 2025 — Hapoel Beer Sheva (A) — Saturday
+  MD14: December 27, 2025 — Maccabi Netanya (H) — Saturday
+
+---
+
+RECORD_TYPE: FIXTURE_CONGESTION
+EVENT: December Double-Header
+DATES: December 13–17, 2025
+MATCHES: MD12 (December 13) + Cup QF (December 17)
+IMPACT: Moderate. 4-day turnaround. No load flags triggered.
+
+---
+
+RECORD_TYPE: PHASE
+PHASE: Winter Break | DATES: January 5–19, 2026
+
+Q: When is the winter break?
+A: January 5–19, 2026. No competitive fixtures. Training resumes January 15. Medical staff use this period for: mid-season fitness testing battery (January 6–8), blood panel assessments for all squad members (January 7), individual injury management reviews, and nutritional reassessments.
+
+Q: What medical assessments occur during the winter break?
+A: January 6–8, 2026 — Full fitness reassessment: Yo-Yo IR2, sprint, agility, isokinetic strength. January 7, 2026 — Annual blood panel: iron, Vitamin D, haematocrit for all 14 squad members. Results reviewed by Daniela Ronen and Dr. Shapira. January 10, 2026 — Individual medical review meetings. January 14 — Eitan Levi bone density (DXA) scan result reviewed.
+
+---
+
+RECORD_TYPE: SCHEDULE_ENTRY
+ENTRY: Eitan Levi DXA Scan Follow-up
+DATE: January 14, 2026
+
+Q: When was Eitan Levi's DXA scan?
+A: January 8, 2026 — DXA bone density scan conducted. Results reviewed January 14, 2026 with Dr. Shapira and Daniela Ronen.
+
+Q: What did Levi's January 2026 DXA scan show?
+A: DXA result January 8, 2026: Bone density T-score improved from baseline (March 2024). Lumbar spine Z-score: –0.4 (within normal range). Vitamin D: 82 nmol/L (above target of 75 nmol/L — target reached). Calcium supplementation reduced to maintenance dose. Vitamin D supplementation continued at 1000 IU/day (reduced from 2000 IU). Dr. Shapira: "Levi's bone health is now well-managed. Continue annual monitoring." Daniela Ronen updated his nutritional plan accordingly.
+
+---
+
+RECORD_TYPE: INTERNATIONAL_BREAK
+BREAK: 4 | DATES: March 21–29, 2026
+PLAYERS_CALLED_UP: PLR-001 Alvarez, PLR-013 Cristiano Levi, PLR-011 Neymar Cohen (called up but UNAVAILABLE — Grade II hamstring rehab)
+
+Q: What happened during the March 2026 international break?
+A: March 21–29, 2026. Alvarez (1 match, minor hamstring tightness — assessed on return, cleared). Cristiano Levi (2 matches, returned with ACWR 1.24 — within safe zone, no restrictions). Neymar Cohen was called up by his national team but unavailable due to Grade II left hamstring strain sustained March 5, 2026.
+
+---
+
+RECORD_TYPE: SEASON_MATCHES
+PHASE: League Phase 2 | DATES: January 20 – May 30, 2026
+MATCHDAYS: 15–26
+
+Q: What were the second-half league fixtures?
+A:
+  MD15: January 25, 2026 — Hapoel Tel Aviv (A) — Sunday
+  MD16: February 1, 2026 — Maccabi Haifa (H) — Sunday
+  MD17: February 8, 2026 — Beitar Jerusalem (A) — Sunday
+  MD18: February 15, 2026 — Bnei Sakhnin (H) — Sunday
+  MD19: February 22, 2026 — Hapoel Beer Sheva (A) — Sunday
+  MD20: March 1, 2026 — Maccabi Tel Aviv (H) — Sunday
+  Cup SF: March 11, 2026 — Maccabi Haifa (H) — Wednesday
+  MD21: March 14, 2026 — Hapoel Haifa (A) — Saturday
+  [International break March 21–29]
+  MD22: April 4, 2026 — Ashdod FC (H) — Saturday
+  MD23: April 18, 2026 — Ironi Kiryat Shmona (A) — Saturday
+  MD24: April 25, 2026 — Maccabi Petah Tikva (H) — Saturday
+  MD25: May 9, 2026 — Hapoel Jerusalem (A) — Saturday
+  MD26: May 30, 2026 — Maccabi Netanya (A) — Saturday (FINAL LEAGUE MATCH)
+  CUP FINAL: June 6, 2026 — Maccabi Tel Aviv (Bloomfield, Tel Aviv) — Saturday
+
+---
+
+RECORD_TYPE: FIXTURE_CONGESTION
+EVENT: February Congestion — CRITICAL ACWR EVENT
+DATES: February 15–22, 2026
+MATCHES: MD18 (February 15) + MD19 (February 22) + Cup preparation
+GAP_DAYS: 7 days between MD18 and MD19 with 3 training sessions
+
+Q: When was the most significant fixture congestion of the season?
+A: February 15–22, 2026. Two league matches in 7 days during the most intense training week of the second half. Three players exceeded safe ACWR zone: PLR-013 Cristiano Levi (ACWR 1.68 — high risk), PLR-001 Alvarez (ACWR 1.52 — high risk), PLR-002 Ferretti (ACWR 1.33 — elevated risk). Tal Ben-David applied immediate load reduction protocol: Levi and Alvarez excluded from February 17 training session. No injuries sustained. Protocol worked.
+
+Q: Did any player reach ACWR above 1.5 this season?
+A: Yes — February 2026. Cristiano Levi reached 1.68 and Marco Alvarez reached 1.52 during the February fixture congestion. Tal Ben-David applied load reduction protocol immediately. Both players missed one training session (February 17). Neither was injured. This is the clearest example of the ACWR protocol preventing injury.
+
+---
+
+RECORD_TYPE: SCHEDULE_ENTRY
+ENTRY: Neymar Cohen Grade II Hamstring — March 2026
+DATE: March 5, 2026 | CASE_ID: INJ-2026-005
+
+Q: When did Neymar Cohen's second hamstring injury occur?
+A: March 5, 2026 — MD20 vs Maccabi Tel Aviv (H). Mechanism: explosive acceleration in 71st minute. Left biceps femoris Grade II strain — same site as 2024 injury. Immediate removal, POLICE protocol applied. Dr. Shapira review triggered (re-injury to previously Grade II structure within 12 months — automatic formal review). Discharged and cleared: April 22, 2026. Currently fully fit.
+
+---
+
+RECORD_TYPE: SCHEDULE_ENTRY
+ENTRY: Oren Shoval Grade I Calf — May 2026
+DATE: May 28, 2026 | CASE_ID: INJ-2026-012
+
+Q: When did Shoval get injured this season?
+A: May 28, 2026 — Training session the week before the Cup Final. Right calf Grade I strain — same site as 2024 injury. Currently Stage 2 rehabilitation. Expected return to full training: June 13, 2026. NOT available for Cup Final (June 6, 2026).
+
+---
+
+RECORD_TYPE: TRAINING_SCHEDULE
+SECTION: Cup Final week — June 2–6, 2026
+
+Q: What is the training schedule for Cup Final week?
+A:
+  Monday June 2 — Full squad training (double session, tactical). Medical check all 13 fit players.
+  Tuesday June 3 — Light recovery session. Clinical assessments: Shoval Stage 2 review (Dr. Cohen). Ferretti maintenance (Dr. Mizrahi). Volkov lumbar check (Dr. Cohen).
+  Wednesday June 4 — Captain's session — technical and set pieces. Becker shoulder programme (Dr. Mizrahi). Nutrition briefing by Daniela Ronen: match day protocol reminder.
+  Thursday June 5 — Walk-through, travel preparation. Dr. Shapira final medical clearances. Klein inhaler confirmed for bench. Volkov training restrictions confirmed.
+  Friday June 6 — CUP FINAL DAY. Pitch-side medical bag check 90 min pre-kickoff. Full medical team at Bloomfield Stadium.
+
+Q: Who is confirmed fit for the Cup Final on June 6, 2026?
+A: CONFIRMED FIT (12): Alvarez, Ferretti, Volkov (modified — no aerial duels), Okafor, Becker, Torres, Klein (inhaler confirmed), Harroui, Levi E, Cohen N, Mizrahi, Cristiano Levi.
+  UNAVAILABLE (1): PLR-008 Oren Shoval — right calf Grade I (INJ-2026-012), Stage 2 rehabilitation. Not cleared for selection.
+
+Q: How many days until the next match after the Cup Final?
+A: The Cup Final (June 6, 2026) is the last competitive fixture of the season. Off-season begins June 7, 2026. Pre-season 2026–27 begins July 2026.
+
+---
+
+RECORD_TYPE: SEASON_SUMMARY
+SECTION: Medical department 2025–26 season overview
+
+Q: How many injuries occurred in the 2025-26 season?
+A: Total documented injuries: 3 active cases during the season.
+  INJ-2026-005: Neymar Cohen — Grade II hamstring (March 5, 2026) — resolved April 22, 2026
+  INJ-2026-012: Oren Shoval — Grade I calf (May 28, 2026) — ACTIVE, return June 13
+  INJ-2026-003: Volkov lumbar flare-up (May 15, 2026) — MANAGED, chronic condition
+  No Grade III injuries, no surgical cases, no ACL injuries this season.
+
+Q: What was the season's most significant load management achievement?
+A: February 2026 fixture congestion — Levi ACWR 1.68 and Alvarez ACWR 1.52 identified and managed before injury. Both players available for subsequent matches. This demonstrates the ACWR system preventing injury in real conditions.
+
+Q: What is the current squad status going into the Cup Final?
+A: 12 players fit and available, 1 unavailable (Shoval — calf). Volkov available for modified role. Ferretti in outstanding ACL maintenance condition (ACL-RSI 91/100). Squad medical status: best of the season.

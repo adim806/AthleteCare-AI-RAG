@@ -22,7 +22,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 import pytest
-from rag.pipeline import RAGEngine  # noqa: E402
+from backend.rag.pipeline import RAGEngine  # noqa: E402
 
 
 # ------------------------------------------------------------------

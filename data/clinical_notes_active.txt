@@ -1,344 +1,164 @@
 FC Velocity — Physiotherapy Clinical Notes: Active and Recent Cases
-SOURCE: clinical_notes_active.txt | DOMAIN: clinical_notes | UPDATED: November 2024
+SOURCE: clinical_notes_active.txt | DOMAIN: clinical_notes | UPDATED: June 2026
 CHUNK_FORMAT: SESSION_NOTE | Each session note is self-contained and independently retrievable.
 
-PURPOSE: Active rehabilitation cases and ongoing maintenance cases. Archived cases (discharged >3 months ago) are in clinical_notes_archive.txt.
-Every note includes: PLAYER | DATE | CLINICIAN | SESSION_TYPE | OBJECTIVE_FINDINGS | TREATMENT_APPLIED | PATIENT_RESPONSE | PLAN.
-
-ACTIVE REHABILITATION CASES: Neymar Cohen (PLR-011) — hamstring Grade II Stage 3, Oren Shoval (PLR-008) — calf Grade I Stage 2
-ACTIVE MAINTENANCE CASES: Luca Ferretti (PLR-002) — post-ACL, Dmitri Volkov (PLR-003) — chronic lumbar, Anton Becker (PLR-005) — shoulder
+ACTIVE REHABILITATION: PLR-008 Oren Shoval (right calf Grade I, Stage 2)
+ACTIVE MAINTENANCE: PLR-002 Ferretti (post-ACL), PLR-003 Volkov (chronic lumbar), PLR-005 Becker (shoulder)
+RECENTLY DISCHARGED: PLR-011 Cohen (April 22, 2026 — see clinical_notes_archive.txt)
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
-INJURY: Left hamstring strain, Grade II
-DATE: 19 November 2024 | SESSION_NUMBER: 7 (Day 30 post-injury)
-CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Stage 3 — rehabilitation and return to running assessment
-
-OBJECTIVE_FINDINGS:
-  - Pain at rest: 0/10
-  - Pain during Stage 3 activities: 0/10 throughout session
-  - Isokinetic left hamstring strength: 78% of contralateral right (target 80% for Stage 3→4 advancement)
-  - Straight-line jogging: completed 3×200m without symptoms
-  - Curvilinear running (low speed): initiated — 2×100m, no discomfort
-  - Nordic hamstring exercise: 3×5 reps — completed without pain
-  - Single-leg balance (bilateral): symmetric — no proprioceptive deficits noted
-
-TREATMENT_APPLIED:
-  - Isokinetic dynamometry assessment (formal strength measurement)
-  - Manual soft tissue work: left hamstring, 15 minutes
-  - Eccentric loading: Nordic hamstring 3×5 reps
-  - Running programme progression: curvilinear running introduced
-
-PATIENT_RESPONSE: Positive. Player motivated and fully compliant. Confidence building.
-
-CLINICAL_DECISION: Strength at 78% — 2% below the 80% threshold required for Stage 3→4 progression. Stage 4 advancement NOT yet authorised. Continue Stage 3 programme with focus on hamstring strength loading.
-
-PLAN:
-  - Continue isokinetic strengthening programme
-  - Re-assess strength: 25 November 2024
-  - If strength reaches 80%: initiate Stage 4 (non-contact team training) + refer to Dr. Shapira for Grade II sign-off
-  - Target return to full training: 15 December 2024
-  - No contact training until Stage 4 criteria met and physician clearance obtained
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
-INJURY: Left hamstring strain, Grade II
-DATE: 11 November 2024 | SESSION_NUMBER: 5 (Day 22 post-injury)
-CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Stage 3 entry — first jogging session
-
-OBJECTIVE_FINDINGS:
-  - Pain at rest: 0/10
-  - Palpation: minimal residual tenderness only at direct firm pressure. No pain on gentle palpation.
-  - Hamstring flexibility: within normal limits bilaterally
-  - Isokinetic strength (informal assessment): estimated 70–72% of contralateral
-  - Straight-line jogging trial: 2×100m at 60% pace — completed pain-free
-
-TREATMENT_APPLIED:
-  - Passive hamstring stretching: pain-free range
-  - Soft tissue mobilisation: instrument-assisted, 10 minutes
-  - Straight-line jogging introduction (Stage 3 entry)
-  - Stationary cycling: 15 minutes, low resistance
-
-PATIENT_RESPONSE: Excellent. No pain during jogging. Player visibly relieved to be running again.
-
-CLINICAL_DECISION: Stage 3 formally commenced. Pool running maintained as supplementary cardiovascular work. Strength still below target — formal isokinetic test scheduled for Day 30 (19 November).
-
-PLAN:
-  - Progressive straight-line running: increase distance and pace over next 2 weeks
-  - Nordic hamstring exercise: introduce at Day 25
-  - Next assessment: 19 November 2024
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
-INJURY: Left hamstring strain, Grade II
-DATE: 31 October 2024 | SESSION_NUMBER: 3 (Day 11 post-injury)
-CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Stage 2 — subacute rehabilitation
-
-OBJECTIVE_FINDINGS:
-  - Pain at rest: 0/10
-  - Palpation: localised tenderness left biceps femoris proximal. Reduced from Day 2.
-  - Active hamstring flexibility: 70° straight leg raise (reduced from normal 85°)
-  - Pain with passive stretch: mild discomfort at end range only (2/10)
-  - Crutches discontinued — full weight-bearing comfortable
-
-TREATMENT_APPLIED:
-  - Active-assisted hamstring stretching: pain-free range
-  - Soft tissue mobilisation: manual therapy to left hamstring and gluteal region
-  - Isometric hamstring contraction: 3×10 seconds, 50% effort — pain 0/10
-  - Pool running: 20 minutes, low resistance
-
-PATIENT_RESPONSE: Good progress. Crutches no longer needed. Pool running tolerated well.
-
-PLAN:
-  - Continue Stage 2 programme
-  - Progress to isotonic loading when pain 0/10 throughout
-  - Stage 3 entry target: approximately Day 18–20 (around 7–9 November)
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Neymar Cohen | PLAYER_ID: PLR-011 | CASE_ID: INJ-2024-033
-INJURY: Left hamstring strain, Grade II
-DATE: 22 October 2024 | SESSION_NUMBER: 1 (Day 2 post-injury — initial assessment)
-CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Initial assessment and Stage 1 management
-
-OBJECTIVE_FINDINGS:
-  - Localised swelling: present at left biceps femoris proximal musculotendinous junction
-  - Bruising: superficial ecchymosis noted Day 2
-  - Active hamstring flexibility: 50° straight leg raise (normal 85°) — significantly limited
-  - Pain with resisted knee flexion: 6/10
-  - Single-leg standing: possible but painful (4/10)
-  - Grade II classification confirmed: partial tearing, significant functional impairment
-
-TREATMENT_APPLIED:
-  - POLICE protocol: compression bandage, ice 20 minutes
-  - Crutches provided — non-weight-bearing as comfortable initially
-  - NSAIDs prescribed by Dr. Shapira
-  - Informed consent obtained for treatment plan
-
-DIAGNOSIS: Left hamstring Grade II strain — INJ-2024-033 opened.
-
-PLAN:
-  - Stage 1–2 soft tissue protocol (Protocol A)
-  - NSAIDs for 5 days
-  - Expected return to training: 15 December 2024
-  - Grade II: Dr. Shapira sign-off required before Stage 4
-  - Responsible: Dr. Sara Cohen
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2024-031
+PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2026-012
 INJURY: Right calf muscle strain, Grade I
-DATE: 20 November 2024 | SESSION_NUMBER: 3 (Day 6 post-injury)
+DATE: 5 June 2026 | SESSION_NUMBER: 6 (Day 8 post-injury)
 CLINICIAN: Dr. Sara Cohen
 SESSION_TYPE: Stage 2 — soft tissue rehabilitation
 
 OBJECTIVE_FINDINGS:
   - Swelling: significantly reduced vs Day 1
-  - Palpation: tenderness on moderate pressure at right gastrocnemius medial head (reduced from Day 1)
-  - Active dorsiflexion ROM: 12° (Day 1: 6°; normal: 20°)
-  - Single-leg standing: maintained; pain score 0/10
-  - Isometric calf contraction: introduced — 3×10-second holds at 50% perceived effort; pain 0/10 throughout
+  - Palpation: mild tenderness on firm pressure at right gastrocnemius medial head
+  - Active dorsiflexion ROM: 14° (Day 1: 7°; normal: 20°) — improving well
+  - Single-leg standing: maintained 30 seconds, pain 0/10
+  - Isometric calf contraction: 3×10-second holds at 60% effort, pain 0/10 throughout
+  - Thompson test: NEGATIVE (Achilles intact — confirmed again)
 
 TREATMENT_APPLIED:
   - Passive calf stretching within pain-free range
-  - Instrument-assisted soft tissue mobilisation: 10 minutes to gastrocnemius medial head
-  - Isometric contraction protocol commenced
+  - Instrument-assisted soft tissue mobilisation: 12 minutes, gastrocnemius medial head
+  - Isometric contraction progression
+  - Manual lymphatic drainage for residual swelling
 
-PATIENT_RESPONSE: Positive. Pain-free throughout session. Player confidence improving.
+PATIENT_RESPONSE: Good progress. Pain-free throughout. Player asking about Cup Final — counselled clearly: not available for June 6.
 
 PLAN:
-  - Pool running session: 21 November 2024
-  - Next physiotherapy assessment: 23 November 2024
-  - Target return to field jogging: 24 November 2024
-  - Target return to full training: 28 November 2024
+  - Pool running: June 7, 2026 (post-Cup Final)
+  - Physiotherapy reassessment: June 9, 2026
+  - Target field jogging: June 10, 2026
+  - Target full training: June 13, 2026
+  NOTE: This is second calf injury at same site (first: INJ-2024-031, November 2024). Bilateral calf prevention programme review scheduled at clearance.
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2024-031
+PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2026-012
 INJURY: Right calf muscle strain, Grade I
-DATE: 18 November 2024 | SESSION_NUMBER: 2 (Day 4 post-injury)
+DATE: 2 June 2026 | SESSION_NUMBER: 4 (Day 5 post-injury)
 CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Stage 1/2 transition — early mobilisation
+SESSION_TYPE: Stage 2 entry — early mobilisation
 
 OBJECTIVE_FINDINGS:
-  - Swelling: stable, no bruising progression
   - Pain at rest: 0/10
-  - Palpation: localised tenderness medial gastrocnemius
-  - Single-leg standing: maintained 20 seconds pain-free
+  - Swelling: stable, reduced from initial
+  - Dorsiflexion ROM: 11° (improving from 7°)
+  - Single-leg standing: 25 seconds pain-free
 
 TREATMENT_APPLIED:
-  - Active-assisted ankle ROM exercises (pain-free range only)
-  - Manual soft tissue work: effleurage and petrissage proximal to injury site only
-  - NSAIDs continued (as prescribed by Dr. Shapira)
+  - Active-assisted ankle ROM exercises
+  - Manual soft tissue: effleurage and petrissage proximal to injury site
+  - NSAIDs continued (Dr. Shapira prescription, 48 hours remaining)
 
-PATIENT_RESPONSE: Tolerating treatment well. Resting pain resolved.
+PATIENT_RESPONSE: Good. Resting pain resolved. NSAIDs finishing.
 
-PLAN:
-  - No running or impact activity until reassessment
-  - Next session: 20 November 2024
+PLAN: Progress to isometric loading next session. Pool running from Day 10.
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_REHAB
-PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2024-031
+PLAYER: Oren Shoval | PLAYER_ID: PLR-008 | CASE_ID: INJ-2026-012
 INJURY: Right calf muscle strain, Grade I
-DATE: 15 November 2024 | SESSION_NUMBER: 1 (Day 1 — initial assessment)
+DATE: 29 May 2026 | SESSION_NUMBER: 1 (Day 1 — initial assessment)
 CLINICIAN: Dr. Sara Cohen
 SESSION_TYPE: Initial assessment and Stage 1 management
 
 OBJECTIVE_FINDINGS:
-  - Localised swelling: present at medial head right gastrocnemius
-  - Active dorsiflexion ROM: 6° (normal 20°) — significantly limited
-  - Thompson test: NEGATIVE (Achilles tendon intact)
-  - Single-leg calf raise: unable to complete due to pain
-  - Classification: Grade I muscle strain
+  - Localised swelling: right gastrocnemius medial head
+  - Active dorsiflexion ROM: 7° (normal 20°) — significantly limited
+  - Thompson test: NEGATIVE (Achilles intact)
+  - Single-leg calf raise: unable due to pain
+  - Classification: Grade I muscle strain (consistent with 2024 injury pattern)
 
 TREATMENT_APPLIED:
   - POLICE protocol: compression bandage, ice 20 minutes
-  - Crutches provided for weight-bearing assistance
-  - Informed consent obtained
+  - NSAIDs prescribed by Dr. Shapira
+  - Crutches provided initially
 
-DIAGNOSIS: Right calf Grade I strain — INJ-2024-031 opened.
+DIAGNOSIS: Right calf Grade I strain — INJ-2026-012 opened. Second occurrence same site.
 
-PLAN:
-  - Stage 1–2 soft tissue protocol
-  - Expected return to full training: 28 November 2024
-  - Responsible: Dr. Sara Cohen
+PLAN: Protocol A. Expected full training return June 13, 2026.
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_MAINTENANCE
 PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | CASE_ID: POST-ACL-MAINTENANCE
-INJURY_HISTORY: Right knee ACL reconstruction (March 2023)
-DATE: 19 November 2024 | SESSION_NUMBER: Ongoing weekly maintenance
+INJURY_HISTORY: Right knee ACL reconstruction (March 2023) — 3+ years maintenance
+DATE: 3 June 2026 | SESSION_NUMBER: Ongoing weekly maintenance
 CLINICIAN: Dr. Yoel Mizrahi
-SESSION_TYPE: ACL maintenance — weekly assessment and prevention
+SESSION_TYPE: ACL maintenance — pre-Cup Final assessment
 
 OBJECTIVE_FINDINGS:
-  - Right knee: fully asymptomatic. No pain, no swelling.
-  - Isokinetic assessment: quadriceps peak torque right 218 Nm / left 221 Nm — LSI 98.6% (normal limits)
-  - H:Q ratio right knee: 0.68 (within target range 0.60–0.70)
-  - Plyometric landing: 4×5 drop jumps, 3×lateral box hops — knee valgus controlled on ALL reps
-  - Video review: no corrective coaching required
-  - ACL-RSI score this month: 79/100 (threshold ≥65 — psychological clearance MAINTAINED)
+  - Right knee: fully asymptomatic. No pain, no swelling, no discomfort.
+  - Isokinetic assessment: quadriceps peak torque right 223 Nm / left 225 Nm — LSI 99.1%
+  - H:Q ratio right knee: 0.69 (within target 0.60–0.70)
+  - Plyometric landing: 4×5 drop jumps, 3×lateral box hops — knee valgus controlled on ALL reps. No correction required.
+  - Video review: biomechanics excellent.
+  - ACL-RSI score (June 2026): 91/100 — highest recorded score. Player fully confident.
 
 TREATMENT_APPLIED:
-  - Plyometric landing session (full volume)
-  - Nordic hamstring exercises: 3×6 reps
+  - Full plyometric landing session (standard volume)
+  - Nordic hamstring exercises: 3×8 reps
+  - Prophylactic taping applied per player request for Cup Final
 
-PATIENT_RESPONSE: Excellent. Player in outstanding condition for this stage of maintenance.
+PATIENT_RESPONSE: Excellent. Player commented: "I haven't thought about my knee in months." Highest psychological readiness since surgery.
 
-PLAN: Continue current programme unchanged. Next session: 26 November 2024.
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_MAINTENANCE
-PLAYER: Luca Ferretti | PLAYER_ID: PLR-002 | CASE_ID: POST-ACL-MAINTENANCE
-INJURY_HISTORY: Right knee ACL reconstruction (March 2023)
-DATE: 12 November 2024 | SESSION_NUMBER: Ongoing weekly maintenance
-CLINICIAN: Dr. Yoel Mizrahi
-SESSION_TYPE: ACL maintenance — fatigue management session
-
-OBJECTIVE_FINDINGS:
-  - Right knee: no pain, no swelling
-  - Resting HR: 52 bpm (within personal baseline)
-  - Player reports: mild right knee fatigue following Sunday's 90-minute match
-
-TREATMENT_APPLIED:
-  - Reduced plyometric volume: 2×drop jumps (instead of standard 4)
-  - Nordic hamstring: 3×6 reps (maintained)
-  - Manual soft tissue work: right hamstring and quadriceps, 15 minutes
-
-CLINICAL_DECISION: Load reduction applied based on subjective fatigue. Appropriate response — no alarm signals.
-
-PLAN: Load review with Tal Ben-David. Next session: 19 November.
+PLAN: Cup Final cleared. No restrictions. Next weekly session: June 10, 2026.
+CUP_FINAL_NOTE: Dr. Mizrahi recommendation — prophylactic taping for Cup Final, player preference confirmed.
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_MAINTENANCE
 PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | CASE_ID: CHRONIC-LUMBAR-MAINTENANCE
-CONDITION: Chronic lower back — ongoing managed condition
-DATE: 21 November 2024 | SESSION_NUMBER: Ongoing
+DATE: 3 June 2026 | SESSION_NUMBER: Ongoing
 CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Routine maintenance — lumbar
+SESSION_TYPE: Routine maintenance — pre-Cup Final lumbar check
 
 OBJECTIVE_FINDINGS:
-  - Morning stiffness reported: 2/10, resolved within 20 minutes
-  - Pain at session: 0/10 (no acute pain)
-  - Lumbar ROM: flexion 70°, extension 25°, lateral flexion 30° bilaterally — ALL within personal stable range
-  - Paraspinal palpation: mild bilateral tightness at L3–L4; no focal tenderness
-  - ACWR (reviewed with Tal Ben-David): 1.22 — safe zone
+  - Morning stiffness: 1/10, resolves within 15 minutes (improved from post-flare level)
+  - Pain at session: 0/10
+  - Lumbar ROM: flexion 68°, extension 24°, lateral flexion 29° bilaterally — within personal stable range
+  - SLR bilateral: NEGATIVE. No radicular symptoms.
+  - ACWR: 1.18 — safe zone
 
 TREATMENT_APPLIED:
   - Manual therapy: passive lumbar mobilisation Grade III/IV at L3–L5
   - Dry needling: bilateral erector spinae (3 needles each side, 10 minutes)
-  - Home programme review: Thomas stretch, cat-cow, bird-dog, dead bug, pallof press — player confirmed compliant
+  - Home programme review: full compliance confirmed
 
-CLINICAL_DECISION: No load changes required. Stable presentation.
+CLINICAL_DECISION: Stable for Cup Final. Restrictions confirmed with coaching staff (no aerial duels, max 75 min).
 
-PLAN: Next session 28 November 2024.
-
----
-
-RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_MAINTENANCE
-PLAYER: Dmitri Volkov | PLAYER_ID: PLR-003 | CASE_ID: CHRONIC-LUMBAR-MAINTENANCE
-CONDITION: Chronic lower back — acute flare-up episode
-DATE: 14 November 2024 | SESSION_NUMBER: Acute review
-CLINICIAN: Dr. Sara Cohen
-SESSION_TYPE: Acute flare-up management
-
-OBJECTIVE_FINDINGS:
-  - Pain: 5/10 immediately post-match (Tuesday); 3/10 at this assessment
-  - No radiation to lower limb; no neurological symptoms
-  - Lumbar ROM: flexion 40° (reduced from stable 70°), extension 15° (reduced from stable 25°)
-  - Straight Leg Raise bilateral: NEGATIVE
-  - Red flags: none present
-
-ASSESSMENT: Acute episode on background of chronic lumbar condition — consistent with previous episodes. Mechanism: aerial duel landing.
-
-TREATMENT_APPLIED:
-  - Manual therapy: soft tissue mobilisation only
-  - NSAIDs prescribed by Dr. Shapira
-
-CLINICAL_DECISION: 2-day rest from running. Modified training — no aerial duels, no heavy physical contact.
-
-PLAN: Review in 3 days.
+PLAN: Cup Final June 6 — proceed with agreed restrictions. Post-match review June 7.
 
 ---
 
 RECORD_TYPE: SESSION_NOTE | STATUS: ACTIVE_MAINTENANCE
 PLAYER: Anton Becker | PLAYER_ID: PLR-005 | CASE_ID: SHOULDER-STABILITY-PERMANENT
-CONDITION: Post-Bankart repair — permanent prevention programme
-DATE: 18 November 2024 | SESSION_NUMBER: Ongoing (3×/week, permanent)
+DATE: 4 June 2026 | SESSION_NUMBER: Ongoing (3×/week, permanent)
 CLINICIAN: Dr. Yoel Mizrahi
-SESSION_TYPE: Shoulder stability routine
+SESSION_TYPE: Shoulder stability — pre-Cup Final session
 
 OBJECTIVE_FINDINGS:
-  - Left shoulder: no complaints, no discomfort
-  - External rotation: right 38 Nm / left 37 Nm — symmetrical and stable
-  - Internal rotation: right 52 Nm / left 51 Nm — symmetrical
+  - Left shoulder: no complaints, no discomfort.
+  - External rotation: R 39 Nm / L 38 Nm — symmetrical and stable
+  - Internal rotation: R 53 Nm / L 52 Nm — symmetrical
   - Glenohumeral ROM: full bilaterally
   - Apprehension sign: NEGATIVE
   - Audible click: NONE
 
 TREATMENT_APPLIED:
-  - Rotator cuff circuit: external rotation 3×15, internal rotation 3×15, diagonal D1/D2 patterns 3×10 each
+  - Rotator cuff circuit: external rotation 3×15, internal rotation 3×15, diagonal D1/D2 patterns 3×10
   - Serratus anterior activation: wall push-up plus 3×12
   - Posterior capsule stretch: 60 seconds each side
 
-PATIENT_RESPONSE: Comfortable throughout.
+PATIENT_RESPONSE: Comfortable throughout. Five years post-Bankart repair — programme maintaining excellent stability.
 
-PLAN: Programme continuing as prescribed. Next session: 20 November 2024.
+PLAN: NO shoulder programme on Cup Final day (June 6). Next session June 9.

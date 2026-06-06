@@ -6,7 +6,7 @@ Parse FC Velocity data for the welcome-screen insight panel
 import re
 from pathlib import Path
 
-_ROOT = Path(__file__).resolve().parent
+_ROOT     = Path(__file__).resolve().parent.parent   # RAG-App/
 _DATA_DIR = _ROOT / "data"
 
 _AUDIENCES = [

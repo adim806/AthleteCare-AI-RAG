@@ -72,14 +72,23 @@ User ──▶ Flask Web UI ──▶ POST /api/ask
 | Conversation store | SQLite (UI display) + Bedrock Agent (context) |
 | Containerisation | Docker |
 
+### Folder Structure
+
+| Folder | Role |
+|--------|------|
+| `backend/` | All server-side Python — Flask app, database, dashboard, RAG pipeline |
+| `frontend/` | All client-side assets — HTML, CSS, images (ready for React migration) |
+| `data/` | Source medical documents indexed by AWS Bedrock Knowledge Base |
+| `tests/` | Integration tests against the live Bedrock pipeline |
+
 There is **no local vector index** and no client-side history management.
 Retrieval, generation, and multi-turn context are all handled server-side by
 the Bedrock Agent. The app starts immediately.
 
 ## Data Source
 
-The corpus consists of **14 medical and performance documents** (plus a hero
-visual asset) covering FC Velocity's squad and clinical operations:
+The corpus consists of **14 medical, performance, and scheduling documents**
+(plus a hero visual asset) covering FC Velocity's squad and clinical operations:
 
 | File | Content |
 |------|---------|
@@ -96,17 +105,19 @@ visual asset) covering FC Velocity's squad and clinical operations:
 | `concussion_protocol.txt` | Graduated return-to-sport after head injury |
 | `nutrition_plans.txt` | Individual diet protocols and supplementation |
 | `squad_status_daily.txt` | Daily availability snapshot — who is cleared, modified, or unavailable |
-| `clinical_notes.txt` | Legacy combined notes (retained for compatibility) |
+| `season_schedule.txt` | Full 2025–26 season calendar — league fixtures, cup draw, international breaks, pre-season phases, and fixture-congestion windows for load planning |
 
-The local `data/` folder holds the source documents. `dashboard.py` reads
+The local `data/` folder holds the source documents. `backend/dashboard.py` reads
 `squad_status_daily.txt` and maps files to the five staff audiences for the
-welcome-screen insight panel. At runtime, Q&A queries an **AWS Bedrock
-Knowledge Base** that indexes these files (typically synced from S3). Chunking,
-embedding, and vector search are managed by Bedrock — not by application code.
+welcome-screen insight panel. `season_schedule.txt` is indexed for RAG queries
+about fixtures, international breaks, cup rounds, and load-planning windows. At
+runtime, Q&A queries an **AWS Bedrock Knowledge Base** that indexes these files
+(typically synced from S3). Chunking, embedding, and vector search are managed
+by Bedrock — not by application code.
 
 ## RAG Pipeline
 
-The entire RAG backend lives in `rag/pipeline.py` as a single `RAGEngine`
+The entire RAG backend lives in `backend/rag/pipeline.py` as a single `RAGEngine`
 class:
 
 1. **User submits a question** via the web UI (`POST /api/ask`).
@@ -272,15 +283,13 @@ Install into the correct virtual environment:
 ```
 RAG-App/
 ├── run.py                  # Entry point — starts Flask on port 5000
-├── database.py             # SQLite session & message persistence
-├── dashboard.py            # Squad status + documents by staff audience (welcome panel)
 ├── requirements.txt        # Python dependencies (Flask, boto3, pytest)
 ├── Dockerfile              # Docker image build recipe
 ├── .dockerignore
 ├── .env                    # AWS credentials (not committed)
 ├── .gitignore
 ├── README.md
-├── data/                   # Source medical documents (14 .txt files + rag_image.jpg)
+├── data/                   # Source medical documents (14 .txt files)
 │   ├── players.txt
 │   ├── injury_history.txt
 │   ├── treatment_protocols.txt
@@ -294,14 +303,18 @@ RAG-App/
 │   ├── concussion_protocol.txt
 │   ├── nutrition_plans.txt
 │   ├── squad_status_daily.txt
-│   └── clinical_notes.txt
-├── rag/
+│   └── season_schedule.txt
+├── backend/                # All server-side Python code
 │   ├── __init__.py
-│   └── pipeline.py         # RAGEngine — Bedrock invoke_agent (event stream + traces)
-├── web/
 │   ├── app.py              # Flask routes & API endpoints
+│   ├── database.py         # SQLite session & message persistence
+│   ├── dashboard.py        # Squad status + documents by staff audience
+│   └── rag/
+│       ├── __init__.py
+│       └── pipeline.py     # RAGEngine — Bedrock invoke_agent (event stream + traces)
+├── frontend/               # All client-side assets (ready for React migration)
 │   ├── templates/
-│   │   └── index.html      # Chat UI (HTML + inline JS)
+│   │   └── index.html      # Chat UI (HTML + inline JS, served by Flask)
 │   └── static/
 │       ├── style.css       # Dark-theme stylesheet (navy + green)
 │       └── images/
