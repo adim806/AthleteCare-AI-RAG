@@ -109,9 +109,10 @@ The corpus consists of **14 medical, performance, and scheduling documents**
 
 The local `data/` folder holds the source documents. `backend/dashboard.py` reads
 `squad_status_daily.txt` and maps files to the five staff audiences for the
-welcome-screen insight panel. `season_schedule.txt` is indexed for RAG queries
-about fixtures, international breaks, cup rounds, and load-planning windows. At
-runtime, Q&A queries an **AWS Bedrock Knowledge Base** that indexes these files
+welcome-screen insight panel and the **Squad Status** sidebar module.
+`season_schedule.txt` and `injury_history.txt` also feed the **Match Schedule**
+and **Analytics & Reports** UI modules (static client-side views). At runtime,
+Q&A queries an **AWS Bedrock Knowledge Base** that indexes these files
 (typically synced from S3). Chunking, embedding, and vector search are managed
 by Bedrock — not by application code.
 
@@ -150,17 +151,70 @@ class:
 
 ## Web Application
 
+The UI is a **single-page Flask app** (`frontend/templates/index.html` +
+`frontend/static/style.css`) with a client-side view switcher — no React router.
+Chat, RAG, and session APIs are unchanged; department modules are **UI-only**
+views backed by static JS data aligned with the `data/` corpus (except Squad
+Status, which reuses `GET /api/dashboard`).
+
+### Layout
+
 - **Dark-themed UI** — navy (`#0B1E3D`) and green (`#00A86B`) palette with cyan accents on the hero section.
 - **Branding** — AthleteCare / "Sports Medicine Intelligence for Professional Football".
-- **Sidebar** with session management (create, switch, delete consultations).
+- **Clickable logo** (top-left) — returns to the home welcome screen from any view or active chat (session is deselected, not deleted).
+- **Sidebar** — department modules, new consultation, and session list (create, switch, delete consultations).
+- **Main area** — switches between the home/chat view and full-page module views; the input bar is visible only on home/chat.
+- **Startup** — brief connection overlay until Bedrock reports ready; then dashboard and sessions load.
+- **Error handling** — network and API errors shown inline in the chat.
+- **Responsive design** — sidebar collapses on mobile; hero and insight panel stack vertically; module detail panels stack below lists on narrow screens.
+
+### Home screen (consultation)
+
 - **Welcome screen** — AI Sports Medicine hero visual, **insight panel** (Squad + Library tabs), and suggestion chips for common clinical questions.
 - **Squad tab** — live-style snapshot from `squad_status_daily.txt`: players not fit for full training vs. cleared.
 - **Library tab** — documents grouped by the five target audiences (accordion per role).
 - **Chat interface** with user/assistant message bubbles.
 - **Source display** — each answer shows expandable clinical source citations.
-- **Startup** — brief connection overlay until Bedrock reports ready; then dashboard and sessions load.
-- **Error handling** — network and API errors shown inline in the chat.
-- **Responsive design** — sidebar collapses on mobile; hero and insight panel stack vertically on narrower screens.
+
+### Sidebar modules
+
+| Module | Purpose | Data source |
+|--------|---------|-------------|
+| **Staff Hub** | Contact details, areas of responsibility, and availability for CMO, physios, fitness coach, nutritionist, and sports scientist | Static JS (names aligned with `medical_staff_guide.txt` and `dashboard.py` audiences) |
+| **Squad Status** | Full roster with filters: All · Injured · In Rehab · Fit | `GET /api/dashboard` → `squad_status_daily.txt` |
+| **Knowledge Base** | Secure document archive in a **tree view** — expand folders, browse all 14 corpus files | Static JS tree; **Indexed in RAG** badge when file exists in `data/` |
+| **Match Schedule** | Season fixtures, training sessions, congestion windows; click an event for medical/GPS load reports | Static JS aligned with `season_schedule.txt` |
+| **Analytics & Reports** | Periodic reports, injury trend analyses, and treatment summaries | Static JS aligned with `injury_history.txt`, `season_schedule.txt`, and related files |
+
+#### Knowledge Base categories
+
+| Category | Documents |
+|----------|-----------|
+| **Club Protocols** | treatment_protocols, return_to_play, concussion_protocol, prevention_guidelines |
+| **Player Records & Status** | players, injury_history, squad_status_daily, fitness_assessments |
+| **Clinical Notes** | clinical_notes_active, clinical_notes_archive |
+| **Operations & Reference** | medical_staff_guide, quick_reference, nutrition_plans, season_schedule |
+
+#### Match Schedule highlights
+
+- Filter by **All · Matches · Training · Congestion**.
+- Season overview banner (2025–26, Cup Final day).
+- Selected sessions show **medical/clinical reports** and **GPS load metrics** (ACWR, distance, sprints) where available — e.g. Cup Final week, February congestion protocol.
+
+#### Analytics & Reports highlights
+
+- Filter by **All · Periodic Reports · Injury Trends · Treatment Summaries**.
+- Summary stats bar (counts per category).
+- Click a report card for full sections and source document references — e.g. season medical summary, ACWR February analysis, Cohen/Shoval/Volkov treatment summaries.
+
+### API vs UI data
+
+| Feature | Backend API |
+|---------|-------------|
+| RAG Q&A, sessions, status | Yes (`/api/ask`, `/api/sessions`, `/api/status`) |
+| Welcome insight panel (Squad + Library) | Yes (`GET /api/dashboard`) |
+| Squad Status module | Yes (same dashboard payload, client-side filters) |
+| Staff Hub, Knowledge Base, Match Schedule, Analytics & Reports | No — static UI data only (no new routes) |
 
 ## Installation & Running
 
@@ -314,9 +368,9 @@ RAG-App/
 │       └── pipeline.py     # RAGEngine — Bedrock invoke_agent (event stream + traces)
 ├── frontend/               # All client-side assets (ready for React migration)
 │   ├── templates/
-│   │   └── index.html      # Chat UI (HTML + inline JS, served by Flask)
+│   │   └── index.html      # Single-page UI — chat, view switcher, sidebar modules (HTML + inline JS)
 │   └── static/
-│       ├── style.css       # Dark-theme stylesheet (navy + green)
+│       ├── style.css       # Dark-theme stylesheet (navy + green; modules, tree, schedule, reports)
 │       └── images/
 │           └── rag_hero.jpg  # Welcome-screen hero visual
 └── tests/

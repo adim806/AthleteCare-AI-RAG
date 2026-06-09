@@ -73,14 +73,47 @@
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <div class="brand">
+    <button type="button" class="brand" id="btnGoHome" aria-label="Return to home">
       <svg class="brand-logo" aria-hidden="true"><use href="#logo-athletecare"/></svg>
       <div class="brand-text">
         <span class="brand-name">AthleteCare</span>
         <span class="brand-tagline">Medical Intelligence</span>
       </div>
-    </div>
+    </button>
   </div>
+
+  <nav class="sidebar-nav" aria-label="Department modules">
+    <button type="button" class="sidebar-nav-item" data-view="staff-hub" id="navStaffHub">
+      <svg class="sidebar-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+      </svg>
+      <span class="sidebar-nav-label">Staff Hub</span>
+    </button>
+    <button type="button" class="sidebar-nav-item" data-view="squad-status" id="navSquadStatus">
+      <svg class="sidebar-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/>
+      </svg>
+      <span class="sidebar-nav-label">Squad Status</span>
+    </button>
+    <button type="button" class="sidebar-nav-item" data-view="knowledge-base" id="navKnowledgeBase">
+      <svg class="sidebar-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+      </svg>
+      <span class="sidebar-nav-label">Knowledge Base</span>
+    </button>
+    <button type="button" class="sidebar-nav-item" data-view="match-schedule" id="navMatchSchedule">
+      <svg class="sidebar-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span class="sidebar-nav-label">Match Schedule</span>
+    </button>
+    <button type="button" class="sidebar-nav-item" data-view="analytics-reports" id="navAnalyticsReports">
+      <svg class="sidebar-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+      <span class="sidebar-nav-label">Analytics &amp; Reports</span>
+    </button>
+  </nav>
 
   <div class="sidebar-actions">
     <button class="btn-new-chat" id="btnNewChat" title="New consultation">
@@ -117,7 +150,7 @@
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
-    <span class="topbar-title" id="topbarTitle">New consultation</span>
+    <span class="topbar-title" id="topbarTitle">AthleteCare</span>
     <span class="topbar-badge">Clinical RAG</span>
   </header>
 
@@ -132,6 +165,7 @@
   </div>
 
   <div class="chat-area" id="chatArea">
+    <div id="viewHome" class="app-view">
     <div class="welcome" id="welcome">
       <div class="welcome-hero">
         <div class="welcome-badge">
@@ -230,9 +264,85 @@
     </div>
 
     <div class="message-list" id="messageList" style="display:none;"></div>
+    </div>
+
+    <div id="viewStaffHub" class="app-view module-view hidden">
+      <header class="module-header">
+        <h2 class="module-title">Staff Hub</h2>
+        <p class="module-desc">Quick access to contact details, areas of responsibility, and availability for all medical department staff.</p>
+      </header>
+      <div class="staff-grid" id="staffGrid"></div>
+    </div>
+
+    <div id="viewSquadStatus" class="app-view module-view hidden">
+      <header class="module-header">
+        <h2 class="module-title">Squad Status</h2>
+        <p class="module-desc">Centralized roster view with availability filters for injured, rehab, and fit players.</p>
+      </header>
+      <div class="filter-chips" id="squadFilters" role="tablist" aria-label="Filter squad by status">
+        <button type="button" class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-chip" data-filter="injured" role="tab" aria-selected="false">Injured</button>
+        <button type="button" class="filter-chip" data-filter="rehab" role="tab" aria-selected="false">In Rehab</button>
+        <button type="button" class="filter-chip" data-filter="fit" role="tab" aria-selected="false">Fit</button>
+      </div>
+      <div class="roster-stats" id="rosterStats"></div>
+      <ul class="roster-list" id="rosterList"></ul>
+    </div>
+
+    <div id="viewKnowledgeBase" class="app-view module-view hidden">
+      <header class="module-header">
+        <h2 class="module-title">Knowledge Base</h2>
+        <p class="module-desc">Secure archive of medical files, test results, and injury history — organized by category.</p>
+      </header>
+      <div class="kb-tree" id="kbTree"></div>
+    </div>
+
+    <div id="viewMatchSchedule" class="app-view module-view hidden">
+      <header class="module-header">
+        <h2 class="module-title">Match Schedule</h2>
+        <p class="module-desc">Season fixture calendar, training sessions, and load-planning windows — with session reports and GPS load metrics where available.</p>
+      </header>
+      <div class="schedule-overview" id="scheduleOverview"></div>
+      <div class="filter-chips" id="scheduleFilters" role="tablist" aria-label="Filter schedule events">
+        <button type="button" class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-chip" data-filter="match" role="tab" aria-selected="false">Matches</button>
+        <button type="button" class="filter-chip" data-filter="training" role="tab" aria-selected="false">Training</button>
+        <button type="button" class="filter-chip" data-filter="congestion" role="tab" aria-selected="false">Congestion</button>
+      </div>
+      <div class="schedule-layout">
+        <div class="schedule-list-wrap">
+          <ul class="schedule-list" id="scheduleList" role="list"></ul>
+        </div>
+        <aside class="schedule-detail" id="scheduleDetail" aria-label="Session details" hidden>
+          <button type="button" class="schedule-detail-close" id="scheduleDetailClose" aria-label="Close details">&times;</button>
+          <div id="scheduleDetailContent"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="viewAnalyticsReports" class="app-view module-view hidden">
+      <header class="module-header">
+        <h2 class="module-title">Analytics &amp; Reports</h2>
+        <p class="module-desc">Quick access to periodic reports, injury trend analyses, and treatment summaries from the medical department.</p>
+      </header>
+      <div class="reports-stats" id="reportsStats"></div>
+      <div class="filter-chips" id="reportsFilters" role="tablist" aria-label="Filter reports">
+        <button type="button" class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-chip" data-filter="periodic" role="tab" aria-selected="false">Periodic Reports</button>
+        <button type="button" class="filter-chip" data-filter="trends" role="tab" aria-selected="false">Injury Trends</button>
+        <button type="button" class="filter-chip" data-filter="treatment" role="tab" aria-selected="false">Treatment Summaries</button>
+      </div>
+      <div class="reports-layout">
+        <div class="reports-grid" id="reportsGrid"></div>
+        <aside class="reports-detail" id="reportsDetail" aria-label="Report details" hidden>
+          <button type="button" class="reports-detail-close" id="reportsDetailClose" aria-label="Close report">&times;</button>
+          <div id="reportsDetailContent"></div>
+        </aside>
+      </div>
+    </div>
   </div>
 
-  <div class="input-bar">
+  <div class="input-bar" id="inputBar">
     <div class="input-wrapper">
       <textarea
         id="questionInput"
@@ -257,6 +367,16 @@
 let currentSessionId = null;
 let engineReady = false;
 let statusPollTimer = null;
+let currentView = 'home';
+let dashboardCache = null;
+let squadFilter = 'all';
+let staffHubRendered = false;
+let kbTreeRendered = false;
+let scheduleRendered = false;
+let scheduleFilter = 'all';
+let selectedScheduleId = null;
+let reportsFilter = 'all';
+let selectedReportId = null;
 
 const sidebar       = document.getElementById('sidebar');
 const sessionList   = document.getElementById('sessionList');
@@ -266,12 +386,656 @@ const messageList   = document.getElementById('messageList');
 const questionInput = document.getElementById('questionInput');
 const btnSend       = document.getElementById('btnSend');
 const btnNewChat    = document.getElementById('btnNewChat');
+const btnGoHome     = document.getElementById('btnGoHome');
 const btnToggle     = document.getElementById('btnToggleSidebar');
 const topbarTitle   = document.getElementById('topbarTitle');
 const initOverlay   = document.getElementById('initOverlay');
 const initStatus    = document.getElementById('initStatus');
 const statusDot     = document.getElementById('statusDot');
 const statusText    = document.getElementById('statusText');
+const inputBar      = document.getElementById('inputBar');
+const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
+
+const VIEWS = {
+  home: document.getElementById('viewHome'),
+  'staff-hub': document.getElementById('viewStaffHub'),
+  'squad-status': document.getElementById('viewSquadStatus'),
+  'knowledge-base': document.getElementById('viewKnowledgeBase'),
+  'match-schedule': document.getElementById('viewMatchSchedule'),
+  'analytics-reports': document.getElementById('viewAnalyticsReports'),
+};
+
+const VIEW_TITLES = {
+  home: 'AthleteCare',
+  'staff-hub': 'Staff Hub',
+  'squad-status': 'Squad Status',
+  'knowledge-base': 'Knowledge Base',
+  'match-schedule': 'Match Schedule',
+  'analytics-reports': 'Analytics & Reports',
+};
+
+const STAFF_HUB = [
+  {
+    icon: '🩺',
+    role: 'Chief Medical Officer',
+    name: 'Dr. Anat Shapira',
+    credentials: 'MD, MSc Sports Medicine',
+    phone: '+972 50-123-4501',
+    email: 'a.shapira@fcvelocity.co.il',
+    responsibility: 'Final authority on RTP clearance, concussion, supplements, and emergency decisions.',
+    availability: 'On-site · Mon/Fri handover',
+  },
+  {
+    icon: '📋',
+    role: 'Lead Physiotherapist',
+    name: 'Dr. Sara Cohen',
+    credentials: 'BPhys, MSc',
+    phone: '+972 50-123-4502',
+    email: 's.cohen@fcvelocity.co.il',
+    responsibility: 'Rehab progressions, RTP stage assessments, and interim physio authority in CMO absence.',
+    availability: 'On-site · Pitch-side at training',
+  },
+  {
+    icon: '🦴',
+    role: 'Physiotherapist',
+    name: 'Dr. Yoel Mizrahi',
+    credentials: 'BPhys',
+    phone: '+972 50-123-4503',
+    email: 'y.mizrahi@fcvelocity.co.il',
+    responsibility: 'Maintenance sessions, routine assessments, and active rehabilitation cases.',
+    availability: 'On-site · Afternoon rehab sessions',
+  },
+  {
+    icon: '📈',
+    role: 'Fitness & Conditioning Coach',
+    name: 'Tal Ben-David',
+    credentials: 'MSc Sports Science',
+    phone: '+972 50-123-4504',
+    email: 't.bendavid@fcvelocity.co.il',
+    responsibility: 'GPS load monitoring, ACWR calculations, and daily conditioning programmes.',
+    availability: 'On-site · Daily 11:00 handover',
+  },
+  {
+    icon: '🥗',
+    role: 'Sports Nutritionist',
+    name: 'Daniela Ronen',
+    credentials: 'RD, MSc',
+    phone: '+972 50-123-4505',
+    email: 'd.ronen@fcvelocity.co.il',
+    responsibility: 'Nutrition plans, supplement approvals, and micronutrient assessments.',
+    availability: 'Part-time · Match days & Wed clinics',
+  },
+  {
+    icon: '🔬',
+    role: 'Sports Scientist',
+    name: 'Dr. Eitan Mor',
+    credentials: 'PhD Exercise Physiology',
+    phone: '+972 50-123-4506',
+    email: 'e.moran@fcvelocity.co.il',
+    responsibility: 'HRV monitoring, fitness testing, load metrics, and injury-risk analytics.',
+    availability: 'On-site · Mon–Thu',
+  },
+];
+
+const KNOWLEDGE_TREE = [
+  {
+    id: 'protocols',
+    label: 'Club Protocols',
+    icon: '📋',
+    children: [
+      { file: 'treatment_protocols.txt', title: 'Treatment Protocols', desc: 'Standard treatment protocols for common football injuries' },
+      { file: 'return_to_play.txt', title: 'Return to Play', desc: 'Return-to-play guidelines and clearance criteria' },
+      { file: 'concussion_protocol.txt', title: 'Concussion Protocol', desc: 'Graduated return-to-sport after head injury' },
+      { file: 'prevention_guidelines.txt', title: 'Prevention Guidelines', desc: 'FIFA 11+, neuromuscular training, load management' },
+    ],
+  },
+  {
+    id: 'player-records',
+    label: 'Player Records & Status',
+    icon: '⚽',
+    children: [
+      { file: 'players.txt', title: 'Player Profiles', desc: 'Positions, baselines, and current medical status' },
+      { file: 'injury_history.txt', title: 'Injury History', desc: 'Full injury history per player — type, date, mechanism, days missed' },
+      { file: 'squad_status_daily.txt', title: 'Daily Squad Status', desc: 'Daily availability snapshot — cleared, modified, or unavailable' },
+      { file: 'fitness_assessments.txt', title: 'Fitness Assessments', desc: 'Fitness test results, ACWR values, and readiness scores' },
+    ],
+  },
+  {
+    id: 'clinical',
+    label: 'Clinical Notes',
+    icon: '🩺',
+    children: [
+      { file: 'clinical_notes_active.txt', title: 'Clinical Notes (Active)', desc: 'Current physiotherapy assessments and session diary' },
+      { file: 'clinical_notes_archive.txt', title: 'Clinical Notes (Archive)', desc: 'Historical clinical notes' },
+    ],
+  },
+  {
+    id: 'operations',
+    label: 'Operations & Reference',
+    icon: '📚',
+    children: [
+      { file: 'medical_staff_guide.txt', title: 'Medical Staff Guide', desc: 'Matchday protocols, emergency procedures, documentation' },
+      { file: 'quick_reference.txt', title: 'Quick Reference', desc: 'Red flags, drug dosages, taping techniques' },
+      { file: 'nutrition_plans.txt', title: 'Nutrition Plans', desc: 'Individual diet protocols and supplementation' },
+      { file: 'season_schedule.txt', title: 'Season Schedule', desc: '2025–26 calendar — fixtures, cup draw, international breaks, load-planning windows' },
+    ],
+  },
+];
+
+const SCHEDULE_EVENTS = [
+  {
+    id: 'cup-final',
+    date: '2026-06-06',
+    type: 'match',
+    highlight: true,
+    title: 'State Cup Final',
+    subtitle: 'vs Maccabi Tel Aviv · Bloomfield Stadium · 20:45',
+    summary: 'Highest-stakes fixture of the season. Full medical team travelling. 12 players fit, Shoval unavailable (calf Grade I).',
+    report: {
+      title: 'Matchday Medical Brief',
+      notes: [
+        'Pitch-side bag check 90 min pre-kickoff — AED, oxygen, cervical collar confirmed.',
+        'Volkov: modified role — no aerial duels, max 75 min agreed with coaching staff.',
+        'Klein: inhaler confirmed pitch-side for bench.',
+        'Shoval (PLR-008): not cleared for selection — Stage 2 calf rehab.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.09, distance: '8.2 km', sprint: '12', status: 'safe' },
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.14, distance: '7.8 km', sprint: '10', status: 'safe' },
+      { id: 'PLR-003', name: 'Dmitri Volkov', acwr: 1.18, distance: '7.1 km', sprint: '8', status: 'safe' },
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.21, distance: '9.1 km', sprint: '14', status: 'safe' },
+      { id: 'PLR-004', name: 'James Okafor', acwr: 1.06, distance: '8.5 km', sprint: '15', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cf-walkthrough',
+    date: '2026-06-05',
+    type: 'training',
+    title: 'Walk-through & Travel Prep',
+    subtitle: 'Cup Final week · Thursday',
+    summary: 'Light walk-through session. Dr. Shapira final medical clearances. Volkov restrictions confirmed.',
+    report: {
+      title: 'Pre-Match Clearance Report',
+      notes: [
+        'Dr. Shapira signed off 12 available players for Cup Final selection.',
+        'Becker shoulder programme completed pre-session (Dr. Mizrahi).',
+        'Volkov lumbar check — stable, restrictions unchanged.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.08, distance: '3.2 km', sprint: '4', status: 'safe' },
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.12, distance: '2.9 km', sprint: '3', status: 'safe' },
+      { id: 'PLR-003', name: 'Dmitri Volkov', acwr: 1.16, distance: '2.8 km', sprint: '2', status: 'safe' },
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.19, distance: '3.4 km', sprint: '5', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cf-captains',
+    date: '2026-06-04',
+    type: 'training',
+    title: "Captain's Session",
+    subtitle: 'Cup Final week · Wednesday',
+    summary: 'Technical and set-piece focus. Becker shoulder programme. Daniela Ronen match-day nutrition briefing.',
+    report: {
+      title: 'Session Clinical Notes',
+      notes: [
+        'Becker: shoulder stability session with Dr. Mizrahi — ROM within limits.',
+        'Daniela Ronen: match-day hydration and pre-match meal protocol reminder to squad.',
+        'Ferretti: right knee prophylactic taping offered — player preference for final.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-005', name: 'Anton Becker', acwr: 1.07, distance: '5.8 km', sprint: '7', status: 'safe' },
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.13, distance: '6.2 km', sprint: '9', status: 'safe' },
+      { id: 'PLR-011', name: 'Neymar Cohen', acwr: 1.05, distance: '6.0 km', sprint: '11', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cf-recovery',
+    date: '2026-06-03',
+    type: 'training',
+    title: 'Light Recovery Session',
+    subtitle: 'Cup Final week · Tuesday',
+    summary: 'Recovery-focused day. Shoval Stage 2 review. Ferretti maintenance. Volkov lumbar check.',
+    report: {
+      title: 'Rehab & Assessment Report',
+      notes: [
+        'Shoval (PLR-008): Stage 2 calf review — progressing, not match-ready.',
+        'Ferretti: weekly ACL maintenance with Dr. Mizrahi — LSI 99.1%, no swelling.',
+        'Volkov: lumbar assessment stable — cleared for modified training only.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-008', name: 'Oren Shoval', acwr: 0.42, distance: '1.2 km', sprint: '0', status: 'rehab' },
+      { id: 'PLR-003', name: 'Dmitri Volkov', acwr: 1.15, distance: '4.1 km', sprint: '5', status: 'safe' },
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.11, distance: '3.8 km', sprint: '4', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cf-full',
+    date: '2026-06-02',
+    type: 'training',
+    title: 'Full Squad Training',
+    subtitle: 'Cup Final week · Monday · Double session',
+    summary: 'Double session — tactical focus. Medical check for all 13 fit players before Cup Final week.',
+    report: {
+      title: 'GPS Load Summary',
+      notes: [
+        'Tal Ben-David: squad mean ACWR 1.11 — all within safe zone except monitoring flags cleared.',
+        'High-output players on reduced sprint volume in PM session.',
+        'Daily medical handover: no new injury reports.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.10, distance: '9.4 km', sprint: '18', status: 'safe' },
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.22, distance: '10.1 km', sprint: '20', status: 'safe' },
+      { id: 'PLR-004', name: 'James Okafor', acwr: 1.08, distance: '9.8 km', sprint: '22', status: 'safe' },
+      { id: 'PLR-009', name: 'Nabil Harroui', acwr: 1.04, distance: '8.9 km', sprint: '16', status: 'safe' },
+      { id: 'PLR-010', name: 'Eitan Levi', acwr: 0.98, distance: '8.2 km', sprint: '12', status: 'safe' },
+    ],
+  },
+  {
+    id: 'shoval-injury',
+    date: '2026-05-28',
+    type: 'training',
+    title: 'Training Session — Injury Event',
+    subtitle: 'Pre-Cup Final week',
+    summary: 'Oren Shoval sustained right calf Grade I strain during training. Case INJ-2026-012. Not available for Cup Final.',
+    report: {
+      title: 'Injury Report',
+      notes: [
+        'Mechanism: acceleration during sprint drill — same site as 2024 injury.',
+        'Immediate removal, POLICE protocol applied by Dr. Cohen.',
+        'Expected return to full training: June 13, 2026.',
+      ],
+    },
+  },
+  {
+    id: 'md26',
+    date: '2026-05-30',
+    type: 'match',
+    title: 'League MD26 — Final Match',
+    subtitle: 'vs Maccabi Netanya (A)',
+    summary: 'Final league fixture of 2025–26 season before Cup Final preparation.',
+    loadMetrics: [
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.07, distance: '10.2 km', sprint: '16', status: 'safe' },
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.18, distance: '10.8 km', sprint: '19', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cohen-hamstring',
+    date: '2026-03-05',
+    type: 'match',
+    title: 'League MD20 vs Maccabi Tel Aviv',
+    subtitle: 'Injury during match',
+    summary: 'Neymar Cohen Grade II left hamstring strain (71st min). Case INJ-2026-005. Cleared April 22.',
+    report: {
+      title: 'Match Injury Report',
+      notes: [
+        'Mechanism: explosive acceleration — same site as 2024 Grade II injury.',
+        'Dr. Shapira formal review triggered (re-injury within 12 months).',
+        'Discharged and cleared April 22, 2026 — enhanced hamstring protocol active.',
+      ],
+    },
+  },
+  {
+    id: 'feb-congestion',
+    date: '2026-02-15',
+    type: 'congestion',
+    title: 'February Fixture Congestion',
+    subtitle: 'MD18 + MD19 · 7-day window',
+    summary: 'Critical ACWR event — Levi 1.68, Alvarez 1.52, Ferretti 1.33. Load reduction protocol applied. No injuries sustained.',
+    report: {
+      title: 'Congestion Medical Briefing',
+      notes: [
+        'Daily 10-min ACWR briefings October 5–11 equivalent protocol activated.',
+        'Levi and Alvarez excluded from February 17 training session.',
+        'Tal Ben-David modified session load for 3 days post-break.',
+        'Clearest example of ACWR system preventing injury this season.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.68, distance: '11.4 km', sprint: '24', status: 'high' },
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.52, distance: '10.9 km', sprint: '20', status: 'high' },
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.33, distance: '9.6 km', sprint: '14', status: 'elevated' },
+    ],
+  },
+  {
+    id: 'feb-training',
+    date: '2026-02-17',
+    type: 'training',
+    title: 'Modified Training Session',
+    subtitle: 'Post-congestion load reduction',
+    summary: 'Levi and Alvarez excluded per Tal Ben-David protocol. Remaining squad at reduced intensity.',
+    report: {
+      title: 'Load Reduction Protocol Log',
+      notes: [
+        'Excluded: Cristiano Levi (ACWR 1.68), Marco Alvarez (ACWR 1.52).',
+        'Session RPE capped at 5/10 for remaining high-load players.',
+        'Both players returned to full training within 48 hours — no injury.',
+      ],
+    },
+    loadMetrics: [
+      { id: 'PLR-002', name: 'Luca Ferretti', acwr: 1.28, distance: '5.2 km', sprint: '8', status: 'elevated' },
+      { id: 'PLR-004', name: 'James Okafor', acwr: 1.12, distance: '6.1 km', sprint: '12', status: 'safe' },
+      { id: 'PLR-011', name: 'Neymar Cohen', acwr: 1.09, distance: '5.8 km', sprint: '10', status: 'safe' },
+    ],
+  },
+  {
+    id: 'cup-sf',
+    date: '2026-03-11',
+    type: 'match',
+    title: 'State Cup Semi-Final',
+    subtitle: 'vs Maccabi Haifa (H) · Won 2–1',
+    summary: 'Semi-final victory. Squad rotated carefully ahead of league run-in.',
+    loadMetrics: [
+      { id: 'PLR-001', name: 'Marco Alvarez', acwr: 1.14, distance: '9.7 km', sprint: '14', status: 'safe' },
+      { id: 'PLR-013', name: 'Cristiano Levi', acwr: 1.20, distance: '10.3 km', sprint: '17', status: 'safe' },
+    ],
+  },
+  {
+    id: 'oct-congestion',
+    date: '2025-10-04',
+    type: 'congestion',
+    title: 'October Double-Header',
+    subtitle: 'MD6 + Cup R2 · 4 days',
+    summary: 'Two competitive matches in 4 days. Daily ACWR briefings. No injuries sustained.',
+    report: {
+      title: 'Congestion Load Report',
+      notes: [
+        'Tal Ben-David reduced training intensity October 5–7.',
+        'Medical team held daily 10-minute ACWR briefings.',
+        'No load flags triggered beyond standard monitoring.',
+      ],
+    },
+  },
+  {
+    id: 'winter-break',
+    date: '2026-01-06',
+    type: 'training',
+    title: 'Mid-Season Fitness Battery',
+    subtitle: 'Winter break assessments',
+    summary: 'Yo-Yo IR2, sprint, agility, isokinetic strength. Blood panels January 7. DXA review for Eitan Levi January 14.',
+    report: {
+      title: 'Winter Break Assessment Summary',
+      notes: [
+        'Full fitness reassessment January 6–8 for all squad members.',
+        'Blood panels: iron, Vitamin D, haematocrit — reviewed by Daniela Ronen.',
+        'Eitan Levi DXA (Jan 8): T-score improved, Vitamin D 82 nmol/L — target reached.',
+      ],
+    },
+  },
+  {
+    id: 'season-opener',
+    date: '2025-08-16',
+    type: 'match',
+    title: 'League MD1 — Season Opener',
+    subtitle: 'vs Hapoel Tel Aviv (H)',
+    summary: 'First league fixture of 2025–26 IPL season following European qualifying window.',
+  },
+];
+
+const ANALYTICS_REPORTS = [
+  {
+    id: 'season-medical-2026',
+    category: 'periodic',
+    icon: '📊',
+    title: '2025–26 Season Medical Summary',
+    date: '2026-06-01',
+    author: 'Dr. Anat Shapira',
+    excerpt: 'End-of-season department overview — 3 documented injuries, no Grade III or surgical cases, ACWR protocol success in February congestion.',
+    sections: [
+      { heading: 'Injury Overview', items: [
+        'Total documented injuries: 3 active cases during the season.',
+        'INJ-2026-005: Neymar Cohen — Grade II hamstring (March) — resolved April 22.',
+        'INJ-2026-012: Oren Shoval — Grade I calf (May) — active, return June 13.',
+        'INJ-2026-003: Volkov lumbar flare-up (May) — managed chronic condition.',
+        'No Grade III injuries, no surgical cases, no ACL injuries this season.',
+      ]},
+      { heading: 'Key Achievement', items: [
+        'February fixture congestion — Levi ACWR 1.68 and Alvarez ACWR 1.52 identified and managed before injury.',
+        'Both players available for subsequent matches — clearest ACWR prevention success of the season.',
+      ]},
+      { heading: 'Cup Final Status', items: [
+        '12 players fit and available, 1 unavailable (Shoval).',
+        'Squad medical status: best of the season going into June 6 final.',
+      ]},
+    ],
+    source: 'season_schedule.txt · injury_history.txt',
+  },
+  {
+    id: 'cup-final-medical',
+    category: 'periodic',
+    icon: '🏆',
+    title: 'Cup Final Week Medical Report',
+    date: '2026-06-05',
+    author: 'Dr. Sara Cohen',
+    excerpt: 'Pre-final clearance summary — 12 players fit, Volkov modified role, Shoval unavailable, Klein inhaler confirmed.',
+    sections: [
+      { heading: 'Availability', items: [
+        'Confirmed fit (12): Alvarez, Ferretti, Volkov (modified), Okafor, Becker, Torres, Klein, Harroui, Levi E, Cohen N, Mizrahi, Cristiano Levi.',
+        'Unavailable (1): PLR-008 Oren Shoval — right calf Grade I, Stage 2 rehab.',
+      ]},
+      { heading: 'Matchday Protocols', items: [
+        'Volkov: no aerial duels, max 75 min — agreed with coaching staff.',
+        'Klein: inhaler confirmed pitch-side for bench.',
+        'Ferretti: prophylactic right knee taping per player preference.',
+        'Pitch-side bag check 90 min pre-kickoff — full medical team at Bloomfield.',
+      ]},
+    ],
+    source: 'squad_status_daily.txt · season_schedule.txt',
+  },
+  {
+    id: 'winter-break-2026',
+    category: 'periodic',
+    icon: '❄️',
+    title: 'Winter Break Assessment Report',
+    date: '2026-01-14',
+    author: 'Tal Ben-David · Daniela Ronen',
+    excerpt: 'Mid-season fitness battery and blood panel results — Yo-Yo, sprint, DXA review for Eitan Levi, nutritional reassessments.',
+    sections: [
+      { heading: 'Fitness Battery (Jan 6–8)', items: [
+        'Full reassessment: Yo-Yo IR2, sprint, agility, isokinetic strength for all squad members.',
+        'Baseline comparison vs pre-season July 2025 — squad mean fitness maintained.',
+      ]},
+      { heading: 'Blood Panels (Jan 7)', items: [
+        'Iron, Vitamin D, haematocrit for all 14 squad members.',
+        'Reviewed by Daniela Ronen and Dr. Shapira.',
+      ]},
+      { heading: 'Eitan Levi DXA Follow-up', items: [
+        'DXA Jan 8: T-score improved from March 2024 baseline.',
+        'Lumbar spine Z-score: –0.4 (within normal range).',
+        'Vitamin D: 82 nmol/L — target reached. Calcium reduced to maintenance dose.',
+      ]},
+    ],
+    source: 'season_schedule.txt · fitness_assessments.txt',
+  },
+  {
+    id: 'preseason-2025',
+    category: 'periodic',
+    icon: '🔬',
+    title: 'Pre-Season Screening Summary 2025',
+    date: '2025-08-01',
+    author: 'Dr. Anat Shapira',
+    excerpt: 'July screening battery complete — musculoskeletal screening, ACWR baselines established, nutritional assessments conducted.',
+    sections: [
+      { heading: 'Screening Window', items: [
+        'July 1–14: Individual fitness testing and musculoskeletal screening for all first-squad players.',
+        'July 15–31: Double-session training, tactical preparation, fitness base building.',
+        'August 1–14: Friendly matches and final pre-season preparation.',
+      ]},
+      { heading: 'Medical Outcomes', items: [
+        'Dr. Shapira led full squad screening — no exclusions from screening.',
+        'Tal Ben-David established individual ACWR baselines for all players.',
+        'Daniela Ronen conducted nutritional assessments — supplementation plans updated.',
+      ]},
+    ],
+    source: 'season_schedule.txt · fitness_assessments.txt',
+  },
+  {
+    id: 'injury-trend-2026',
+    category: 'trends',
+    icon: '📈',
+    title: 'Injury Trend Analysis — 2025–26 Season',
+    date: '2026-05-15',
+    author: 'Dr. Eitan Mor',
+    excerpt: 'Soft-tissue recurrence patterns, site-specific clusters, and comparison to prior seasons — hamstring and calf dominate.',
+    sections: [
+      { heading: 'Trend Summary', items: [
+        'Soft-tissue injuries account for 100% of season cases (3/3).',
+        'Recurrence at same anatomical site: 2/3 cases (Cohen hamstring, Shoval calf).',
+        'No contact-related structural injuries recorded this season.',
+        'Late-season fatigue factor noted in both May/June cases.',
+      ]},
+      { heading: 'Site Clusters', items: [
+        'Hamstring (biceps femoris): 1 case — Cohen INJ-2026-005 (recurrence).',
+        'Calf (gastrocnemius): 1 case — Shoval INJ-2026-012 (recurrence).',
+        'Lumbar (chronic managed): 1 case — Volkov INJ-2026-003 (flare-up pattern).',
+      ]},
+      { heading: 'Recommendations', items: [
+        'Mandatory post-clearance prevention review for all same-site recurrences within 12 months.',
+        'Enhanced bilateral protocols permanent for Cohen and Shoval on return.',
+        'Aerial duel load monitoring for Volkov — landing mechanics review ongoing.',
+      ]},
+    ],
+    source: 'injury_history.txt',
+  },
+  {
+    id: 'acwr-trend-feb',
+    category: 'trends',
+    icon: '⚠️',
+    title: 'ACWR Load Trend — February Congestion',
+    date: '2026-02-22',
+    author: 'Tal Ben-David',
+    excerpt: 'Critical load event analysis — 3 players exceeded safe zone, immediate protocol prevented injury.',
+    sections: [
+      { heading: 'Peak ACWR Values', items: [
+        'Cristiano Levi: 1.68 — high risk (excluded Feb 17 session).',
+        'Marco Alvarez: 1.52 — high risk (excluded Feb 17 session).',
+        'Luca Ferretti: 1.33 — elevated risk (modified load).',
+      ]},
+      { heading: 'Intervention Outcome', items: [
+        'Load reduction protocol applied within 24 hours of threshold breach.',
+        'Both high-risk players missed one training session — returned within 48 hours.',
+        'No injuries sustained during or after congestion window.',
+        'Protocol validated as primary injury prevention mechanism.',
+      ]},
+    ],
+    source: 'season_schedule.txt · fitness_assessments.txt',
+  },
+  {
+    id: 'recurrence-policy-review',
+    category: 'trends',
+    icon: '🔄',
+    title: 'Recurrence Pattern Review — Same-Site Injuries',
+    date: '2026-04-30',
+    author: 'Dr. Anat Shapira',
+    excerpt: 'Mandatory re-injury review findings for Cohen INJ-2026-005 — RTP criteria met, recurrence attributed to late-match fatigue demand.',
+    sections: [
+      { heading: 'Policy Context', items: [
+        'Re-injury to Grade II+ structure within 12 months triggers automatic Dr. Shapira review.',
+        'Recurring injuries at same site within 12 months require monthly medical meeting review.',
+      ]},
+      { heading: 'Cohen Case Finding (April 30)', items: [
+        'RTP criteria from 2024 clearance were genuinely met.',
+        'Recurrence at 71st minute under late-season fatigue — match-specific explosive demand.',
+        'Prevention protocol made permanent and enhanced — not a premature clearance issue.',
+      ]},
+    ],
+    source: 'injury_history.txt · return_to_play.txt',
+  },
+  {
+    id: 'cohen-treatment',
+    category: 'treatment',
+    icon: '🦵',
+    title: 'Treatment Summary — Neymar Cohen (INJ-2026-005)',
+    date: '2026-04-22',
+    author: 'Dr. Sara Cohen',
+    excerpt: 'Grade II left hamstring — 48 days missed, POLICE protocol, progressive return, cleared with enhanced bilateral programme.',
+    sections: [
+      { heading: 'Treatment Timeline', items: [
+        'Injury: March 5, 2026 — MD20 vs Maccabi Tel Aviv, 71st minute.',
+        'Protocol: POLICE, NSAIDs, 6-week structured rehabilitation.',
+        'Progressive running return from Week 4. Stage 4 non-contact training Week 5.',
+        'Cleared: April 22, 2026 — Dr. Shapira sign-off.',
+      ]},
+      { heading: 'Current Status', items: [
+        'Enhanced bilateral hamstring + ankle protocols active.',
+        'Any hamstring symptom = same-day assessment, no exceptions.',
+        'ACL-RSI not applicable — hamstring case. LSI target maintained >90%.',
+      ]},
+    ],
+    source: 'injury_history.txt · treatment_protocols.txt · clinical_notes_active.txt',
+  },
+  {
+    id: 'shoval-treatment',
+    category: 'treatment',
+    icon: '🩹',
+    title: 'Treatment Summary — Oren Shoval (INJ-2026-012)',
+    date: '2026-06-03',
+    author: 'Dr. Sara Cohen',
+    excerpt: 'Grade I right calf recurrence — Stage 2 rehab, pool running scheduled, expected return June 13.',
+    sections: [
+      { heading: 'Active Treatment', items: [
+        'Injury: May 28, 2026 — explosive sprint during tactical training.',
+        'Protocol A (soft tissue): mobilisation and isometric loading — Stage 2.',
+        'Thompson test negative. POLICE applied immediately.',
+        'Pool running scheduled from June 7.',
+      ]},
+      { heading: 'Prevention Plan on Return', items: [
+        'Second calf injury same site — bilateral calf prevention programme review mandatory.',
+        'Post-clearance prevention review per club recurrence policy.',
+        'Expected full training return: June 13, 2026.',
+      ]},
+    ],
+    source: 'injury_history.txt · treatment_protocols.txt',
+  },
+  {
+    id: 'volkov-treatment',
+    category: 'treatment',
+    icon: '🦴',
+    title: 'Treatment Summary — Dmitri Volkov (INJ-2026-003)',
+    date: '2026-06-03',
+    author: 'Dr. Sara Cohen',
+    excerpt: 'Chronic lumbar management — acute May flare-up resolved, cup final modified role agreed.',
+    sections: [
+      { heading: 'Episode Management', items: [
+        'Acute episode: May 15, 2026 — aerial duel landing, MD25 aftermath.',
+        'Treatment: 3-day rest, NSAIDs, manual therapy, dry needling.',
+        'Stable as of June 3 — chronic management programme continued.',
+      ]},
+      { heading: 'Ongoing Restrictions', items: [
+        'No aerial duels, no heavy contact — full technical/tactical permitted.',
+        'Cup Final: available max 75 minutes — agreed with coaching staff.',
+        'Flare-up pattern: aerial duel landings — load monitoring active.',
+      ]},
+    ],
+    source: 'injury_history.txt · clinical_notes_active.txt',
+  },
+  {
+    id: 'ferretti-maintenance',
+    category: 'treatment',
+    icon: '✅',
+    title: 'Treatment Summary — Luca Ferretti ACL Maintenance',
+    date: '2026-06-01',
+    author: 'Dr. Yoel Mizrahi',
+    excerpt: 'Post-ACL long-term maintenance — ACL-RSI 91/100, LSI 99.1%, highest confidence score recorded.',
+    sections: [
+      { heading: 'Maintenance Programme', items: [
+        'Post-ACL surgery March 2023 — 3+ years of structured maintenance.',
+        'FIFA 11+ enhanced variant — weekly maintenance sessions ongoing.',
+        'Next maintenance session: June 10 with Dr. Yoel Mizrahi.',
+      ]},
+      { heading: 'Current Metrics (June 2026)', items: [
+        'LSI: 99.1% | H:Q ratio: 0.69 | ACL-RSI: 91/100 (highest recorded).',
+        'ACWR: 1.14 — safe zone. Right knee prophylactic taping offered for Cup Final.',
+        'Any right knee swelling = same-day referral to Dr. Shapira.',
+      ]},
+    ],
+    source: 'players.txt · fitness_assessments.txt · clinical_notes_active.txt',
+  },
+];
 
 const AVATAR_SVG = '<svg viewBox="0 0 48 48" width="22" height="22"><use href="#icon-assistant"/></svg>';
 const SESSION_ICON = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-session"/></svg>';
@@ -361,7 +1125,8 @@ async function deleteSession(sessionId) {
   await fetch(`/api/sessions/${sessionId}`, { method: 'DELETE' });
   if (currentSessionId === sessionId) {
     currentSessionId = null;
-    topbarTitle.textContent = 'New consultation';
+    topbarTitle.textContent = 'AthleteCare';
+    switchView('home');
     showWelcome();
   }
   await loadSessions();
@@ -369,6 +1134,7 @@ async function deleteSession(sessionId) {
 
 async function loadSession(sessionId) {
   currentSessionId = sessionId;
+  switchView('home');
 
   const res  = await fetch(`/api/sessions/${sessionId}/messages`);
   const json = await res.json();
@@ -386,6 +1152,7 @@ async function loadSession(sessionId) {
 }
 
 async function createSession() {
+  switchView('home');
   const res = await fetch('/api/sessions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -401,8 +1168,57 @@ async function createSession() {
 }
 
 btnNewChat.addEventListener('click', async () => {
+  switchView('home');
   await createSession();
   questionInput.focus();
+});
+
+function switchView(name) {
+  currentView = name;
+  Object.entries(VIEWS).forEach(([key, el]) => {
+    if (!el) return;
+    el.classList.toggle('hidden', key !== name);
+  });
+  sidebarNavItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.view === name);
+  });
+  inputBar.classList.toggle('hidden', name !== 'home');
+
+  if (name === 'home') {
+    updateHomeTopbar();
+  } else {
+    topbarTitle.textContent = VIEW_TITLES[name] || 'AthleteCare';
+  }
+
+  if (name === 'staff-hub' && !staffHubRendered) renderStaffHub();
+  if (name === 'squad-status') renderSquadStatusView(squadFilter);
+  if (name === 'knowledge-base' && !kbTreeRendered) renderKnowledgeTree();
+  if (name === 'match-schedule') renderMatchSchedule(scheduleFilter);
+  if (name === 'analytics-reports') renderAnalyticsReports(reportsFilter);
+
+  chatArea.scrollTop = 0;
+}
+
+async function updateHomeTopbar() {
+  if (currentSessionId) {
+    topbarTitle.textContent = await getSessionTitle(currentSessionId);
+  } else {
+    topbarTitle.textContent = 'AthleteCare';
+  }
+}
+
+function goHome() {
+  switchView('home');
+  showWelcome();
+  topbarTitle.textContent = 'AthleteCare';
+  currentSessionId = null;
+  loadSessions();
+}
+
+btnGoHome.addEventListener('click', goHome);
+
+sidebarNavItems.forEach(item => {
+  item.addEventListener('click', () => switchView(item.dataset.view));
 });
 
 function showWelcome() {
@@ -498,6 +1314,7 @@ async function sendMessage() {
   if (!question) return;
   if (!engineReady) { alert('The knowledge base is not ready. Please wait.'); return; }
 
+  switchView('home');
   if (!currentSessionId) await createSession();
 
   questionInput.value = '';
@@ -617,6 +1434,7 @@ async function loadDashboard() {
 }
 
 function renderDashboard(data) {
+  dashboardCache = data;
   const squad = data.squad || {};
   const audiences = data.audiences || [];
 
@@ -692,7 +1510,462 @@ function renderDashboard(data) {
       <ul class="insight-doc-list">${docItems}</ul>
     </div>`;
   }).join('');
+
+  if (kbTreeRendered && currentView === 'knowledge-base') {
+    kbTreeRendered = false;
+    renderKnowledgeTree();
+  }
+  if (currentView === 'squad-status') {
+    renderSquadStatusView(squadFilter);
+  }
 }
+
+function renderStaffHub() {
+  const grid = document.getElementById('staffGrid');
+  grid.innerHTML = STAFF_HUB.map(s => `
+    <article class="staff-card">
+      <div class="staff-card-head">
+        <span class="staff-card-icon" aria-hidden="true">${s.icon}</span>
+        <div class="staff-card-role-wrap">
+          <h3 class="staff-card-role">${escHtml(s.role)}</h3>
+          <p class="staff-card-name">${escHtml(s.name)}</p>
+          <p class="staff-card-credentials">${escHtml(s.credentials)}</p>
+        </div>
+        <span class="staff-availability">${escHtml(s.availability)}</span>
+      </div>
+      <p class="staff-card-responsibility">${escHtml(s.responsibility)}</p>
+      <div class="staff-card-contact">
+        <a href="tel:${s.phone.replace(/\s/g, '')}" class="staff-contact-item">${escHtml(s.phone)}</a>
+        <a href="mailto:${s.email}" class="staff-contact-item">${escHtml(s.email)}</a>
+      </div>
+    </article>
+  `).join('');
+  staffHubRendered = true;
+}
+
+function getIndexedFiles() {
+  if (!dashboardCache?.audiences) return new Set();
+  const files = new Set();
+  dashboardCache.audiences.forEach(aud => {
+    (aud.documents || []).forEach(doc => {
+      if (doc.available && doc.file) files.add(doc.file);
+    });
+  });
+  return files;
+}
+
+function renderSquadStatusView(filter) {
+  squadFilter = filter;
+  const squad = dashboardCache?.squad || {};
+  const injured = squad.unavailable || [];
+  const rehab = squad.modified || [];
+  const fit = squad.cleared || [];
+
+  const allPlayers = [
+    ...injured.map(p => ({ ...p, category: 'injured' })),
+    ...rehab.map(p => ({ ...p, category: 'rehab' })),
+    ...fit.map(p => ({ ...p, category: 'fit', detail: p.detail || 'Cleared for full training' })),
+  ];
+
+  const filtered = filter === 'all' ? allPlayers
+    : filter === 'injured' ? allPlayers.filter(p => p.category === 'injured')
+    : filter === 'rehab' ? allPlayers.filter(p => p.category === 'rehab')
+    : allPlayers.filter(p => p.category === 'fit');
+
+  document.getElementById('rosterStats').innerHTML = `
+    <div class="roster-stat roster-stat--warn">
+      <span class="roster-stat-value">${injured.length}</span>
+      <span class="roster-stat-label">Injured</span>
+    </div>
+    <div class="roster-stat roster-stat--mod">
+      <span class="roster-stat-value">${rehab.length}</span>
+      <span class="roster-stat-label">In Rehab</span>
+    </div>
+    <div class="roster-stat roster-stat--ok">
+      <span class="roster-stat-value">${fit.length}</span>
+      <span class="roster-stat-label">Fit</span>
+    </div>
+    <div class="roster-stat">
+      <span class="roster-stat-value">${allPlayers.length}</span>
+      <span class="roster-stat-label">Total</span>
+    </div>`;
+
+  const badgeMap = {
+    injured: { label: 'Injured', cls: 'badge-unavailable' },
+    rehab: { label: 'In Rehab', cls: 'badge-modified' },
+    fit: { label: 'Fit', cls: 'badge-fit' },
+  };
+
+  const list = document.getElementById('rosterList');
+  if (!filtered.length) {
+    list.innerHTML = '<li class="roster-player roster-player--empty">No players match this filter.</li>';
+  } else {
+    list.innerHTML = filtered.map(p => {
+      const badge = badgeMap[p.category];
+      return `<li class="roster-player">
+        <div class="roster-player-top">
+          <div class="roster-player-id-name">
+            ${p.id ? `<span class="roster-player-id">${escHtml(p.id)}</span>` : ''}
+            <span class="roster-player-name">${escHtml(p.name)}</span>
+          </div>
+          <span class="insight-player-badge ${badge.cls}">${badge.label}</span>
+        </div>
+        <p class="roster-player-detail">${escHtml(p.detail || '')}</p>
+      </li>`;
+    }).join('');
+  }
+
+  document.querySelectorAll('#squadFilters .filter-chip').forEach(chip => {
+    const on = chip.dataset.filter === filter;
+    chip.classList.toggle('active', on);
+    chip.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+}
+
+document.getElementById('squadFilters')?.addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+  renderSquadStatusView(chip.dataset.filter);
+});
+
+function renderKnowledgeTree() {
+  const indexed = getIndexedFiles();
+  const tree = document.getElementById('kbTree');
+
+  tree.innerHTML = KNOWLEDGE_TREE.map((folder, i) => {
+    const open = i === 0 ? ' open' : '';
+    const expanded = i === 0 ? 'true' : 'false';
+    const files = folder.children.map(doc => {
+      const inRag = indexed.has(doc.file);
+      return `<li class="kb-file">
+        <span class="kb-file-icon" aria-hidden="true">📄</span>
+        <div class="kb-file-info">
+          <span class="kb-file-title">${escHtml(doc.title)}</span>
+          <span class="kb-file-desc">${escHtml(doc.desc)}</span>
+        </div>
+        <span class="kb-file-lock" title="Secured archive" aria-hidden="true">🔒</span>
+        ${inRag ? '<span class="kb-file-badge">Indexed in RAG</span>' : ''}
+      </li>`;
+    }).join('');
+
+    return `<div class="kb-folder${open}">
+      <button type="button" class="kb-folder-head" aria-expanded="${expanded}">
+        <span class="kb-folder-icon" aria-hidden="true">${folder.icon}</span>
+        <span class="kb-folder-label">${escHtml(folder.label)}</span>
+        <span class="kb-folder-count">${folder.children.length}</span>
+        <svg class="kb-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="kb-file-list">${files}</ul>
+    </div>`;
+  }).join('');
+
+  kbTreeRendered = true;
+}
+
+document.getElementById('kbTree')?.addEventListener('click', e => {
+  const head = e.target.closest('.kb-folder-head');
+  if (!head) return;
+  const folder = head.closest('.kb-folder');
+  if (!folder) return;
+  const open = folder.classList.toggle('open');
+  head.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+function formatScheduleDate(iso) {
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function scheduleTypeLabel(type) {
+  return { match: 'Match', training: 'Training', congestion: 'Congestion' }[type] || type;
+}
+
+function scheduleTypeClass(type) {
+  return { match: 'schedule-type--match', training: 'schedule-type--training', congestion: 'schedule-type--congestion' }[type] || '';
+}
+
+function acwrStatusClass(status) {
+  return { safe: 'load-status--safe', elevated: 'load-status--elevated', high: 'load-status--high', rehab: 'load-status--rehab' }[status] || '';
+}
+
+function renderMatchSchedule(filter) {
+  scheduleFilter = filter;
+  const events = (filter === 'all'
+    ? SCHEDULE_EVENTS
+    : SCHEDULE_EVENTS.filter(e => e.type === filter)
+  ).slice().sort((a, b) => b.date.localeCompare(a.date));
+
+  document.getElementById('scheduleOverview').innerHTML = `
+    <div class="schedule-overview-inner">
+      <div class="schedule-overview-item">
+        <span class="schedule-overview-label">Season</span>
+        <span class="schedule-overview-value">2025–26 · IPL + State Cup</span>
+      </div>
+      <div class="schedule-overview-item">
+        <span class="schedule-overview-label">Today</span>
+        <span class="schedule-overview-value schedule-overview-highlight">June 6, 2026 — Cup Final</span>
+      </div>
+      <div class="schedule-overview-item">
+        <span class="schedule-overview-label">Source</span>
+        <span class="schedule-overview-value">season_schedule.txt</span>
+      </div>
+    </div>`;
+
+  const list = document.getElementById('scheduleList');
+  if (!events.length) {
+    list.innerHTML = '<li class="schedule-item schedule-item--empty">No events match this filter.</li>';
+  } else {
+    list.innerHTML = events.map(ev => {
+      const active = selectedScheduleId === ev.id ? ' active' : '';
+      const highlight = ev.highlight ? ' schedule-item--highlight' : '';
+      const hasDetail = ev.report || ev.loadMetrics;
+      return `<li class="schedule-item${active}${highlight}">
+        <button type="button" class="schedule-item-btn" data-id="${escHtml(ev.id)}" ${hasDetail ? '' : 'disabled'}>
+          <span class="schedule-item-date">${formatScheduleDate(ev.date)}</span>
+          <span class="schedule-item-body">
+            <span class="schedule-item-top">
+              <span class="schedule-item-title">${escHtml(ev.title)}</span>
+              <span class="schedule-type ${scheduleTypeClass(ev.type)}">${scheduleTypeLabel(ev.type)}</span>
+            </span>
+            <span class="schedule-item-sub">${escHtml(ev.subtitle || '')}</span>
+            <span class="schedule-item-summary">${escHtml(ev.summary)}</span>
+          </span>
+          ${hasDetail ? '<svg class="schedule-item-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>' : ''}
+        </button>
+      </li>`;
+    }).join('');
+  }
+
+  document.querySelectorAll('#scheduleFilters .filter-chip').forEach(chip => {
+    const on = chip.dataset.filter === filter;
+    chip.classList.toggle('active', on);
+    chip.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+
+  scheduleRendered = true;
+}
+
+function renderScheduleDetail(eventId) {
+  const ev = SCHEDULE_EVENTS.find(e => e.id === eventId);
+  const panel = document.getElementById('scheduleDetail');
+  const content = document.getElementById('scheduleDetailContent');
+  if (!ev) {
+    panel.hidden = true;
+    selectedScheduleId = null;
+    return;
+  }
+
+  selectedScheduleId = eventId;
+  renderMatchSchedule(scheduleFilter);
+
+  let html = `
+    <header class="schedule-detail-head">
+      <span class="schedule-detail-date">${formatScheduleDate(ev.date)}</span>
+      <h3 class="schedule-detail-title">${escHtml(ev.title)}</h3>
+      <p class="schedule-detail-sub">${escHtml(ev.subtitle || '')}</p>
+      <span class="schedule-type ${scheduleTypeClass(ev.type)}">${scheduleTypeLabel(ev.type)}</span>
+    </header>
+    <p class="schedule-detail-summary">${escHtml(ev.summary)}</p>`;
+
+  if (ev.report) {
+    html += `
+      <section class="schedule-report">
+        <h4 class="schedule-report-title">${escHtml(ev.report.title)}</h4>
+        <ul class="schedule-report-notes">
+          ${ev.report.notes.map(n => `<li>${escHtml(n)}</li>`).join('')}
+        </ul>
+      </section>`;
+  }
+
+  if (ev.loadMetrics?.length) {
+    html += `
+      <section class="schedule-load">
+        <h4 class="schedule-load-title">GPS Load Metrics</h4>
+        <div class="schedule-load-table-wrap">
+          <table class="schedule-load-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>ACWR</th>
+                <th>Distance</th>
+                <th>Sprints</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${ev.loadMetrics.map(m => `
+                <tr>
+                  <td>
+                    <span class="load-player-name">${escHtml(m.name)}</span>
+                    <span class="load-player-id">${escHtml(m.id)}</span>
+                  </td>
+                  <td class="load-acwr">${m.acwr.toFixed(2)}</td>
+                  <td>${escHtml(m.distance)}</td>
+                  <td>${escHtml(m.sprint)}</td>
+                  <td><span class="load-status ${acwrStatusClass(m.status)}">${escHtml(m.status)}</span></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+        <p class="schedule-load-note">ACWR safe zone: 0.8–1.3 · Elevated: 1.3–1.5 · High risk: &gt;1.5</p>
+      </section>`;
+  }
+
+  if (!ev.report && !ev.loadMetrics?.length) {
+    html += '<p class="schedule-detail-empty">No detailed report available for this event.</p>';
+  }
+
+  content.innerHTML = html;
+  panel.hidden = false;
+}
+
+document.getElementById('scheduleList')?.addEventListener('click', e => {
+  const btn = e.target.closest('.schedule-item-btn');
+  if (!btn || btn.disabled) return;
+  renderScheduleDetail(btn.dataset.id);
+});
+
+document.getElementById('scheduleFilters')?.addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+  selectedScheduleId = null;
+  document.getElementById('scheduleDetail').hidden = true;
+  renderMatchSchedule(chip.dataset.filter);
+});
+
+document.getElementById('scheduleDetailClose')?.addEventListener('click', () => {
+  selectedScheduleId = null;
+  document.getElementById('scheduleDetail').hidden = true;
+  renderMatchSchedule(scheduleFilter);
+});
+
+function reportCategoryLabel(cat) {
+  return { periodic: 'Periodic Report', trends: 'Injury Trends', treatment: 'Treatment Summary' }[cat] || cat;
+}
+
+function reportCategoryClass(cat) {
+  return { periodic: 'report-cat--periodic', trends: 'report-cat--trends', treatment: 'report-cat--treatment' }[cat] || '';
+}
+
+function renderAnalyticsReports(filter) {
+  reportsFilter = filter;
+  const reports = (filter === 'all'
+    ? ANALYTICS_REPORTS
+    : ANALYTICS_REPORTS.filter(r => r.category === filter)
+  ).slice().sort((a, b) => b.date.localeCompare(a.date));
+
+  const counts = {
+    periodic: ANALYTICS_REPORTS.filter(r => r.category === 'periodic').length,
+    trends: ANALYTICS_REPORTS.filter(r => r.category === 'trends').length,
+    treatment: ANALYTICS_REPORTS.filter(r => r.category === 'treatment').length,
+  };
+
+  document.getElementById('reportsStats').innerHTML = `
+    <div class="reports-stat">
+      <span class="reports-stat-value">${ANALYTICS_REPORTS.length}</span>
+      <span class="reports-stat-label">Total Reports</span>
+    </div>
+    <div class="reports-stat reports-stat--periodic">
+      <span class="reports-stat-value">${counts.periodic}</span>
+      <span class="reports-stat-label">Periodic</span>
+    </div>
+    <div class="reports-stat reports-stat--trends">
+      <span class="reports-stat-value">${counts.trends}</span>
+      <span class="reports-stat-label">Trends</span>
+    </div>
+    <div class="reports-stat reports-stat--treatment">
+      <span class="reports-stat-value">${counts.treatment}</span>
+      <span class="reports-stat-label">Treatment</span>
+    </div>`;
+
+  const grid = document.getElementById('reportsGrid');
+  if (!reports.length) {
+    grid.innerHTML = '<p class="reports-empty">No reports match this filter.</p>';
+  } else {
+    grid.innerHTML = reports.map(r => {
+      const active = selectedReportId === r.id ? ' active' : '';
+      return `<article class="report-card${active}">
+        <button type="button" class="report-card-btn" data-id="${escHtml(r.id)}">
+          <span class="report-card-icon" aria-hidden="true">${r.icon}</span>
+          <span class="report-card-body">
+            <span class="report-card-top">
+              <span class="report-cat ${reportCategoryClass(r.category)}">${reportCategoryLabel(r.category)}</span>
+              <span class="report-card-date">${formatScheduleDate(r.date)}</span>
+            </span>
+            <span class="report-card-title">${escHtml(r.title)}</span>
+            <span class="report-card-author">${escHtml(r.author)}</span>
+            <span class="report-card-excerpt">${escHtml(r.excerpt)}</span>
+          </span>
+          <svg class="report-card-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </article>`;
+    }).join('');
+  }
+
+  document.querySelectorAll('#reportsFilters .filter-chip').forEach(chip => {
+    const on = chip.dataset.filter === filter;
+    chip.classList.toggle('active', on);
+    chip.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+}
+
+function renderReportDetail(reportId) {
+  const report = ANALYTICS_REPORTS.find(r => r.id === reportId);
+  const panel = document.getElementById('reportsDetail');
+  const content = document.getElementById('reportsDetailContent');
+  if (!report) {
+    panel.hidden = true;
+    selectedReportId = null;
+    return;
+  }
+
+  selectedReportId = reportId;
+  renderAnalyticsReports(reportsFilter);
+
+  content.innerHTML = `
+    <header class="reports-detail-head">
+      <span class="report-cat ${reportCategoryClass(report.category)}">${reportCategoryLabel(report.category)}</span>
+      <span class="reports-detail-date">${formatScheduleDate(report.date)}</span>
+      <h3 class="reports-detail-title">${escHtml(report.title)}</h3>
+      <p class="reports-detail-author">${escHtml(report.author)}</p>
+    </header>
+    <p class="reports-detail-excerpt">${escHtml(report.excerpt)}</p>
+    ${report.sections.map(sec => `
+      <section class="reports-detail-section">
+        <h4 class="reports-detail-section-title">${escHtml(sec.heading)}</h4>
+        <ul class="reports-detail-list">
+          ${sec.items.map(item => `<li>${escHtml(item)}</li>`).join('')}
+        </ul>
+      </section>
+    `).join('')}
+    <footer class="reports-detail-source">
+      <span class="reports-detail-source-label">Source documents</span>
+      <span class="reports-detail-source-value">${escHtml(report.source)}</span>
+    </footer>`;
+
+  panel.hidden = false;
+}
+
+document.getElementById('reportsGrid')?.addEventListener('click', e => {
+  const btn = e.target.closest('.report-card-btn');
+  if (!btn) return;
+  renderReportDetail(btn.dataset.id);
+});
+
+document.getElementById('reportsFilters')?.addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+  selectedReportId = null;
+  document.getElementById('reportsDetail').hidden = true;
+  renderAnalyticsReports(chip.dataset.filter);
+});
+
+document.getElementById('reportsDetailClose')?.addEventListener('click', () => {
+  selectedReportId = null;
+  document.getElementById('reportsDetail').hidden = true;
+  renderAnalyticsReports(reportsFilter);
+});
 
 </script>
 </body>
