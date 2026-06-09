@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>AthleteCare — Sports Medicine Assistant</title>
   <link rel="stylesheet" href="/static/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -1217,10 +1217,6 @@ function goHome() {
 
 btnGoHome.addEventListener('click', goHome);
 
-sidebarNavItems.forEach(item => {
-  item.addEventListener('click', () => switchView(item.dataset.view));
-});
-
 function showWelcome() {
   welcome.style.display = '';
   messageList.style.display = 'none';
@@ -1391,6 +1387,45 @@ document.querySelectorAll('.suggestion-chip').forEach(btn => {
 btnToggle.addEventListener('click', () => {
   sidebar.classList.toggle('collapsed');
   document.body.classList.toggle('sidebar-collapsed');
+});
+
+/* Mobile sidebar — start closed, close on nav / backdrop */
+const MOBILE_SIDEBAR_MQ = window.matchMedia('(max-width: 640px)');
+
+function isMobileSidebar() {
+  return MOBILE_SIDEBAR_MQ.matches;
+}
+
+function closeMobileSidebar() {
+  if (!isMobileSidebar()) return;
+  sidebar.classList.add('collapsed');
+  document.body.classList.add('sidebar-collapsed');
+}
+
+function syncSidebarForViewport() {
+  if (isMobileSidebar()) {
+    closeMobileSidebar();
+  } else {
+    sidebar.classList.remove('collapsed');
+    document.body.classList.remove('sidebar-collapsed');
+  }
+}
+
+syncSidebarForViewport();
+MOBILE_SIDEBAR_MQ.addEventListener('change', syncSidebarForViewport);
+
+document.addEventListener('click', e => {
+  if (!isMobileSidebar() || sidebar.classList.contains('collapsed')) return;
+  const onToggle = btnToggle.contains(e.target);
+  const inSidebar = sidebar.contains(e.target);
+  if (!onToggle && !inSidebar) closeMobileSidebar();
+});
+
+sidebarNavItems.forEach(item => {
+  item.addEventListener('click', () => {
+    switchView(item.dataset.view);
+    closeMobileSidebar();
+  });
 });
 
 /* Insight panel — squad status & document library */

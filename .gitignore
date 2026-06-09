@@ -1,3 +1,20 @@
 .venv/
 .env
 chat.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+# Local DB (any path)
+*.db
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Env (keep — never commit secrets)
+.env
+.env.local
