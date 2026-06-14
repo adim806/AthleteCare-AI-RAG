@@ -14,8 +14,10 @@ Each staff member asks questions in natural language and receives answers
 > asks questions in natural language and receives document-grounded answers with
 > citations, without manually opening files.
 
-<img width="2557" height="1272" alt="צילום מסך 2026-06-04 214950" src="https://github.com/user-attachments/assets/4677e277-5293-4ece-824c-caa182b03d17" />
 
+<img width="2550" height="1269" alt="צילום מסך 2026-06-14 110324" src="https://github.com/user-attachments/assets/50fc1854-a620-4431-898f-fe6e78ea87e7" />
+
+<img width="2544" height="1265" alt="צילום מסך 2026-06-14 110351" src="https://github.com/user-attachments/assets/9bc61493-db8a-4c16-a9e3-69dce4409855" />
 
 
 ### Five target audiences (one platform)
